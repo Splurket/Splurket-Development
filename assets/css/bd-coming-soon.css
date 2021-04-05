@@ -108,7 +108,7 @@ a{
 }
 /* navigation menu */
 /* media query */
-@media(max-width:992px){
+/*@media(max-width:992px){
     .navbar{
         flex-direction: column;
     }
@@ -122,7 +122,78 @@ a{
         overflow: hidden;
         transition: all 0.8s cubic-bezier(0.51,-0.15,0,0.98);
     }
-}
+}*/
+@media(max-width:1056px){
+    #header {
+        height:180px;
+    }
+    #cartbutton {
+        right:3% !important;
+        top:0px;
+    }
+    .navbar{
+        flex-direction: column;
+        align-content: center;
+    }
+    #searchbar10 {
+        align-content: center !important;
+        margin-left:10% !important;
+
+    }
+    .nav-brand{
+      text-align:center;
+    }
+    .toggle-button{
+        display: initial;
+    }
+    .collapse{
+        max-width: 0;
+        overflow: hidden;
+        transition: all 0.8s cubic-bezier(0.51,-0.15,0,0.98);
+    }
+    .collapse .nav-link{
+        display: block;
+        text-align: center;
+    }
+    .search-box{
+        border-right: none;
+    }
+    .collapse-toggle{
+        max-width: 500px;
+    }
+    #journey {
+      font-size:14px !important;
+    }
+    #journey1 {
+      font-size:11px !important;
+    }
+    .container100 {
+        height:280px;
+    }
+    #shopnw1{
+        width:50%;
+        height:20%;
+        font-size:8px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #learnmr1 {
+        width:50%;
+        height:20%;
+        font-size:8px;
+        text-align: center;
+    }
+    .content{
+        min-height: 366px;
+
+    }
+    #cardw{
+        width:44%;
+    }
+    .swiper-slide{
+        width:718px !important;
+    }
+  }
     .searchbar{
     margin-bottom: 0;
     margin-top: 0;
