@@ -69,7 +69,7 @@ a{
     padding: 10px;
 }
 .nav-brand{
-    font-family: 'Shadows Into Light Two;
+    font-family: 'Shadows Into Light Two;'
     font-weight: bold;
     align-items: center;
     font-size: 40px;
@@ -200,7 +200,6 @@ a{
     .pussy:hover + .fuck {
         display: block;
 }
-
 .page-title {
   font-size: 80px;
   font-weight: bold;
@@ -222,135 +221,182 @@ p {
   font-size: 14px;
   margin-bottom: 21px; }
 
-.footer-social-links .social-link {
-  display: inline-block;
-  text-align: center;
-  line-height: 40px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  color: #000000;
-  margin-right: 16px;
-  transition: all 0.3s ease-in-out; }
-  .footer-social-links .social-link:last-child {
-    margin-right: 0; }
-  .footer-social-links .social-link:hover {
-    text-decoration: none;
-    background-color: #000000;
-    color: #ffffff; }
-.gooey {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  grid-template-areas: "footer";
-  background: #F5F7FA;
-  min-height: 100px;
-  max-height: 500px;
-  font-family: "Open Sans", sans-serif;
-  margin:0;
-
-}
-.gooey .footer {
-  z-index: 1;
-  --footer-background:#52b36c;
-  display: grid;
-  position: relative;
-  grid-area: footer;
-  min-height: 12rem;
-}
-.gooey .footer .bubbles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1rem;
-  background: var(--footer-background);
-  filter: url("#blob");
-}
-.gooey .footer .bubbles .bubble {
-  position: absolute;
-  left: var(--position, 50%);
-  background: var(--footer-background);
-  border-radius: 100%;
-  -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-          animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-  transform: translate(-50%, 100%);
-}
-.gooey .footer .content {
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-gap: 4rem;
-  padding: 2rem;
-  background: var(--footer-background);
-}
-.gooey .footer .content a, .gooey .footer .content p {
-  color: #F5F7FA;
-  text-decoration: none;
-}
-.gooey .footer .content b {
+/* Create three equal columns that floats next to each other */
+.fcolumn {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: auto;
   color: white;
 }
-.gooey .footer .content p {
-  margin: 0;
-  font-size: 0.75rem;
+
+/* Clear floats after the columns */
+.frow:after {
+  content: "";
+  display: table;
+  clear: both;
+  background-color:black;
 }
-.gooey .footer .content > div {
+a {
+    color:white;
+    padding-bottom:5px;
+}
+
+#lblCartCount {
+    font-size: 15px;
+    font-family: Arial;
+    font-weight: bold;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    border-radius:10px;
+}
+.footercontainer {
+    width:"100%";
+    height:10%;
+    background-color: black;
+    padding-top:40px;
+    bottom:0;
+    margin-bottom:0px;
+}
+h2 {
+  color: #fff;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.scrolling-wrapper .card {
+  display: inline-block;
+}
+
+.scrolling-wrapper-flexbox {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
-.gooey .footer .content > div > div {
-  margin: 0.25rem 0;
-}
-.gooey .footer .content > div > div > * {
-  margin-right: 0.5rem;
-}
-.gooey .footer .content > div .image {
-  align-self: center;
-  width: 4rem;
-  height: 4rem;
-  margin: 0.25rem 0;
-  background-size: cover;
-  background-position: center;
+.scrolling-wrapper-flexbox .card {
+  flex: 0 0 auto;
+  margin-right: 3px;
 }
 
-@-webkit-keyframes bubble-size {
-  0%, 75% {
-    width: var(--size, 4rem);
-    height: var(--size, 4rem);
-  }
-  100% {
-    width: 0rem;
-    height: 0rem;
-  }
+.card {
+  width: 23%;
+  height: 100%;
+  padding-left:20px;
+  padding-right: 20px;
 }
 
-@keyframes bubble-size {
-  0%, 75% {
-    width: var(--size, 4rem);
-    height: var(--size, 4rem);
-  }
-  100% {
-    width: 0rem;
-    height: 0rem;
-  }
+.scrolling-wrapper, .scrolling-wrapper-flexbox {
+  height: 80px;
+  margin-bottom: 20px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
-@-webkit-keyframes bubble-move {
-  0% {
-    bottom: -4rem;
-  }
-  100% {
-    bottom: var(--distance, 10rem);
-  }
+.scrolling-wrapper::-webkit-scrollbar, .scrolling-wrapper-flexbox::-webkit-scrollbar {
+  display: none;
 }
-@keyframes bubble-move {
-  0% {
-    bottom: -4rem;
+
+
+.testimonials{
+ position: relative;
+ max-width: 100%;
+
+}
+
+
+  .swiper-slide{
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    min-height: 350px;
+    margin:0 20px;
+    background: #fff;
+
   }
-  100% {
-    bottom: var(--distance, 10rem);
+  .testimonials .cardswipe{
+      position: relative;
+      width:100%;
+      margin: 0 auto;
+      background: #333;
+      padding: 60px 40px;
+      text-align: center;
+      overflow: hidden;
   }
+  
+  .testimonials .cardswipe .layer{
+      position: absolute;
+      top: calc(100% - 2px);
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#03a9f4,#e91ee3);
+      z-index: 1;
+      transition: 0.5s;
+  }
+  .testimonials .cardswipe:hover .layer{
+      top: 0;
+  }
+  .testimonials .cardswipe .contentswipe{
+      position: relative;
+      z-index: 2;
+  }
+  .testimonials .cardswipe .contentswipe p{
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 20px;
+      color: #fff;
+  }
+  .testimonials .cardswipe .contentswipe .imgBx{
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #fff;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  .testimonials .cardswipe .contentswipe h2{
+      font-size: 18px;
+      color: #0fff;
+      margin:10px 0px;
+  }
+  .testimonials .cardswipe .contentswipe h2 span{
+      color: #03a9f4;
+      font-size: 14px;
+      transition: 0.5s;
+  }
+  .testimonials .cardswipe:hover .contentswipe h2 span{
+  color: #fff;
+  }
+  select {
+  position:relative; 
+  border-width:0px !important;
+  height:34px; 
+  background:#000000; 
+  padding:0px 10px 0px 10px; 
+  color:#FFFF; 
+  margin:-10px 0px 0px 20px; 
+  font-size: 12px; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none; 
+}
+  .login-button {
+  background-color: #ffff;
+  border: none;
+  color: #52b36c;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
 /**CONTAINERS INSIDE FOOTER!!!!**/
 
@@ -358,15 +404,3 @@ p {
 }
 
 </style>
-
-  <script>
-  window.console = window.console || function(t) {};
-</script>
-
-  
-  
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-/*# sourceMappingURL=bd-coming-soon.css.map */
