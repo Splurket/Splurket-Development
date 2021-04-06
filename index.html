@@ -108,6 +108,7 @@
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
         var name, email, photoUrl, uid, emailVerified;
+
         var config = {
             apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
             authDomain: "splurket-66df1.firebaseapp.com",
@@ -126,6 +127,8 @@
             // User is signed in.
             var user = firebase.auth().currentUser;
             //splurket@gmail.com
+            String email1 = user.email;
+            console.log(btoa(email))
             var email = getParameterByName('user'); 
             console.log(email)
             //still splurket
