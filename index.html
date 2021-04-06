@@ -128,7 +128,6 @@
             var user = firebase.auth().currentUser;
             //splurket@gmail.com
             var email1 = user.email;
-            var email = new String(email1)
             
             /*var email = getParameterByName('user'); 
             console.log(email)*/
@@ -155,7 +154,19 @@
               })
               .then(function (data) {
                 //should be a base64 string by now
-                email = data.encryptedstring;
+                getuserdata(data);
+            });
+            console.log(email)
+            document.getElementById("avatar").src = pro_pic;
+            document.getElementById("avatar").style.display = "block";
+          } else {
+            console.log('fuck')
+            document.getElementById("avatar").style.display = "none";
+            document.getElementById("login").style.display = "block";
+          }
+        });
+        function getuserdata(data) {
+            email = data.encryptedstring;
                 var docRef = db.collection("users").doc(email);
                 docRef.get().then((doc) => {
                     if (doc.exists) {
@@ -169,16 +180,7 @@
                 }).catch((error) => {
                     console.log("Error getting document:", error);
                 });
-            });
-            console.log(email)
-            document.getElementById("avatar").src = pro_pic;
-            document.getElementById("avatar").style.display = "block";
-          } else {
-            console.log('fuck')
-            document.getElementById("avatar").style.display = "none";
-            document.getElementById("login").style.display = "block";
-          }
-        });
+        }
     </script>
 
     <!--BODY ENDS HERE!!!!-->
