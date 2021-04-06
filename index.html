@@ -120,7 +120,7 @@
             email = user.email;
             var email1 = btoa(btoa(email));
             var docRef = db.collection("users").doc(`${email1}`);
-            console.log(docRef)
+            console.log(docRef.get())
             docRef.get().then((doc) => {
                 if (doc.exists) {
                     console.log("Document data:", doc.data());
