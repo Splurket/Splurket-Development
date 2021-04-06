@@ -124,7 +124,7 @@
             myHeaders.append("Accept", "application/json, /;q=0.5");
 
             var raw = JSON.stringify({
-              "stringtodecrypt": `${email1}`
+              "stringtoencrypt": `${email1}`
             });
             //document.write(raw)
             var requestOptions = {
@@ -134,12 +134,12 @@
               redirect: 'follow'
             };
 
-            fetch("https://americanrivergold.com/fluffybunnyout", requestOptions)
+            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
               .then(function (response) {
                   return response.json();
               })
               .then(function (data) {
-                email1 = data.decryptedstring;
+                email1 = data.encryptedstring;
                 var docRef = db.collection("users").doc(email1);
                 docRef.get().then((doc) => {
                     if (doc.exists) {
