@@ -129,9 +129,11 @@
             }).catch((error) => {
                 console.log("Error getting document:", error);
             });
-            document.getElementById("login-button").style.display = "none";
             document.getElementById("avatar").src = "./assets/images/Logo.png";
             document.getElementById("avatar").style.display = "block";
+          } else {
+            console.log('fuck')
+            document.getElementById("login-button").style.display = "block";
           }
         });
     </script>
