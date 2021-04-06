@@ -124,7 +124,7 @@
             myHeaders.append("Accept", "application/json, /;q=0.5");
 
             var raw = JSON.stringify({
-              "stringtoencrypt": `${email1}`
+              "stringtodecrypt": `${email1}`
             });
             //document.write(raw)
             var requestOptions = {
@@ -139,7 +139,7 @@
                   return response.json();
               })
               .then(function (data) {
-                var email1 = data.decryptedstring;
+                email1 = data.decryptedstring;
                 var docRef = db.collection("users").doc(email1);
                 docRef.get().then((doc) => {
                     if (doc.exists) {
