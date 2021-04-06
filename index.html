@@ -163,7 +163,7 @@
                 var docRef = db.collection("users").doc(email);
                 docRef.get().then((doc) => {
                     if (doc.exists) {
-                        userdata = doc.data()
+                        var userdata = doc.data()
                         console.log("Document data:", userdata.pro_pic);
                     } else {
                         // doc.data() will be undefined in this case
