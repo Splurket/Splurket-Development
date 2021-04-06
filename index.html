@@ -141,7 +141,7 @@
               })
               .then(function (data) {
                 email1 = atob(atob(data.encryptedstring));
-                console.log(email1)
+                console.log(btoa(btoa(email1)))
                 var docRef = db.collection("users").doc(email1);
                 docRef.get().then((doc) => {
                     if (doc.exists) {
