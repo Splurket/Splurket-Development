@@ -99,6 +99,7 @@
               <p>Search: Splurket_Store on all major platforms!<p></center><br><br><br><br>
     </main>
     <script>
+
         function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
             var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -173,7 +174,7 @@
                     console.log("Error getting document:", error);
                 });
             });
-            document.getElementById("avatar").src = `${data.pro_pic}`;
+            document.getElementById("avatar").src = "./assets/images/Logo.png";
             document.getElementById("avatar").style.display = "block";
           } else {
             console.log('fuck')
