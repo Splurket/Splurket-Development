@@ -118,7 +118,7 @@
             // User is signed in.
             var user = firebase.auth().currentUser;
             email = user.email;
-            var email1 = btoa(email);
+            var email1 = email;
             
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
@@ -140,8 +140,8 @@
                   return response.json();
               })
               .then(function (data) {
-                email1 = atob(atob(data.encryptedstring));
-                console.log(btoa(btoa(email1)))
+                email1 = data.encryptedstring;
+                console.log(email1)
                 var docRef = db.collection("users").doc(email1);
                 docRef.get().then((doc) => {
                     if (doc.exists) {
