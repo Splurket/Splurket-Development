@@ -57,7 +57,7 @@
                 <button class="login-button" id="login-button" onclick="location.href='https://accounts.splurket.com?redirect='+location.href;">Login</button>
             </div>
             <div class="dropdown" id="avatar" hidden="hidden">
-                <img src="" alt="Avatar" class="avatar" width="60px" height="60px">
+                <img src="" alt="Avatar" class="avatar" id="avatarpic" width="60px" height="60px">
               <div class="dropdown-content">
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
@@ -176,7 +176,7 @@
                     if (doc.exists) {
                         data1 = doc.data()
                         pro_pic = data1.pro_pic;
-                        document.getElementById("avatar").src = pro_pic;
+                        document.getElementById("avatarpic").src = pro_pic;
                         document.getElementById("avatar").style.display = "block";
                     } else {
                         // doc.data() will be undefined in this case
