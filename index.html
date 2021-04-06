@@ -156,7 +156,6 @@
                 //should be a base64 string by now
                 getuserdata(data);
             });
-            document.getElementById("avatar").style.display = "block";
           } else {
             console.log('fuck')
             document.getElementById("avatar").style.display = "none";
@@ -171,6 +170,7 @@
                         data1 = doc.data()
                         pro_pic = data1.pro_pic;
                         document.getElementById("avatar").src = pro_pic;
+                        document.getElementById("avatar").style.display = "block";
                     } else {
                         // doc.data() will be undefined in this case
                         console.log("No such document!");
