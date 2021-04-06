@@ -58,7 +58,7 @@
             </div>
             <div class="dropdown" id="avatar" hidden="hidden">
                 <img src="" alt="Avatar" class="avatar" id="avatarpic" width="60px" height="60px">
-                <p style="display:inline-block;">Hello</p>
+                <p style="display:inline-block;" id="avatarusername"></p>
               <div class="dropdown-content">
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
@@ -177,8 +177,15 @@
                     if (doc.exists) {
                         data1 = doc.data()
                         pro_pic = data1.pro_pic;
+                        if (data1.username == "" ){
+                            user_name = data1.email
+                        }
+                        if (data1.username != "") {
+                            user_name = data1.username;
+                        }
                         document.getElementById("avatarpic").src = pro_pic;
                         document.getElementById("avatar").style.display = "block";
+                        document.getElementById("avatarusername").innerText = user_name;
                     } else {
                         // doc.data() will be undefined in this case
                         console.log("No such document!");
