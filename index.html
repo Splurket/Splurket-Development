@@ -99,6 +99,14 @@
               <p>Search: Splurket_Store on all major platforms!<p></center><br><br><br><br>
     </main>
     <script>
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
         var name, email, photoUrl, uid, emailVerified;
         var config = {
             apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
@@ -117,7 +125,9 @@
           if (user) {
             // User is signed in.
             var user = firebase.auth().currentUser;
-            email = user.email;
+            //splurket@gmail.com
+            var email = getParameterByName('user'); 
+            //still splurket
             var email1 = email;
             
             var myHeaders = new Headers();
@@ -140,6 +150,7 @@
                   return response.json();
               })
               .then(function (data) {
+                //should be a base64 string by now
                 email1 = data.encryptedstring;
                 console.log(email1)
                 var docRef = db.collection("users").doc(email1);
