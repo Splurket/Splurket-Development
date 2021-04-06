@@ -117,8 +117,8 @@
             var user = firebase.auth().currentUser;
             email = user.email;
             var email1 = btoa(btoa(email));
-            console.log(email1)
             var docRef = db.collection("users").doc(`${email1}`);
+            console.log(docRef)
             docRef.get().then((doc) => {
                 if (doc.exists) {
                     console.log("Document data:", doc.data());
