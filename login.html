@@ -36,7 +36,7 @@
     db.settings({ timestampsInSnapshots: true }); 
     firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
         var data= JSON.stringify(success)
-        location.href=redirect + '&user=' + userSIEmail1
+        location.href=redirect + '?user=' + userSIEmail1
     }).catch((error) => {
         // Handle Errors here.
         console.log(error)
