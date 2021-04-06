@@ -127,15 +127,15 @@
             var user = firebase.auth().currentUser;
             //splurket@gmail.com
             var email = getParameterByName('user'); 
+            console.log(email)
             //still splurket
-            var email1 = email;
             
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("Accept", "application/json, /;q=0.5");
 
             var raw = JSON.stringify({
-              "stringtoencrypt": `${email1}`
+              "stringtoencrypt": `${email}`
             });
             //document.write(raw)
             var requestOptions = {
@@ -151,9 +151,9 @@
               })
               .then(function (data) {
                 //should be a base64 string by now
-                email1 = data.encryptedstring;
-                console.log(email1)
-                var docRef = db.collection("users").doc(email1);
+                email = data.encryptedstring;
+                console.log(email)
+                var docRef = db.collection("users").doc(email);
                 docRef.get().then((doc) => {
                     if (doc.exists) {
                         console.log("Document data:", doc.data());
