@@ -129,7 +129,6 @@
             //splurket@gmail.com
             var email1 = user.email;
             var email = new String(email1)
-            console.log(btoa(email))
             
             /*var email = getParameterByName('user'); 
             console.log(email)*/
@@ -142,7 +141,6 @@
             var raw = JSON.stringify({
               "stringtoencrypt": `${email1}`
             });
-            console.log(raw)
             //document.write(raw)
             var requestOptions = {
               method: 'POST',
@@ -158,7 +156,6 @@
               .then(function (data) {
                 //should be a base64 string by now
                 email = data.encryptedstring;
-                console.log(email)
                 var docRef = db.collection("users").doc(email);
                 docRef.get().then((doc) => {
                     if (doc.exists) {
@@ -173,6 +170,7 @@
                     console.log("Error getting document:", error);
                 });
             });
+            console.log(email)
             document.getElementById("avatar").src = pro_pic;
             document.getElementById("avatar").style.display = "block";
           } else {
