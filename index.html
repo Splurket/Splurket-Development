@@ -53,7 +53,7 @@
                 </ul>
             </div>
             <!--Login BUTTON-->
-            <div hidden="hidden">
+            <div id="login" hidden="hidden">
                 <button class="login-button" id="login-button" onclick="location.href='https://accounts.splurket.com?redirect='+location.href;">Login</button>
             </div>
             <img src="" alt="Avatar" class="avatar" hidden="hidden" id="avatar" width="60px" height="60px">
@@ -158,7 +158,7 @@
             document.getElementById("avatar").style.display = "block";
           } else {
             console.log('fuck')
-            document.getElementById("login-button").style.display = "block";
+            document.getElementById("login").style.display = "block";
           }
         });
     </script>
