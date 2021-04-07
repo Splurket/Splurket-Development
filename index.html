@@ -219,7 +219,8 @@
             });
         }
         function profilego() {
-            var localstuff = localStorage.getItem('usercreds');
+            var localstuff1 = localStorage.getItem('usercreds');
+            var localstuff = JSON.parse(localstuff1)
             var loginemail = localstuff.email;
             var loginpassword = localstuff.password;
             location.href = "https://myaccount.splurket.com/login?bunnyluck="+loginemail+"&rabbitfoot="+loginpassword
