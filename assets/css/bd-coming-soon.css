@@ -492,6 +492,7 @@ h2 {
 
 .dropdown-content p {
   color: white;
+  padding-left:12px;
   text-decoration: none;
   cursor: pointer;
 
