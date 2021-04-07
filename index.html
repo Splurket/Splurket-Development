@@ -60,8 +60,8 @@
                 <img src="" alt="Avatar" class="avatar" id="avatarpic" width="60px" height="60px">
                 <p style="display:inline-block;" id="avatarusername"></p>
               <center><div class="dropdown-content">
-                <img src="" alt="Avatar" class="avatar" id="avatarpic" width="60px" height="60px">
-                <p style="display:inline-block;" id="avatarusername"></p><br>
+                <img src="" alt="Avatar" class="avatar" id="avatarpic1" width="60px" height="60px">
+                <p style="display:inline-block;" id="avatarusername1"></p><br>
                 <p onclick="profilego()">My Profile</p>
                 <p>Payments</p>
                 <p onclick="signout()">Sign Out</p>
@@ -186,8 +186,10 @@
                             user_name = data1.username;
                         }
                         document.getElementById("avatarpic").src = pro_pic;
+                        document.getElementById("avatarpic1").src = pro_pic;
                         document.getElementById("avatar").style.display = "block";
                         document.getElementById("avatarusername").innerText = user_name;
+                        document.getElementById("avatarusername1").innerText = user_name;
                     } else {
                         // doc.data() will be undefined in this case
                         console.log("No such document!");
