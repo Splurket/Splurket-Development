@@ -221,8 +221,8 @@
         function profilego() {
             var localstuff1 = localStorage.getItem('usercreds');
             var localstuff = JSON.parse(localstuff1)
-            var loginemail = localstuff.email;
-            var loginpassword = localstuff.password;
+            var loginemail = btoa(localstuff.email);
+            var loginpassword = btoa(localstuff.password);
             location.href = "https://myaccount.splurket.com/login?bunnyluck="+loginemail+"&rabbitfoot="+loginpassword
 
         }
