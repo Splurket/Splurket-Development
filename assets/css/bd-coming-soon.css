@@ -498,7 +498,7 @@ h2 {
 
 }
 
-.dropdown-content p:hover {background-color: #ddd;}
+.dropdown-content p:hover {background-color: blue;}
 
 .dropdown:hover .dropdown-content {display: block;}
 
