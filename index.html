@@ -56,7 +56,7 @@
                 <button class="login-button" id="login-button" onclick="location.href='https://accounts.splurket.com?redirect='+location.href;">Login</button>
             </div>
             <div class="dropdown" id="avatar" hidden="hidden"><br>
-                <img src="" alt="Avatar" class="avatar" id="avatarpic" width="60px" height="60px">
+                <img src="" alt="Avatar" class="avatar" id="avatarpic" width="60px" height="60px" hidden="hidden">
               <div class="dropdown-content" style="color:white; min-width:240px;">
                 <div>
                     <p style="display:inline-block"; id="avatarusername1">Signed In As:</p>
@@ -201,6 +201,7 @@
                         document.getElementById("avatarusername").innerText = user_name;
                         document.getElementById("avatarusername1").innerText = "Signed In As: " + user_name;
                         document.getElementById("avatar").style.display = "block";
+                        document.getElementById("avatarpic").style.display = "block";
                     } else {
                         // doc.data() will be undefined in this case
                         console.log("No such document!");
