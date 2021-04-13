@@ -43,16 +43,18 @@
             <!-- collapse on toggle button click -->
             <div class="collapse">
                 <ul class="navbar-nav">
-                    <a href="./index.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Home">Home</a>
-                        <div id="headerdrop">
+                    <a href="./index.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Home" onmouseover="document.getElementById('homeheaderdrop').style.display = 'block';">Home</a>
+                        <div class="headerdrop" id="homeheaderdrop">
                             
                         </div>
-                    <a href="./pages/store.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Marketplace">Marketplace</a>
-                        <div id="headerdrop">Marketplace</div>
-                    <a href="./pages/messages.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Messages">Messages</a>
-                        <div id="headerdrop">Messages</div>
-                    <a href="./pages/custom request.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Support">Support</a>
-                        <div id="headerdrop">Support</div>
+                    <a href="./pages/store.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Marketplace" onmouseover="document.getElementById('marketplaceheaddrop').style.display = 'block';">Marketplace</a>
+                        <div class="headerdrop" id="marketplaceheaddrop">Marketplace</div>
+                    
+                    <a href="./pages/messages.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Messages" onmouseover="document.getElementById('messageheaderdrop').style.display = 'block';">Messages</a>
+                        <div class="headerdrop" id="messageheaderdrop">Messages</div>
+                    
+                    <a href="./pages/custom request.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Support" onmouseover="document.getElementById('supportheaderdrop').style.display = 'block';">Support</a>
+                        <div class="headerdrop" id="supportheaderdrop">Support</div>
                 </ul>
             </div>
             <!--Login BUTTON-->
