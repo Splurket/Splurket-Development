@@ -505,15 +505,13 @@ h2 {
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 }
-.headerdrop {
+.collapse .navbar-nav .headerdrop {
   position: absolute;
-  top:98px;
+  top:300px;
   background-color: #52b36c;
   width:100%;
   color: white;
   display: none;
-
-
 }
 .home:hover + .headerdrop {
   display: block;
