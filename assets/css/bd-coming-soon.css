@@ -515,9 +515,17 @@ h2 {
 
 
 }
-#home:hover + #homeheaderdrop {display: block;}
-#marketplace:hover + #marketplaceheaderdrop{display: block;}
-#messages:hover + #messagesheaderdrop {display: block;}
-#support:hover + #supportheaderdrop{display: block;}
+#home:hover + .headerdrop {
+  display: block;
+}
+#marketplace:hover + .headerdrop{
+  display: block;
+}
+#messages:hover + .headerdrop {
+  display: block;
+}
+#support:hover + .headerdrop{
+  display: block;
+}
 
 </style>
