@@ -515,5 +515,9 @@ h2 {
 
 
 }
+.home:hover .homeheaderdrop {display: block;}
+.marketplace:hover .marketplaceheaderdrop{display: block;}
+.messages:hover .messagesheaderdrop {display: block;}
+.support:hover .supportheaderdrop{display: block;}
 
 </style>
