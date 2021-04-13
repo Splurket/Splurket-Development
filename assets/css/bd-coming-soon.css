@@ -515,16 +515,16 @@ h2 {
 
 
 }
-#home:hover + .headerdrop {
+.home:hover + .headerdrop {
   display: block;
 }
-#marketplace:hover + .headerdrop{
+.marketplace:hover + .headerdrop{
   display: block;
 }
-#messages:hover + .headerdrop {
+.messages:hover + .headerdrop {
   display: block;
 }
-#support:hover + .headerdrop{
+.support:hover + .headerdrop{
   display: block;
 }
 
