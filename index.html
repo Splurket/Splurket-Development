@@ -75,7 +75,7 @@
                 <hr>
                 <p onclick="profilego()">My Profile</p>
                 <p>Splurket Pay</p>
-                <p> Splurket Creators</p>
+                <p>Splurket Creators</p>
                 <hr>
                 <div>
                 <center><p onclick="signout()">Sign Out</p></center>
@@ -247,6 +247,14 @@
                     console.log("Error getting document:", error);
                 });
         }
+        function profilego() {
+            var localstuff1 = localStorage.getItem('usercreds');
+            var localstuff = JSON.parse(localstuff1)
+            var loginemail = btoa(localstuff.email);
+            var loginpassword = btoa(localstuff.password);
+            location.href = "https://myaccount.splurket.com/login?bunnyluck="+loginemail+"&rabbitfoot="+loginpassword
+
+        }
         function signout() {
             firebase.auth().signOut().then(() => {
                 localStorage.removeItem('usercreds');
@@ -257,14 +265,6 @@
             }).catch((error) => {
               // An error happened.
             });
-        }
-        function profilego() {
-            var localstuff1 = localStorage.getItem('usercreds');
-            var localstuff = JSON.parse(localstuff1)
-            var loginemail = btoa(localstuff.email);
-            var loginpassword = btoa(localstuff.password);
-            location.href = "https://myaccount.splurket.com/login?bunnyluck="+loginemail+"&rabbitfoot="+loginpassword
-
         }
     </script>
 
