@@ -209,7 +209,7 @@
             console.log('fuck')
             document.getElementById("avatar").style.display = "none";
             document.getElementById("login").style.display = "block";
-            document.getElementByClassName('headerdrop').style = "top:83px;"
+            document.getElementsByClassName('headerdrop').style = "top:83px;"
           }
         });
         function getuserdata(data) {
@@ -242,7 +242,7 @@
         }
         function signout() {
             firebase.auth().signOut().then(() => {
-                document.getElementByClassName('headerdrop').style = "top:83px;"
+                document.getElementsByClassName('headerdrop').style = "top:83px;"
             }).catch((error) => {
               // An error happened.
             });
