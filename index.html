@@ -26,14 +26,12 @@
 <style type="text/css">
     .headerdrop {
       position: absolute;
-      top:98px;
+      top:99px;
       background-color: #52b36c;
-      min-width:100%;
+      width:100%;
       color: white;
       display: none;
-      margin: auto;
-
-    }
+}
 </style>
 
     <!-- Header.. -->
@@ -55,30 +53,31 @@
             <!-- collapse on toggle button click -->
             <div class="collapse">
                 <ul class="navbar-nav">
-                    <span class="home"><a href="./index.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Home">Home</a></span>
-                    <!--Home Dropdown-->
-                    <div class="headerdrop" hidden="hidden" id="homeheaderdrop"> 
-                        <p>gdhwj</p> 
-                    </div>
-                    <span class="marketplace"><a href="./pages/store.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Marketplace">Marketplace</a></span>
-                    <!--marketplace Dropdown-->
-                    <div class="headerdrop" hidden="hidden" id="marketplaceheaddrop">   
-                        <p>bvfdjsvhb</p>
-                    </div>
+                    <a href="./index.html" id="home" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Home" onmouseover="document.getElementById('homeheaderdrop').style.display = 'block';" onmouseout="document.getElementById('homeheaderdrop').style.display = 'none';">Home</a>
+                    <a href="./pages/store.html" id="marketplace" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Marketplace" onmouseover="document.getElementById('marketplaceheaddrop').style.display = 'block';" onmouseout="document.getElementById('marketplaceheaddrop').style.display = 'none';">Marketplace</a>
                     
-                    <span class="messages"><a href="./pages/messages.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Messages">Messages</a></span>
-                    <!--Messages Dropdown-->
-                    <div class="headerdrop" hidden="hidden" id="messageheaderdrop">
-                        <p>hvfjkwjhvfj</p>
-                    </div>
+                    <a href="./pages/messages.html" id="messages" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Messages" onmouseover="document.getElementById('messageheaderdrop').style.display = 'block';" onmouseout="document.getElementById('messageheaderdrop').style.display = 'none';">Messages</a>
                     
-                    <span class="support"><a href="./pages/custom request.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Support">Support</a><span>
-                    <!--Support Dropdown-->
-                    <div class="headerdrop" hidden="hidden" id="supportheaderdrop">
-                        <p>hjwjvh</p>
-                    </div>
+                    <a href="./pages/custom request.html" id="support" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;" title="Support" onmouseover="document.getElementById('supportheaderdrop').style.display = 'block';" onmouseout="document.getElementById('supportheaderdrop').style.display = 'none';">Support</a>
                 </ul>
                 <!--dropdowns-->
+                <!--Home Dropdown-->
+                <div class="headerdrop" hidden="hidden" id="homeheaderdrop"> 
+                <p>gdhwj</p> 
+                </div>
+                <!--marketplace Dropdown-->
+                <div class="headerdrop" hidden="hidden" id="marketplaceheaddrop">   
+                    <p>bvfdjsvhb</p>
+                </div>
+                <!--Messages Dropdown-->
+                <div class="headerdrop" hidden="hidden" id="messageheaderdrop">
+                    <p>hvfjkwjhvfj</p>
+                </div>
+
+                <!--Support Dropdown-->
+                <div class="headerdrop" hidden="hidden" id="supportheaderdrop">
+                    <p>hjwjvh</p>
+                </div>
             </div>
             <!--Login BUTTON-->
             <div id="login" hidden="hidden">

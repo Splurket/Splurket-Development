@@ -505,7 +505,7 @@ h2 {
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 }
-.collapse .navbar-nav .headerdrop {
+.headerdrop {
   position: absolute;
   top:300px;
   background-color: #52b36c;
@@ -513,6 +513,7 @@ h2 {
   color: white;
   display: none;
 }
+/*
 .home:hover + .headerdrop {
   display: block;
 }
@@ -525,5 +526,5 @@ h2 {
 .support:hover + .headerdrop{
   display: block;
 }
-
+*/
 </style>
