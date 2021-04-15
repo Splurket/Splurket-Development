@@ -514,16 +514,16 @@ h2 {
   display: none;
 }
 
-.home:hover {
+#home:hover {
   text-decoration: underline;
 }
-.marketplace:hover {
+#marketplace:hover {
   text-decoration: underline;
 }
-.messages:hover {
+#messages:hover {
   text-decoration: underline;
 }
-.support:hover {
+#support:hover {
   text-decoration: underline;
 }
 
