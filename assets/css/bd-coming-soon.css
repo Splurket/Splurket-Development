@@ -513,18 +513,18 @@ h2 {
   color: white;
   display: none;
 }
-/*
-.home:hover + .headerdrop {
-  display: block;
+
+.home:hover {
+  text-decoration: underline;
 }
-.marketplace:hover + .headerdrop{
-  display: block;
+.marketplace:hover {
+  text-decoration: underline;
 }
-.messages:hover + .headerdrop {
-  display: block;
+.messages:hover {
+  text-decoration: underline;
 }
-.support:hover + .headerdrop{
-  display: block;
+.support:hover {
+  text-decoration: underline;
 }
 */
 </style>
