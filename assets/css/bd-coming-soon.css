@@ -526,6 +526,8 @@ h2 {
 #support:hover {
   text-decoration: underline;
 }
-
+.headerdrop p{
+  cursor: pointer;
+}
 */
 </style>
