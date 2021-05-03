@@ -138,9 +138,15 @@
                 <label for="demo_name" style="color:white;">Splurket Username</label>
                 <input class="u-full-width" type="text" placeholder="Please Enter Your Username" id="demo_username">
             </div>
+            <div style="background-color:red;color:white;border-radius: 5px;padding:5px;display:none;" id="UsernameError">
+                        <p>Error: Invalid Email. Please Provide A Valid Email!</p>
+            </div>
             <div class="input-group" id="name">
                 <label for="demo_name" style="color:white;">Full Name</label>
                 <input class="u-full-width" type="text" placeholder="Please Enter Your Name" id="demo_name">
+            </div>
+            <div style="background-color:red;color:white;border-radius: 5px;padding:5px;display:none;" id="NameError">
+                        <p>Error: Invalid Email. Please Provide A Valid Email!</p>
             </div>
 
             <!-- email -->
@@ -148,10 +154,16 @@
                 <label for="demo_name" style="color:white;">Email</label>
                 <input class="u-full-width" type="text" placeholder="Please Enter Your Email" id="demo_email">
             </div>
+            <div style="background-color:red;color:white;border-radius: 5px;padding:5px;display:none;" id="EmailError">
+                        <p>Error: Invalid Email. Please Provide A Valid Email!</p>
+                    </div>
             <!-- email -->
             <div class="input-group" id="phone">
-                <label for="demo_name" style="color:white;">Phone Number</label>
+                <label for="demo_name" style="color:white;">Phone Number (To Contact When Completed)</label>
                 <input class="u-full-width" type="text" placeholder="Please Enter Your Phone Number" id="demo_phone">
+            </div>
+            <div style="background-color:red;color:white;border-radius: 5px;padding:5px;display:none;" id="PhoneError">
+                        <p>Error: Invalid Email. Please Provide A Valid Email!</p>
             </div>
             <div id="next1">
                 <center>
@@ -477,6 +489,19 @@
             name = document.getElementById('demo_name').value;
             email = document.getElementById('demo_email').value;
             phone = document.getElementById('demo_phone').value;
+            if(typeof Username = "undefined" || Username ==""){
+                document.getElementById('UsernameError').style.display = "block";
+            }
+            if(typeof name = "undefined" || name ==""){
+                document.getElementById('NameError').style.display = "block";
+            }
+            if(typeof email = "undefined" || email ==""){
+                document.getElementById('EmailError').style.display = "block";
+            }
+            if(typeof phone = "undefined" || phone ==""){
+                document.getElementById('PhoneError').style.display = "block";
+            }else{
+
             document.getElementById("username").style.display = "none";
             document.getElementById("name").style.display = "none";
             document.getElementById("email").style.display = "none";
@@ -490,6 +515,7 @@
             document.getElementById("next1").style.display = "none";
             document.getElementById("next2").style.display = "block";
         }
+    }
 
         function back1() {
             document.getElementById("job_type").style.display = "none";
@@ -566,219 +592,17 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
+        //new product
         var description = document.getElementById('pdescription').value;
         var productCategory
         var skillsNeed
         var pdescription
         //Create A card
         function pcard() {
-            var cardurl = 'https://api.trello.com/1/cards?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-            var listid = '5fcfa030511b292fe2f58bf7'
-            productName = document.getElementById('pname').value;
-            productCategory = document.getElementById('pcategory').value;
-            skillsNeed = document.getElementById('pskills').value;
-            pdescription = document.getElementById('pdescription').value;
-            var requestOptions = {
-                method: 'POST',
-                dataType: 'jsonp',
-                redirect: 'follow'
-            };
-            fetch(cardurl + '&idList=' + listid + '&name=' + productName + "&desc=" + pdescription, requestOptions)
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    var cardid = data.id;
-                    pchecklist();
-
-                    //Add Checklist To the card
-                    function pchecklist() {
-                        var checklisturl = 'https://api.trello.com/1/checklists?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                        var requestOptions = {
-                            method: 'POST',
-                            dataType: 'jsonp',
-                            redirect: 'follow'
-                        };
-                        fetch(checklisturl + '&idCard=' + cardid + '&name=More Info About Request', requestOptions)
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log('Success:', data);
-                                var checklistid = data.id;
-                                pnamefield();
-
-                                //Add First FIELD
-
-                                function pnamefield() {
-                                    var pname = '&name=Splurket Username: ' + Username
-                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                    var requestOptions = {
-                                        method: 'POST',
-                                        dataType: 'jsonp',
-                                        redirect: 'follow'
-                                    };
-                                    fetch(checklisturl + pname, requestOptions)
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            console.log('Success:', data);
-                                            pnamefield2();
-
-
-                                            //ADD SECOND CHECKITEM
-
-
-                                            function pnamefield2() {
-                                                var pname = '&name=Customer Name: ' + name
-                                                var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                var requestOptions = {
-                                                    method: 'POST',
-                                                    dataType: 'jsonp',
-                                                    redirect: 'follow'
-                                                };
-                                                };
-                                                fetch(checklisturl + pname, requestOptions)
-                                                    .then(response => response.json())
-                                                    .then(data => {
-                                                        console.log('Success:', data);
-                                                        pnamefield3();
-
-
-                                                        // ADD THIRD CHECKITEM
-
-                                                        function pnamefield3() {
-                                                            var pname = '&name=Customer Email: ' + email
-                                                            var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                            var requestOptions = {
-                                                                method: 'POST',
-                                                                dataType: 'jsonp',
-                                                                redirect: 'follow'
-                                                            };
-                                                            fetch(checklisturl + pname, requestOptions)
-                                                                .then(response => response.json())
-                                                                .then(data => {
-                                                                    console.log('Success:', data);
-                                                                    pnamefield4();
-
-                                                                    //Add Fourth CHECKITEM
-
-
-                                                                    function pnamefield4() {
-                                                                        var pname = '&name=Customer Phone Number: ' + phone
-                                                                        var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                        var requestOptions = {
-                                                                            method: 'POST',
-                                                                            dataType: 'jsonp',
-                                                                            redirect: 'follow'
-                                                                        };
-                                                                        fetch(checklisturl + pname, requestOptions)
-                                                                            .then(response => response.json())
-                                                                            .then(data => {
-                                                                                console.log('Success:', data);
-                                                                                pnamefield5();
-                                                                            })
-
-                                                                        //Add First FIELD
-
-                                                                        function pnamefield5() {
-                                                                            var pname = '&name=Name Of Product: ' + productName
-                                                                            var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                            var requestOptions = {
-                                                                                method: 'POST',
-                                                                                dataType: 'jsonp',
-                                                                                redirect: 'follow'
-                                                                            };
-                                                                            fetch(checklisturl + pname, requestOptions)
-                                                                                .then(response => response.json())
-                                                                                .then(data => {
-                                                                                    console.log('Success:', data);
-                                                                                    pnamefield6();
-
-
-                                                                                    //ADD SECOND CHECKITEM
-
-
-                                                                                    function pnamefield6() {
-                                                                                        var pname = '&name=Product Category: ' + productCategory
-                                                                                        var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                        var requestOptions = {
-                                                                                            method: 'POST',
-                                                                                            dataType: 'jsonp',
-                                                                                            redirect: 'follow'
-                                                                                        };
-                                                                                        fetch(checklisturl + pname, requestOptions)
-                                                                                            .then(response => response.json())
-                                                                                            .then(data => {
-                                                                                                console.log('Success:', data);
-                                                                                                pnamefield7();
-
-
-                                                                                                // ADD THIRD CHECKITEM
-
-                                                                                                function pnamefield7() {
-                                                                                                    var pname = '&name=Skills Needed: ' + skillsNeed
-                                                                                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                    var requestOptions = {
-                                                                                                        method: 'POST',
-                                                                                                        dataType: 'jsonp',
-                                                                                                        redirect: 'follow'
-                                                                                                    };
-                                                                                                    fetch(checklisturl + pname, requestOptions)
-                                                                                                        .then(response => response.json())
-                                                                                                        .then(data => {
-                                                                                                            console.log('Success:', data);
-                                                                                                            pnamefield8();
-
-                                                                                                            //Add Fourth CHECKITEM
-
-
-                                                                                                            function pnamefield8() {
-                                                                                                                var pname = '&name=Payment Method: ' + ppayment
-                                                                                                                var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                var requestOptions = {
-                                                                                                                    method: 'POST',
-                                                                                                                    dataType: 'jsonp',
-                                                                                                                    redirect: 'follow'
-                                                                                                                };
-                                                                                                                fetch(checklisturl + pname, requestOptions)
-                                                                                                                    .then(response => response.json())
-                                                                                                                    .then(data => {
-                                                                                                                        console.log('Success:', data);
-                                                                                                                        pnamefield9()
-                                                                                                                    })
-                                                                                                                        function pnamefield9() {
-                                                                                                                        var pname = '&name=Permissions: ' + ppermission
-                                                                                                                        var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                        var requestOptions = {
-                                                                                                                            method: 'POST',
-                                                                                                                            dataType: 'jsonp',
-                                                                                                                            redirect: 'follow'
-                                                                                                                        };
-                                                                                                                        fetch(checklisturl + pname, requestOptions)
-                                                                                                                            .then(response => response.json())
-                                                                                                                            .then(data => {
-                                                                                                                                console.log('Success:', data);
-                                                                                                                            })
-
-                                                                                                                    }
-
-                                                                                                            }
-                                                                                                        })
-                                                                                                }
-                                                                                            })
-                                                                                    }
-                                                                                })
-                                                                        }
-                                                                    }
-                                                                })
-                                                        }
-                                                    })
-                                            }
-                                        })
-                                }
-                            })
-                    }
-                })
-        }
+}
     </script>
     <script>
+        //New developer hire
         var ddescription = document.getElementById('ddescription').value;
         var devtime
         var devprice
@@ -787,247 +611,10 @@
         var ddescription
         //Create A card
         function dcard() {
-            var cardurl = 'https://api.trello.com/1/cards?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-            var listid = '5fcfac5fe523634bdecc0179'
-            dprice = document.getElementById('dprice').value;
-            dtime = document.getElementById('dtime').value;
-            dname = document.getElementById('dname').value;
-            dcat = document.getElementById('dcategory').value;
-            dskills = document.getElementById('dskills').value;
-            ddescription = document.getElementById('ddescription').value;
-            var requestOptions = {
-                method: 'POST',
-                dataType: 'jsonp',
-                redirect: 'follow'
-            };
-            fetch(cardurl + '&idList=' + listid + '&name=' + dname + "&desc=" + ddescription, requestOptions)
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    var cardid = data.id;
-                    dchecklist();
-
-                    //Add Checklist To the card
-                    function dchecklist() {
-                        var checklisturl = 'https://api.trello.com/1/checklists?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                        var requestOptions = {
-                            method: 'POST',
-                            dataType: 'jsonp',
-                            redirect: 'follow'
-                        };
-                        fetch(checklisturl + '&idCard=' + cardid + '&name=More Info About Request', requestOptions)
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log('Success:', data);
-                                var checklistid = data.id;
-                                dnamefield();
-
-                                //Add First FIELD
-
-                                function dnamefield() {
-                                    var pname = '&name=Splurket Username: ' + Username
-                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                    var requestOptions = {
-                                        method: 'POST',
-                                        dataType: 'jsonp',
-                                        redirect: 'follow'
-                                    };
-                                    fetch(checklisturl + pname, requestOptions)
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            console.log('Success:', data);
-                                            dnamefield2();
-
-
-                                            //ADD SECOND CHECKITEM
-
-
-                                            function dnamefield2() {
-                                                var pname = '&name=Customer Name: ' + name
-                                                var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                var requestOptions = {
-                                                    method: 'POST',
-                                                    dataType: 'jsonp',
-                                                    redirect: 'follow'
-                                                };
-                                                fetch(checklisturl + pname, requestOptions)
-                                                    .then(response => response.json())
-                                                    .then(data => {
-                                                        console.log('Success:', data);
-                                                        dnamefield3();
-
-
-                                                        // ADD THIRD CHECKITEM
-
-                                                        function dnamefield3() {
-                                                            var pname = '&name=Customer Email: ' + email
-                                                            var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                            var requestOptions = {
-                                                                method: 'POST',
-                                                                dataType: 'jsonp',
-                                                                redirect: 'follow'
-                                                            };
-                                                            fetch(checklisturl + pname, requestOptions)
-                                                                .then(response => response.json())
-                                                                .then(data => {
-                                                                    console.log('Success:', data);
-                                                                    dnamefield4();
-
-                                                                    //Add Fourth CHECKITEM
-
-
-                                                                    function dnamefield4() {
-                                                                        var pname = '&name=Customer Phone Number: ' + phone
-                                                                        var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                        var requestOptions = {
-                                                                            method: 'POST',
-                                                                            dataType: 'jsonp',
-                                                                            redirect: 'follow'
-                                                                        };
-                                                                        fetch(checklisturl + pname, requestOptions)
-                                                                            .then(response => response.json())
-                                                                            .then(data => {
-                                                                                console.log('Success:', data);
-                                                                                dnamefield5();
-                                                                            })
-
-                                                                        //Add First FIELD
-
-                                                                        function dnamefield5() {
-                                                                            var pname = '&name=Name Of Product: ' + dname
-                                                                            var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                            var requestOptions = {
-                                                                                method: 'POST',
-                                                                                dataType: 'jsonp',
-                                                                                redirect: 'follow'
-                                                                            };
-                                                                            fetch(checklisturl + pname, requestOptions)
-                                                                                .then(response => response.json())
-                                                                                .then(data => {
-                                                                                    console.log('Success:', data);
-                                                                                    dnamefield6();
-
-
-                                                                                    //ADD SECOND CHECKITEM
-
-
-                                                                                    function dnamefield6() {
-                                                                                        var pname = '&name=Product Category: ' + dcat
-                                                                                        var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                        var requestOptions = {
-                                                                                            method: 'POST',
-                                                                                            dataType: 'jsonp',
-                                                                                            redirect: 'follow'
-                                                                                        };
-                                                                                        fetch(checklisturl + pname, requestOptions)
-                                                                                            .then(response => response.json())
-                                                                                            .then(data => {
-                                                                                                console.log('Success:', data);
-                                                                                                dnamefield7();
-                                                                                              })
-
-                                                                                                // ADD THIRD CHECKITEM
-
-                                                                                                function dnamefield7() {
-                                                                                                    var pname = '&name=Skills Needed: ' + dskills
-                                                                                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                    var requestOptions = {
-                                                                                                        method: 'POST',
-                                                                                                        dataType: 'jsonp',
-                                                                                                        redirect: 'follow'
-                                                                                                    };
-                                                                                                    fetch(checklisturl + pname, requestOptions)
-                                                                                                        .then(response => response.json())
-                                                                                                        .then(data => {
-                                                                                                            console.log('Success:', data);
-                                                                                                            dnamefield8();
-                                                                                                          })
-                                                                                                            //Add Fourth CHECKITEM
-
-
-                                                                                                            function dnamefield8() {
-                                                                                                                var pname = '&name=Payment Method: ' + dpayment
-                                                                                                                var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                var requestOptions = {
-                                                                                                                    method: 'POST',
-                                                                                                                    dataType: 'jsonp',
-                                                                                                                    redirect: 'follow'
-                                                                                                                };
-                                                                                                                fetch(checklisturl + pname, requestOptions)
-                                                                                                                    .then(response => response.json())
-                                                                                                                    .then(data => {
-                                                                                                                        console.log('Success:', data);
-                                                                                                                        dnamefield9()
-                                                                                                                    })
-                                                                                                                        function dnamefield9() {
-                                                                                                                          var pname = '&name=Permissions: ' + dpermissions
-                                                                                                                          var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                          var requestOptions = {
-                                                                                                                              method: 'POST',
-                                                                                                                              dataType: 'jsonp',
-                                                                                                                              redirect: 'follow'
-                                                                                                                          };
-                                                                                                                          fetch(checklisturl + pname, requestOptions)
-                                                                                                                              .then(response => response.json())
-                                                                                                                              .then(data => {
-                                                                                                                                  console.log('Success:', data);
-                                                                                                                                  dnamefield10();
-                                                                                                                              })
-                                                                                                                                  function dnamefield10() {
-                                                                                                                                    var pname = '&name=Permissions: ' + dpermissions
-                                                                                                                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                                    var requestOptions = {
-                                                                                                                                        method: 'POST',
-                                                                                                                                        dataType: 'jsonp',
-                                                                                                                                        redirect: 'follow'
-                                                                                                                                    };
-                                                                                                                                    fetch(checklisturl + pname, requestOptions)
-                                                                                                                                        .then(response => response.json())
-                                                                                                                                        .then(data => {
-                                                                                                                                            console.log('Success:', data);
-                                                                                                                                            dnamefield11();
-                                                                                                                                        })
-                                                                                                                                        function dnamefield11() {
-                                                                                                                                          var pname = '&name=Permissions: ' + dpermissions
-                                                                                                                                          var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                                          var requestOptions = {
-                                                                                                                                              method: 'POST',
-                                                                                                                                              dataType: 'jsonp',
-                                                                                                                                              redirect: 'follow'
-                                                                                                                                          };
-                                                                                                                                          fetch(checklisturl + pname, requestOptions)
-                                                                                                                                              .then(response => response.json())
-                                                                                                                                              .then(data => {
-                                                                                                                                                  console.log('Success:', data);
-                                                                                                                                                
-                                                                                                                                              })
-
-                                                                                                                                    }
-
-                                                                                                                              }
-
-                                                                                                                    }
-
-                                                                                                            }
-                                                                                                      
-                                                                                                }
-                                                                                          
-                                                                                    }
-                                                                                })
-                                                                        }
-                                                                    }
-                                                                })
-                                                        }
-                                                    })
-                                            }
-                                        })
-                                }
-                            })
-                    }
-                })
-        }
+}
     </script>
     <script>
+        //dev hire quote
         var qddescription = document.getElementById('qddescription').value;
         var qdtime
         var qdcost
@@ -1036,247 +623,10 @@
         var qddescription
         //Create A card
         function pqcard() {
-            var cardurl = 'https://api.trello.com/1/cards?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-            var listid = '5fcfac4c8f873370f755efe3'
-            qdcost = document.getElementById('qdcost').value;
-            qdtime = document.getElementById('qdtime').value;
-            qdname = document.getElementById('qdname').value;
-            qdcat = document.getElementById('qdcat').value;
-            qdskills = document.getElementById('dqskills').value;
-            qddescription = document.getElementById('qddescription').value;
-            var requestOptions = {
-                method: 'POST',
-                dataType: 'jsonp',
-                redirect: 'follow'
-            };
-            fetch(cardurl + '&idList=' + listid + '&name=' + qdname + "&desc=" + qddescription, requestOptions)
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    var cardid = data.id;
-                    qdchecklist();
-
-                    //Add Checklist To the card
-                    function qdchecklist() {
-                        var checklisturl = 'https://api.trello.com/1/checklists?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                        var requestOptions = {
-                            method: 'POST',
-                            dataType: 'jsonp',
-                            redirect: 'follow'
-                        };
-                        fetch(checklisturl + '&idCard=' + cardid + '&name=More Info About Request', requestOptions)
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log('Success:', data);
-                                var checklistid = data.id;
-                                qdnamefield();
-
-                                //Add First FIELD
-
-                                function qdnamefield() {
-                                    var pname = '&name=Splurket Username: ' + Username
-                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                    var requestOptions = {
-                                        method: 'POST',
-                                        dataType: 'jsonp',
-                                        redirect: 'follow'
-                                    };
-                                    fetch(checklisturl + pname, requestOptions)
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            console.log('Success:', data);
-                                            qdnamefield2();
-
-
-                                            //ADD SECOND CHECKITEM
-
-
-                                            function qdnamefield2() {
-                                                var pname = '&name=Customer Name: ' + name
-                                                var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                var requestOptions = {
-                                                    method: 'POST',
-                                                    dataType: 'jsonp',
-                                                    redirect: 'follow'
-                                                };
-                                                fetch(checklisturl + pname, requestOptions)
-                                                    .then(response => response.json())
-                                                    .then(data => {
-                                                        console.log('Success:', data);
-                                                        qdnamefield3();
-
-
-                                                        // ADD THIRD CHECKITEM
-
-                                                        function qdnamefield3() {
-                                                            var pname = '&name=Customer Email: ' + email
-                                                            var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                            var requestOptions = {
-                                                                method: 'POST',
-                                                                dataType: 'jsonp',
-                                                                redirect: 'follow'
-                                                            };
-                                                            fetch(checklisturl + pname, requestOptions)
-                                                                .then(response => response.json())
-                                                                .then(data => {
-                                                                    console.log('Success:', data);
-                                                                    qdnamefield4();
-
-                                                                    //Add Fourth CHECKITEM
-
-
-                                                                    function qdnamefield4() {
-                                                                        var pname = '&name=Customer Phone Number: ' + phone
-                                                                        var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                        var requestOptions = {
-                                                                            method: 'POST',
-                                                                            dataType: 'jsonp',
-                                                                            redirect: 'follow'
-                                                                        };
-                                                                        fetch(checklisturl + pname, requestOptions)
-                                                                            .then(response => response.json())
-                                                                            .then(data => {
-                                                                                console.log('Success:', data);
-                                                                                qdnamefield5();
-                                                                            })
-
-                                                                        //Add First FIELD
-
-                                                                        function qdnamefield5() {
-                                                                            var pname = '&name=Name Of Product: ' + qdname
-                                                                            var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                            var requestOptions = {
-                                                                                method: 'POST',
-                                                                                dataType: 'jsonp',
-                                                                                redirect: 'follow'
-                                                                            };
-                                                                            fetch(checklisturl + pname, requestOptions)
-                                                                                .then(response => response.json())
-                                                                                .then(data => {
-                                                                                    console.log('Success:', data);
-                                                                                    qdnamefield6();
-
-
-                                                                                    //ADD SECOND CHECKITEM
-
-
-                                                                                    function qdnamefield6() {
-                                                                                        var pname = '&name=Product Category: ' + qdcat
-                                                                                        var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                        var requestOptions = {
-                                                                                            method: 'POST',
-                                                                                            dataType: 'jsonp',
-                                                                                            redirect: 'follow'
-                                                                                        };
-                                                                                        fetch(checklisturl + pname, requestOptions)
-                                                                                            .then(response => response.json())
-                                                                                            .then(data => {
-                                                                                                console.log('Success:', data);
-                                                                                                qdnamefield7();
-                                                                                              })
-
-                                                                                                // ADD THIRD CHECKITEM
-
-                                                                                                function qdnamefield7() {
-                                                                                                    var pname = '&name=Skills Needed: ' + qdskills
-                                                                                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                    var requestOptions = {
-                                                                                                        method: 'POST',
-                                                                                                        dataType: 'jsonp',
-                                                                                                        redirect: 'follow'
-                                                                                                    };
-                                                                                                    fetch(checklisturl + pname, requestOptions)
-                                                                                                        .then(response => response.json())
-                                                                                                        .then(data => {
-                                                                                                            console.log('Success:', data);
-                                                                                                            qdnamefield8();
-                                                                                                          })
-                                                                                                            //Add Fourth CHECKITEM
-
-
-                                                                                                            function qdnamefield8() {
-                                                                                                                var pname = '&name=Payment Method: ' + qdpayment
-                                                                                                                var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                var requestOptions = {
-                                                                                                                    method: 'POST',
-                                                                                                                    dataType: 'jsonp',
-                                                                                                                    redirect: 'follow'
-                                                                                                                };
-                                                                                                                fetch(checklisturl + pname, requestOptions)
-                                                                                                                    .then(response => response.json())
-                                                                                                                    .then(data => {
-                                                                                                                        console.log('Success:', data);
-                                                                                                                        qdnamefield9()
-                                                                                                                    })
-                                                                                                                        function qdnamefield9() {
-                                                                                                                          var pname = '&name=Permissions: ' + qdcost
-                                                                                                                          var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                          var requestOptions = {
-                                                                                                                              method: 'POST',
-                                                                                                                              dataType: 'jsonp',
-                                                                                                                              redirect: 'follow'
-                                                                                                                          };
-                                                                                                                          fetch(checklisturl + pname, requestOptions)
-                                                                                                                              .then(response => response.json())
-                                                                                                                              .then(data => {
-                                                                                                                                  console.log('Success:', data);
-                                                                                                                                  qdnamefield10();
-                                                                                                                              })
-                                                                                                                                  function qdnamefield10() {
-                                                                                                                                    var pname = '&name=Permissions: ' + qdtime
-                                                                                                                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                                    var requestOptions = {
-                                                                                                                                        method: 'POST',
-                                                                                                                                        dataType: 'jsonp',
-                                                                                                                                        redirect: 'follow'
-                                                                                                                                    };
-                                                                                                                                    fetch(checklisturl + pname, requestOptions)
-                                                                                                                                        .then(response => response.json())
-                                                                                                                                        .then(data => {
-                                                                                                                                            console.log('Success:', data);
-                                                                                                                                            qdnamefield11();
-                                                                                                                                        })
-                                                                                                                                        function qdnamefield11() {
-                                                                                                                                          var pname = '&name=Permissions: ' + dpermissions
-                                                                                                                                          var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                                          var requestOptions = {
-                                                                                                                                              method: 'POST',
-                                                                                                                                              dataType: 'jsonp',
-                                                                                                                                              redirect: 'follow'
-                                                                                                                                          };
-                                                                                                                                          fetch(checklisturl + pname, requestOptions)
-                                                                                                                                              .then(response => response.json())
-                                                                                                                                              .then(data => {
-                                                                                                                                                  console.log('Success:', data);
-                                                                                                                                                
-                                                                                                                                              })
-
-                                                                                                                                    }
-
-                                                                                                                              }
-
-                                                                                                                    }
-
-                                                                                                            }
-                                                                                                      
-                                                                                                }
-                                                                                          
-                                                                                    }
-                                                                                })
-                                                                        }
-                                                                    }
-                                                                })
-                                                        }
-                                                    })
-                                            }
-                                        })
-                                }
-                            })
-                    }
-                })
-        }
+}
     </script>
     <script>
+        //product quote
         var qpdescription = document.getElementById('qpdescription').value;
         var qptime
         var qpcost
@@ -1285,245 +635,7 @@
         var qpdescription
         //Create A card
         function dqcard() {
-            var cardurl = 'https://api.trello.com/1/cards?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-            var listid = '6022af3076a894053533abcc'
-            qpcost = document.getElementById('qpcost').value;
-            qptime = document.getElementById('qptime').value;
-            qpname = document.getElementById('qpname').value;
-            qpcat = document.getElementById('dqpat').value;
-            qpskills = document.getElementById('qpskills').value;
-            qpdescription = document.getElementById('qpdescription').value;
-            var requestOptions = {
-                method: 'POST',
-                dataType: 'jsonp',
-                redirect: 'follow'
-            };
-            fetch(cardurl + '&idList=' + listid + '&name=' + qpname + "&desc=" + qpdescription, requestOptions)
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    var cardid = data.id;
-                    qpchecklist();
-
-                    //Add Checklist To the card
-                    function qpchecklist() {
-                        var checklisturl = 'https://api.trello.com/1/checklists?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                        var requestOptions = {
-                            method: 'POST',
-                            dataType: 'jsonp',
-                            redirect: 'follow'
-                        };
-                        fetch(checklisturl + '&idCard=' + cardid + '&name=More Info About Request', requestOptions)
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log('Success:', data);
-                                var checklistid = data.id;
-                                qpnamefield();
-
-                                //Add First FIELD
-
-                                function qpnamefield() {
-                                    var pname = '&name=Splurket Username: ' + Username
-                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                    var requestOptions = {
-                                        method: 'POST',
-                                        dataType: 'jsonp',
-                                        redirect: 'follow'
-                                    };
-                                    fetch(checklisturl + pname, requestOptions)
-                                        .then(response => response.json())
-                                        .then(data => {
-                                            console.log('Success:', data);
-                                            qpnamefield2();
-
-
-                                            //ADD SECOND CHECKITEM
-
-
-                                            function qpnamefield2() {
-                                                var pname = '&name=Customer Name: ' + name
-                                                var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                var requestOptions = {
-                                                    method: 'POST',
-                                                    dataType: 'jsonp',
-                                                    redirect: 'follow'
-                                                };
-                                                fetch(checklisturl + pname, requestOptions)
-                                                    .then(response => response.json())
-                                                    .then(data => {
-                                                        console.log('Success:', data);
-                                                        qpnamefield3();
-
-
-                                                        // ADD THIRD CHECKITEM
-
-                                                        function qpnamefield3() {
-                                                            var pname = '&name=Customer Email: ' + email
-                                                            var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                            var requestOptions = {
-                                                                method: 'POST',
-                                                                dataType: 'jsonp',
-                                                                redirect: 'follow'
-                                                            };
-                                                            fetch(checklisturl + pname, requestOptions)
-                                                                .then(response => response.json())
-                                                                .then(data => {
-                                                                    console.log('Success:', data);
-                                                                    qpnamefield4();
-
-                                                                    //Add Fourth CHECKITEM
-
-
-                                                                    function qpnamefield4() {
-                                                                        var pname = '&name=Customer Phone Number: ' + phone
-                                                                        var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                        var requestOptions = {
-                                                                            method: 'POST',
-                                                                            dataType: 'jsonp',
-                                                                            redirect: 'follow'
-                                                                        };
-                                                                        fetch(checklisturl + pname, requestOptions)
-                                                                            .then(response => response.json())
-                                                                            .then(data => {
-                                                                                console.log('Success:', data);
-                                                                                qpnamefield5();
-                                                                            })
-
-                                                                        //Add First FIELD
-
-                                                                        function qpnamefield5() {
-                                                                            var pname = '&name=Name Of Product: ' + qpname
-                                                                            var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                            var requestOptions = {
-                                                                                method: 'POST',
-                                                                                dataType: 'jsonp',
-                                                                                redirect: 'follow'
-                                                                            };
-                                                                            fetch(checklisturl + pname, requestOptions)
-                                                                                .then(response => response.json())
-                                                                                .then(data => {
-                                                                                    console.log('Success:', data);
-                                                                                    qpnamefield6();
-
-
-                                                                                    //ADD SECOND CHECKITEM
-
-
-                                                                                    function qpnamefield6() {
-                                                                                        var pname = '&name=Product Category: ' + qpcat
-                                                                                        var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                        var requestOptions = {
-                                                                                            method: 'POST',
-                                                                                            dataType: 'jsonp',
-                                                                                            redirect: 'follow'
-                                                                                        };
-                                                                                        fetch(checklisturl + pname, requestOptions)
-                                                                                            .then(response => response.json())
-                                                                                            .then(data => {
-                                                                                                console.log('Success:', data);
-                                                                                                qpnamefield7();
-                                                                                              })
-
-                                                                                                // ADD THIRD CHECKITEM
-
-                                                                                                function qpnamefield7() {
-                                                                                                    var pname = '&name=Skills Needed: ' + qpskills
-                                                                                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                    var requestOptions = {
-                                                                                                        method: 'POST',
-                                                                                                        dataType: 'jsonp',
-                                                                                                        redirect: 'follow'
-                                                                                                    };
-                                                                                                    fetch(checklisturl + pname, requestOptions)
-                                                                                                        .then(response => response.json())
-                                                                                                        .then(data => {
-                                                                                                            console.log('Success:', data);
-                                                                                                            qpnamefield8();
-                                                                                                          })
-                                                                                                            //Add Fourth CHECKITEM
-
-
-                                                                                                            function qpnamefield8() {
-                                                                                                                var pname = '&name=Payment Method: ' + qppayment
-                                                                                                                var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                var requestOptions = {
-                                                                                                                    method: 'POST',
-                                                                                                                    dataType: 'jsonp',
-                                                                                                                    redirect: 'follow'
-                                                                                                                };
-                                                                                                                fetch(checklisturl + pname, requestOptions)
-                                                                                                                    .then(response => response.json())
-                                                                                                                    .then(data => {
-                                                                                                                        console.log('Success:', data);
-                                                                                                                        qpnamefield9()
-                                                                                                                    })
-                                                                                                                        function qpnamefield9() {
-                                                                                                                          var pname = '&name=Permissions: ' + qpcost
-                                                                                                                          var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                          var requestOptions = {
-                                                                                                                              method: 'POST',
-                                                                                                                              dataType: 'jsonp',
-                                                                                                                              redirect: 'follow'
-                                                                                                                          };
-                                                                                                                          fetch(checklisturl + pname, requestOptions)
-                                                                                                                              .then(response => response.json())
-                                                                                                                              .then(data => {
-                                                                                                                                  console.log('Success:', data);
-                                                                                                                                  qpnamefield10();
-                                                                                                                              })
-                                                                                                                                  function qpnamefield10() {
-                                                                                                                                    var pname = '&name=Permissions: ' + qptime
-                                                                                                                                    var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                                    var requestOptions = {
-                                                                                                                                        method: 'POST',
-                                                                                                                                        dataType: 'jsonp',
-                                                                                                                                        redirect: 'follow'
-                                                                                                                                    };
-                                                                                                                                    fetch(checklisturl + pname, requestOptions)
-                                                                                                                                        .then(response => response.json())
-                                                                                                                                        .then(data => {
-                                                                                                                                            console.log('Success:', data);
-                                                                                                                                            qpnamefield11();
-                                                                                                                                        })
-                                                                                                                                        function qpnamefield11() {
-                                                                                                                                          var pname = '&name=Permissions: ' + qpperms
-                                                                                                                                          var checklisturl = 'https://api.trello.com/1/checklists/' + checklistid + '/checkItems?key=aa8ab2f4e1bf7b8f82f74196837c7d07&token=5b6aff50ab19f53f363bfade341c7e57fa2c0e8a4dad2e0db6d1a19f93c57868'
-                                                                                                                                          var requestOptions = {
-                                                                                                                                              method: 'POST',
-                                                                                                                                              dataType: 'jsonp',
-                                                                                                                                              redirect: 'follow'
-                                                                                                                                          };
-                                                                                                                                          fetch(checklisturl + pname, requestOptions)
-                                                                                                                                              .then(response => response.json())
-                                                                                                                                              .then(data => {
-                                                                                                                                                  console.log('Success:', data);
-                                                                                                                                                
-                                                                                                                                              })
-
-                                                                                                                                    }
-
-                                                                                                                              }
-
-                                                                                                                    }
-
-                                                                                                            }
-                                                                                                      
-                                                                                                }
-                                                                                          
-                                                                                    }
-                                                                                })
-                                                                        }
-                                                                    }
-                                                                })
-                                                        }
-                                                    })
-                                            }
-                                        })
-                                }
-                            })
-                    }
-                })
-        }
+}
     </script>
     </form>
     </main>
