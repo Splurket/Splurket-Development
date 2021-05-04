@@ -47,6 +47,13 @@ a{
 .text-dark{
     color:var(--dark);
 }
+.ef5672847{
+  color:white;
+  font-size:20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition-delay: 1s;
+}
 .text-primary{
     color:var(--primary-color);
 }
