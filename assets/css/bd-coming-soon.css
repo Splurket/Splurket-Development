@@ -483,6 +483,11 @@ h2 {
   right: -81px;
   top: -5px;
 }
+#login {
+  display: block;
+  right: -81px;
+  top: -5px;
+}
 /**CONTAINERS INSIDE FOOTER!!!!**/
 .dropdown {
   position: relative;
