@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MisFitz Cart Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="icon" src="/assets/images/Logo.ico">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/cart.css">
+    <script
+    src="https://www.paypal.com/sdk/js?client-id=AVyn_6vYgYmaiUJnGmtSjmP43NtTeK5aMRpLExQhvO4GtRhSkpmCVqLiZQrHFcCINLVOVBkhNF8DD39I&components=messages"
+    data-namespace="PayPalSDK">
+    </script>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
+</head>
+
+    <!-- Header.. -->
+<body style="margin:0px;">
+    <!-- Header -->
+<body>
+    <!-- Header -->
+    <header id="header" class="shadow bg-light"style="background-color:#000000; padding:5 px;">
+        <nav class="container navbar">
+            <a href="../../../index.html" class="nav-brand text-dark" style="color:white;font-family: 'Shadows Into Light Two';">
+             MisFitz
+            </a>
+            <!-- toggle button -->
+            <button class="toggle-button">
+                <span><i class="fas fa-bars"></i></span>
+            </button>
+                <div class="container">
+                  <div class="d-flex justify-content-center">
+                    <div class="searchbar">
+                      <input class="search_input change1" type="text" name="" placeholder="Search Products..." onclick="location.href='../pages/store.html';">
+                      <button class="search_icon" style="color:white;background-color: white; border:1px;border-color: black;"><i class="fas fa-search" style="color:#000000;"></i></a></button>
+                    </div>
+                  </div>
+                </div>
+            <!-- collapse on toggle button click -->
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    <a href="../index.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px; font-weight:normal;" title="Home">Home</i></a></span>
+                        <div class="fuck">Home</div>
+                    <a href="../pages/store.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;font-weight:normal;" title="Store">Store</i></a></span>
+                        <div class="fuck">Store</div>
+                    <a href="../pages/contact.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;font-weight:normal;" title="Custom Order">Contact Us</i></a></span>
+                        <div class="fuck">About</div>
+                    <a href="../pages/about.html" style="color:white;font-size:20px;padding-left: 10px;padding-right: 10px;font-weight:normal;" title="About"></i>About</a></span>
+                </ul>
+            </div>
+
+            <!-- collapse on toggle button click -->
+            <div class="collapse">
+
+            </div>
+        </nav>
+    </header>
+    <script>
+        var totalpaypal = document.getElementById(total).innerText;
+    </script>
+
+<div class="body1">
+<section style="margin-left:20%">
+  <form style="padding-top:0px">
+  <header>
+    <center><div style="padding-top:0px"
+    data-pp-message
+    data-pp-style-layout="flex"
+    data-pp-style-ratio="8x1"
+    data-pp-style-color="blue"
+    data-pp-amount= totalpaypal>
+    </div></center>
+    <center><h2>Cart</h2></center>
+  </header>
+  <table id="cart">
+    <center><p><strong style="font-size:23px;">Total: <span style="font-size:23px;" id="total"></span></p></strong>
+    <thead>
+      <tr>
+        <th style="background-color: black;">Name</th>
+        <th style="background-color: black;">Quantity</th>
+        <th style="background-color: black;">Price</th>
+        <th style="background-color: black;"id="sizetable">Size</th>
+        <th style="background-color: black;"id="colortable">Color</th>
+        <th style="background-color: black;">Remove One</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <center><p><strong>MisFitz Gym Essentials</p></strong>
+  </form>
+</section>
+<script src="./cart.js"></script>
+</div>
+<section class='section1'>
+  <section style="margin-left:40%;margin-top:50px;">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="paypalitems">
+    <input type="hidden" name="cmd" value="_cart" />
+    <input type="hidden" name="upload" value="1">
+
+    <!-- business email address -->
+    <input type="hidden" name="business" value="misfitzgym@gmail.com" />
+
+    <!-- currency code -->
+
+    <input type="hidden" name="currency_code" value="USD">
+
+    <!-- url handling -->
+    <input type="hidden" name="handling" value="0">
+    <input type="hidden" name="cancel_return" value="">
+    <input type="hidden" name="return" value="RETURN_URL">
+    <input type="submit" value="Checkout" id="Secure payment" class="u_sec_btn" style="font-family:'Arial'; font-weight:bold;" name="Secure payment" />
+    </form>
+
+    <script src="./cart.js"></script>
+    <script type="text/javascript">
+
+      var cart = getCart();
+      v=0
+      for (var item in cart) {
+        var v
+        v = (v + 1)
+        var n =JSON.stringify(v)
+        var cartItem = cart[item];
+        var dollars = JSON.stringify(cartItem.data.price);
+        var dollars1 = dollars.replace(/["']/g, "")
+        var str = dollars1;
+        var resStr=str.substring(0,str.length-2)+"."+str.substring(str.length-2);
+        var size1 = JSON.stringify(cartItem.data.size);
+        var color1 = JSON.stringify(cartItem.data.color);
+        //If both not undefined then add in color and size
+          if(typeof size1 !== "undefined" && typeof color1 !== "undefined") {
+            var itemname = cartItem.data.description +"; "+ size1 + "; " + color1
+        }
+            //if color is defined and size is undefined add in only color
+          if(typeof color1 !== "undefined" && typeof size1 == "undefined") {
+            var itemname = cartItem.data.description + "; " + color1
+        }
+        //if size is defined and color is undefined add in only size
+          if(typeof size1 !== "undefined" && typeof color1 == "undefined") {
+            var itemname = cartItem.data.description + "; " + size1
+        }
+        //If both undefined then don't add in color or size
+          if(typeof size1 == "undefined" && typeof color1 == "undefined") {
+            var itemname = cartItem.data.description
+        }
+        var appendpay = document.getElementById('paypalitems')
+        var ppitem = document.createElement("input")
+        var ppitem1 = document.createElement("input")
+        var ppitem2 = document.createElement("input")
+        var ppitem3 = document.createElement("input")
+        ppitem.type="hidden";
+        ppitem.name = "item_number_"+ n;
+        ppitem.value = `${cartItem.data.id}`
+
+        ppitem1.type="hidden";
+        ppitem1.name = "item_name_"+ n;
+        ppitem1.value = itemname
+
+        ppitem2.type="hidden";
+        ppitem2.name = "amount_"+ n;
+        ppitem2.value = `${resStr}`
+
+        ppitem3.type="hidden";
+        ppitem3.name = "quantity_"+ n;
+        ppitem3.value = `${cartItem.quantity}`
+
+        appendpay.appendChild(ppitem);
+        appendpay.appendChild(ppitem1)
+        appendpay.appendChild(ppitem2)
+        appendpay.appendChild(ppitem3)
+      }
+
+    </script>
+    <script
+      src="https://www.paypal.com/sdk/js?client-id=AT6U31PpcI49m4V_DCS7ELtZwaU8A9R6jOClCAlkOjW6TeS49G4kswEX2kWoLzcbcd_eUCtmdz7CG8__"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+    </script>
+    </script>
+  </section>
+</section>
+</p>
+</center>
+</p>
+</center>
+</table>
+</form>
+</section>
+</div>
+</body>
+</body>
+</html>

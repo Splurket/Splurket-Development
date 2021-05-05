@@ -1,0 +1,35 @@
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" name="frmPayPal1">
+<!-- from cart -->
+
+<input type="hidden" name="cmd" value="_cart" />
+<input type="hidden" name="upload" value="1">
+
+<!-- business email address -->
+<input type="hidden" name="business" value="sb-xogjj5127478@business.example.com" />
+<!-- item or product 1 -->
+<div id="paypalitems" hidden="hidden">
+<input type="hidden" name="item_number_1" value="Item #1">
+<input type="hidden" name="item_name_1" value="Item #1">
+<input type="hidden" name="amount_1" value="1">
+<input type="hidden" name="quantity_1" value="1">
+<input type="hidden" name="shipping_1" value="4">
+<!-- item or product 2 -->
+
+<input type="hidden" name="item_number_2" value="Item #1">
+<input type="hidden" name="item_name_2" value="Item #1">
+<input type="hidden" name="amount_2" value="2">
+<!--Quantity and Shipping-->
+<input type="hidden" name="quantity_2" value="1">
+<input type="hidden" name="shipping_2" value="1">
+
+<!-- currency code -->
+
+<input type="hidden" name="currency_code" value="USD">
+
+<!-- url handling -->
+<input type="hidden" name="handling" value="0">
+<input type="hidden" name="cancel_return" value="">
+<input type="hidden" name="return" value="RETURN_URL">
+<input type="submit" value="Secure payment" id="Secure payment" class="u_sec_btn" name="Secure payment" />
+</form>
+</div>
