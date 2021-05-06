@@ -101,8 +101,7 @@ new Vue({
       'Ratings'
       ],
 
-      items: product_data
-  },
+      items: product_data};},
   computed: {
     numberOfPages() {
       return Math.ceil(this.items.length / this.itemsPerPage);
