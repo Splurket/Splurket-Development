@@ -1,18 +1,4 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
-    authDomain: "splurket-66df1.firebaseapp.com",
-    databaseURL: "https://splurket-66df1-default-rtdb.firebaseio.com",
-    projectId: "splurket-66df1",
-    storageBucket: "splurket-66df1.appspot.com",
-    messagingSenderId: "286706779903",
-    appId: "1:286706779903:web:fd91c29319f9804e192eca",
-    measurementId: "G-QWQ2M658KL"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-  db.settings({ timestampsInSnapshots: true });
-  firebase.analytics();
+
   var user;
   var email1;
   firebase.auth().onAuthStateChanged(function(user) {
