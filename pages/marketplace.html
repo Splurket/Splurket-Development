@@ -14,6 +14,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.css'>
 
     <link rel="icon" type="image/x-icon" href="../assets/images/Logo.png" />
     <!-- Font Awesome Icons -->
@@ -327,6 +331,199 @@
     
     <!-- Header ENDS HERE!!!!.. -->
 <body>
-    <h1>Fuck You</h1>
+<style type="text/css">
+  v-card-title{
+    display:block;
+  }
+</style>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <v-app id="inspire">
+    <v-container fluid>
+      <v-data-iterator
+        :items="items"
+        :items-per-page.sync="itemsPerPage"
+        :page.sync="page"
+        :search="search"
+        :sort-by="sortBy.toLowerCase()"
+        :sort-desc="sortDesc"
+        hide-default-footer
+      >
+        <template v-slot:header>
+          <v-toolbar
+            dark
+            color="blue darken-3"
+            class="mb-1"
+          >
+            <v-text-field
+              v-model="search"
+              clearable
+              flat
+              solo-inverted
+              hide-details
+              prepend-inner-icon="mdi-magnify"
+              label="Search"
+            ></v-text-field>
+            <template v-if="$vuetify.breakpoint.mdAndUp">
+              <v-spacer></v-spacer>
+              <v-select
+                v-model="sortBy"
+                flat
+                solo-inverted
+                hide-details
+                :items="keys1"
+                prepend-inner-icon="mdi-magnify"
+                label="Sort by"
+              ></v-select>
+              <v-spacer></v-spacer>
+              <v-btn-toggle
+                v-model="sortDesc"
+                mandatory
+              >
+                <v-btn
+                  large
+                  depressed
+                  color="blue"
+                  :value="false"
+                >
+                  <v-icon>mdi-arrow-up</v-icon>
+                </v-btn>
+                <v-btn
+                  large
+                  depressed
+                  color="blue"
+                  :value="true"
+                >
+                  <v-icon>mdi-arrow-down</v-icon>
+                </v-btn>
+              </v-btn-toggle>
+            </template>
+          </v-toolbar>
+        </template>
+  
+        <template v-slot:default="props">
+          <v-row>
+            <v-col
+              v-for="item in props.items"
+              :key="item.name"
+              cols="12"
+              sm="6"
+              md="4"
+              lg="3"
+            >
+              <v-card>
+                <v-img
+                  height="250"
+                  :src="item.image"
+                ></v-img>
+                <div>
+                  <img :src="item.image" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px"></img>
+                    <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;"> {{ item.name }}
+                </p>
+              </div>
+                <center><v-card-title class="subheading font-weight-bold">
+                  {{ item.name }}
+                </v-card-title></center>
+  
+  
+                <v-list dense>
+                  <!--<v-list-item
+                    v-for="(key, index) in filteredKeys"
+                    :key="index"
+                  >
+                    <v-list-item-content :class="{ 'blue--text': sortBy === key }">
+                      {{ key }}:
+                    </v-list-item-content>
+                    <v-list-item-content
+                      class="align-end"
+                      :class="{ 'blue--text': sortBy === key }"
+                    >
+                      {{ item[key.toLowerCase()] }}
+                    </v-list-item-content>
+                  </v-list-item>-->
+
+                 <v-card-text style="color:#52b36c;font-size:30px;padding-left: 16px;padding-top: 0px">
+                  ★ <span style="color:#52b36c;font-size:20px;top:0px">{{ item.protein }}</span>
+                 </v-card-text></v-list>
+                <v-divider></v-divider>
+                <div style="height:40px"></div>
+                <p style="right:20px;display:block;bottom:-5px;position: absolute;">{{ item.price }}</p>
+              </v-card>
+            </v-col>
+          </v-row>
+        </template>
+  
+        <template v-slot:footer>
+          <v-row
+            class="mt-2"
+            align="center"
+            justify="center"
+          >
+            <span class="grey--text">Items per page</span>
+            <v-menu offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  dark
+                  text
+                  color="primary"
+                  class="ml-2"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  {{ itemsPerPage }}
+                  <v-icon>mdi-chevron-down</v-icon>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="(number, index) in itemsPerPageArray"
+                  :key="index"
+                  @click="updateItemsPerPage(number)"
+                >
+                  <v-list-item-title>{{ number }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+  
+            <v-spacer></v-spacer>
+  
+            <span
+              class="mr-4
+              grey--text"
+            >
+              Page {{ page }} of {{ numberOfPages }}
+            </span>
+            <v-btn
+              fab
+              dark
+              color="blue darken-3"
+              class="mr-1"
+              @click="formerPage"
+            >
+              <v-icon>mdi-chevron-left</v-icon>
+            </v-btn>
+            <v-btn
+              fab
+              dark
+              color="blue darken-3"
+              class="ml-1"
+              @click="nextPage"
+            >
+              <v-icon>mdi-chevron-right</v-icon>
+            </v-btn>
+          </v-row>
+        </template>
+      </v-data-iterator>
+    </v-container>
+  </v-app>
+</div>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
+
 </body>
 </html>
