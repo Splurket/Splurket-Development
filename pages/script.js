@@ -1,4 +1,6 @@
-
+var product_items;
+var catshit;
+var product_data = [];
   var user;
   var email1;
   firebase.auth().onAuthStateChanged(function(user) {
