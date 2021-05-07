@@ -41,16 +41,12 @@
     padding-right: 12px;
     margin-right: 10px;
 }
-.container{
-    padding:0px;
-    margin:0px;
-}
 </style>
 
     <!-- Header.. -->
 <body>
     <!-- Header -->
-    <header id="header" class="shadow bg-light"style="background-color:#52b36c;min-height: 98px">
+    <header id="header" class="shadow bg-light"style="background-color:#52b36c;">
         <ul style="position: absolute;right:30px;top:20px;" id="cartbutton">
                 <a target="_top" href="./cart/cart" class="icon-shopping-cart" style="font-size: 25px;"><i style="color:white" class="fa fa-shopping-cart"></i>
                 </a><a target="_top" style="padding-left:7px;padding-right:7px;padding-top:5px;padding-bottom:5px;" id="lblCartCount" cssclass="badge badge-warning" forecolor="White">0</a>
@@ -83,11 +79,27 @@
             </div>
             <!--Login BUTTON-->
             <div id="login" hidden="hidden">
-                <button class="login-button" id="login-button" onclick="top.location.href='https://accounts.splurket.com?redirect='+window.top.location.href;">Login</button>
+                <button class="login-button" id="login-button" onclick="window.top.location.href='https://accounts.splurket.com?redirect='+window.top.location.href;">Login</button>
             </div>
             <!--AVATAR-->
             <div class="dropdown" id="avatar" hidden="hidden" onmouseover="window.top.document.getElementById('messageheaderdrop').style.display = 'none';window.top.document.getElementById('homeheaderdrop').style.display = 'none';window.top.document.getElementById('supportheaderdrop').style.display = 'none';window.top.document.getElementById('marketplaceheaderdrop').style.display = 'none';window.top.document.getElementById('dropcont').style.display = 'block';"><br>
                 <img src="" alt="Avatar" class="avatar" id="avatarpic" width="60px" height="60px" hidden="hidden">
+              <div class="dropdon-content" style="color:white; min-width:240px;right:2%;border-top: solid 2px;border-color: white;">
+                <div>
+                    <p style="display:inline-block"; id="avatarusername1" onclick="profilego()">Signed In As:</p>
+                </div>
+                <br><hr><br>
+                <p onclick="profilego()">Your Profile</p>
+                <p>Splurket Pay</p>
+                <p>Splurket Creators</p>
+                <p>Your Payment History</p>
+                <p>Your Job Request History</p>
+                <br><hr><br>
+                <div>
+                <center><p onclick="signout()">Sign Out</p></center>
+              </div>
+            </div>
+
             </div>
         </nav>
     </header>
