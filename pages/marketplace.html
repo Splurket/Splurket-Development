@@ -62,7 +62,7 @@
             <button class="toggle-button">
                 <span><i class="fas fa-bars"></i></span>
             </button>
-            <div class="container">
+            <div class="searchcont">
                   <div class="d-flex justify-content-center">
                     <div class="searchbar">
                       <input class="search_input change1" type="text" name="" placeholder="Search Products..." >
@@ -376,26 +376,6 @@
                 label="Sort by"
               ></v-select>
               <v-spacer></v-spacer>
-              <v-btn-toggle
-                v-model="sortDesc"
-                mandatory
-              >
-                <v-btn
-                  large
-                  depressed
-                  color="blue"
-                  :value="false"
-                >
-                  <v-icon>mdi-arrow-up</v-icon>
-                </v-btn>
-                <v-btn
-                  large
-                  depressed
-                  color="blue"
-                  :value="true"
-                >
-                  <v-icon>mdi-arrow-down</v-icon>
-                </v-btn>
               </v-btn-toggle>
             </template>
           </v-toolbar>

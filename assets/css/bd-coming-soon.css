@@ -492,6 +492,9 @@ h2 {
   position: relative;
   display: inline-block;
 }
+.searchcont{
+  width:340px;
+}
 
 .dropdown-content {
   display: none;
