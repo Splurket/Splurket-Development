@@ -255,6 +255,18 @@
               // An error happened.
             });
         }
+        function fixDiv() {
+            var $div = $("#navwrap");
+            if ($(window).scrollTop() > $div.data("top")) { 
+                $div.css({'position': 'fixed', 'top': '0', 'width': '100%'}); 
+            }
+            else {
+                $div.css({'position': 'static', 'top': 'auto', 'width': '100%'});
+            }
+        }
+
+        $("#navwrap").data("top", $("#navwrap").offset().top); // set original position on load
+        $(window).scroll(fixDiv);
     </script>
 
     
@@ -283,6 +295,7 @@
             dark
             color="blue darken-3"
             class="mb-1"
+            id="navwrap"
           >
             <v-text-field
               v-model="search"
