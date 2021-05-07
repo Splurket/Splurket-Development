@@ -32,7 +32,7 @@ var product_data = [];
     .then(function (data) {
       profile_id= data.encryptedstring;
 
-     db.collection("users").doc(profile_id).collection('myproducts').get().then((querySnapshot) => {
+     db.collection("products").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
 
             if (doc.exists) {
