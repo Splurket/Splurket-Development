@@ -1,37 +1,8 @@
 var product_items;
 var catshit;
 var product_data = [];
-  var user;
-  var email1;
-  firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in.
-        user = firebase.auth().currentUser;
-        //splurket@gmail.com
-        email1 = user.email;
-    }
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Accept", "application/json, /;q=0.5");
-
-  var raw = JSON.stringify({
-    "stringtoencrypt": `${user.email}`
-  });
-  //document.write(raw)
-  var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
-
-  fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-      profile_id= data.encryptedstring;
-
+var user;
+var email1;
      db.collection("products").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
 
@@ -64,8 +35,6 @@ var product_data = [];
         }).catch((error) => {
             console.log("Error getting document:", error);
         });
-      });
-   });
 new Vue({
   el: '#app',
   vuetify: new Vuetify(),
