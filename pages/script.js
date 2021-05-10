@@ -84,12 +84,13 @@ new Vue({
 
 
 
- fetch('https://api.trello.com/1/lists/603e5f3afc99b724f835c7dc/cards?key=324ea524ff59f71498da5f35878666f1&token=fc6909bad59ced8b7ea3f2162ac52efe52dc94f2603c712a3cd1d5281541e914')
+ fetch('https://script.google.com/macros/s/AKfycbynD4nHvW7hQMWjRWA1KOgyHwkZq_G-ZebfhYS1_Cotc-GsAxHmIADxlgeUGC2pkwpe/exec')
                       .then(function (response) {
                           return response.json();
                       })
                       .then(function (data) {
-                          appendData4(data);
+                        var data2=JSON.stringify(Object.keys(data))
+                          appendData4(data2);
                       })
                       .catch(function (err) {
                           console.log('error: ' + err);
@@ -99,26 +100,16 @@ new Vue({
                         var mainContainer = document.getElementById("myData4");
                         
                         for (var i = 0; i < data1.length; i++) {
-                            var str = data1[i].desc;
-                            var chunks = str.split('</>>')
-                            var price = chunks[0];
-                            var image = chunks[1];
-                            var shipping = chunks[2];
-                            var desc = chunks[3];
-                            var size = chunks[4];
-                            var color = chunks[5];
-                            var div2 = document.createElement("div");
+                          var catname= data1[i]
+
+
                             div2.className = "card content";
                             div2.id = "cardw"
                           
                             div2.innerHTML = `
                                  <div width="100%">
-                                      <img src="${image}" style="max-width:250px; max-height:250px">
-                                      <div class="card__title" style="max-height:45px; overflow:hidden; text-overflow: ellipsis; max-width:100px;">${data1[i].name}</div>
-                                      <b><p style="font-size:20px;">${price}</p></b>
-                                      <button class="w3-button w3-black" style="margin-bottom:10%;" onclick="document.getElementById('c${data1[i].id}').style.display='block'">More Info</a>
+                                      <div class="card__title" style="max-height:45px; overflow:hidden; text-overflow: ellipsis; max-width:100px;">${catname}</div>
                                     </div>
-                                  </div>
                                   </div>
                                   `
                             mainContainer.appendChild(div2);
