@@ -57,7 +57,7 @@ new Vue({
       'Price',
       'Ratings'
       ],
-        slides: [
+      slides: [
     {
       title: 'Slide #1',
       content: 'Slide content.'
