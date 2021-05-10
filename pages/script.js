@@ -1,6 +1,5 @@
 var product_items;
 var catshit;
-var data1=[Design, Logos, data]
 var product_data = [];
 var user;
 var email1;
