@@ -57,6 +57,12 @@ new Vue({
       'Price',
       'Ratings'
       ],
+        slides: [
+    {
+      title: 'Slide #1',
+      content: 'Slide content.'
+    }
+  ],
 
       items: product_data};},
   computed: {
