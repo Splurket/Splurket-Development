@@ -108,7 +108,7 @@ new Vue({
                             div2.id = "cardw"
                           
                             div2.innerHTML = `
-                                 <div width="100%">
+                                 <div width="100%" style="background-color:#52b36c">
                                       <div class="card__title" style="max-height:45px; overflow:hidden; text-overflow: ellipsis; max-width:100px;">${data1[i].name}</div>
                                     </div>
                                   </div>
