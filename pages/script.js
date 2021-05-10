@@ -36,27 +36,8 @@ var email1;
             console.log("Error getting document:", error);
         });
 new Vue({
-  el: '#app',
-  vuetify: new Vuetify(),
-  data() {
-    return {
-      itemsPerPageArray: [15, 25, 50],
-      search: '',
-      filter: {},
-      sortDesc: false,
-      page: 1,
-      itemsPerPage: 15,
-      sortBy: 'name',
-      keys1: [
-      'Name',
-      'Price',
-      'Ratings'
-      ],
-      keys: [
-      'Name',
-      'Price',
-      'Ratings'
-      ],
+  // In your Vue.js component.
+data: () => ({
       slides: [
     {
       title: 'Slide #1',
@@ -78,7 +59,32 @@ new Vue({
       title: 'Slide #5',
       content: 'Slide content.'
     }
-  ],
+  ]
+})
+})
+new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  data() {
+    return {
+      itemsPerPageArray: [15, 25, 50],
+      search: '',
+      filter: {},
+      sortDesc: false,
+      page: 1,
+      itemsPerPage: 15,
+      sortBy: 'name',
+      keys1: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
+      keys: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
+
 
       items: product_data};},
   computed: {
