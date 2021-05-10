@@ -62,6 +62,22 @@ new Vue({
       title: 'Slide #1',
       content: 'Slide content.'
     }
+    {
+      title: 'Slide #2',
+      content: 'Slide content.'
+    }
+    {
+      title: 'Slide #3',
+      content: 'Slide content.'
+    }
+    {
+      title: 'Slide #4',
+      content: 'Slide content.'
+    }
+    {
+      title: 'Slide #5',
+      content: 'Slide content.'
+    }
   ],
 
       items: product_data};},
