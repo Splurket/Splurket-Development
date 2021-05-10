@@ -90,9 +90,9 @@ new Vue({
                       })
                       .then(function (data) {
                         data='{'+data+'}'
-                        document.write(JSON.stringify(data))
+                        document.write((data))
 
-                        var data2=JSON.stringify(Object.keys(data))
+                        var data2=(Object.keys(data))
                           appendData4(data2);
                       })
                       .catch(function (err) {
