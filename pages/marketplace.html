@@ -111,6 +111,9 @@
     top:55px !important;
     left:650px !important;
 }
+.cardtit:hover{
+    color:#52b36c;
+}
 
 </style>
 
@@ -424,8 +427,8 @@
                   :src="item.image"
                 ></v-img>
                 <div>
-                  <a href="./product?product="+product_id +><img :src="item.creatorpic" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px"></img></a>
-                    <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;"> {{ item.creator }}
+                  <img :src="item.creatorpic" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px" :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="(this.id, this.dataset.cat, this.dataset.subcat)"></img></a>
+                    <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit"> {{ item.creator }}
                 </p>
               </div>
                 <v-card-title class="subheading font-weight-bold">
