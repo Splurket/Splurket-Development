@@ -123,7 +123,6 @@ new Vue({
                                   </div>
                                   </div>
                                   `
-                            dipwad.appendChild(div1);
                             mainContainer.appendChild(div2);
                             var size1 = JSON.stringify(size)
                             var color1 = JSON.stringify(color)
