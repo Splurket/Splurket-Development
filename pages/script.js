@@ -101,6 +101,7 @@ new Vue({
                         
                         for (var i = 0; i < data1.length; i++) {
                           var catname= data1[i]
+                          var div2 = document.createElement("div");
 
 
                             div2.className = "card content";
@@ -108,7 +109,7 @@ new Vue({
                           
                             div2.innerHTML = `
                                  <div width="100%">
-                                      <div class="card__title" style="max-height:45px; overflow:hidden; text-overflow: ellipsis; max-width:100px;">${catname}</div>
+                                      <div class="card__title" style="max-height:45px; overflow:hidden; text-overflow: ellipsis; max-width:100px;">${data1[i].name}</div>
                                     </div>
                                   </div>
                                   `
