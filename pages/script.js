@@ -84,7 +84,7 @@ new Vue({
 
 
 
- fetch('https://script.google.com/macros/s/AKfycbynD4nHvW7hQMWjRWA1KOgyHwkZq_G-ZebfhYS1_Cotc-GsAxHmIADxlgeUGC2pkwpe/exec')
+ /*fetch('https://script.google.com/macros/s/AKfycbynD4nHvW7hQMWjRWA1KOgyHwkZq_G-ZebfhYS1_Cotc-GsAxHmIADxlgeUGC2pkwpe/exec')
                       .then(function (response) {
                           return response.json();
                       })
@@ -118,4 +118,5 @@ new Vue({
                                   `
                             mainContainer.appendChild(div2);
                         }
-                    }
+                    }*/
+                    
