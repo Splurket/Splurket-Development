@@ -355,7 +355,11 @@
 <body>
     <br><strong><h1 style="color:#52b36c; font-family: 'Shadows Into Light Two';margin-left:5%;font-size:48px">Marketplace</h1></strong><br>
 <style type="text/css">
-    <vueper-slides
+  v-card-title{
+    display:block;
+  }
+</style>
+<vueper-slides
       class="no-shadow"
       :visible-slides="3"
       slide-multiple
@@ -365,10 +369,6 @@
       :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }">
       <vueper-slide v-for="i in 10" :key="i" :title="i.toString()" />
     </vueper-slides>
-  v-card-title{
-    display:block;
-  }
-</style>
 <!-- partial:index.partial -->
 <div id="app" style="position:relative;width:90%;margin-right: 5%;margin-left: 5%;">
   <v-app id="inspire">
