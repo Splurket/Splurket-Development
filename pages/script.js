@@ -110,7 +110,6 @@ new Vue({
                             var div2 = document.createElement("div");
                             div2.className = "card content";
                             div2.id = "cardw"
-                            var div1 = document.createElement("div");
                           
                             div2.innerHTML = `
                                  <div width="100%">
@@ -123,31 +122,5 @@ new Vue({
                                   </div>
                                   `
                             mainContainer.appendChild(div2);
-                            var size1 = JSON.stringify(size)
-                            var color1 = JSON.stringify(color)
-
-                            var shit = document.getElementById("selectscript")
-                            var script = document.createElement("script");
-                            script.innerHTML = `var select = document.getElementById("selectSize${data1[i].id}");
-                            var options1 = ${size1}.toString();
-                            var options = options1.split(",")
-                            for(var i = 0; i < options.length; i++) {
-                                var opt = options[i];
-                                var el = document.createElement("option");
-                                el.textContent = opt;
-                                el.value = opt;
-                                select.appendChild(el);
-                            }
-                            var select = document.getElementById("selectColor${data1[i].id}");
-                            var options3 = ${color1}.toString();
-                            var options4 = options3.split(",")
-                            for(var i = 0; i < options4.length; i++) {
-                                var opt = options4[i];
-                                var el = document.createElement("option");
-                                el.textContent = opt;
-                                el.value = opt;
-                                select.appendChild(el);
-                            }`
-                            shit.appendChild(script)
                         }
                     }
