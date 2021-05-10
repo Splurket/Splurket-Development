@@ -89,6 +89,7 @@ new Vue({
                           return response.json();
                       })
                       .then(function (data) {
+                        document.write(data)
                         var data2=JSON.stringify(Object.keys(data))
                           appendData4(data2);
                       })
