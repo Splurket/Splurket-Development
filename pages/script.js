@@ -1,5 +1,6 @@
 var product_items;
 var catshit;
+var data1=[Design, Logos, data]
 var product_data = [];
 var user;
 var email1;
@@ -13,6 +14,8 @@ var email1;
               if (product_data.includes('{')){
                 var push_data = ','+push_data1;
                 product_data.push(push_data)
+
+
               }else{
                 var push_data = push_data1;
                 product_data.push(push_data)
@@ -81,6 +84,7 @@ new Vue({
 
 
 
+
  fetch('https://api.trello.com/1/lists/603e5f3afc99b724f835c7dc/cards?key=324ea524ff59f71498da5f35878666f1&token=fc6909bad59ced8b7ea3f2162ac52efe52dc94f2603c712a3cd1d5281541e914')
                       .then(function (response) {
                           return response.json();
@@ -108,44 +112,7 @@ new Vue({
                             div2.className = "card content";
                             div2.id = "cardw"
                             var div1 = document.createElement("div");
-                            div1.innerHTML = `
-                                <div id="c${data1[i].id}" class="w3-modal" style="overflow:auto;">
-                                  <div class="w3-modal-content">
-                                    <header class="w3-container w3-black"> 
-                                      <span onclick="document.getElementById('c${data1[i].id}').style.display='none'" 
-                                      class="w3-button w3-display-topright">&times;</span>
-                                      <center><h2 style="padding-right:15px; padding-left:15px;">${data1[i].name}</h2></center>
-                                    </header>
-                                    <div class="w3-container" style="display:flex;">
-                                      <div class="container">
-                                        <img src="${image}" alt="Product Image" width="200px" height="200px" style="padding-top:10%;">
-                                        <p style="padding-top:10px; color:black; font-size:20px;">${price}</p>
-                                        <p style="padding-top:10px; color:black; font-size:20px;">${shipping}</p>
-                                      </div>
-                                      <div class="container" style="float:left; max-width:50%; margin-top:5%;">
-                                        <p style="padding-right:50px;">${desc}</p>
-                                        <select id="selectColor${data1[i].id}" style="max-width:126px" onchange="document.getElementById('A${data1[i].id}').setAttribute('data-color', this.value); var colorset = document.getElementById('A${data1[i].id}').getAttribute('data-id')+ this.value; document.getElementById('A${data1[i].id}').setAttribute('data-id', colorset);">
-                                            <option>Choose A Color</option>
-                                        </select>
-                                        <select id="selectSize${data1[i].id}" style="max-width:119px" onchange="document.getElementById('A${data1[i].id}').setAttribute('data-size', this.value); var sizeset = document.getElementById('A${data1[i].id}').getAttribute('data-id')+ this.value; document.getElementById('A${data1[i].id}').setAttribute('data-id', sizeset);">
-                                            <option>Choose A Size</option>
-                                        </select>
-                                        <br><br>
-                                        <p hidden="hidden" id="selectscript"></p>
-
-                                          <button type="submit" id="A${data1[i].id}" class="w3-button w3-black" data-id='${data1[i].id}' data-description='${data1[i].name}' data-price='${price}' onclick="addCart(this)">Add To Cart</button><br><br><br>
-                                        </aside>
-                                      </div>
-                                      
-                                    </div>
-                                    <footer class="w3-container w3-black">
-                                      <p>MisFitz Gym Essentials</p>
-                                    </footer>
-                                  </div>
-                                </div>
-                              </div>
-                            
-                            ` 
+                          
                             div2.innerHTML = `
                                  <div width="100%">
                                       <img src="${image}" style="max-width:250px; max-height:250px">
