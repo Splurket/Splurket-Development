@@ -387,7 +387,7 @@
             color="blue darken-3"
             class="mb-1"
             id="navwrap"
-            style="height: 100%;background-color: rgb(82, 179, 108) !important;width: 418;position: fixed;z-index: 400;top: 0px;left: 0px;"
+            style="height: 100%;background-color: rgb(82, 179, 108) !important;width: 418;position: sticky;z-index: 400;top: 98px;left: 0px;"
           >
             <v-text-field
               v-model="search"
@@ -412,9 +412,8 @@
               </v-btn></strong>
               </v-btn-toggle>
             </template>
-          </v-toolbar>
+          </v-toolbar></div>
         </template>
-    </div>
   
         <template v-slot:default="props" >
           <v-row style="margin-top:50px">
