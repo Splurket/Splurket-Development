@@ -435,8 +435,10 @@
                 <v-card-title class="subheading font-weight-bold">
                   {{ item.name }}
                 </v-card-title>
-                <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ item.desc }}</v-card-text></v-list>
-  
+                <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ item.desc }}</v-card-text>
+                <v-card-text style="color:#52b36c;font-size:25px;padding-left: 16px;padding-top: 0px;position:absolute;bottom:-5px">
+                  ★<span style="color:#52b36c;font-size:20px;top:0px">{{ item.reviewsn }}</span>
+                 </v-card-text></v-list>
   
                 <v-list dense>
                   <!--<v-list-item
@@ -455,9 +457,6 @@
                   </v-list-item>-->
 
                 <v-divider></v-divider>
-                <v-card-text style="color:#52b36c;font-size:25px;padding-left: 16px;padding-top: 0px;position:absolute;bottom:-5px">
-                  ★<span style="color:#52b36c;font-size:20px;top:0px">{{ item.reviewsn }}</span>
-                 </v-card-text></v-list>
                 <div style="height:40px"></div>
                 <p style="right:20px;display:block;bottom:-5px;position: absolute;font-size:20px">{{ item.price }}</span></p>
               </v-card>
