@@ -364,7 +364,7 @@
     display:block;
   }
 </style><!-- partial:index.partial -->
-<div id="app" style="width:100%">
+<div id="app" style="width:100%" onload="document.getElementById('navwrap').style.display='none';">
   <v-app id="inspire">
     <v-container fluid style="min-height:100%">
       <v-data-iterator
@@ -379,7 +379,6 @@
         <template v-slot:header>
             <strong><v-btn
             class="vuebtn"
-            onload="document.getElementById('navwrap').style.display='none';"
         id="opensearchbtn"
         style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:block;z-index:6" onclick="document.getElementById('navwrap').style.display='block';document.getElementById('closesearchbtn').style.display='block';this.style.display='none'">
             Search And Filters
