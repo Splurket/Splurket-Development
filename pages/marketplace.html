@@ -376,7 +376,8 @@
         :sort-desc="sortDesc"
         hide-default-footer
       >
-        <template v-slot:header style="background-color: white; position: fixed;bottom: 0px">
+      <div style="position:absolute;height:100%;left:0px" id="searchcats">
+        <template v-slot:header style="height: 100%;background-color: rgb(82, 179, 108) !important;width: 418;position: fixed;z-index: 400;top: 0px;left: 0px;">
           <v-toolbar
             dark
             color="blue darken-3"
@@ -392,22 +393,24 @@
               hide-details
               prepend-inner-icon="mdi-magnify"
               label="Search"
+              style="width:417px"
             ></v-text-field>
             <template v-if="$vuetify.breakpoint.mdAndUp">
               <v-spacer></v-spacer>
                 <strong><v-btn
-                    style="background-color:white;color:#52b36c">
+                    style="background-color:white;color:#52b36c;position:absolute;">
                     Categories And Subcategories
                 </v-btn></strong>
               <v-spacer></v-spacer>
               <strong><v-btn
-                style="background-color:white;color:#52b36c">
+                style="background-color:white;color:#52b36c;position:absolute;">
                 Filters And Settings
               </v-btn></strong>
               </v-btn-toggle>
             </template>
           </v-toolbar>
         </template>
+    </div>
   
         <template v-slot:default="props" >
           <v-row style="margin-top:50px">
