@@ -78,7 +78,6 @@
 }
 .subheading:hover{
     color:#52b36c;
-    text-decoration: underline;
 }
 .e546783wyte {
     color: rgb(135, 135, 135);
@@ -103,7 +102,6 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-
 }
 .shadowlight{
     font-family: 'Shadows Into Light Two';
@@ -118,7 +116,6 @@
 .cardtit:hover{
     color:#52b36c;
     cursor: pointer;
-    text-decoration: underline;
 }
 
 </style>
@@ -379,8 +376,7 @@
         :sort-desc="sortDesc"
         hide-default-footer
       >
-
-        <template v-slot:header style="height: 100%;background-color: rgb(82, 179, 108) !important;width: 418;position: fixed;z-index: 400;top: 0px;left: 0px;">
+        <template v-slot:header style="background-color: white; position: fixed;bottom: 0px">
           <v-toolbar
             dark
             color="blue darken-3"
@@ -396,17 +392,16 @@
               hide-details
               prepend-inner-icon="mdi-magnify"
               label="Search"
-              style="width:417px"
             ></v-text-field>
             <template v-if="$vuetify.breakpoint.mdAndUp">
               <v-spacer></v-spacer>
                 <strong><v-btn
-                    style="background-color:white;color:#52b36c;position:absolute;">
+                    style="background-color:white;color:#52b36c">
                     Categories And Subcategories
                 </v-btn></strong>
               <v-spacer></v-spacer>
               <strong><v-btn
-                style="background-color:white;color:#52b36c;position:absolute;">
+                style="background-color:white;color:#52b36c">
                 Filters And Settings
               </v-btn></strong>
               </v-btn-toggle>
