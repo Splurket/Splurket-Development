@@ -120,7 +120,7 @@
 
 </style>
 
-<iframe src="./header" style="border:none;width:100%;height:98px"></iframe>
+<iframe src="./header" style="border:none;width:100%;height:98px" id="frameshit"></iframe>
 <div class="dropdown-content" id="dropcont" style="color:white; min-width:240px;right:2%;border-top: solid 2px;border-color: white;z-index: 100;" onmouseout="this.style.display = 'none'" onmouseover="this.style.display = 'block'">
     <div><br>
         <p style="display:inline-block"; id="avatarusername1" onclick="profilego()">Signed In As:</p>
@@ -540,7 +540,20 @@
   <script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script><script  src="./script.js"></script>
+<script>
 
+    var someElement = document.querySelector('frameshit');
+    window.onscroll = function(){
+    //TOP
+    if(someElement.getBoundingClientRect().top <= 0){
+        console.log("TRIGGER: top of div reached.");
+    }
+    //BOTTOM
+    if(someElement.getBoundingClientRect().bottom <= 0){
+        console.log("TRIGGER: bottom of div reached.");
+    }
+}
+</script>
 </body>
 </html>
 
