@@ -376,7 +376,7 @@
         :sort-desc="sortDesc"
         hide-default-footer
       >
-        <template v-slot:header style="background-color: white;">
+        <template v-slot:header style="background-color: white; position: fixed;bottom: 0px">
           <v-toolbar
             dark
             color="blue darken-3"
@@ -402,7 +402,6 @@
               <v-spacer></v-spacer>
               <strong><v-btn
                 style="background-color:white;color:#52b36c">
-              >
                 Filters And Settings
               </v-btn></strong>
               </v-btn-toggle>
