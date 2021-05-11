@@ -367,16 +367,7 @@
 <div id="app" style="position:relative;width:90%;margin-right: 5%;margin-left: 5%;">
   <v-app id="inspire">
     <v-container fluid style="min-height:100%">
-      <v-data-iterator
-        :items="items"
-        :items-per-page.sync="itemsPerPage"
-        :page.sync="page"
-        :search="search"
-        :sort-by="sortBy.toLowerCase()"
-        :sort-desc="sortDesc"
-        hide-default-footer
-      >
-        <template v-slot:header style="background-color: white; position: fixed;bottom: 0px">
+        <template v-slot:header style="background-color: white; position: sticky;bottom: 0px">
           <v-toolbar
             dark
             color="blue darken-3"
@@ -408,6 +399,15 @@
             </template>
           </v-toolbar>
         </template>
+      <v-data-iterator
+        :items="items"
+        :items-per-page.sync="itemsPerPage"
+        :page.sync="page"
+        :search="search"
+        :sort-by="sortBy.toLowerCase()"
+        :sort-desc="sortDesc"
+        hide-default-footer
+      >
   
         <template v-slot:default="props" >
           <v-row style="margin-top:50px">
