@@ -376,16 +376,27 @@
         :sort-desc="sortDesc"
         hide-default-footer
       >
+      <strong><v-btn
+        id="opensearchbtn"
+            style="background-color:white;color:#52b36c;position:fixed:right:15px;bottom:20px" onclick="document.getElementById('navwrap').style.display='block';document.getElementById('closesearchbtn').style.display='block';this.style.display='none'">
+            Search And Filters
+        </v-btn></strong>
+      <v-spacer></v-spacer>
+      <strong><v-btn
+        id="closesearchbtn"
+        style="background-color:white;color:#52b36c;position:fixed:right:15px;bottom:20px;display:none;" onclick="document.getElementById('navwrap').style.display='none';document.getElementById('opensearchbtn').style.display='block';this.style.display='none'">
+        Close Search And Filters
+      </v-btn></strong>
         <template v-slot:header>
           <v-toolbar
             dark
             color="blue darken-3"
             class="mb-1"
             id="navwrap"
-            style="height: 64px;background-color: rgb(82, 179, 108) !important;width: 420px;position: sticky;top: 0px;z-index: 4;"
+            style="height: 64px;background-color: rgb(82, 179, 108) !important;width: 330px;position: sticky;top: 0px;z-index: 4;display:none;"
           >
-          <div style="width: 420px;position: absolute;height: 100vh;background-color: rgb(82, 179, 108);top: 20;left: 0px;">
-            <v-text-field
+          <div style="width: 330px;position: absolute;height: 100vh;background-color: rgb(82, 179, 108);top: 20;left: 0px;">
+            <center><v-text-field
               v-model="search"
               clearable
               flat
@@ -393,8 +404,8 @@
               hide-details
               prepend-inner-icon="mdi-magnify"
               label="Search"
-              style="width:417px"
-            ></v-text-field>
+              style="width:320px"
+            ></v-text-field></center>
             <template v-if="$vuetify.breakpoint.mdAndUp">
               <v-spacer></v-spacer>
                 <strong><v-btn
