@@ -364,7 +364,7 @@
     display:block;
   }
 </style><!-- partial:index.partial -->
-<div id="app" style="position:relative;width:90%;margin-right: 5%;margin-left: 5%;">
+<div id="app" style="width:100%">
   <v-app id="inspire">
     <v-container fluid style="min-height:100%">
       <v-data-iterator
@@ -409,7 +409,7 @@
           </v-toolbar>
         </template>
   
-        <template v-slot:default="props" >
+        <template v-slot:default="props" style="position:relative;width:90%;margin-right: 5%;margin-left: 5%;">
           <v-row style="margin-top:50px">
             <v-col
               v-for="item in props.items"
