@@ -377,18 +377,18 @@
         hide-default-footer
       >
         <template v-slot:header>
-            <strong><btn
+            <strong><v-btn
             class="vuebtn"
         id="opensearchbtn"
         style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:block;z-index:6" onclick="document.getElementById('navwrap').style.display='block';document.getElementById('closesearchbtn').style.display='block';this.style.display='none'">
             Search And Filters
-        </btn></strong>
-      <strong><btn
+        </v-btn></strong>
+      <strong><v-btn
         class="vuebtn"
         id="closesearchbtn"
         style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:none;z-index:6" onclick="document.getElementById('navwrap').style.display='none';document.getElementById('opensearchbtn').style.display='block';this.style.display='none'">
         Close Search And Filters
-      </btn></strong>
+      </v-btn></strong>
           <v-toolbar
             dark
             color="blue darken-3"
@@ -408,6 +408,16 @@
               style="width:320px"
             ></v-text-field></center>
             <template v-if="$vuetify.breakpoint.mdAndUp">
+              <v-spacer></v-spacer>
+                <strong><v-btn
+                    style="background-color:white;color:#52b36c;position:absolute;left:15px;top:80px">
+                    Categories And Subcategories
+                </v-btn></strong>
+              <v-spacer></v-spacer>
+              <strong><v-btn
+                style="background-color:white;color:#52b36c;position:absolute;left:15px;top:150px">
+                Filters And Settings
+              </v-btn></strong>
               </v-btn-toggle>
             </template>
         </div>
