@@ -379,14 +379,15 @@
         :sort-desc="sortDesc"
         hide-default-footer
       >
-      <div style="position:absolute;height:100%;left:0px" id="searchcats">
-        <template v-slot:header style="height: 100%;background-color: rgb(82, 179, 108) !important;width: 418;position: fixed;z-index: 400;top: 0px;left: 0px;">
+    
+        <template v-slot:header>
+         <div style="position:absolute;height:100%;left:0px" id="searchcats">
           <v-toolbar
             dark
             color="blue darken-3"
             class="mb-1"
             id="navwrap"
-            style="background-color: #52b36c !important"
+            style="height: 100%;background-color: rgb(82, 179, 108) !important;width: 418;position: fixed;z-index: 400;top: 0px;left: 0px;"
           >
             <v-text-field
               v-model="search"
