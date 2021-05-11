@@ -406,6 +406,8 @@
               prepend-inner-icon="mdi-magnify"
               label="Search"
               style="width:320px"
+              onclick="document.getElementById('navwrap').style.display='block';"
+              onkeyup="document.getElementById('navwrap').style.display='block';"
             ></v-text-field></center>
             <template v-if="$vuetify.breakpoint.mdAndUp">
               <v-spacer></v-spacer>
