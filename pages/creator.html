@@ -9,6 +9,5 @@ function getParameterByName(name, url = window.location.href) {
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 var creator= getParameterByName('creator');
-var create= document.getElementById('create').innerHTML
-create.innerHTML = create+creator
+var create= document.getElementById('create').innerHTML='Creator Profile Page'+creator
 </script>
