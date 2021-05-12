@@ -443,7 +443,7 @@
                 <a target="_top" :href="./product?product=item.id&cat=item.category&subcategory=item.subcategory"><v-img
                   height="250"
                   :src="item.image"
-                  :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='this.dataset.subcat"
+                  :id="item.id"
                 ></v-img>
                 <div>
                   <img :src="item.creatorpic" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px"></img></a>
@@ -451,7 +451,7 @@
                 </p>
               </div>
                 
-              <a target="_top" :href="./product?product=item.id&cat=item.category&subcategory=item.subcategory"><v-card-title class="subheading font-weight-bold" :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='this.dataset.subcat ">
+              <a target="_top" :href="./product?product=item.id&cat=item.category&subcategory=item.subcategory"><v-card-title class="subheading font-weight-bold" :id="item.id" >
                   {{ item.name }}
                 </v-card-title>
                 <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ item.desc }}</v-card-text>
