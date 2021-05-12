@@ -450,7 +450,7 @@
                     <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit" :id="item.creator" onclick="window.top.location.href='./creator?creator='+this.id"> {{ item.creator }}
                 </p>
               </div>
-                <v-card-title class="subheading font-weight-bold" :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat">
+                <v-card-title class="subheading font-weight-bold" :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat">
                   {{ item.name }}
                 </v-card-title>
                 <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ item.desc }}</v-card-text>
