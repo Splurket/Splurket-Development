@@ -375,6 +375,8 @@
         :sort-by="sortBy.toLowerCase()"
         :sort-desc="sortDesc"
         hide-default-footer
+        disable-pagination
+        dense
       >
         <template v-slot:header>
             <strong><v-btn
@@ -487,7 +489,7 @@
           </v-row>
         </template>
   
-        <template v-slot:footer>
+       <!-- <template v-slot:footer>
           <v-row
             class="mt-2"
             align="center"
@@ -546,7 +548,7 @@
               <v-icon>mdi-chevron-right</v-icon>
             </v-btn>
           </v-row>
-        </template>
+        </template>-->
       </v-data-iterator>
     </v-container>
   </v-app>
