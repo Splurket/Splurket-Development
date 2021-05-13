@@ -1,4 +1,4 @@
-getuserprodata(userfile);
+
 var product_items;
 var catshit;
 var user_data = [];
@@ -19,6 +19,7 @@ var config = {
 firebase.initializeApp(config);
 const db = firebase.firestore();
 db.settings({ timestampsInSnapshots: true }); 
+
 function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
             var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -28,6 +29,7 @@ function getParameterByName(name, url = window.location.href) {
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
 var userfile= getParameterByName('user');
+getuserprodata(userfile);
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
