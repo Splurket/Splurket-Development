@@ -302,24 +302,6 @@
         disable-pagination
         dense
       >
-        <template v-slot:header>
-          <div style="width: 330px;position: absolute;height: 100vh;background-color: rgb(82, 179, 108);top: 20;left: 0px;">
-            <center><v-text-field
-              v-model="search"
-              clearable
-              flat
-              solo-inverted
-              hide-details
-              prepend-inner-icon="mdi-magnify"
-              label="Search"
-              style="width:320px"
-            ></v-text-field></center>
-            <template v-if="$vuetify.breakpoint.mdAndUp">
-              <v-spacer></v-spacer>
-            </template>
-        </div>
-          </v-toolbar>
-        </template>
   
         <template v-slot:default="props">
           <v-row style="margin-top:50px;position:relative;width:90%;margin-right: 5%;margin-left: 5%;">
