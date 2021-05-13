@@ -547,10 +547,7 @@ h2 {
 .headerdrop p{
   cursor: pointer;
 }
-.subheading:hover{
-    color:#52b36c;
-    text-decoration: underline;
-}
+
 .e546783wyte {
     color: rgb(135, 135, 135);
     font-size: 15px;
@@ -585,10 +582,6 @@ h2 {
     top:55px !important;
     left:650px !important;
 }
-.cardtit:hover{
-    color:#52b36c;
-    cursor: pointer;
-    text-decoration: underline;
-}
+
 */
 </style>
