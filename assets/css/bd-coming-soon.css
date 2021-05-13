@@ -547,5 +547,48 @@ h2 {
 .headerdrop p{
   cursor: pointer;
 }
+.subheading:hover{
+    color:#52b36c;
+    text-decoration: underline;
+}
+.e546783wyte {
+    color: rgb(135, 135, 135);
+    font-size: 15px;
+    padding-left: 16px;
+    padding-top: 0px;
+    color: #222325;
+    line-height: 22px;
+    font-weight: 400;
+    height: 65px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 12px 5px;
+    margin-top: 5px;
+    word-wrap: break-word;
+    word-break: break-word;
+    -webkit-transition: .15s ease-in-out;
+    -o-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.shadowlight{
+    font-family: 'Shadows Into Light Two';
+}
+.mb-1{
+    background-color: white;
+}
+.v-menu__content .theme--light .menuable__content__active{
+    top:55px !important;
+    left:650px !important;
+}
+.cardtit:hover{
+    color:#52b36c;
+    cursor: pointer;
+    text-decoration: underline;
+}
 */
 </style>
