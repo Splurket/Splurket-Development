@@ -16,7 +16,7 @@ var config = {
     measurementId: "G-QWQ2M658KL"
   };
 firebase.initializeApp(config);
-  const db = firebase.firestore();
+const db = firebase.firestore();
 db.settings({ timestampsInSnapshots: true }); 
 function getuserprodata(prodata){
   var docRef = db.collection('pubusers').doc(prodata);
@@ -50,7 +50,6 @@ function getuserprodata(prodata){
     }
 new Vue({
   el: '#app',
-  vuetify: new Vuetify(),
   data() {
     return {
       itemsPerPageArray: [15, 25, 50],
