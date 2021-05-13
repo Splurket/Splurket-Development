@@ -4,6 +4,7 @@ var user_data = [];
 var user;
 var email1;
 function getuserprodata(prodata){
+  var db = firebase.firestore();
   var docRef = db.collection('pubusers').doc(prodata);
     docRef.get().then((doc) => {
      
@@ -44,6 +45,17 @@ new Vue({
       sortDesc: false,
       page: 1,
       itemsPerPage: 1,
+      sortBy: 'name',
+      keys1: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
+      keys: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
 
 
       items: user_data};},
