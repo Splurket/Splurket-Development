@@ -155,6 +155,7 @@ function getuserprodata(prodata){
     }
 new Vue({
   el: '#app',
+    vuetify: new Vuetify(),
   data() {
     return {
       itemsPerPageArray: [15, 25, 50],
