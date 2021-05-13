@@ -9,7 +9,7 @@ function getuserprodata(prodata){
      
                  if (doc.exists) {
                    var doc= doc.data();
-                   var push_data1 = {value: false, name: `${doc.username}`}
+                   var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`}
                    if (user_data.includes('{')){
                      var push_data = ','+push_data1;
                      user.push(push_data)

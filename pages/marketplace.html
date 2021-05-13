@@ -328,6 +328,18 @@
 <div id="app" style="width:100%">
   <v-app id="inspire">
     <v-container fluid style="min-height:100%">
+        <strong><v-btn
+            class="vuebtn"
+        id="opensearchbtn"
+        style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:block;z-index:6" onclick="document.getElementById('navwrap').style.display='block';document.getElementById('closesearchbtn').style.display='block';this.style.display='none'">
+            Search And Filters
+        </v-btn></strong>
+      <strong><v-btn
+        class="vuebtn"
+        id="closesearchbtn"
+        style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:none;z-index:6" onclick="document.getElementById('navwrap').style.display='none';document.getElementById('opensearchbtn').style.display='block';this.style.display='none'">
+        Close Search And Filters
+      </v-btn></strong>
       <v-data-iterator
         :items="items"
         :items-per-page.sync="itemsPerPage"
@@ -340,18 +352,6 @@
         dense
       >
         <template v-slot:header>
-            <strong><v-btn
-            class="vuebtn"
-        id="opensearchbtn"
-        style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:block;z-index:6" onclick="document.getElementById('navwrap').style.display='block';document.getElementById('closesearchbtn').style.display='block';this.style.display='none'">
-            Search And Filters
-        </v-btn></strong>
-      <strong><v-btn
-        class="vuebtn"
-        id="closesearchbtn"
-        style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:none;z-index:6" onclick="document.getElementById('navwrap').style.display='none';document.getElementById('opensearchbtn').style.display='block';this.style.display='none'">
-        Close Search And Filters
-      </v-btn></strong>
           <v-toolbar
             dark
             color="blue darken-3"
