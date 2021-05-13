@@ -303,25 +303,6 @@
         dense
       >
         <template v-slot:header>
-            <strong><v-btn
-            class="vuebtn"
-        id="opensearchbtn"
-        style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:block;z-index:6" onclick="document.getElementById('navwrap').style.display='block';document.getElementById('closesearchbtn').style.display='block';this.style.display='none'">
-            Search And Filters
-        </v-btn></strong>
-      <strong><v-btn
-        class="vuebtn"
-        id="closesearchbtn"
-        style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:none;z-index:6" onclick="document.getElementById('navwrap').style.display='none';document.getElementById('opensearchbtn').style.display='block';this.style.display='none'">
-        Close Search And Filters
-      </v-btn></strong>
-          <v-toolbar
-            dark
-            color="blue darken-3"
-            class="mb-1"
-            id="navwrap"
-            style="height: 64px;background-color: rgb(82, 179, 108) !important;width: 330px;position: sticky;top: 0px;z-index: 4;"
-          >
           <div style="width: 330px;position: absolute;height: 100vh;background-color: rgb(82, 179, 108);top: 20;left: 0px;">
             <center><v-text-field
               v-model="search"
@@ -335,16 +316,6 @@
             ></v-text-field></center>
             <template v-if="$vuetify.breakpoint.mdAndUp">
               <v-spacer></v-spacer>
-                <strong><v-btn
-                    style="background-color:white;color:#52b36c;position:absolute;left:15px;top:80px">
-                    Categories And Subcategories
-                </v-btn></strong>
-              <v-spacer></v-spacer>
-              <strong><v-btn
-                style="background-color:white;color:#52b36c;position:absolute;left:15px;top:150px">
-                Filters And Settings
-              </v-btn></strong>
-              </v-btn-toggle>
             </template>
         </div>
           </v-toolbar>
@@ -366,6 +337,7 @@
                   width="250px"
                   :src="item.image"
                   :id="item.id"
+                  style=""
                 ></v-img>
               </div>
                 <v-card-title class="subheading font-weight-bold" :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory">
