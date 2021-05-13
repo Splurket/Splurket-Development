@@ -191,17 +191,17 @@ display:block;
               lg="3"
             >
               <v-card :id="item.name" :data-cat="item.category" :data-subcat="item.subcategory">
-                <v-img
-                  height="250px"
-                  width="250px"
+                <center><v-img
+                  height="150px"
+                  width="150px"
                   :src="item.image"
                   :id="item.id"
-                  style=""
+                  style="border-radius: 50%;"
                 ></v-img>
               </div>
                 <v-card-title class="subheading font-weight-bold" :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory">
                   {{ item.name }}
-                </v-card-title>
+                </v-card-title></center>
   
                 <!--<v-list dense>
                   <v-list-item
