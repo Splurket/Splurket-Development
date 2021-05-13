@@ -16,9 +16,9 @@ var config = {
     measurementId: "G-QWQ2M658KL"
   };
 firebase.initializeApp(config);
+  const db = firebase.firestore();
 db.settings({ timestampsInSnapshots: true }); 
 function getuserprodata(prodata){
-  const db = firebase.firestore();
   var docRef = db.collection('pubusers').doc(prodata);
     docRef.get().then((doc) => {
       console.log(doc)
