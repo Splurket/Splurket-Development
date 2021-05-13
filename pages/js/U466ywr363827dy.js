@@ -4,36 +4,36 @@ var user_data = [];
 var user;
 var email1;
 function getuserprodata(prodata){
-  var db = firebase.firestore();
+  const db = firebase.firestore();
   var docRef = db.collection('pubusers').doc(prodata);
     docRef.get().then((doc) => {
-     
-                 if (doc.exists) {
-                   var doc= doc.data();
-                   var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`}
-                   if (user_data.includes('{')){
-                     var push_data = ','+push_data1;
-                     user.push(push_data)
-     
-     
-                   }else{
-                     user_data.push(push_data1)
-     
-                   }//document.write(product_data)
+      console.log(doc)
+      if (doc.exists) {
+            var doc= doc.data();
+            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`}
+            if (user_data.includes('{')){
+              var push_data = ','+push_data1;
+              user.push(push_data)
      
      
+            }else{
+              user_data.push(push_data1)
+     
+            }//document.write(product_data)
      
      
-                 } else {
-                     // doc.data() will be undefined in this case
-                     user_data=[{
-                       value: false,
-                       name: 'No User Found'}]
-                 }
-             }).catch((error) => {
-                 console.log("Error getting document:", error);
-             });
-           }
+     
+     
+          } else {
+              // doc.data() will be undefined in this case
+              user_data=[{
+                value: false,
+                name: 'No User Found'}]
+          }
+      }).catch((error) => {
+          console.log("Error getting document:", error);
+      });
+    }
 new Vue({
   el: '#app',
   vuetify: new Vuetify(),
@@ -44,7 +44,7 @@ new Vue({
       filter: {},
       sortDesc: false,
       page: 1,
-      itemsPerPage: 1,
+      itemsPerPage: 15,
       sortBy: 'name',
       keys1: [
       'Name',
