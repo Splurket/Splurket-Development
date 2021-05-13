@@ -43,18 +43,7 @@ new Vue({
       filter: {},
       sortDesc: false,
       page: 1,
-      itemsPerPage: 15,
-      sortBy: 'name',
-      keys1: [
-      'Name',
-      'Price',
-      'Ratings'
-      ],
-      keys: [
-      'Name',
-      'Price',
-      'Ratings'
-      ],
+      itemsPerPage: 1,
 
 
       items: user_data};},
