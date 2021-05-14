@@ -168,6 +168,7 @@ new Vue({
       page: 1,
       itemsPerPage: 1,
       sortBy: 'name',
+      products:products +'}',
       keys1: [
       'Name',
       'Price',
@@ -180,8 +181,7 @@ new Vue({
       ],
 
 
-      items: user_data},
-      products:product_data},
+      items: user_data};},
   computed: {
     numberOfPages() {
       return Math.ceil(this.items.length / this.itemsPerPage);
