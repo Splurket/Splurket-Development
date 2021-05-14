@@ -166,7 +166,7 @@ function getuserprodata(prodata){
 
 
                       }else{
-                        product_data.push(push_data2)
+                        products.push(push_data2)
 
                       }//document.write(product_data)
                     } else {
