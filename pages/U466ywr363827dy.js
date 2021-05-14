@@ -169,6 +169,8 @@ new Vue({
       itemsPerPage: 1,
       sortBy: 'name',
       products:products +'}',
+      badges:badges +'}',
+      reviews:reviews +'}',
       keys1: [
       'Name',
       'Price',
