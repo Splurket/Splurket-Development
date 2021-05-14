@@ -134,7 +134,7 @@ function getuserprodata(prodata){
       console.log(doc)
       if (doc.exists) {
             var doc= doc.data();
-            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`,date: `${doc.Date}`,tag: `${doc.tagline}`, reviewsn: `${doc.Reviewsn}`}
+            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`,date: `${doc.Date}`,tag: `${doc.tagline}`, reviewsn: `${doc.Reviewsn}`.parseFloat()}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
               user.push(push_data)
