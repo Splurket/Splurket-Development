@@ -180,8 +180,8 @@ new Vue({
       ],
 
 
-      items: user_data};},
-      products:product_data,
+      items: user_data},
+      products:product_data};},
   computed: {
     numberOfPages() {
       return Math.ceil(this.items.length / this.itemsPerPage);
