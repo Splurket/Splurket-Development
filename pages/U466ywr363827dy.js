@@ -181,7 +181,34 @@ function getuserprodata(prodata){
                   })
                 }
               })
+            })
+      db.collection("pubusers").doc(prodata).collection('Badges').get().then((querySnapshot) => {
+        querySnapshot.forEach((doc2) => {
+          if (doc.exists) {
+            var doc= doc.data();
+            var badgedata = {value: false, name: `${doc.Name}`};
+            if (products.includes('{')){
+                var push_data = ','+badgedata;
+                badges.push(push_data)
+
+
+              }else{
+                badges.push(badgedata)
+
+              }//document.write(product_data)
+            } else {
+                // doc.data() will be undefined in this case
+                products=[{
+                  value: false,
+                  name: 'No Products Found',
+                  Price: 'N/A',
+                  reviews: 'N/A',
+                  status: 'N/A' }]
             }
+          })
+        })
+      
+
     }
 new Vue({
   el: '#app',
