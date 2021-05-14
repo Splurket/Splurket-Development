@@ -168,13 +168,6 @@ display:block;
 </style><!-- partial:index.partial -->
 <div id="app" style="width:100%">
   <v-app id="inspire">
-     <div style="height:100%;width:70%;position:absolute;right:0px;z-index:3;top:20px">
-                <v-tabs color="#52b36c">
-                    <v-tab>Products</v-tab>
-                    <v-tab>Reviews</v-tab>
-                    <v-tab>Badges</v-tab>
-                  </v-tabs></center>
-        </div>
     <v-container fluid style="min-height:100%">
       <v-data-iterator
         :items="items"
@@ -187,6 +180,14 @@ display:block;
         disable-pagination
         dense
       >
+      <div style="height:100%;width:70%;position:absolute;right:0px;z-index:3;top:20px">
+                <v-tabs color="#52b36c">
+                    <v-tab>Products</v-tab>
+                    
+                    <v-tab>Reviews</v-tab>
+                    <v-tab>Badges</v-tab>
+                  </v-tabs></center>
+        </div>
   
         <template v-slot:default="props">
           <v-row style="margin-top:50px;position:relative;width:90%;margin-right: 5%;margin-left: 5%;">
