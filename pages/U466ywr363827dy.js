@@ -142,10 +142,6 @@ function getuserprodata(prodata){
               user_data.push(push_data1)
      
             }//document.write(product_data)
-     
-     
-     
-     
           } else {
               // doc.data() will be undefined in this case
               user_data=[{
@@ -155,6 +151,37 @@ function getuserprodata(prodata){
       }).catch((error) => {
           console.log("Error getting document:", error);
       });
+      db.collection("products").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              if (doc.exists) {
+                var doc= doc.data();
+                var productnm = {value: false, name: `${doc.product_name}`};
+                var docRefprod = db.collection('products').doc(productnm);
+                  docRefprod.get().then((doc1) => {
+                    if (doc1.exists) {
+                      var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
+                      if (products.includes('{')){
+                        var push_data = ','+push_data2;
+                        products.push(push_data)
+
+
+                      }else{
+                        product_data.push(push_data2)
+
+                      }//document.write(product_data)
+                    } else {
+                        // doc.data() will be undefined in this case
+                        products=[{
+                          value: false,
+                          name: 'No Products Found',
+                          Price: 'N/A',
+                          reviews: 'N/A',
+                          status: 'N/A' }]
+                    }
+                  })
+                }
+              }
+            }
     }
 new Vue({
   el: '#app',
