@@ -207,13 +207,14 @@ display:block;
                   {{ item.name }}
                 </v-card-title></center>
                 <strong><center><p style="font-family: 'Shadows Into Light Two';font-size:15px">{{ item.tag }}</p></center><strong>
-                <v-rating
+                <center><p>SplurkStars</p>
+                <center><v-rating
                   v-model="item.reviewsn"
                   background-color="green lighten-3"
                   color="green"
                   large
                   readonly
-                ></v-rating>
+                ></v-rating></center>
   
                 <!--<v-list dense>
                   <v-list-item
