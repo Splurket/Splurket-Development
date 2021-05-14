@@ -2,6 +2,9 @@
 var product_items;
 var catshit;
 var user_data = [];
+var products=[];
+var badges=[];
+var reviews=[];
 var user;
 var email1;
  var name, email, photoUrl, uid, emailVerified;
@@ -131,12 +134,10 @@ function getuserprodata(prodata){
       console.log(doc)
       if (doc.exists) {
             var doc= doc.data();
-            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`}
+            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`,date: `${doc.Date}`,tag: `${doc.tagline}`, reviewsn: `${doc.Reviewsn}`}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
               user.push(push_data)
-     
-     
             }else{
               user_data.push(push_data1)
      
@@ -165,7 +166,7 @@ new Vue({
       filter: {},
       sortDesc: false,
       page: 1,
-      itemsPerPage: 15,
+      itemsPerPage: 1,
       sortBy: 'name',
       keys1: [
       'Name',
@@ -180,6 +181,7 @@ new Vue({
 
 
       items: user_data};},
+      products:product_data
   computed: {
     numberOfPages() {
       return Math.ceil(this.items.length / this.itemsPerPage);

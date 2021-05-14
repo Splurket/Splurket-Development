@@ -191,7 +191,10 @@ display:block;
               md="4"
               lg="3"
             >
-              <v-card :id="item.name"><br>
+              <v-card :id="item.name">
+                <div style="
+                    height: 5px;
+                "></div>
                 <center><v-img
                   height="150px"
                   width="150px"
@@ -203,6 +206,7 @@ display:block;
                 <center><v-card-title class="subheading font-weight-bold" :id="item.id" style="display:block">
                   {{ item.name }}
                 </v-card-title></center>
+                <p>{{ item.tag }}</p>
   
                 <!--<v-list dense>
                   <v-list-item
