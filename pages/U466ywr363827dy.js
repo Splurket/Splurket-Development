@@ -131,10 +131,10 @@ function signout() {
 function getuserprodata(prodata){
   var docRef = db.collection('pubusers').doc(prodata);
     docRef.get().then((doc) => {
-      console.log(doc)
       if (doc.exists) {
             var doc= doc.data();
-            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`,date: `${doc.Date}`,tag: `${doc.tagline}`, reviewsn: `${doc.Reviewsn}`}
+            var reviewsint= parseFloat(`${doc.Reviewsn}`)
+            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`,date: `${doc.Date}`,tag: `${doc.tagline}`, reviewsn: reviewsint}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
               user.push(push_data)
