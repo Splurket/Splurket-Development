@@ -168,6 +168,13 @@ display:block;
 </style><!-- partial:index.partial -->
 <div id="app" style="width:100%">
   <v-app id="inspire">
+     <div style="height:100%;width:70%;position:absolute;right:0px;z-index:5;top:20px">
+                <v-tabs>
+                    <v-tab>Item One</v-tab>
+                    <v-tab>Item Two</v-tab>
+                    <v-tab>Item Three</v-tab>
+                  </v-tabs>
+            </div>
     <v-container fluid style="min-height:100%">
       <v-data-iterator
         :items="items"
@@ -234,13 +241,6 @@ display:block;
                   </v-list-item>-->
               </v-card>
             </v-col>
-             <div style="height:100%;width:80%;position:absolute;right:10%,z-index:5">
-                <v-tabs>
-                    <v-tab>Item One</v-tab>
-                    <v-tab>Item Two</v-tab>
-                    <v-tab>Item Three</v-tab>
-                  </v-tabs>
-            </div>
           </v-row>
         </template>
        <!-- <template v-slot:footer>
