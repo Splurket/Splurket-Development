@@ -180,7 +180,7 @@ new Vue({
       ],
 
 
-      items: user_data};},
+      items: user_data},
       products:product_data},
   computed: {
     numberOfPages() {
