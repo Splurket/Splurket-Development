@@ -180,7 +180,7 @@ function getuserprodata(prodata){
                     }
                   })
                 }
-              }
+              })
             }
     }
 new Vue({
