@@ -171,6 +171,7 @@ new Vue({
       products:products +'}',
       badges:badges +'}',
       reviews:reviews +'}',
+      rating: reviewsn,
       keys1: [
       'Name',
       'Price',
