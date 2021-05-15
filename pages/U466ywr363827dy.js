@@ -151,10 +151,10 @@ function getuserprodata(prodata){
       }).catch((error) => {
           console.log("Error getting document:", error);
       });
-      db.collection("products").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-              if (doc.exists) {
-                var doc= doc.data();
+      db.collection("pubusers").doc(prodata).collection('products').get().then((querySnapshot) => {
+            querySnapshot.forEach((doc3) => {
+              if (doc3.exists) {
+                var doc= doc3.data();
                 var productnm = {value: false, name: `${doc.product_name}`};
                 var docRefprod = db.collection('products').doc(productnm);
                   docRefprod.get().then((doc1) => {
@@ -184,8 +184,8 @@ function getuserprodata(prodata){
             })
       db.collection("pubusers").doc(prodata).collection('Badges').get().then((querySnapshot) => {
         querySnapshot.forEach((doc2) => {
-          if (doc.exists) {
-            var doc= doc.data();
+          if (doc2.exists) {
+            var doc= doc2.data();
             var badgedata = {value: false, name: `${doc.Name}`};
             if (products.includes('{')){
                 var push_data = ','+badgedata;
