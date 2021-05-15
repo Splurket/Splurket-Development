@@ -168,6 +168,7 @@ display:block;
 </style><!-- partial:index.partial -->
 <div id="app" style="width:100%">
   <v-app id="inspire">
+    <v-container fluid style="min-height:100%">
       <v-data-iterator
         :items="items"
         :items-per-page.sync="itemsPerPage"
@@ -182,7 +183,7 @@ display:block;
         disable-pagination
         dense
       >
-        <template>
+    <template v-slot:header="props">
             <div style="height:100%;width:70%;position:absolute;right:0px;z-index:3;top:20px">
                 <v-tabs color="#52b36c">
                     <v-tab>Products</v-tab>
@@ -320,6 +321,7 @@ display:block;
           </v-row>
         </template>-->
       </v-data-iterator>
+    </v-container>
   </v-app>
 </div>
 <script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
