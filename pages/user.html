@@ -168,26 +168,6 @@ display:block;
 </style><!-- partial:index.partial -->
 <div id="app" style="width:100%">
   <v-app id="inspire">
-    <v-data-iterator
-        :reviews="reviews"
-        :products="products"
-        :badges="badges"
-        hide-default-footer
-        disable-pagination
-        dense
-      >
-    <template>
-        <div style="height:100%;width:70%;position:absolute;right:0px;z-index:3;top:20px">
-            <v-tabs color="#52b36c">
-                <v-tab>Products</v-tab>
-                
-                <v-tab>Reviews</v-tab>
-                <v-tab>Badges</v-tab>
-              </v-tabs></center>
-        </div>
-    </template>
-</v-data-iterator>
-    <v-container fluid style="min-height:100%">
       <v-data-iterator
         :items="items"
         :items-per-page.sync="itemsPerPage"
@@ -202,6 +182,17 @@ display:block;
         disable-pagination
         dense
       >
+        <template>
+            <div style="height:100%;width:70%;position:absolute;right:0px;z-index:3;top:20px">
+                <v-tabs color="#52b36c">
+                    <v-tab>Products</v-tab>
+                    
+                    <v-tab>Reviews</v-tab>
+                    <v-tab>Badges</v-tab>
+                  </v-tabs></center>
+        </div>
+    </template>
+    <v-container fluid style="min-height:100%">
   
         <template v-slot:default="props">
           <v-row style="margin-top:50px;position:relative;width:90%;margin-right: 5%;margin-left: 5%;">
@@ -258,6 +249,17 @@ display:block;
             </v-col>
           </v-row>
         </template>
+
+        <template>
+            <div style="height:100%;width:70%;position:absolute;right:0px;z-index:3;top:20px">
+                <v-tabs color="#52b36c">
+                    <v-tab>Products</v-tab>
+                    
+                    <v-tab>Reviews</v-tab>
+                    <v-tab>Badges</v-tab>
+                  </v-tabs></center>
+        </div>
+    </template>
        <!-- <template v-slot:footer>
           <v-row
             class="mt-2"
