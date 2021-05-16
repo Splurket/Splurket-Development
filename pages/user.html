@@ -188,7 +188,7 @@ display:block;
                 <v-tabs color="#52b36c">
                 <v-tab>Products</v-tab>
                   <v-tab-item
-                    v-for="product in products"
+                    v-for="product in props.products"
                     :key="product.id"
                   >
                     <v-card :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory">
@@ -242,6 +242,7 @@ display:block;
                       </v-card>
                   </v-tab-item>
               </v-row>
+          </v-tabs>
                     <v-tab>Reviews</v-tab>
 
 
