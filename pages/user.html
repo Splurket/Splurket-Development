@@ -188,7 +188,7 @@ display:block;
                 <v-tabs color="#52b36c">
                 <v-tab>Products</v-tab>
                   <v-tab-item
-                    v-for="product in props.products"
+                    v-for="product in products"
                     :key="product.id"
                   >
 
@@ -242,7 +242,6 @@ display:block;
                         <p style="right:20px;display:block;bottom:-5px;position: absolute;font-size:20px">{{ product.price }}</span></p>
                       </v-card>
                   </v-tab-item>
-              </v-row>
                     <v-tab>Reviews</v-tab>
 
 
