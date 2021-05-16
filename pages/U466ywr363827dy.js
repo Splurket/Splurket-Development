@@ -232,9 +232,9 @@ new Vue({
       'Price',
       'Ratings'
       ],
-      products:products'}',
-      badges:badges'}',
-      reviews:reviews'}',
+      products:products,
+      badges:badges,
+      reviews:reviews,
       items: user_data};},
   computed: {
     numberOfPages() {
