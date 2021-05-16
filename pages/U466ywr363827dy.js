@@ -222,9 +222,6 @@ new Vue({
       page: 1,
       itemsPerPage: 1,
       sortBy: 'name',
-      products:products +'}',
-      badges:badges +'}',
-      reviews:reviews +'}',
       keys1: [
       'Name',
       'Price',
@@ -235,8 +232,9 @@ new Vue({
       'Price',
       'Ratings'
       ],
-
-
+      products:products'}',
+      badges:badges'}',
+      reviews:reviews'}',
       items: user_data};},
   computed: {
     numberOfPages() {
