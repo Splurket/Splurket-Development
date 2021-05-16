@@ -222,16 +222,6 @@ new Vue({
       page: 1,
       itemsPerPage: 1,
       sortBy: 'name',
-      keys1: [
-      'Name',
-      'Price',
-      'Ratings'
-      ],
-      keys: [
-      'Name',
-      'Price',
-      'Ratings'
-      ],
       items: user_data,
       products:products,
       badges:badges,
