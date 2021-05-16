@@ -155,7 +155,7 @@ function getuserprodata(prodata){
             querySnapshot.forEach((doc3) => {
               if (doc3.exists) {
                 var doc= doc3.data();
-                var productnm = {value: false, name: `${doc.product_name}`};
+                var productnm = doc.product_name;
                 var docRefprod = db.collection('products').doc(productnm);
                   docRefprod.get().then((doc1) => {
                     if (doc1.exists) {
@@ -232,9 +232,9 @@ new Vue({
       'Price',
       'Ratings'
       ],
-      products:user_data+'}',
-      badges:badges+'}',
-      reviews:reviews+'}',
+      products:user_data,
+      badges:badges,
+      reviews:reviews,
       items: user_data};},
   computed: {
     numberOfPages() {
