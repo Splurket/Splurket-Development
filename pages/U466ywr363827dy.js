@@ -222,7 +222,7 @@ new Vue({
       page: 1,
       itemsPerPage: 1,
       sortBy: 'name',
-      items: user_data,
+      items: products,
       products:products,
       badges:badges,
       reviews:reviews};},
