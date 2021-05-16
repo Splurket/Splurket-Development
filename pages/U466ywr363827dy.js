@@ -232,7 +232,7 @@ new Vue({
       'Price',
       'Ratings'
       ],
-      products:user_data,
+      products:products,
       badges:badges,
       reviews:reviews,
       items: user_data};},
