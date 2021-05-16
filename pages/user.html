@@ -186,52 +186,52 @@ display:block;
     <template v-slot:header="props">
             <div style="height:100%;width:70%;position:absolute;right:0px;z-index:3;top:20px">
                 <v-tabs color="#52b36c">
-                <v-tab>items</v-tab>
-                  <v-tab-item
+                <v-tab>products</v-tab>
+                  <v-tab-product
                   >
                 <v-col
-                  v-for="item in props.items"
-                  :key="item.name"
+                  v-for="product in props.products"
+                  :key="product.name"
                   cols="12"
                   sm="6"
                   md="4"
                   lg="3"
                 >
 
-                    <v-card :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory">
+                    <v-card :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory">
                         <v-img
                           height="250"
-                          :src="item.image"
-                          :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="window.top.location.href='./item?item='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat"
+                          :src="product.image"
+                          :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat"
                         ></v-img>
                         <div>
-                          <img :src="item.creatorpic" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px":id="item.creator" onclick="window.top.location.href='./creator?creator='+this.id"></img></a>
-                            <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit" :id="item.creator" onclick="window.top.location.href='./user?user='+this.id">{{ item.creator }}
+                          <img :src="product.creatorpic" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px":id="product.creator" onclick="window.top.location.href='./creator?creator='+this.id"></img></a>
+                            <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit" :id="product.creator" onclick="window.top.location.href='./user?user='+this.id">{{ product.creator }}
                         </p>
                       </div>
-                        <v-card-title class="subheading font-weight-bold" :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="window.top.location.href='./item?item='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat">
-                          {{ item.name }}
+                        <v-card-title class="subheading font-weight-bold" :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat">
+                          {{ product.name }}
                         </v-card-title>
-                        <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ item.desc }}</v-card-text>
+                        <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ product.desc }}</v-card-text>
                         <v-card-text style="color:#52b36c;font-size:25px;padding-left: 16px;padding-top: 0px;position:relative;padding-bottom:0px;padding-top:15px">
-                          ★<span style="color:#52b36c;font-size:20px;top:0px">{{ item.reviewsn }}</span>
+                          ★<span style="color:#52b36c;font-size:20px;top:0px">{{ product.reviewsn }}</span>
                          </v-card-text></v-list>
           
                         <!--<v-list dense>
-                          <v-list-item
+                          <v-list-product
                             v-for="(key, index) in filteredKeys"
                             :key="index"
                           >
-                            <v-list-item-content :class="{ 'blue--text': sortBy === key }">
+                            <v-list-product-content :class="{ 'blue--text': sortBy === key }">
                               {{ key }}:
-                            </v-list-item-content>
-                            <v-list-item-content
+                            </v-list-product-content>
+                            <v-list-product-content
                               class="align-end"
                               :class="{ 'blue--text': sortBy === key }"
                             >
-                              {{ item[key.toLowerCase()] }}
-                            </v-list-item-content>
-                          </v-list-item>-->
+                              {{ product[key.toLowerCase()] }}
+                            </v-list-product-content>
+                          </v-list-product>-->
 
                         <v-divider></v-divider>
                             <div style="padding-left: 11px;padding-top: 0px;position:absolute;bottom:5px;">
@@ -245,9 +245,9 @@ display:block;
                                 </v-btn>
                             </div>
                         <div style="height:40px"></div>
-                        <p style="right:20px;display:block;bottom:-5px;position: absolute;font-size:20px">{{ item.price }}</span></p>
+                        <p style="right:20px;display:block;bottom:-5px;position: absolute;font-size:20px">{{ product.price }}</span></p>
                       </v-card>
-                  </v-tab-item>
+                  </v-tab-product>
               </v-col>
                     <v-tab>Reviews</v-tab>
 
