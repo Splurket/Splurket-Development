@@ -186,8 +186,8 @@ display:block;
     <template v-slot:header="props">
             <div style="height:100%;width:70%;position:absolute;right:0px;z-index:3;top:20px">
                 <v-tabs color="#52b36c">
-                <v-tab>products</v-tab>
-                  <v-tab-product
+                <v-tab>Products</v-tab>
+                  <v-tab-item
                   >
                 <v-col
                   v-for="product in props.products"
@@ -247,7 +247,7 @@ display:block;
                         <div style="height:40px"></div>
                         <p style="right:20px;display:block;bottom:-5px;position: absolute;font-size:20px">{{ product.price }}</span></p>
                       </v-card>
-                  </v-tab-product>
+                  </v-tab-item>
               </v-col>
                     <v-tab>Reviews</v-tab>
 
