@@ -179,6 +179,7 @@ function getuserprodata(prodata){
                           status: 'N/A' }]
                     }
                   })
+                  console.log(products)
                 }
               })
             })
