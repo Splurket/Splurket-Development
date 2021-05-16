@@ -156,6 +156,7 @@ function getuserprodata(prodata){
               if (doc3.exists) {
                 var doc3= doc3.data();
                 var productnm = doc3.name;
+                console.log(productnm)
                 var docRefprod = db.collection('products').doc(productnm);
                   docRefprod.get().then((doc1) => {
                     if (doc1.exists) {
