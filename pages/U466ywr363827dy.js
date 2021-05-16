@@ -2,7 +2,7 @@
 var product_items;
 var catshit;
 var user_data = [];
-var products=[];
+var productstuff=[];
 var badges=[];
 var reviews=[];
 var user;
@@ -151,22 +151,22 @@ function getuserprodata(prodata){
       }).catch((error) => {
           console.log("Error getting document:", error);
       });
-      db.collection("pubusers").doc(prodata).collection('products').get().then((querySnapshot) => {
-            querySnapshot.forEach((doc3) => {
+      docRef.collection('products').get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
               if (doc3.exists) {
-                var doc= doc3.data();
+                var doc= doc.data();
                 var productnm = {value: false, name: `${doc.product_name}`};
                 var docRefprod = db.collection('products').doc(productnm);
-                  docRefprod.get().then((doc1) => {
-                    if (doc1.exists) {
+                  docRefprod.get().then((doc) => {
+                    if (doc.exists) {
                       var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
-                      if (products.includes('{')){
+                      if (productstuff.includes('{')){
                         var push_data = ','+push_data2;
-                        products.push(push_data)
+                        productstuff.push(push_data)
 
 
                       }else{
-                        products.push(push_data2)
+                        productstuff.push(push_data2)
 
                       }//document.write(product_data)
                     } else {
@@ -178,8 +178,8 @@ function getuserprodata(prodata){
                           reviews: 'N/A',
                           status: 'N/A' }]
                     }
+                   console.log(products) 
                   })
-                  console.log(products)
                 }
               })
             })
