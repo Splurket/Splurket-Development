@@ -154,11 +154,12 @@ function getuserprodata(prodata){
       db.collection("pubusers").doc(prodata).collection('products').get().then((querySnapshot) => {
             querySnapshot.forEach((doc3) => {
               if (doc3.exists) {
-                var doc= doc3.data();
-                var productnm = doc.product_name;
+                var doc3= doc3.data();
+                var productnm = doc3.name;
                 var docRefprod = db.collection('products').doc(productnm);
                   docRefprod.get().then((doc1) => {
                     if (doc1.exists) {
+                      var doc= doc1.data();
                       var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
                       if (products.includes('{')){
                         var push_data = ','+push_data2;
