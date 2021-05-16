@@ -129,15 +129,15 @@ function signout() {
     });
 }
 function getuserprodata(prodata){
-  var docRef = db.collection('pubusers').doc(prodata);
+  docRef = db.collection('pubusers').doc(prodata);
     docRef.get().then((doc) => {
       if (doc.exists) {
             var doc= doc.data();
             var reviewsint= parseFloat(`${doc.Reviewsn}`)
-            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`,date: `${doc.Date}`,tag: `${doc.tagline}`, reviewsn: reviewsint}
+            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`,date: `${doc.Date}`, tag: `${doc.tagline}`, reviewsn: reviewsint}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
-              user.push(push_data)
+              user_data.push(push_data)
             }else{
               user_data.push(push_data1)
      
@@ -151,7 +151,7 @@ function getuserprodata(prodata){
       }).catch((error) => {
           console.log("Error getting document:", error);
       });
-      docRef.collection('products').get().then((querySnapshot) => {
+      /*docRef.collection('products').get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
               if (doc.exists) {
                 var doc= doc.data();
@@ -181,7 +181,7 @@ function getuserprodata(prodata){
                   })
                 }
               })
-            })
+            })*/
       db.collection("pubusers").doc(prodata).collection('Badges').get().then((querySnapshot) => {
         querySnapshot.forEach((doc2) => {
           if (doc2.exists) {
@@ -223,7 +223,7 @@ new Vue({
       itemsPerPage: 1,
       sortBy: 'name',
       items: user_data,
-      products:productstuff+'}',
+      products:[{value: false, id: hello, name: hello, price: hello, date: hello, reviewsn: hello, creator: hello, image: hello, creatorpic: hello, desc: hello},{value: false, id: hello1, name: hello1, price: hello1, date: hello1, reviewsn: hello1, creator: hello1, image: hello1, creatorpic: hello1, desc: hello1},],
       badges:badges+'}',
       reviews:reviews};},
   computed: {
