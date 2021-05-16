@@ -178,7 +178,6 @@ function getuserprodata(prodata){
                           reviews: 'N/A',
                           status: 'N/A' }]
                     }
-                   console.log(products) 
                   })
                 }
               })
@@ -199,7 +198,7 @@ function getuserprodata(prodata){
               }//document.write(product_data)
             } else {
                 // doc.data() will be undefined in this case
-                products=[{
+                badges=[{
                   value: false,
                   name: 'No Products Found',
                   Price: 'N/A',
@@ -224,8 +223,8 @@ new Vue({
       itemsPerPage: 1,
       sortBy: 'name',
       items: user_data,
-      products:products,
-      badges:badges,
+      products:products+'}',
+      badges:badges+'}',
       reviews:reviews};},
   computed: {
     numberOfPages() {
