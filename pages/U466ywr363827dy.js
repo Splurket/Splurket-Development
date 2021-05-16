@@ -232,10 +232,10 @@ new Vue({
       'Price',
       'Ratings'
       ],
+      items: user_data,
       products:products,
       badges:badges,
-      reviews:reviews,
-      items: user_data};},
+      reviews:reviews};},
   computed: {
     numberOfPages() {
       return Math.ceil(this.items.length / this.itemsPerPage);
