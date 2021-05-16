@@ -184,6 +184,14 @@ display:block;
         dense
       >
     <template v-slot:header="props">
+            <v-col
+              v-for="product in props.products"
+              :key="product.name"
+              cols="12"
+              sm="6"
+              md="4"
+              lg="3"
+            >
             <div style="height:100%;width:70%;position:absolute;right:0px;z-index:3;top:20px">
                 <v-tabs color="#52b36c">
                     <v-tab>Products</v-tab>
@@ -206,8 +214,8 @@ display:block;
                   ★<span style="color:#52b36c;font-size:20px;top:0px">{{ product.reviewsn }}</span>
                  </v-card-text></v-list>
   
-                <v-list dense>
-                  <!--<v-list-product
+                <!--<v-list dense>
+                  <v-list-product
                     v-for="(key, index) in filteredKeys"
                     :key="index"
                   >
@@ -240,7 +248,16 @@ display:block;
           </v-row>
         </template>
                     <v-tab>Reviews</v-tab>
+
+
+
+
+
                     <v-tab>Badges</v-tab>
+
+
+
+
                   </v-tabs></center>
         </div>
     </template>
