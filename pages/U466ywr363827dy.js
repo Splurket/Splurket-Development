@@ -222,8 +222,8 @@ new Vue({
       page: 1,
       itemsPerPage: 1,
       sortBy: 'name',
-      items: products,
-      products:products,
+      items: badges,
+      products:items,
       badges:badges,
       reviews:reviews};},
   computed: {
