@@ -184,10 +184,7 @@ display:block;
         dense
       >
     <template v-slot:header="props">
-            <div
-              v-for="product in props.products"
-              :key="product.name"
-            >
+
             <div style="height:100%;width:70%;position:absolute;right:0px;z-index:3;top:20px">
                 <v-tabs color="#52b36c">
                     <v-tab>Products</v-tab>
@@ -240,7 +237,6 @@ display:block;
                 <div style="height:40px"></div>
                 <p style="right:20px;display:block;bottom:-5px;position: absolute;font-size:20px">{{ product.price }}</span></p>
               </v-card>
-            </div>
           </v-row>
         </template>
                     <v-tab>Reviews</v-tab>
