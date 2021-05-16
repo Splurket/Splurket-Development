@@ -191,12 +191,7 @@ display:block;
                     v-for="product in props.products"
                     :key="product.id"
                   >
-                     <v-col
-                      cols="12"
-                      sm="6"
-                      md="4"
-                      lg="3"
-                    >
+
                     <v-card :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory">
                         <v-img
                           height="250"
@@ -246,7 +241,6 @@ display:block;
                         <div style="height:40px"></div>
                         <p style="right:20px;display:block;bottom:-5px;position: absolute;font-size:20px">{{ product.price }}</span></p>
                       </v-card>
-                  </v-col>
                   </v-tab-item>
               </v-row>
                     <v-tab>Reviews</v-tab>
