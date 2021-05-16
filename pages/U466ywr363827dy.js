@@ -171,7 +171,7 @@ function getuserprodata(prodata){
                       }//document.write(product_data)
                     } else {
                         // doc.data() will be undefined in this case
-                        products=[{
+                        productstuff=[{
                           value: false,
                           name: 'No Products Found',
                           Price: 'N/A',
@@ -187,7 +187,7 @@ function getuserprodata(prodata){
           if (doc2.exists) {
             var doc= doc2.data();
             var badgedata = {value: false, name: `${doc.Name}`};
-            if (products.includes('{')){
+            if (badges.includes('{')){
                 var push_data = ','+badgedata;
                 badges.push(push_data)
 
