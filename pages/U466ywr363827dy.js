@@ -180,6 +180,7 @@ function getuserprodata(prodata){
                           reviews: 'N/A',
                           status: 'N/A' }]
                     }
+                    console.log(push_data2)
                   })
                 }
               })
@@ -200,7 +201,7 @@ function getuserprodata(prodata){
               }//document.write(product_data)
             } else {
                 // doc.data() will be undefined in this case
-                products=[{
+                badges=[{
                   value: false,
                   name: 'No Products Found',
                   Price: 'N/A',
