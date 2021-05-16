@@ -223,8 +223,8 @@ new Vue({
       page: 1,
       itemsPerPage: 1,
       sortBy: 'name',
-      items: badges,
-      products:items,
+      items: user_data,
+      products:products,
       badges:badges,
       reviews:reviews};},
   computed: {
