@@ -153,7 +153,7 @@ function getuserprodata(prodata){
       });
       docRef.collection('products').get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-              if (doc3.exists) {
+              if (doc.exists) {
                 var doc= doc.data();
                 var productnm = {value: false, name: `${doc.product_name}`};
                 var docRefprod = db.collection('products').doc(productnm);
