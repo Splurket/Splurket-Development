@@ -2,7 +2,7 @@
 var product_items;
 var catshit;
 var user_data = [];
-var productstuff=[];
+var products=[];
 var badges=[];
 var reviews=[];
 var user;
@@ -129,15 +129,15 @@ function signout() {
     });
 }
 function getuserprodata(prodata){
-  docRef = db.collection('pubusers').doc(prodata);
+  var docRef = db.collection('pubusers').doc(prodata);
     docRef.get().then((doc) => {
       if (doc.exists) {
             var doc= doc.data();
             var reviewsint= parseFloat(`${doc.Reviewsn}`)
-            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`,date: `${doc.Date}`, tag: `${doc.tagline}`, reviewsn: reviewsint}
+            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`,date: `${doc.Date}`,tag: `${doc.tagline}`, reviewsn: reviewsint}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
-              user_data.push(push_data)
+              user.push(push_data)
             }else{
               user_data.push(push_data1)
      
@@ -151,27 +151,27 @@ function getuserprodata(prodata){
       }).catch((error) => {
           console.log("Error getting document:", error);
       });
-      /*docRef.collection('products').get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-              if (doc.exists) {
-                var doc= doc.data();
+      db.collection("pubusers").doc(prodata).collection('products').get().then((querySnapshot) => {
+            querySnapshot.forEach((doc3) => {
+              if (doc3.exists) {
+                var doc= doc3.data();
                 var productnm = {value: false, name: `${doc.product_name}`};
                 var docRefprod = db.collection('products').doc(productnm);
-                  docRefprod.get().then((doc) => {
-                    if (doc.exists) {
+                  docRefprod.get().then((doc1) => {
+                    if (doc1.exists) {
                       var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
-                      if (productstuff.includes('{')){
+                      if (products.includes('{')){
                         var push_data = ','+push_data2;
-                        productstuff.push(push_data)
+                        products.push(push_data)
 
 
                       }else{
-                        productstuff.push(push_data2)
+                        products.push(push_data2)
 
                       }//document.write(product_data)
                     } else {
                         // doc.data() will be undefined in this case
-                        productstuff=[{
+                        products=[{
                           value: false,
                           name: 'No Products Found',
                           Price: 'N/A',
@@ -181,13 +181,13 @@ function getuserprodata(prodata){
                   })
                 }
               })
-            })*/
+            })
       db.collection("pubusers").doc(prodata).collection('Badges').get().then((querySnapshot) => {
         querySnapshot.forEach((doc2) => {
           if (doc2.exists) {
             var doc= doc2.data();
             var badgedata = {value: false, name: `${doc.Name}`};
-            if (badges.includes('{')){
+            if (products.includes('{')){
                 var push_data = ','+badgedata;
                 badges.push(push_data)
 
@@ -198,7 +198,7 @@ function getuserprodata(prodata){
               }//document.write(product_data)
             } else {
                 // doc.data() will be undefined in this case
-                badges=[{
+                products=[{
                   value: false,
                   name: 'No Products Found',
                   Price: 'N/A',
@@ -222,8 +222,20 @@ new Vue({
       page: 1,
       itemsPerPage: 1,
       sortBy: 'name',
-      items: user_data,
-      products:[{value: false, id: "hello", name: "hello", price: "hello", date: "hello", reviewsn: "hello", creator: "hello", image: "hello", creatorpic: "hello", desc: "hello"},{value: false, id: "hello1", name: "hello1", price: "hello1", date: "hello1", reviewsn: "hello1", creator: "hello1", image: "hello1", creatorpic: "hello1", desc: "hello1"}]}},
+      keys1: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
+      keys: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
+      products:user_data+'}',
+      badges:badges+'}',
+      reviews:reviews+'}',
+      items: user_data};},
   computed: {
     numberOfPages() {
       return Math.ceil(this.items.length / this.itemsPerPage);
