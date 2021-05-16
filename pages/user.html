@@ -188,9 +188,15 @@ display:block;
                 <v-tabs color="#52b36c">
                 <v-tab>items</v-tab>
                   <v-tab-item
-                    v-for="item in props.items"
-                    :key="item.id"
                   >
+                <v-col
+                  v-for="item in props.items"
+                  :key="item.name"
+                  cols="12"
+                  sm="6"
+                  md="4"
+                  lg="3"
+                >
 
                     <v-card :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory">
                         <v-img
@@ -242,6 +248,7 @@ display:block;
                         <p style="right:20px;display:block;bottom:-5px;position: absolute;font-size:20px">{{ item.price }}</span></p>
                       </v-card>
                   </v-tab-item>
+              </v-col>
                     <v-tab>Reviews</v-tab>
 
 
