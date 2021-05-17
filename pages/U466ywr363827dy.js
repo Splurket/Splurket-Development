@@ -188,7 +188,9 @@ function getuserprodata(prodata){
         })
     }
     function prodget(productnames){
-        db.collection('products').doc(productnames).get().then((doc) => {
+      console.log(productnames)
+      var docRef = db.collection("products").doc(productnames);
+        docRef.get().then((doc) => {
           if (doc.exists) {
             var doc= doc.data();
             console.log(doc)
