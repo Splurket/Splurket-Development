@@ -5,6 +5,7 @@ var user_data = [];
 var products=[];
 var badges=[];
 var reviews=[];
+var skills;
 var user;
 var email1;
  var name, email, photoUrl, uid, emailVerified;
@@ -134,6 +135,7 @@ function getuserprodata(prodata){
       if (doc.exists) {
             var doc= doc.data();
             var reviewsint= parseFloat(`${doc.Reviewsn}`)
+            skills=doc.Skills
             var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, location: `${doc.Location}`, education: `${doc.Education}`, date: `${doc.Date}`, tag: `${doc.tagline}`, reviewsn: reviewsint}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
@@ -220,7 +222,7 @@ function getuserprodata(prodata){
         docRef.get().then((doc) => {
           if (doc.exists) {
             var doc= doc.data();
-            var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
+            var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`,skills:skills}
             if (products.includes('{')){
               var push_data = ','+push_data2;
               products.push(push_data)
@@ -260,12 +262,14 @@ new Vue({
       keys1: [
       'Date',
       'Location',
-      'Education'
+      'Education',
+      'Skills'
       ],
       keys: [
       'Date',
       'Location',
-      'Education'
+      'Education',
+      'Skills'
       ],
       products:products,
       badges:badges,
