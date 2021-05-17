@@ -329,7 +329,7 @@ display:block;
 
                     <v-card style="width:100%">
                         <div>
-                          <img :src="product.reviewer" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px":id="review.creator" onclick="window.top.location.href='./creator?creator='+this.id"></img></a>
+                          <img :src="review.reviewer" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px":id="review.reviewer" onclick="window.top.location.href='./creator?creator='+this.id"></img></a>
                             <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit" :id="review.reviewer" onclick="window.top.location.href='./user?user='+this.id">{{ review.reviewer }}
                         </p>
                       </div>
