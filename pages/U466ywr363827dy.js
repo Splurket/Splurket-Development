@@ -263,6 +263,9 @@ new Vue({
       'Education',
       ],
       keys: [
+      'Date',
+      'Location',
+      'Education',
       ],
       products:products,
       badges:badges,
