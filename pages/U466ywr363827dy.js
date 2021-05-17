@@ -191,6 +191,7 @@ function getuserprodata(prodata){
         db.collection('products').doc(productnames).get().then((doc) => {
           if (doc.exists) {
             var doc= doc.data();
+            console.log(doc)
             var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
             if (products.includes('{')){
               var push_data = ','+push_data2;
