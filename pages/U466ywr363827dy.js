@@ -263,14 +263,14 @@ new Vue({
       'Date',
       'Location',
       'Education',
-      'Skills'
       ],
       keys: [
       'Date',
       'Location',
       'Education',
-      'Skills'
       ],
+      skills:[
+      skills],
       products:products,
       badges:badges,
       reviews:reviews,
