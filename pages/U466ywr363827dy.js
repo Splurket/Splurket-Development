@@ -157,31 +157,7 @@ function getuserprodata(prodata){
                 var doc3= doc3.data();
                 var productnm = doc3.name;
                 console.log(productnm)
-                var docRefprod = db.collection('products').doc(productnm);
-                  docRefprod.get().then((doc1) => {
-                    if (doc1.exists) {
-                      var doc= doc1.data();
-                      var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
-                      if (products.includes('{')){
-                        var push_data = ','+push_data2;
-                        products.push(push_data)
-
-
-                      }else{
-                        products.push(push_data2)
-
-                      }//document.write(product_data)
-                    } else {
-                        // doc.data() will be undefined in this case
-                        products=[{
-                          value: false,
-                          name: 'No Products Found',
-                          Price: 'N/A',
-                          reviews: 'N/A',
-                          status: 'N/A' }]
-                    }
-                    console.log(push_data2)
-                  })
+                prodget(productnm);
                 }
               })
             })
@@ -210,8 +186,32 @@ function getuserprodata(prodata){
             }
           })
         })
-      
+    }
+    function prodget(productnames){
+        db.collection('products').doc(productnames).get().then((doc) => {
+          if (doc.exists) {
+            var doc= doc.data();
+            var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
+            if (products.includes('{')){
+              var push_data = ','+push_data2;
+              products.push(push_data)
 
+
+            }else{
+              products.push(push_data2)
+
+            }//document.write(product_data)
+          } else {
+              // doc.data() will be undefined in this case
+              products=[{
+                value: false,
+                name: 'No Products Found',
+                Price: 'N/A',
+                reviews: 'N/A',
+                status: 'N/A' }]
+          }
+          console.log(products)
+        })
     }
 new Vue({
   el: '#app',
