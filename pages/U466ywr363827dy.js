@@ -184,7 +184,10 @@ function getuserprodata(prodata){
                   reviews: 'N/A',
                   status: 'N/A' }]
             }
-          })
+          }).catch((error) => {
+            console.log(error)
+      // An error happened.
+    });
         })
     }
     function prodget(productnames){
@@ -205,6 +208,7 @@ function getuserprodata(prodata){
 
             }//document.write(product_data)
           } else {
+
               // doc.data() will be undefined in this case
               products=[{
                 value: false,
