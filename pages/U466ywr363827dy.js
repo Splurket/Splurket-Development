@@ -190,7 +190,8 @@ function getuserprodata(prodata){
         querySnapshot.forEach((doc2) => {
           if (doc2.exists) {
             var doc= doc2.data();
-            var reviewdata = {value: false, name: `${doc.Name}`, reviewer:`${doc.Reviewer}`, desc: `${doc.Description}`, rate: `${doc.rate}`};
+            var reviewrate=parseFloat(`${doc.rate}`)
+            var reviewdata = {value: false, name: `${doc.Name}`, reviewer:`${doc.Reviewer}`, desc: `${doc.Description}`, rate: reviewrate};
             if (reviews.includes('{')){
                 var push_data = ','+reviewdata;
                 reviews.push(push_data)

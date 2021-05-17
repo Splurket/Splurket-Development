@@ -323,11 +323,11 @@ display:block;
                       sm="6"
                       md="4"
                       lg="3"
-                      style="min-width:324px;width:100%"
+                      style="min-width:100%;width:100%"
 
                     >
 
-                    <v-card style="width:100%">
+                    <v-card style="width:100%"><br>
                         <div>
                             <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit" :id="review.reviewer" onclick="window.top.location.href='./user?user='+this.id">{{ review.reviewer }}
                         </p>
@@ -336,6 +336,7 @@ display:block;
                           {{ review.name }}
                         </v-card-title>
                         <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ review.desc }}</v-card-text>
+                        <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ review.reviewer }}</v-card-text>
                         <v-rating
                           v-model="review.rate"
                           background-color="green lighten-3"
