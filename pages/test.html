@@ -1,0 +1,46 @@
+<head>
+	<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+</head>
+
+<script>
+	var product=[];
+var name, email, photoUrl, uid, emailVerified;
+
+var config = {
+    apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
+    authDomain: "splurket-66df1.firebaseapp.com",
+    databaseURL: "https://splurket-66df1-default-rtdb.firebaseio.com",
+    projectId: "splurket-66df1",
+    storageBucket: "splurket-66df1.appspot.com",
+    messagingSenderId: "286706779903",
+    appId: "1:286706779903:web:fd91c29319f9804e192eca",
+    measurementId: "G-QWQ2M658KL"
+  };
+firebase.initializeApp(config);
+const db = firebase.firestore();
+db.settings({ timestampsInSnapshots: true }); 
+var docRef = db.collection("products").doc('RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFpbC5jb20=');
+        docRef.get().then((doc) => {
+          if (doc.exists) {
+            var doc= doc.data();
+            document.write(JSON.stringify(doc))
+            var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
+            if (products.includes('{')){
+              var push_data = ','+push_data2;
+              products.push(push_data)
+
+
+            }else{
+              products.push(push_data2)
+
+            }//document.write(JSON.stringify(product_data)
+        }
+          document.write(JSON.stringify(products))
+        }).catch((error) => {
+            document.write(JSON.stringify(error))
+      // An error happened.
+    });
+</script>
