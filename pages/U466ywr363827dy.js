@@ -260,12 +260,12 @@ new Vue({
       keys1: [
       'Date',
       'Location',
-      'Education',
+      'Education'
       ],
       keys: [
       'Date',
       'Location',
-      'Education',
+      'Education'
       ],
       products:products,
       badges:badges,
