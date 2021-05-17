@@ -184,10 +184,8 @@ function getuserprodata(prodata){
                   reviews: 'N/A',
                   status: 'N/A' }]
             }
-          }).catch((error) => {
-            console.log(error)
-      // An error happened.
-    });
+          })
+
         })
     }
     function prodget(productnames){
@@ -218,7 +216,10 @@ function getuserprodata(prodata){
                 status: 'N/A' }]
           }
           console.log(products)
-        })
+        }).catch((error) => {
+            console.log(error)
+      // An error happened.
+    });
     }
 new Vue({
   el: '#app',
