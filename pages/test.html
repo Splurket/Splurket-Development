@@ -2,11 +2,204 @@
 	<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>    <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vueperslides"></script>
+  <link href="https://unpkg.com/vueperslides/dist/vueperslides.css" rel="stylesheet">
 </head>
+<div id="app" style="width:100%">
+  <v-app id="inspire">
+    <v-container fluid style="min-height:100%">
+        <strong><v-btn
+            class="vuebtn"
+        id="opensearchbtn"
+        style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:block;z-index:6" onclick="document.getElementById('navwrap').style.display='block';document.getElementById('closesearchbtn').style.display='block';this.style.display='none'">
+            Search And Filters
+        </v-btn></strong>
+      <strong><v-btn
+        class="vuebtn"
+        id="closesearchbtn"
+        style="background-color:#52b36c;color:white;position:fixed;right:15px;bottom:30px;display:none;z-index:6" onclick="document.getElementById('navwrap').style.display='none';document.getElementById('opensearchbtn').style.display='block';this.style.display='none'">
+        Close Search And Filters
+      </v-btn></strong>
+      <v-data-iterator
+        :items="products"
+        :products="products"
+        :items-per-page.sync="itemsPerPage"
+        :page.sync="page"
+        :search="search"
+        :sort-by="sortBy.toLowerCase()"
+        :sort-desc="sortDesc"
+        hide-default-footer
+        disable-pagination
+        dense
+      >
+        <template v-slot:header>
+          <v-toolbar
+            dark
+            color="blue darken-3"
+            class="mb-1"
+            id="navwrap"
+            style="height: 64px;background-color: rgb(82, 179, 108) !important;width: 330px;position: sticky;top: 0px;z-index: 4;"
+          >
+          <div style="width: 330px;position: absolute;height: 100vh;background-color: rgb(82, 179, 108);top: 20;left: 0px;">
+            <center><v-text-field
+              v-model="search"
+              clearable
+              flat
+              solo-inverted
+              hide-details
+              prepend-inner-icon="mdi-magnify"
+              label="Search"
+              style="width:320px"
+            ></v-text-field></center>
+            <template v-if="$vuetify.breakpoint.mdAndUp">
+              <v-spacer></v-spacer>
+                <strong><v-btn
+                    style="background-color:white;color:#52b36c;position:absolute;left:15px;top:80px">
+                    Categories And Subcategories
+                </v-btn></strong>
+              <v-spacer></v-spacer>
+              <strong><v-btn
+                style="background-color:white;color:#52b36c;position:absolute;left:15px;top:150px">
+                Filters And Settings
+              </v-btn></strong>
+              </v-btn-toggle>
+            </template>
+        </div>
+          </v-toolbar>
+        </template>
+  
+        <template v-slot:default="props">
+          <v-row style="margin-top:50px;position:relative;width:90%;margin-right: 5%;margin-left: 5%;">
+            <v-col
+              v-for="product in products"
+              :key="product.name"
+              cols="12"
+              sm="6"
+              md="4"
+              lg="3"
+            >
+              <v-card :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory">
+                <v-img
+                  height="250"
+                  :src="product.image"
+                  :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat"
+                ></v-img>
+                <div>
+                  <img :src="product.creatorpic" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px":id="product.creator" onclick="window.top.location.href='./creator?creator='+this.id"></img></a>
+                    <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit" :id="product.creator" onclick="window.top.location.href='./user?user='+this.id">{{ product.creator }}
+                </p>
+              </div>
+                <v-card-title class="subheading font-weight-bold" :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat">
+                  {{ product.name }}
+                </v-card-title>
+                <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ product.desc }}</v-card-text>
+                <v-card-text style="color:#52b36c;font-size:25px;padding-left: 16px;padding-top: 0px;position:relative;padding-bottom:0px;padding-top:15px">
+                  ★<span style="color:#52b36c;font-size:20px;top:0px">{{ product.reviewsn }}</span>
+                 </v-card-text></v-list>
+  
+                  <!--<v-list-product
+                    v-for="(key, index) in filteredKeys"
+                    :key="index"
+                  >
+                    <v-list-product-content :class="{ 'blue--text': sortBy === key }">
+                      {{ key }}:
+                    </v-list-product-content>
+                    <v-list-product-content
+                      class="align-end"
+                      :class="{ 'blue--text': sortBy === key }"
+                    >
+                      {{ product[key.toLowerCase()] }}
+                    </v-list-product-content>
+                  </v-list-product>-->
 
+                <v-divider></v-divider>
+                    <div style="padding-left: 11px;padding-top: 0px;position:absolute;bottom:5px;">
+                        <v-btn
+                          icon
+                          color="pink"
+                        >
+                          <v-icon dark>
+                            mdi-heart
+                          </v-icon>
+                        </v-btn>
+                    </div>
+                <div style="height:40px"></div>
+                <p style="right:20px;display:block;bottom:-5px;position: absolute;font-size:20px">{{ product.price }}</span></p>
+              </v-card>
+            </v-col>
+          </v-row>
+        </template>
+  
+       <!-- <template v-slot:footer>
+          <v-row
+            class="mt-2"
+            align="center"
+            justify="center"
+          >
+            <span class="grey--text">products per page</span>
+            <v-menu offset-y>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  dark
+                  text
+                  color="primary"
+                  class="ml-2"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  {{ productsPerPage }}
+                  <v-icon>mdi-chevron-down</v-icon>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-product
+                  v-for="(number, index) in productsPerPageArray"
+                  :key="index"
+                  @click="updateproductsPerPage(number)"
+                >
+                  <v-list-product-title>{{ number }}</v-list-product-title>
+                </v-list-product>
+              </v-list>
+            </v-menu>
+  
+            <v-spacer></v-spacer>
+  
+            <span
+              class="mr-4
+              grey--text"
+            >
+              Page {{ page }} of {{ numberOfPages }}
+            </span>
+            <v-btn
+              fab
+              dark
+              color="blue darken-3"
+              class="mr-1"
+              @click="formerPage"
+            >
+              <v-icon>mdi-chevron-left</v-icon>
+            </v-btn>
+            <v-btn
+              fab
+              dark
+              color="blue darken-3"
+              class="ml-1"
+              @click="nextPage"
+            >
+              <v-icon>mdi-chevron-right</v-icon>
+            </v-btn>
+          </v-row>
+        </template>-->
+      </v-data-iterator>
+    </v-container>
+  </v-app>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
 <script>
-	var product=[];
+	var products=[];
 var name, email, photoUrl, uid, emailVerified;
 
 var config = {
@@ -26,7 +219,7 @@ var docRef = db.collection("products").doc('RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFp
         docRef.get().then((doc) => {
           if (doc.exists) {
             var doc= doc.data();
-            document.write(JSON.stringify(doc))
+            //document.write(JSON.stringify(doc))
             var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
             if (products.includes('{')){
               var push_data = ','+push_data2;
@@ -38,9 +231,52 @@ var docRef = db.collection("products").doc('RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFp
 
             }//document.write(JSON.stringify(product_data)
         }
-          document.write(JSON.stringify(products))
+          //document.write(JSON.stringify(products))
         }).catch((error) => {
-            document.write(JSON.stringify(error))
+            //document.write(JSON.stringify(error))
       // An error happened.
     });
+new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  data() {
+    return {
+      itemsPerPageArray: [15, 25, 50],
+      search: '',
+      filter: {},
+      sortDesc: false,
+      page: 1,
+      itemsPerPage: 15,
+      sortBy: 'name',
+      keys1: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
+      keys: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
+
+
+      products: products};},
+  computed: {
+    numberOfPages() {
+      return Math.ceil(this.items.length / this.itemsPerPage);
+    },
+    filteredKeys() {
+      return this.keys.filter(key => key !== 'Name');
+    } },
+
+  methods: {
+    nextPage() {
+      if (this.page + 1 <= this.numberOfPages) this.page += 1;
+    },
+    formerPage() {
+      if (this.page - 1 >= 1) this.page -= 1;
+    },
+    updateItemsPerPage(number) {
+      this.itemsPerPage = number;
+    } } });
 </script>
