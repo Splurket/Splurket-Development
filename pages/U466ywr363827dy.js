@@ -134,7 +134,7 @@ function getuserprodata(prodata){
       if (doc.exists) {
             var doc= doc.data();
             var reviewsint= parseFloat(`${doc.Reviewsn}`)
-            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`,date: `${doc.Date}`,tag: `${doc.tagline}`, reviewsn: reviewsint}
+            var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, loc: `${doc.Location}`, edu: `${doc.Education}`, date: `${doc.Date}`, tag: `${doc.tagline}`, reviewsn: reviewsint}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
               user.push(push_data)
@@ -258,14 +258,11 @@ new Vue({
       itemsPerPage: 1,
       sortBy: 'name',
       keys1: [
-      'Name',
-      'Price',
-      'Ratings'
+      'Date',
+      'Location',
+      'Education',
       ],
       keys: [
-      'Name',
-      'Price',
-      'Ratings'
       ],
       products:products,
       badges:badges,
