@@ -407,7 +407,6 @@ display:block;
 </template>
   
         <template v-slot:default="props">
-          <v-row style="margin-top:50px;position:relative;width:90%;margin-right: 5%;margin-left: 5%;">
             <v-col
               v-for="item in props.items"
               :key="item.name"
@@ -441,6 +440,9 @@ display:block;
                   medium
                   readonly
                 ></v-rating></center>
+                <strong><v-btn>
+                Message Me!
+              </v-btn></strong>
   
                 <!--<v-list dense>
                   <v-list-item
