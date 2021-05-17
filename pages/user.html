@@ -336,13 +336,14 @@ display:block;
                           {{ review.name }}
                         </v-card-title>
                         <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ review.desc }}</v-card-text>
-                        <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ review.reviewer }}</v-card-text>
+                        <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;height:30px" class="e546783wyte">- {{ review.reviewer }}</v-card-text>
                         <v-rating
                           v-model="review.rate"
                           background-color="green lighten-3"
                           color="green"
                           small
                           readonly
+                          style=""
                         ></v-rating>
                         <!--<v-list dense>
                           <v-list-product
