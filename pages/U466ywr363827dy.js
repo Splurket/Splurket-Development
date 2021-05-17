@@ -186,6 +186,32 @@ function getuserprodata(prodata){
           })
 
         })
+      db.collection("pubusers").doc(prodata).collection('reviews').get().then((querySnapshot) => {
+        querySnapshot.forEach((doc2) => {
+          if (doc2.exists) {
+            var doc= doc2.data();
+            var reviewdata = {value: false, name: `${doc.Name}`, reviewer:`${doc.reviewer}`, desc: `${doc.description}`, rate: `${doc.rate}`};
+            if (reviews.includes('{')){
+                var push_data = ','+reviewdata;
+                reviews.push(push_data)
+
+
+              }else{
+                reviews.push(reviewdata)
+
+              }//document.write(product_data)
+            } else {
+                // doc.data() will be undefined in this case
+                reviews=[{
+                  value: false,
+                  name: 'No Reviews Found',
+                  Price: 'N/A',
+                  reviews: 'N/A',
+                  status: 'N/A' }]
+            }
+          })
+
+        })
     }
     function prodget(productnames){
       console.log(productnames)
