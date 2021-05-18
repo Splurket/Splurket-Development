@@ -166,7 +166,7 @@ function getuserprodata(prodata){
         querySnapshot.forEach((doc2) => {
           if (doc2.exists) {
             var doc= doc2.data();
-            var badgedata = {value: false, name: `${doc.Name}`};
+            var badgedata = {value: false, name: `${doc.Name}`, image: `${doc.image}`};
             if (products.includes('{')){
                 var push_data = ','+badgedata;
                 badges.push(push_data)
