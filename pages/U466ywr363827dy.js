@@ -136,8 +136,8 @@ function getuserprodata(prodata){
             var reviewsint= parseFloat(`${doc.Reviewsn}`)
             var skills1=doc.Skills
             skills2=skills1.split(',');
-            skills2.forEach((skill3) => skills.push(skill3))
-            console.log(skills)
+            skills2.forEach((skill3) => {skills.push(skill3)
+            console.log(skills)})
             var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, location: `${doc.Location}`, education: `${doc.Education}`, date: `${doc.Date}`, tag: `${doc.tagline}`, reviewsn: reviewsint, skills: skills}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
