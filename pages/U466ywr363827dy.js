@@ -141,8 +141,8 @@ function getuserprodata(prodata){
             var skills1=doc.Skills
             skills2=skills1.split(',');
             skills2.forEach((skill3) => {skills.push(skill3)
-            console.log(skills)})
-            append=`<meta property="og:locale" content="en_US">
+            append=document.createElement('head')
+            append.innerHTML=`<meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${doc.tagline}">
