@@ -33,6 +33,10 @@ function getParameterByName(name, url = window.location.href) {
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
 var userfile= getParameterByName('user');
+title=document.createElement('Title');
+title.innerText=userfile"'s Profile | Splurket"
+document.getElementsByTagName('head')[0].appendChild(title);
+
 getuserprodata(userfile);
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -138,6 +142,21 @@ function getuserprodata(prodata){
             skills2=skills1.split(',');
             skills2.forEach((skill3) => {skills.push(skill3)
             console.log(skills)})
+            append=`<meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${doc.tagline}">
+    <meta property="og:site_name" content="Splurket">
+    <meta property="og:image" content="${doc.image}">
+    <meta itemprop="name" content="Splurket">
+    <meta itemprop="image" content="${doc.image}">
+    <meta property="og:url" content="http://www.Splurket.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@splurket_store">
+    <meta name="twitter:description" content="${doc.tagline}">
+    <meta name="twitter:title" content="Splurket">
+    <meta name="twitter:image" content="${doc.image}">`
+    document.getElementsByTagName('head')[0].appendChild(append);
             var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, location: `${doc.Location}`, education: `${doc.Education}`, date: `${doc.Date}`, tag: `${doc.tagline}`, reviewsn: reviewsint, skills: skills}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
