@@ -135,7 +135,8 @@ function getuserprodata(prodata){
       if (doc.exists) {
             var doc= doc.data();
             var reviewsint= parseFloat(`${doc.Reviewsn}`)
-            skills=doc.Skills.split(',');
+            var skills1=doc.Skills
+            skills=skills1.split(',');
             var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, location: `${doc.Location}`, education: `${doc.Education}`, date: `${doc.Date}`, tag: `${doc.tagline}`, reviewsn: reviewsint, skills: skills}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
