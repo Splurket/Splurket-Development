@@ -5,7 +5,7 @@ var user_data = [];
 var products=[];
 var badges=[];
 var reviews=[];
-var skills;
+var skills=[];
 var user;
 var email1;
  var name, email, photoUrl, uid, emailVerified;
@@ -135,7 +135,7 @@ function getuserprodata(prodata){
       if (doc.exists) {
             var doc= doc.data();
             var reviewsint= parseFloat(`${doc.Reviewsn}`)
-            skills=doc.Skills
+            skills.push(doc.Skills);
             var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, location: `${doc.Location}`, education: `${doc.Education}`, date: `${doc.Date}`, tag: `${doc.tagline}`, reviewsn: reviewsint, skills: skills}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
@@ -269,8 +269,7 @@ new Vue({
       'Location',
       'Education',
       ],
-      skills:[
-      skills],
+      skills:skills,
       products:products,
       badges:badges,
       reviews:reviews,
