@@ -44,6 +44,8 @@
       <!-- css -->
   <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
   <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vueperslides"></script>
+  <link href="https://unpkg.com/vueperslides/dist/vueperslides.css" rel="stylesheet">
 </head>
 <style type="text/css">
     .headerdrop {
@@ -368,8 +370,6 @@ body{
         dense
       ></v-data-iterator>
       <!-- Products Details -->
-      <template v-slot:default="props">
-        <div v-for="product in products">
       <section class="section product-details__section">
         <div class="product-detail__container">
           <div class="product-detail__left">
@@ -399,6 +399,7 @@ body{
               </div>
               <div class="zoom" id="zoom"></div>
             </div>
+            <template v-for="product in products">
             <div class="product-details__btn">
               <a class="add" href="#">
                 <span>
@@ -535,6 +536,7 @@ body{
             </div>
           </div>
         </div>
+      </template>
 
         <div class="product-detail__bottom">
           <div class="title__container tabs">
@@ -1757,9 +1759,6 @@ body{
 </div>
 </head>
 </div>
-</template>
-</div>
-</main>
 </v-app>
 </body>
 </html>
@@ -1781,6 +1780,7 @@ body{
   <script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- Custom JavaScript -->
   <script src="./js/products.js"></script>
