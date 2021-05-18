@@ -355,8 +355,8 @@ body{
     
     <!-- Header ENDS HERE!!!!.. -->
 <div id="app" style="width:100%">
-  <v-app id="inspire" v-for="product in products">
-  <main id="main">
+  <v-app id="inspire">
+  <main id="main" v-for="product in products">
     <div class="container">
       <v-data-iterator
         :items="products"
@@ -1757,6 +1757,7 @@ body{
 </div>
 </head>
 </div>
+</main>
 </v-app>
 </body>
 </html>
