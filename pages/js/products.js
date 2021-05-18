@@ -1,4 +1,4 @@
-const getProducts = async () => {
+/*const getProducts = async () => {
   try {
     const results = await fetch("./data/products.json");
     const data = await results.json();
@@ -8,7 +8,7 @@ const getProducts = async () => {
     console.log(err);
   }
 };
-
+*/
 /*
 =============
 Load Category Products
