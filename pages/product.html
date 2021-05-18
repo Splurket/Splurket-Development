@@ -255,7 +255,7 @@ body{
         firebase.initializeApp(config);
         const db = firebase.firestore();
         db.settings({ timestampsInSnapshots: true }); 
-        firebase.auth().onAuthStateChanged(function(user) {
+        /*firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             // User is signed in.
             var user = firebase.auth().currentUser;
@@ -263,7 +263,7 @@ body{
             var email1 = user.email;
             
             /*var email = getParameterByName('user'); 
-            console.log(email)*/
+            console.log(email)
             //still splurket
             
             var myHeaders = new Headers();
@@ -349,7 +349,7 @@ body{
             }).catch((error) => {
               // An error happened.
             });
-        }
+        }*/
     </script>
 
     
@@ -358,16 +358,27 @@ body{
   <v-app id="inspire">
   <main id="main">
     <div class="container">
+      <v-data-iterator
+        :items="products"
+        :items-per-page.sync="itemsPerPage"
+        :page.sync="page"
+        :search="search"
+        :sort-by="sortBy.toLowerCase()"
+        :sort-desc="sortDesc"
+        hide-default-footer
+        disable-pagination
+        dense
+      ></v-data-iterator>
       <!-- Products Details -->
       <section class="section product-details__section">
         <div class="product-detail__container">
           <div class="product-detail__left">
             <div class="details__container--left">
               <div class="product__pictures">
-                <div class="pictures__container">
-                  <img class="picture" src="../assets/images/products/iPhone/iphone1.jpeg" id="item.id" />
+                <div class="pictures__container" v-for="(image, key) in images" >
+                  <img class="picture" :src="image" id="key" onmouseover="document.getElementById('mainpicture').src=this.src"/>
                 </div>
-                <div class="pictures__container">
+                <!--<div class="pictures__container">
                   <img class="picture" src="../assets/images/products/iPhone/iphone2.jpeg" id="pic2" />
                 </div>
                 <div class="pictures__container">
@@ -378,12 +389,12 @@ body{
                 </div>
                 <div class="pictures__container">
                   <img class="picture" src="../assets/images/products/iPhone/iphone5.jpeg" id="pic5" />
-                </div>
+                </div>-->
               </div>
               <div class="product__picture" id="product__picture">
                 <!-- <div class="rect" id="rect"></div> -->
                 <div class="picture__container">
-                  <img src="../assets/images/products/iPhone/iphone1.jpeg" id="pic" />
+                  <img src="" id="mainpicture" />
                 </div>
               </div>
               <div class="zoom" id="zoom"></div>
@@ -646,7 +657,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="/images/products/sumsung/samsung5.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Samsung Galaxy</h3>
@@ -701,7 +712,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="/images/products/iPhone/iphone6.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Apple iPhone 11</h3>
@@ -755,7 +766,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="/images/products/sumsung/samsung3.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Samsung Galaxy</h3>
@@ -863,7 +874,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="/images/products/headphone/headphone4.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Sony WH-CH510</h3>
@@ -918,7 +929,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="images/products/sumsung/samsung1.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Samsung Galaxy</h3>
@@ -972,7 +983,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="images/products/headphone/headphone2.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Sony WH-CH510</h3>
@@ -1026,7 +1037,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="images/products/headphone/headphone1.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Sony WH-CH510</h3>
@@ -1080,7 +1091,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="images/products/iPhone/iphone1.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Apple iPhone XR</h3>
@@ -1164,7 +1175,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="/images/products/iPhone/iphone6.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Apple iPhone 11</h3>
@@ -1218,7 +1229,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="/images/products/sumsung/samsung5.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Samsung Galaxy</h3>
@@ -1272,7 +1283,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="/images/products/headphone/headphone4.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Sony WH-CH510</h3>
@@ -1326,7 +1337,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="/images/products/sumsung/samsung3.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Samsung Galaxy</h3>
@@ -1434,7 +1445,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="images/products/headphone/headphone2.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Sony WH-CH510</h3>
@@ -1488,7 +1499,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="images/products/sumsung/samsung1.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Samsung Galaxy</h3>
@@ -1542,7 +1553,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="images/products/headphone/headphone1.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Sony WH-CH510</h3>
@@ -1596,7 +1607,7 @@ body{
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="images/products/iPhone/iphone1.jpeg" alt="product"></a>
+                      <a href="#"><img src="" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Apple iPhone XR</h3>
@@ -1772,8 +1783,83 @@ body{
 
   <!-- Custom JavaScript -->
   <script src="./js/products.js"></script>
-  <script src="./js/index.js"></script>
   <script src="./js/slider.js"></script>
 </body>
 
 </html>
+<script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
+<script>
+  var products=[];
+  var images=[];
+var docRef = db.collection("products").doc('RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFpbC5jb20=');
+        docRef.get().then((doc) => {
+          if (doc.exists) {
+            var doc= doc.data();
+            images.push(doc.product_cover)
+            var images1=doc.product_images
+            images2=images1.split(',');
+            images2.forEach((images3) => {images.push(images3)});
+            document.getElementById('mainpicture').src=doc.product_cover;
+            //document.write(JSON.stringify(doc))
+            var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
+            if (products.includes('{')){
+              var push_data = ','+push_data2;
+              products.push(push_data)
+
+
+            }else{
+              products.push(push_data2)
+
+            }//document.write(JSON.stringify(product_data)
+        }
+          //document.write(JSON.stringify(products))
+        }).catch((error) => {
+            //document.write(JSON.stringify(error))
+      // An error happened.
+    });
+new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  data() {
+    return {
+      itemsPerPageArray: [15, 25, 50],
+      search: '',
+      filter: {},
+      sortDesc: false,
+      page: 1,
+      itemsPerPage: 15,
+      sortBy: 'name',
+      keys1: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
+      keys: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
+
+      images:images,
+      products: products};},
+  computed: {
+    numberOfPages() {
+      return Math.ceil(this.items.length / this.itemsPerPage);
+    },
+    filteredKeys() {
+      return this.keys.filter(key => key !== 'Name');
+    } },
+
+  methods: {
+    nextPage() {
+      if (this.page + 1 <= this.numberOfPages) this.page += 1;
+    },
+    formerPage() {
+      if (this.page - 1 >= 1) this.page -= 1;
+    },
+    updateItemsPerPage(number) {
+      this.itemsPerPage = number;
+    } } });
+</script>
