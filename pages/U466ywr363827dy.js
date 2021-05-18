@@ -34,7 +34,7 @@ function getParameterByName(name, url = window.location.href) {
     }
 var userfile= getParameterByName('user');
 title=document.createElement('Title');
-title.innerText=userfile"'s Profile | Splurket"
+title.innerText=userfile +"'s Profile | Splurket"
 document.getElementsByTagName('head')[0].appendChild(title);
 
 getuserprodata(userfile);
