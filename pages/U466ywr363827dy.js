@@ -69,7 +69,6 @@ firebase.auth().onAuthStateChanged(function(user) {
         getuserdata(data);
     });
   } else {
-    console.log('fuck')
     document.getElementById("avatar").style.display = "none";
     document.getElementById("login").style.display = "block";
     document.getElementById('cartbutton').style.top='20px';
@@ -92,7 +91,7 @@ function getuserdata(data) {
                 if (data1.username != "") {
                     user_name = data1.username;
                 }
-                document.getElementById("avatarpic").src = pro_pic;
+                //document.getElementById("avatarpic").src = pro_pic;
                 //document.getElementById("avatarpic1").src = pro_pic;
                 document.getElementById("avatarusername1").innerText = "Signed In As: " + user_name;
                 document.getElementById("avatar").style.display = "block";
@@ -136,7 +135,9 @@ function getuserprodata(prodata){
             var doc= doc.data();
             var reviewsint= parseFloat(`${doc.Reviewsn}`)
             var skills1=doc.Skills
-            skills=skills1.split(',');
+            skills2=skills1.split(',');
+            skills2.forEach((skill3) => skills.push(skill3))
+            console.log(skills)
             var push_data1 = {value: false, name: `${doc.username}`, image: `${doc.image}`, location: `${doc.Location}`, education: `${doc.Education}`, date: `${doc.Date}`, tag: `${doc.tagline}`, reviewsn: reviewsint, skills: skills}
             if (user_data.includes('{')){
               var push_data = ','+push_data1;
@@ -181,10 +182,8 @@ function getuserprodata(prodata){
                 // doc.data() will be undefined in this case
                 badges=[{
                   value: false,
-                  name: 'No Products Found',
-                  Price: 'N/A',
-                  reviews: 'N/A',
-                  status: 'N/A' }]
+                  name: 'No Badges Found',
+                  image: 'N/A'}]
             }
           })
 
@@ -209,9 +208,9 @@ function getuserprodata(prodata){
                 reviews=[{
                   value: false,
                   name: 'No Reviews Found',
-                  Price: 'N/A',
-                  reviews: 'N/A',
-                  status: 'N/A' }]
+                  reviewer: 'N/A',
+                  desc: 'N/A',
+                  rate: 'N/A' }]
             }
           })
 
