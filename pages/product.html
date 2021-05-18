@@ -355,7 +355,7 @@ body{
     
     <!-- Header ENDS HERE!!!!.. -->
 <div id="app" style="width:100%">
-  <v-app id="inspire">
+  <v-app id="inspire" v-for="product in products">
   <main id="main">
     <div class="container">
       <v-data-iterator
@@ -399,7 +399,6 @@ body{
               </div>
               <div class="zoom" id="zoom"></div>
             </div>
-            <template v-for="product in products">
             <div class="product-details__btn">
               <a class="add" href="#">
                 <span>
@@ -536,7 +535,6 @@ body{
             </div>
           </div>
         </div>
-      </template>
 
         <div class="product-detail__bottom">
           <div class="title__container tabs">
