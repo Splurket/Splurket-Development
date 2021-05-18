@@ -5,7 +5,7 @@ var user_data = [];
 var products=[];
 var badges=[];
 var reviews=[];
-var skills=;
+var skills;
 var user;
 var email1;
  var name, email, photoUrl, uid, emailVerified;
