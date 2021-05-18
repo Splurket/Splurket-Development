@@ -356,7 +356,7 @@ body{
     <!-- Header ENDS HERE!!!!.. -->
 <div id="app" style="width:100%">
   <v-app id="inspire">
-  <main id="main" v-for="product in products">
+  <main id="main">
     <div class="container">
       <v-data-iterator
         :items="products"
@@ -370,6 +370,8 @@ body{
         dense
       ></v-data-iterator>
       <!-- Products Details -->
+      <template v-slot:default="props">
+        <div v-for="product in products">
       <section class="section product-details__section">
         <div class="product-detail__container">
           <div class="product-detail__left">
@@ -1757,6 +1759,8 @@ body{
 </div>
 </head>
 </div>
+<template>
+<div>
 </main>
 </v-app>
 </body>
