@@ -428,23 +428,15 @@ body{
               </div>
               <div class="product__review">
                 <div class="rating">
-                  <svg>
-                    <use xlink:href="../assets/images/sprite.svg#icon-star-full"></use>
-                  </svg>
-                  <svg>
-                    <use xlink:href="../assets/images/sprite.svg#icon-star-full"></use>
-                  </svg>
-                  <svg>
-                    <use xlink:href="../assets/images/sprite.svg#icon-star-full"></use>
-                  </svg>
-                  <svg>
-                    <use xlink:href="../assets/images/sprite.svg#icon-star-full"></use>
-                  </svg>
-                  <svg>
-                    <use xlink:href="../assets/images/sprite.svg#icon-star-empty"></use>
-                  </svg>
+                  <v-rating
+                  v-model="product.reviewsn"
+                  background-color="green lighten-3"
+                  color="green"
+                  medium
+                  readonly
+                ></v-rating>
                 </div>
-                <a href="#" class="rating__quatity">3 reviews</a>
+                <a href="#" class="rating__quatity">{{product.reviewsn}} reviews</a>
               </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
@@ -548,10 +540,7 @@ body{
                   <div width="100">
                     <p>{{ product.desc }}</p>
                   </div>
-                    <
                   </v-tab-item>
-              </v-col>
-          </v-row>
                     <v-tab>Reviews</v-tab>
                         <v-tab-item
                   >
