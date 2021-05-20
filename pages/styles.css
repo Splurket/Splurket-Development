@@ -2417,30 +2417,6 @@ Product Details
   transition: 0.3s;
 }
 
-.product-details__btn .add,
-.product-details__btn .buy {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.product-details__btn .add span,
-.product-details__btn .buy span {
-  margin-right: 1rem;
-}
-
-.product-details__btn .add:hover,
-.product-details__btn .buy:hover {
-  background-color: var(--black);
-  color: var(--primaryColor);
-}
-
-.product-details__btn .add:hover svg,
-.product-details__btn .buy:hover svg {
-  fill: var(--primaryColor);
-}
-
 .product-detail__content {
   width: 90%;
   margin: 0 auto;
