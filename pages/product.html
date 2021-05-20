@@ -364,21 +364,12 @@ body{
            
 
             <div class="product-details__btn">
-              <a class="add" href="#">
-                <span>
-                  <svg>
-                    <use xlink:href="../assets/images/sprite.svg#icon-cart-plus"></use>
-                  </svg>
-                </span>
-                ADD TO CART</a>
-              <a class="buy" href="#">
-                <span>
-                  <svg>
-                    <use xlink:href="../assets/images/sprite.svg#icon-credit-card"></use>
-                  </svg>
-                </span>
-                BUY NOW
-              </a>
+              <center><<v-btn
+                  depressed
+                  color="#52b36c"
+                >
+                  Add To Cart
+                </v-btn>
             </div>
           </div>
           <template v-for="product in products">
