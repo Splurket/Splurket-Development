@@ -2401,11 +2401,6 @@ Product Details
   justify-content: center;
 }
 
-.product-details__btn {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-}
 
 .product-details__btn a {
   flex: 0 0 47%;
