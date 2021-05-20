@@ -5,7 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Favicon -->
+  <!--<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon" />-->
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css
+">
+  <!-- Animate On Scroll -->
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="styles.css" />
@@ -16,6 +28,7 @@
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="icon" src="/assets/images/Logo.ico">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.css">
   <link rel="stylesheet" href="./styles.css">
       <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -340,7 +353,6 @@ body{
             });
         }*/
     </script>
-  </body>
 
     
     <!-- Header ENDS HERE!!!!.. -->
@@ -348,6 +360,17 @@ body{
   <v-app id="inspire">
   <main id="main">
     <div class="container">
+      <v-data-iterator
+        :items="products"
+        :items-per-page.sync="itemsPerPage"
+        :page.sync="page"
+        :search="search"
+        :sort-by="sortBy.toLowerCase()"
+        :sort-desc="sortDesc"
+        hide-default-footer
+        disable-pagination
+        dense
+      ></v-data-iterator>
       <!-- Products Details -->
       <section class="section product-details__section">
         <div class="product-detail__container">
@@ -612,9 +635,14 @@ body{
               </v-row>-->
             </v-tab-item>
           </v-tabs>
-</div>
+        </div>
 </template>
-  </main>
+</div>
+</section>
+</div>
+</main>
+</v-app>
+</div>
 
   <!-- Glide Carousel Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
@@ -647,6 +675,7 @@ var docRef = db.collection("products").doc('RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFp
             images2.forEach((images3) => {images.push(images3)});
             document.getElementById('mainpicture').src=doc.product_cover;
             //document.write(JSON.stringify(doc))
+            var reviewsn=parseFloat(doc.reviewsn)
             var push_data2 = {value: false, id: `${doc.product_id}`, name:`${doc.product_name}`, price: `${doc.product_price}`, date: `${doc.creation_date}`, reviewsn: `${doc.product_reviewsn}`, creator: `${doc.product_creator}`, image: `${doc.product_cover}`, creatorpic: `${doc.product_creatorpic}`, desc: `${doc.product_description}`}
             if (products.includes('{')){
               var push_data = ','+push_data2;

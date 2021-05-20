@@ -1,4 +1,4 @@
-const getProducts = async () => {
+/*const getProducts = async () => {
   try {
     const results = await fetch("./data/products.json");
     const data = await results.json();
@@ -14,7 +14,7 @@ const getProducts = async () => {
 Load Category Products
 =============
  */
-const categoryCenter = document.querySelector(".category__center");
+/*const categoryCenter = document.querySelector(".category__center");
 
 window.addEventListener("DOMContentLoaded", async function () {
   const his = await getProducts();
