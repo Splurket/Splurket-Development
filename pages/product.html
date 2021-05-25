@@ -381,7 +381,7 @@ body{
                  <p style="display: inline-block;margin: 0px;top:265px;left:50px;" class="cardtit" :id="product.creator" onclick="window.top.location.href='./user?user='+this.id"> Creator: <strong>{{ product.creator }}</strong>
                 </p>
                 </div>
-                <a href="#" class="rating__quatity" style="padding-bottom: 40px">{{product.reviewsn}} reviews</a>
+                <a href="#" class="rating__quatity" style="padding-bottom: 20px">{{product.reviewsn}} reviews</a>
               </div><br>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
@@ -391,6 +391,23 @@ body{
               </p>
               <div class="product__info-container">
                 <ul class="product__info">
+                <!--<v-list dense>
+                  <v-list-item
+                    v-for="product in products"
+                    :key="product.name"
+                  >
+                    <v-list-item-content>
+                      {{  }}:
+                    </v-list-item-content>
+                    <v-list-item-content
+                      class="align-end"
+                      :class="{ 'blue--text': sortBy === key }"
+                    ><center><v-chip
+                      close-icon="mdi-delete"
+                      color="green"
+                      outlined
+                    > {{ item[key.toLowerCase()] }}</v-chip></center>
+                    </v-list-item-content>
 
 
                     <div class="input-counter">
@@ -408,7 +425,7 @@ body{
                           </svg>
                         </span>
                       </div>
-                    </div>
+                    </div>-->
                   </li>
                 </ul>
                 <!--<div class="product-info__btn">
