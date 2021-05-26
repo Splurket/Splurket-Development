@@ -384,10 +384,7 @@ body{
                 <a href="#" class="rating__quatity" style="padding-bottom: 20px">{{product.reviewsn}} reviews</a>
               </div><br>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                a doloribus iste natus et facere?
-                dolor sit amet consectetur adipisicing elit. Sunt
-                a doloribus iste natus et facere?
+                {{product.desc}}
               </p>
               <div class="product__info-container">
                 <ul class="product__info">
@@ -477,7 +474,7 @@ body{
                   <v-tab-item
                   >
                   <div width="100">
-                    <p>{{ product.desc }}</p>
+                    <p>{{ product.dispdesc }}</p>
                   </div>
                   </v-tab-item>
                     <v-tab style="font-size:17px">Reviews</v-tab>
