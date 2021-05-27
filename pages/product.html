@@ -654,8 +654,8 @@ textarea {
 <script>
 
 var iFrameID = document.getElementById('idIframe');
-var hasHorizontalScroll= iFrameID.contentWindow.document.body.scrollWidth>iFrameID.contentWindow.document.body.clientWidth;
-var hasVerticalScroll= iFrameID.contentWindow.document.body.scrollHeight>iFrameID.contentWindow.document.body.clientHeight;
+var hasHorizontalScroll= iFrameID.scrollWidth>iFrameID.clientWidth;
+var hasVerticalScroll= iFrameID.scrollHeight>iFrameID.clientHeight;
 
 </script>
 <script>
