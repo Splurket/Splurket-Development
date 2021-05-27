@@ -1,3 +1,4 @@
+
 // -------------------------------------------
 // DEFAULT INPUT AND OUTPUT AREA
 textarea = document.querySelector( '#input-area' );
