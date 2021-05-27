@@ -495,7 +495,7 @@ textarea {
                   <v-tab-item
                   >
                   <div width="100">
-                  <iframe src="https://splurket.com/arctest" style="border:none" class="iframe" scrolling="no" frameborder="0"></iframe>
+                  <iframe id="ifrm" src="./arctest" onload="setIframeHeight(this.id)"></iframe>
 
                   </div>
                   </v-tab-item>
@@ -652,37 +652,24 @@ textarea {
 </body>
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
 <script type='text/javascript'>
-    
-    $(function(){
-    
-        var iFrames = $('iframe');
-      
-      function iResize() {
-      
-        for (var i = 0, j = iFrames.length; i < j; i++) {
-          iFrames[i].style.height = iFrames[i].contentWindow.document.body.offsetHeight + 'px';}
-          }
-          
-          if ($.browser.safari || $.browser.opera) { 
-          
-             iFrames.load(function(){
-                 setTimeout(iResize, 0);
-               });
-            
-             for (var i = 0, j = iFrames.length; i < j; i++) {
-              var iSource = iFrames[i].src;
-              iFrames[i].src = '';
-              iFrames[i].src = iSource;
-               }
-               
-          } else {
-             iFrames.load(function() { 
-                 this.style.height = this.contentWindow.document.body.offsetHeight + 'px';
-             });
-          }
-        
-        });
-
+function getDocHeight(doc) {
+    doc = doc || document;
+    // stackoverflow.com/questions/1145850/
+    var body = doc.body, html = doc.documentElement;
+    var height = Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+    return height;
+}
+function setIframeHeight(id) {
+    var ifrm = document.getElementById(id);
+    var doc = ifrm.contentDocument? ifrm.contentDocument: 
+        ifrm.contentWindow.document;
+    ifrm.style.visibility = 'hidden';
+    ifrm.style.height = "10px"; // reset to minimal height ...
+    // IE opt. for bing/msn needs a bit added or scrollbar appears
+    ifrm.style.height = getDocHeight( doc ) + 4 + "px";
+    ifrm.style.visibility = 'visible';
+}
 </script>
 <script>
   var products=[];
