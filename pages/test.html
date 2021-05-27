@@ -402,24 +402,6 @@ body{
               <div class="zoom" id="zoom"></div>
             </div>
            
-
-            <div class="product-details__btn">
-              <a class="add" href="#">
-                <span>
-                  <svg>
-                    <use xlink:href="../assets/images/sprite.svg#icon-cart-plus"></use>
-                  </svg>
-                </span>
-                ADD TO CART</a>
-              <a class="buy" href="#">
-                <span>
-                  <svg>
-                    <use xlink:href="../assets/images/sprite.svg#icon-credit-card"></use>
-                  </svg>
-                </span>
-                BUY NOW
-              </a>
-            </div>
           </div>
           <template v-for="product in products">
           <div class="product-detail__right">
@@ -437,34 +419,34 @@ body{
                   medium
                   readonly
                 ></v-rating>
+                 <p style="display: inline-block;margin: 0px;top:265px;left:50px;" class="cardtit" :id="product.creator" onclick="window.top.location.href='./user?user='+this.id"> Creator: <strong>{{ product.creator }}</strong>
+                </p>
                 </div>
-                <a href="#" class="rating__quatity">{{product.reviewsn}} reviews</a>
-              </div>
+                <a href="#" class="rating__quatity" style="padding-bottom: 20px">{{product.reviewsn}} reviews</a>
+              </div><br>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                a doloribus iste natus et facere?
-                dolor sit amet consectetur adipisicing elit. Sunt
-                a doloribus iste natus et facere?
+                {{product.desc}}
               </p>
               <div class="product__info-container">
                 <ul class="product__info">
-                  <li class="select">
-                    <div class="select__option">
-                      <label for="colors">Color</label>
-                      <select name="colors" id="colors" class="select-box">
-                        <option value="blue">blue</option>
-                        <option value="red">red</option>
-                      </select>
-                    </div>
-                    <div class="select__option">
-                      <label for="size">Inches</label>
-                      <select name="size" id="size" class="select-box">
-                        <option value="6.65">6.65</option>
-                        <option value="7.50">7.50</option>
-                      </select>
-                    </div>
-                  </li>
-                  <li>
+                <!--<v-list dense>
+                  <v-list-item
+                    v-for="product in products"
+                    :key="product.name"
+                  >
+                    <v-list-item-content>
+                      {{  }}:
+                    </v-list-item-content>
+                    <v-list-item-content
+                      class="align-end"
+                      :class="{ 'blue--text': sortBy === key }"
+                    ><center><v-chip
+                      close-icon="mdi-delete"
+                      color="green"
+                      outlined
+                    > {{ item[key.toLowerCase()] }}</v-chip></center>
+                    </v-list-item-content>
+
 
                     <div class="input-counter">
                       <span>Quantity:</span>
@@ -481,27 +463,10 @@ body{
                           </svg>
                         </span>
                       </div>
-                    </div>
-                  </li>
-
-                  <li>
-                    <span>Subtotal:</span>
-                    <a href="#" class="new__price">$250.99</a>
-                  </li>
-                  <li>
-                    <span>Brand:</span>
-                    <a href="#">Apple</a>
-                  </li>
-                  <li>
-                    <span>Product Type:</span>
-                    <a href="#">Phone</a>
-                  </li>
-                  <li>
-                    <span>Availability:</span>
-                    <a href="#" class="in-stock">In Stock (7 Items)</a>
+                    </div>-->
                   </li>
                 </ul>
-                <div class="product-info__btn">
+                <!--<div class="product-info__btn">
                   <a href="#">
                     <span>
                       <svg>
@@ -528,22 +493,36 @@ body{
                   </a>
                 </div>
               </div>
-            </div>
+            </div>-->
+            <center style="width:400px"><v-btn
+              depressed
+              color="#52b36c"
+              style="color:white;width:50%"
+            >
+              Add To Cart
+            </v-btn></center>
           </div>
         </div>
       </template>
+    </div>
+  </section>
+
       
       <template v-for="product in products">
-            <div style="height:100%;width:100%;position:relative;">
-                <v-tabs color="#52b36c">
-                <v-tab>Description</v-tab>
+            <div style="height:100%;width:100%;position:relative;margin-bottom:5%">
+              <center><v-tabs color="#52b36c" centered>
+                <v-tab style="font-size:17px">Description</v-tab>
                   <v-tab-item
                   >
                   <div width="100">
-                    <p>{{ product.desc }}</p>
+              <!-- partial:index.partial.html -->
+
+                  <div class="container" id="arcflashccontent">
+                  </div>
+              </div>
                   </div>
                   </v-tab-item>
-                    <v-tab>Reviews</v-tab>
+                    <v-tab style="font-size:17px">Reviews</v-tab>
                         <v-tab-item
                   >
                     <!--<v-col
@@ -592,7 +571,7 @@ body{
               </v-col>
           </v-row>-->
         </v-tab-item>
-                    <v-tab>Badges</v-tab>
+                    <v-tab style="font-size:17px">Badges</v-tab>
                         <v-tab-item
                       >
                       <!--<v-row style="margin-top:10px;position:relative;width:100%;height:100%">
@@ -634,15 +613,52 @@ body{
                   </v-col>
               </v-row>-->
             </v-tab-item>
-          </v-tabs>
-        </div>
+          </v-tabs></center>
+</div>
 </template>
+  </main>
+
+  <!-- Footer -->
+<div class="footercontainer" width="100%" style="max-width:100%;z-index:6;background-color:#52b36c;height:100%">
+  <div class="frow">
+    <center><div class="fcolumn">
+      <img src="../assets/images/Logo.png" width="120px" height="120px">
+      <p style="color:white">Splurket</p>
+      <p style="color:white;font-size: 15px">Software Has No Limits</p>
+    </div>
+    <div class="fcolumn">
+      <h2>Connect</h2>
+      <a onclick="this.innerText = 'Splurket@gmail.com' ">Email</a><br>
+      <a href="">Discord</a><br>
+      <a href="https://www.instagram.com/splurket_store/">Instagram</a><br>
+      <a href="">Facebook</a><br>
+
+    </div>
+    <div class="fcolumn">
+      <h2>Explore</h2>
+      <a href="">Home</a><br>
+      <a href="">Store</a><br>
+      <a href="">About</a><br>
+      <a href="">Cart</a><br>
+      <a href="">Contact</a><br>
+
+    </div>
+    <div class="fcolumn">
+      <h2>Company</h2>
+      <a href="">Home</a><br>
+      <a href="">Legal</a><br>
+      <a href="">Refund</a><br>
+      <a href="">Payment Security</a><br>
+    </div></center>
+  </div>
+  <center><p style="color:white; margin:0px; padding-bottom:20px;">Copyright © 2021 Splurket, All Rights Reserved</p></center>
 </div>
-</section>
+</head>
 </div>
-</main>
 </v-app>
-</div>
+</body>
+</html>
+
 
   <!-- Glide Carousel Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
@@ -652,16 +668,61 @@ body{
   <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js'></script>
 
-  <!-- Custom JavaScript -->
-  <script src="./js/products.js"></script>
-  <script src="./js/slider.js"></script>
-</body>
+  <!-- partial -->
+<script>
+  what1="Heading\n=======\n\nSub-heading\n-----------\n \n### Another deeper heading\n \nParagraphs are separated\nby a blank line.\n\nLeave 2 spaces at the end of a line to do a  \nline break\n\nText attributes *italic*, **bold**, \n`monospace`, ~~strikethrough~~ .\n\nShopping list:\n\n  * apples\n  * oranges\n  * pears\n\nNumbered list:\n\n  1. apples\n  2. oranges\n  3. pears\n\nThe rain---not the reign---in\nSpain.\n\n [Splurket Marketplace](https://splurket.com) \n\n![Image Name](https://i.imgur.com/AaslDzA.png)"
+  function what(state1){
+  var DisplayContainer = React.createClass({ displayName: "DisplayContainer",
+  updateValue: function (modifiedValue) {
+    this.setState({
+      value: modifiedValue });
 
-</html>
-<script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
+  },
+  getInitialState: function () {
+    return {
+      value: state1 };
+
+  },
+  rawMarkup: function (value) {
+    var rawMarkup = marked(value, { sanitize: true });
+    return { __html: rawMarkup };
+  },
+  render: function () {
+    return /*#__PURE__*/(
+      React.createElement("div", { className: "row" }, /*#__PURE__*/
+      React.createElement("div", { className: "col-md-6",id: "textarea2"}, /*#__PURE__*/
+      React.createElement(RawInput, { value: this.state.value, updateValue: this.updateValue })), /*#__PURE__*/
+
+      React.createElement("div", { className: "col-md-6", id:"showcase"}, /*#__PURE__*/
+      React.createElement("span", { dangerouslySetInnerHTML: this.rawMarkup(this.state.value) }))));
+
+
+
+  } });
+
+
+var RawInput = React.createClass({ displayName: "RawInput",
+  update: function () {
+    var modifiedValue = this.refs.inputValue.getDOMNode().value;
+    this.props.updateValue(modifiedValue);
+  },
+  render: function () {
+    return /*#__PURE__*/React.createElement("textarea", { id: "textarea1", rows: "22", type: "text", ref: "inputValue", value: this.props.value, onChange: this.update, className: "form-control" });
+  } });
+
+
+React.render( /*#__PURE__*/React.createElement(DisplayContainer, null), document.getElementById("arcflashccontent"));
+document.getElementById('textarea1').style.display="none";
+document.getElementById('textarea2').style.display="block";
+}
+what(what1)
+</script>
 <script>
 	var products=[];
   var images=[];
