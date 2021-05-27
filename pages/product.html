@@ -495,7 +495,8 @@ textarea {
                   <v-tab-item
                   >
                   <div width="100">
-                  <iframe id="ifrm" src="https://splurket.com/arctest" style="border:none"></iframe>
+                  <iframe src="https://splurket.com/arctest" style="border:none" id="idIframe">
+                  </iframe>
 
                   </div>
                   </v-tab-item>
@@ -651,18 +652,12 @@ textarea {
   <script src="./js/slider.js"></script>
 </body>
 <script>
- function resizeIFrame(){
 
-        var sHeight, frame;
+var iFrameID = document.getElementById('idIframe');
+var hasHorizontalScroll= iFrameID.contentWindow.document.body.scrollWidth>iFrameID.contentWindow.document.body.clientWidth;
+var hasVerticalScroll= iFrameID.contentWindow.document.body.scrollHeight>iFrameID.contentWindow.document.body.clientHeight;
 
-           frame = document.getElementById("ifrm");
-           frame.style.height = '0px';
-           sHeight = document.getElementById('ifrm').
-                  contentWindow.document.body.scrollHeight + 80;
-           frame.style.height = sHeight + 'px';
-     }
 </script>
-</html>
 <script>
   var products=[];
   var images=[];
