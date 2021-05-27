@@ -42,11 +42,6 @@
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/vueperslides"></script>
   <link href="https://unpkg.com/vueperslides/dist/vueperslides.css" rel="stylesheet">
-  <script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-  }
-</script>
 </head>
 <style type="text/css">
     .headerdrop {
@@ -652,6 +647,11 @@ textarea {
 
 
 </html>
+  <script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+  }
+</script>
 <script>
   var products=[];
   var images=[];
