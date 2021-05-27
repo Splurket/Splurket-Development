@@ -42,6 +42,11 @@
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/vueperslides"></script>
   <link href="https://unpkg.com/vueperslides/dist/vueperslides.css" rel="stylesheet">
+  <script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+  }
+</script>
 </head>
 <style type="text/css">
     .headerdrop {
@@ -490,7 +495,7 @@ textarea {
                   <v-tab-item
                   >
                   <div width="100">
-                  <iframe src="https://splurket.com/arctest"></iframe>
+                  <iframe src="https://splurket.com/arctest" frameborder="0" scrolling="no" onload="resizeIframe(this)" />
                   </div>
                   </v-tab-item>
                     <v-tab style="font-size:17px">Reviews</v-tab>
