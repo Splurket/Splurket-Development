@@ -40,7 +40,17 @@ textarea {
 </html>
 
 <script>
-  var name, email, photoUrl, uid, emailVerified;
+  var what1;
+  function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+var productid= getParameterByName('product');
+var name, email, photoUrl, uid, emailVerified;
 
   var config = {
       apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
@@ -55,16 +65,6 @@ textarea {
   firebase.initializeApp(config);
   const db = firebase.firestore();
   db.settings({ timestampsInSnapshots: true }); 
-  var what1;
-  function getParameterByName(name, url = window.location.href) {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
-var productid= getParameterByName('product');
 var docRef = db.collection("products").doc(productid);
         docRef.get().then((doc) => {
           if (doc.exists) {
