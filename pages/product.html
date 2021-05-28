@@ -495,11 +495,9 @@ textarea {
                   <v-tab-item
                   >
                   <div width="100">
-                  <center>
-                    <div>
-                      <iframe id="ifrm" src="./arctest" onload="setIframeHeight(this.id)" style="border:none;width:100%">
+                      <iframe id="ifrm" onload="setIframeHeight(this.id)" style="border:none;width:100%">
                       </iframe>
-                    </div></center>
+
 
                   </div>
                   </v-tab-item>
@@ -688,7 +686,7 @@ function setIframeHeight(id) {
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
 var productid= getParameterByName('product');
-  document.getElementById('ifrm').src="./arctest?product="+productid
+  document.getElementById('ifrm').src="./arctest?product=" + productid
 var docRef = db.collection("products").doc(productid);
         docRef.get().then((doc) => {
           if (doc.exists) {
