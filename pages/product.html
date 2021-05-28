@@ -654,7 +654,16 @@ textarea {
 </body>
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
 <script type='text/javascript'>
-
+var productid;
+  function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+productid= getParameterByName('product');
 function getDocHeight(doc) {
     doc = doc || document;
     // stackoverflow.com/questions/1145850/
@@ -672,20 +681,12 @@ function setIframeHeight(id) {
     // IE opt. for bing/msn needs a bit added or scrollbar appears
     ifrm.style.height = getDocHeight( doc ) + 4 + "px";
     ifrm.style.visibility = 'visible';
+    ifrm.src="./arctest?product=" + productid;
 }
 </script>
 <script>
   var products=[];
   var images=[];
-  function getParameterByName(name, url = window.location.href) {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
-var productid= getParameterByName('product');
 var docRef = db.collection("products").doc(productid);
         docRef.get().then((doc) => {
           if (doc.exists) {
@@ -756,6 +757,4 @@ new Vue({
       this.itemsPerPage = number;
     } } });
 </script>
-<script>
-  document.getElementById('ifrm').src="./arctest?product=" + productid;
-</script>
+
