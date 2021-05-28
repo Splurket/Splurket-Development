@@ -40,7 +40,29 @@ textarea {
 </html>
 
 <script>
-what1="Heading\n=======\n\nSub-heading\n-----------\n \n### Another deeper heading\n \nParagraphs are separated\nby a blank line.\n\nLeave 2 spaces at the end of a line to do a  \nline break\n\nText attributes *italic*, **bold**, \n`monospace`, ~~strikethrough~~ .\n\nShopping list:\n\n  * apples\n  * oranges\n  * pears\n\nNumbered list:\n\n  1. apples\n  2. oranges\n  3. pears\n\nThe rain---not the reign---in\nSpain.\n\n *[Splurket Marketplace](https://splurket.com)*"
+  var what1:
+  function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+var productid= getParameterByName('product');
+var docRef = db.collection("products").doc(productid);
+        docRef.get().then((doc) => {
+          if (doc.exists) {
+            var doc= doc.data();
+            what1=doc.dispdesc
+
+//document.write(JSON.stringify(product_data)
+        }
+          //document.write(JSON.stringify(products))
+        }).catch((error) => {
+            //document.write(JSON.stringify(error))
+      // An error happened.
+    });
   function what(state1){
   var DisplayContainer = React.createClass({ displayName: "DisplayContainer",
   updateValue: function (modifiedValue) {

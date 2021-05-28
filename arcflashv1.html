@@ -40,6 +40,7 @@
     <p class="preview-message">Preview Mode</p>
   </div>
 </div>
+<button onclick="parseval()">Save Stuff</button>
 <style>
   .container {
   margin-top: 15px;
@@ -137,7 +138,11 @@ document.getElementById('textarea1').style.display="none";
 document.getElementById('textarea2').style.display="none";
 }
 what(what1)
-
+function parseval(){
+  text=document.getElementById('textarea1').value
+  linestuff=JSON.stringify(text)
+  document.write(linestuff)
+}
 </script>
 <!-- partial -->
   <script  src="./arcflashengine.js"></script>
