@@ -118,7 +118,7 @@ var docRef = db.collection("products").doc(productid);
           if (doc.exists) {
             var doc= doc.data();
             what2=doc.dispdesc
-            what1=what2.split('\\n')
+            what1=what2.replace('\\n',"<br>")
             document.write(what1)
             what(what1)
 
