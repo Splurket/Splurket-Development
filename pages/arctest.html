@@ -119,6 +119,8 @@ var docRef = db.collection("products").doc(productid);
             var doc= doc.data();
             what2=doc.dispdesc
             what1=what2.replace('\\n',"\n")
+            what1=what2.replace('\\n\\n',"\n")
+            console.log(what1)
             what(what1)
 
 
