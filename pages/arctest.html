@@ -73,7 +73,7 @@ var docRef = db.collection("products").doc(productid);
           if (doc.exists) {
             var doc= doc.data();
             what1=doc.dispdesc
-            document.write(what1)
+            what(what1.toString())
 
 //document.write(JSON.stringify(product_data)
         }
@@ -125,7 +125,6 @@ var RawInput = React.createClass({ displayName: "RawInput",
 React.render( /*#__PURE__*/React.createElement(DisplayContainer, null), document.getElementById("arcflashcontent"));
 document.getElementById('textarea2').style.display="none";
 }
-what(what1)
 
 </script>
 
