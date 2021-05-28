@@ -45,7 +45,7 @@ textarea {
 <script>
   var what1;
   function what(state1){
-    state1=state1.replace(/(?:\r\n|\r|\n)/g, '<br>');
+    state1=state1.replace("\n", '<br>');
     var DisplayContainer = React.createClass({ displayName: "DisplayContainer",
     updateValue: function (modifiedValue) {
       this.setState({
