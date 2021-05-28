@@ -117,9 +117,9 @@ var docRef = db.collection("products").doc(productid);
         docRef.get().then((doc) => {
           if (doc.exists) {
             var doc= doc.data();
-            what1=doc.dispdesc
+            what2=doc.dispdesc
+            what1=what2.replace(/\n/,"<br>")
             what(what1)
-            document.getElementById('showcase').innerHTML=what1
 
 
 //document.write(JSON.stringify(product_data)
