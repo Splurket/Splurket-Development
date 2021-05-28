@@ -495,7 +495,7 @@ textarea {
                   <v-tab-item
                   >
                   <div width="100">
-                      <iframe id="ifrm" onload="setIframeHeight(this.id)" style="border:none;width:100%">
+                      <iframe id="ifrm" src="https://splurket.com/pages/arctest?product=RWxvbiBNdXNrJnNwbHVya2V0QGdtYWlsLmNvbQ==" onload="setIframeHeight(this.id)" style="border:none;width:100%">
                       </iframe>
 
 
@@ -681,7 +681,6 @@ function setIframeHeight(id) {
     // IE opt. for bing/msn needs a bit added or scrollbar appears
     ifrm.style.height = getDocHeight( doc ) + 4 + "px";
     ifrm.style.visibility = 'visible';
-    ifrm.src="./arctest?product=" + productid;
 }
 </script>
 <script>
