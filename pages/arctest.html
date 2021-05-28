@@ -44,6 +44,50 @@ textarea {
 
 <script>
   var what1;
+  function what(state1){
+    var DisplayContainer = React.createClass({ displayName: "DisplayContainer",
+    updateValue: function (modifiedValue) {
+      this.setState({
+        value: modifiedValue });
+
+    },
+    getInitialState: function () {
+      return {
+        value: state1 };
+
+    },
+    rawMarkup: function (value) {
+      var rawMarkup = marked(value, { sanitize: true });
+      return { __html: rawMarkup };
+    },
+    render: function () {
+      return /*#__PURE__*/(
+        React.createElement("div", { className: "row" }, /*#__PURE__*/
+        React.createElement("div", { className: "col-md-6",id: "textarea2"}, /*#__PURE__*/
+        React.createElement(RawInput, { value: this.state.value, updateValue: this.updateValue })), /*#__PURE__*/
+
+        React.createElement("div", { className: "col-md-6", id:"showcase"}, /*#__PURE__*/
+        React.createElement("span", { dangerouslySetInnerHTML: this.rawMarkup(this.state.value) }))));
+
+
+
+    } });
+
+
+  var RawInput = React.createClass({ displayName: "RawInput",
+    update: function () {
+      var modifiedValue = this.refs.inputValue.getDOMNode().value;
+      this.props.updateValue(modifiedValue);
+    },
+    render: function () {
+      return /*#__PURE__*/React.createElement("textarea", { id: "textarea1", rows: "22", type: "text", ref: "inputValue", value: this.props.value, onChange: this.update, className: "form-control" });
+    } });
+
+
+  React.render( /*#__PURE__*/React.createElement(DisplayContainer, null), document.getElementById("arcflashcontent"));
+  document.getElementById('textarea2').style.display="none";
+  }
+
   function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
             var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -83,50 +127,6 @@ var docRef = db.collection("products").doc(productid);
             //document.write(JSON.stringify(error))
       // An error happened.
     });
-  function what(state1){
-  var DisplayContainer = React.createClass({ displayName: "DisplayContainer",
-  updateValue: function (modifiedValue) {
-    this.setState({
-      value: modifiedValue });
-
-  },
-  getInitialState: function () {
-    return {
-      value: state1 };
-
-  },
-  rawMarkup: function (value) {
-    var rawMarkup = marked(value, { sanitize: true });
-    return { __html: rawMarkup };
-  },
-  render: function () {
-    return /*#__PURE__*/(
-      React.createElement("div", { className: "row" }, /*#__PURE__*/
-      React.createElement("div", { className: "col-md-6",id: "textarea2"}, /*#__PURE__*/
-      React.createElement(RawInput, { value: this.state.value, updateValue: this.updateValue })), /*#__PURE__*/
-
-      React.createElement("div", { className: "col-md-6", id:"showcase"}, /*#__PURE__*/
-      React.createElement("span", { dangerouslySetInnerHTML: this.rawMarkup(this.state.value) }))));
-
-
-
-  } });
-
-
-var RawInput = React.createClass({ displayName: "RawInput",
-  update: function () {
-    var modifiedValue = this.refs.inputValue.getDOMNode().value;
-    this.props.updateValue(modifiedValue);
-  },
-  render: function () {
-    return /*#__PURE__*/React.createElement("textarea", { id: "textarea1", rows: "22", type: "text", ref: "inputValue", value: this.props.value, onChange: this.update, className: "form-control" });
-  } });
-
-
-React.render( /*#__PURE__*/React.createElement(DisplayContainer, null), document.getElementById("arcflashcontent"));
-document.getElementById('textarea2').style.display="none";
-}
-
 </script>
 
 
