@@ -45,7 +45,6 @@ textarea {
 <script>
   var what1;
   function what(state1){
-    state1=state1.replace("\n", '<br>');
     var DisplayContainer = React.createClass({ displayName: "DisplayContainer",
     updateValue: function (modifiedValue) {
       this.setState({
@@ -86,6 +85,7 @@ textarea {
 
 
   React.render( /*#__PURE__*/React.createElement(DisplayContainer, null), document.getElementById("arcflashcontent"));
+
   document.getElementById('textarea2').style.display="none";
   }
 
@@ -118,7 +118,8 @@ var docRef = db.collection("products").doc(productid);
           if (doc.exists) {
             var doc= doc.data();
             what1=doc.dispdesc
-            what(what1)
+            what(JSON.stringify(what1))
+            document.write(JSON.stringify(what1))
 
 
 //document.write(JSON.stringify(product_data)
