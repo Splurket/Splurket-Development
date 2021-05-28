@@ -118,9 +118,8 @@ var docRef = db.collection("products").doc(productid);
           if (doc.exists) {
             var doc= doc.data();
             what1=doc.dispdesc
-            what1=what1.replace("/(?:\r\n|\r|\n)/g", '<br>');
-            document.write(what1)
             what(what1)
+            document.getElementById('showcase').innerHTML=what1
 
 
 //document.write(JSON.stringify(product_data)
