@@ -685,7 +685,7 @@ function setHeight(id){
   }
   function createframe(id1){
     productid= getParameterByName('product');
-    iframediv= querySelector("#"+id)
+    iframediv= document.getElementById(id)
     iframe1=document.createElement('IFRAME')
     iframe1.src='./arctest?product='+productid
     iframe1.style.border="none"
