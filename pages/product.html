@@ -674,7 +674,6 @@ function getDocHeight(doc) {
 }
 function setHeight(id){
     var ifrm = document.getElementById(id);
-    ifrm.src="./arctest?product="+productid
     var doc = ifrm.contentDocument? ifrm.contentDocument: 
         ifrm.contentWindow.document;
     ifrm.style.visibility = 'hidden';
