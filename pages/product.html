@@ -494,7 +494,7 @@ textarea {
                 <v-tab style="font-size:17px">Description</v-tab>
                   <v-tab-item
                   >
-                  <div width="100" id="ifrmdiv">
+                  <div width="100" id="ifrmdiv" onload="ghit(this.id)">
                   </div>
                   </v-tab-item>
                     <v-tab style="font-size:17px">Reviews</v-tab>
@@ -660,13 +660,15 @@ var productid;
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
 productid= getParameterByName('product');
-iframe=document.createElement('iframe')
-iframe.src="./arctest?product="+productid
-iframe.id='ifrm'
-iframe.style="border:none;width:100%;height:100%"
-iframediv=document.getElementById('ifrmdiv')
-iframediv.appendChild(iframe)
-setIframeHeight('ifrm')
+function ghit(id1){
+  iframe=document.createElement('iframe')
+  iframe.src="./arctest?product="+productid
+  iframe.id='ifrm'
+  iframe.style="border:none;width:100%;height:100%"
+  iframediv=document.getElementById(id1)
+  iframediv.appendChild(iframe)
+  setIframeHeight('ifrm')
+}
 function getDocHeight(doc) {
     doc = doc || document;
     // stackoverflow.com/questions/1145850/
