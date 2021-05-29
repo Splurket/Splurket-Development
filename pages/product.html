@@ -700,7 +700,7 @@ var docRef = db.collection("products").doc(productid);
             append.innerHTML=`<meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:title" content="${doc.product_name}">
-    <meta property="og:description" content="${doc.tagline}">
+    <meta property="og:description" content="${doc.product_description}">
     <meta property="og:site_name" content="Splurket">
     <meta property="og:image" content="${doc.image}">
     <meta itemprop="name" content="Splurket">
@@ -708,7 +708,7 @@ var docRef = db.collection("products").doc(productid);
     <meta property="og:url" content="http://www.Splurket.com">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@splurket_store">
-    <meta name="twitter:description" content="${doc.tagline}">
+    <meta name="twitter:description" content="${doc.product_description}">
     <meta name="twitter:title" content="Splurket">
     <meta name="twitter:image" content="${doc.image}">`
     document.getElementsByTagName('head')[0].appendChild(append);
