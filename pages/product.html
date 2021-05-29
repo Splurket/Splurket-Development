@@ -719,7 +719,7 @@ var docRef = db.collection("products").doc(productid);
       if (doc2.exists) {
         var doc= doc2.data();
         var reviewrate=parseFloat(`${doc.rate}`)
-        var reviewdata = {value: false, name: `${doc.Name}`, reviewer:`${doc.Reviewer}`, desc: `${doc.Description}`, rate: reviewrate};
+        var reviewdata = {value: false, name: `${doc.name}`, reviewer:`${doc.Reviewer}`, desc: `${doc.Description}`, rate: reviewrate};
         if (reviews.includes('{')){
             var push_data = ','+reviewdata;
             reviews.push(push_data)
