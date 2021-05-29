@@ -696,7 +696,7 @@ var docRef = db.collection("products").doc(productid);
         docRef.get().then((doc) => {
           if (doc.exists) {
             var doc= doc.data();
-            append=document.createElement('head')
+            append=document.createElement('meta')
             append.innerHTML=`<meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:title" content="${doc.product_name}">
