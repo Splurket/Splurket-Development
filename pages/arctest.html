@@ -118,11 +118,12 @@ var docRef = db.collection("products").doc(productid);
           if (doc.exists) {
             var doc= doc.data();
             what2=doc.dispdesc
-            what1=what2.replace('\\n'," ")
-            what2=what2.replace('\\n\\n',"")
+            what1=what2.replace('\\n',"&")
+            what2=what2.replace('\\n\\n',"&")
             what3=what2.split('\\n')
-            console.log(what3)
-            what(what1)
+            what3=what3.join("\r\n");
+            document.write(what3)
+            what(what3.)
 
 
 //document.write(JSON.stringify(product_data)
