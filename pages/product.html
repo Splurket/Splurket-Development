@@ -672,7 +672,7 @@ function getDocHeight(doc) {
         html.clientHeight, html.scrollHeight, html.offsetHeight );
     return height;
 }
-function setHeight(id)
+function setHeight(id){
     var ifrm = document.getElementById(id);
     ifrm.src="./arctest?product="+productid
     var doc = ifrm.contentDocument? ifrm.contentDocument: 
@@ -682,6 +682,7 @@ function setHeight(id)
     // IE opt. for bing/msn needs a bit added or scrollbar appears
     ifrm.style.height = getDocHeight( doc ) + 4 + "px";
     ifrm.style.visibility = 'visible';
+  }
 </script>
 <script>
   var products=[];
