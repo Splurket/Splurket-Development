@@ -121,7 +121,7 @@ var docRef = db.collection("products").doc(productid);
             what1=what2.replace('\\n',"\n")
             what2=what2.replace('\\n\\n',"\n")
             what3=what2.split('\\n')
-            console.log(what3)
+            console.log(what3.replace("\\n\\n") && what3.replace("\\n")
             what(what1)
 
 
