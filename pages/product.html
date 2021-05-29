@@ -494,7 +494,11 @@ textarea {
                 <v-tab style="font-size:17px">Description</v-tab>
                   <v-tab-item
                   >
-                  <div width="100" id="ifrmdiv" onload="ghit(this.id)">
+                  <div width="100" >
+                      <iframe id="ifrm" style="border:none;width:100%;height:100%">
+                      </iframe>
+
+
                   </div>
                   </v-tab-item>
                     <v-tab style="font-size:17px">Reviews</v-tab>
@@ -660,16 +664,6 @@ var productid;
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
 productid= getParameterByName('product');
-function ghit(id1){
-  iframe=document.createElement('IFRAME')
-  iframe.src="./arctest?product="+productid
-  iframe.id='ifrm'
-  iframe.style.border="none"
-  iframe.style.width="100%";
-  iframe.style.height="100%";
-  iframediv=document.getElementById(id1)
-  iframediv.appendChild(iframe)
-}
 function getDocHeight(doc) {
     doc = doc || document;
     // stackoverflow.com/questions/1145850/
@@ -678,7 +672,6 @@ function getDocHeight(doc) {
         html.clientHeight, html.scrollHeight, html.offsetHeight );
     return height;
 }
-function setIframeHeight(id) {
     var ifrm = document.getElementById(id);
     ifrm.src="./arctest?product="+productid
     var doc = ifrm.contentDocument? ifrm.contentDocument: 
@@ -688,7 +681,6 @@ function setIframeHeight(id) {
     // IE opt. for bing/msn needs a bit added or scrollbar appears
     ifrm.style.height = getDocHeight( doc ) + 4 + "px";
     ifrm.style.visibility = 'visible';
-}
 </script>
 <script>
   var products=[];
