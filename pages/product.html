@@ -494,8 +494,8 @@ textarea {
                 <v-tab style="font-size:17px">Description</v-tab>
                   <v-tab-item
                   >
-                  <div width="100" >
-                      <iframe id="ifrm" style="border:none;width:100%;height:100%" onload="setHeight(this.id)">
+                  <div width="100" id="ifrmdiv" onload="createframe(this.id)">
+                      <!--<iframe id="ifrm" style="border:none;width:100%;height:100%" onload="setHeight(this.id)">-->
                       </iframe>
 
 
@@ -682,6 +682,16 @@ function setHeight(id){
     // IE opt. for bing/msn needs a bit added or scrollbar appears
     ifrm.style.height = getDocHeight( doc ) + 4 + "px";
     ifrm.style.visibility = 'visible';
+  }
+  function createframe(id1){
+    productid= getParameterByName('product');
+    iframediv= querySelector("#"+id)
+    iframe1=document.createElement('IFRAME')
+    iframe1.src='./arctest?product='+productid
+    iframe1.style.border="none"
+    iframe1.style.height="100%"
+    iframe1.style.width="100%"
+    iframefiv.appendChild(iframe1)
   }
 </script>
 <script>
