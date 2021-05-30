@@ -482,6 +482,11 @@ textarea {
               depressed
               color="#52b36c"
               style="color:white;width:50%"
+              :id="product.id"
+              :data-id="product.id"
+              :data-description='product.name'
+              :data-price='product.price'
+              onclick="addCart(this)"
             >
               Add To Cart
             </v-btn></center>
