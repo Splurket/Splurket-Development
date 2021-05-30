@@ -90,7 +90,7 @@
       }
       but.addEventListener("click", removeListener(item));
       but.innerHTML = 'X';
-      but.style ="background-color: black; color: white; border-color:white;"
+      but.style ="background-color: #52b36c; color: white; border-color:white;"
       rem.appendChild(but);
       tr.appendChild(rem);
 
