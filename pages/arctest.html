@@ -119,13 +119,13 @@ var docRef = db.collection("products").doc(productid);
           if (doc.exists) {
             var doc= doc.data();
             what2=doc.dispdesc
-            console.log(what2)
+            //console.log(what2)
             //what1=what2.replace('\\n',"")
             what2=what2.replace('\\n\\n',"\n")
             what3=what2.split('\\n')
             what3=what3.join("\r\n");
             //document.write(what3)
-            console.log(what3)
+            //console.log(what3)
             what(what3)
 
 
