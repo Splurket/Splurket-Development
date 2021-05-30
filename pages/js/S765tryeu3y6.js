@@ -34,7 +34,7 @@ var docRef = db.collection("products").doc(productid);
           if (doc.exists) {
             var doc= doc.data();
 
-document.getElementsByTagName("head")[0].innerHTML=`
+/*document.getElementsByTagName("head")[0].innerHTML=`
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./arcflashstyle.css">
@@ -81,7 +81,7 @@ document.getElementsByTagName("head")[0].innerHTML=`
     <meta name="twitter:site" content="@splurket_store">
     <meta name="twitter:description" content="${doc.product_description}">
     <meta name="twitter:title" content="Splurket">
-    <meta name="twitter:image" content="${doc.product_cover}">`
+    <meta name="twitter:image" content="${doc.product_cover}">`*/
 
             images.push(doc.product_cover)
             var images1=doc.product_images
