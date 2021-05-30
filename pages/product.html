@@ -112,7 +112,7 @@ textarea {
 
     <!-- Header.. -->
 <body>
-<iframe src="./header" style="border:none;width:100%;height:98px"></iframe>
+<iframe src="./header" style="border:none;width:100%;height:98px" id="iframehead"></iframe>
 <div class="dropdown-content" id="dropcont" style="color:white; min-width:240px;border-top: solid 2px;border-color: white;z-index: 100;" onmouseout="this.style.display = 'none'" onmouseover="this.style.display = 'block'">
     <div><br>
         <p style="display:inline-block"; id="avatarusername1" onclick="profilego()">Signed In As:</p>
@@ -665,6 +665,7 @@ textarea {
 </body>
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
     <script>
+      iframehead = document.getElementById("iframehead");
        function addCart(clicked_button) {
             var data = {...clicked_button.dataset};
             //document.write(`${data.id} clicked - ${JSON.stringify(data)}`);
@@ -682,10 +683,10 @@ textarea {
           Crtitems = (JSON.stringify(Object.keys(cart).length))
           var CartItemsNote = Crtitems;
           if (CartItemsNote > '0') {
-            document.getElementById('lblCartCount').innerText = CartItemsNote;
+            iframehead.contentWindow.document.getElementById('lblCartCount').innerText = CartItemsNote;
           }
           if (CartItemsNote =='0') {
-            document.getElementById('lblCartCount').innerText = '0';
+            iframehead.contentWindow.document.getElementById('lblCartCount').innerText= '0';
           }
         }
 
