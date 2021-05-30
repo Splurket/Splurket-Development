@@ -175,3 +175,5 @@ new Vue({
     updateItemsPerPage(number) {
       this.itemsPerPage = number;
     } } });
+
+
