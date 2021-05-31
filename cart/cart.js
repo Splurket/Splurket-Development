@@ -1,9 +1,9 @@
-    const items1=[];
+    const items=[];
   var cart = getCart();
   for(var i = 0; i < cart.length; i++) {
     var cartItem = cart[i];
     pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.quantity}`, price: `${cartItem.data.price}`}
-    items1.push(pushdata)
+    items.push(pushdata)
 
     console.log(cartItem.data.id);
   }
@@ -40,7 +40,7 @@
       var cartItem = cart[item];
       var tr = document.createElement("tr");
       var desc = document.createElement("td");
-      console.log(items1)
+      console.log(items)
       desc.innerHTML = cartItem.data.description;
       tr.appendChild(desc);
 
