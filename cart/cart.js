@@ -102,7 +102,6 @@
       cartBody.appendChild(tr);
     }
   }
-  console.log(items)
 
   function addToCart(data) {
     var cart = getCart()
@@ -147,3 +146,5 @@
   window.addEventListener("storage", function(e) {
     populateCart();
   })
+
+console.log(items)
