@@ -158,7 +158,6 @@ console.log(Object.keys(hello).length)
   new Vue({
   el: '#app',
   vuetify: new Vuetify(),
-  export default {
     data: () => ({
       dialog: false,
       dialogDelete: false,
@@ -256,5 +255,6 @@ console.log(Object.keys(hello).length)
         }
         this.close()
       },
-    },
-  }
+    }),
+  })
+}
