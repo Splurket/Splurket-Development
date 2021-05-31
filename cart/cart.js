@@ -21,7 +21,7 @@ console.log(Object.keys(hello).length)
     Crtitems = (JSON.stringify(Object.keys(cart).length))
 
     // update total
-    var totalEl = document.getElementById("total");
+    //var totalEl = document.getElementById("total");
     var total = Object.keys(cart).reduce((prev, curr) => {
 
       var q = cart[curr].quantity;
@@ -32,7 +32,7 @@ console.log(Object.keys(hello).length)
     totalDollars = total / 100;
     
     totalDollars1 = totalDollars.toFixed(2)
-    totalEl.innerHTML = `$${totalDollars1}`;
+    //totalEl.innerHTML = `$${totalDollars1}`;
     
 
     // remove all cart items
