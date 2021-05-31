@@ -1,6 +1,6 @@
     const items=[];
-var hello=getCart();
-console.log(Object.keys(hello).length)
+    var hello=getCart();
+    console.log(Object.keys(hello).length)
   for(var item in hello) {
     console.log(item)
     var cartItem = hello[item];
