@@ -6,6 +6,7 @@
     items.push(pushdata)
 
     console.log(cartItem.data.id);
+    console.log(items)
   }
   populateCart();
   function populateCart() {
@@ -40,7 +41,6 @@
       var cartItem = cart[item];
       var tr = document.createElement("tr");
       var desc = document.createElement("td");
-      console.log(items)
       desc.innerHTML = cartItem.data.description;
       tr.appendChild(desc);
 
