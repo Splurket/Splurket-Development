@@ -41,7 +41,7 @@ console.log(Object.keys(hello).length)
     }
 
     // add cart items back
-    for (var item in cart) {
+    /*for (var item in cart) {
       var cart = getCart();
       var cartItem = cart[item];
       var tr = document.createElement("tr");
@@ -110,7 +110,7 @@ console.log(Object.keys(hello).length)
 
       cartBody.appendChild(tr);
     }
-  }
+  }*/
 
   function addToCart(data) {
     var cart = getCart()
@@ -155,3 +155,106 @@ console.log(Object.keys(hello).length)
   window.addEventListener("storage", function(e) {
     populateCart();
   })
+  new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  export default {
+    data: () => ({
+      dialog: false,
+      dialogDelete: false,
+      headers: [
+        {
+          text: 'Your Items',
+          align: 'start',
+          sortable: false,
+          value: 'name',
+        },
+        { text: 'Quantity', value: 'quantity' },
+        { text: 'Price', value: 'price' },
+        { text: 'Actions', value: 'actions', sortable: false },
+      ],
+      desserts: items,
+      editedIndex: -1,
+      editedItem: {
+        name: '',
+        calories: 0,
+        fat: 0,
+        carbs: 0,
+        protein: 0,
+      },
+      defaultItem: {
+        name: '',
+        calories: 0,
+        fat: 0,
+        carbs: 0,
+        protein: 0,
+      },
+    }),
+
+    computed: {
+      formTitle () {
+        return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+      },
+    },
+
+    watch: {
+      dialog (val) {
+        val || this.close()
+      },
+      dialogDelete (val) {
+        val || this.closeDelete()
+      },
+    },
+
+    created () {
+      this.initialize()
+    },
+
+    methods: {
+      initialize () {
+        this.desserts = items
+      },
+
+      editItem (item) {
+        this.editedIndex = this.desserts.indexOf(item)
+        this.editedItem = Object.assign({}, item)
+        this.dialog = true
+      },
+
+      deleteItem (item) {
+        this.editedIndex = this.desserts.indexOf(item)
+        this.editedItem = Object.assign({}, item)
+        this.dialogDelete = true
+      },
+
+      deleteItemConfirm () {
+        this.desserts.splice(this.editedIndex, 1)
+        this.closeDelete()
+      },
+
+      close () {
+        this.dialog = false
+        this.$nextTick(() => {
+          this.editedItem = Object.assign({}, this.defaultItem)
+          this.editedIndex = -1
+        })
+      },
+
+      closeDelete () {
+        this.dialogDelete = false
+        this.$nextTick(() => {
+          this.editedItem = Object.assign({}, this.defaultItem)
+          this.editedIndex = -1
+        })
+      },
+
+      save () {
+        if (this.editedIndex > -1) {
+          Object.assign(this.desserts[this.editedIndex], this.editedItem)
+        } else {
+          this.desserts.push(this.editedItem)
+        }
+        this.close()
+      },
+    },
+  }

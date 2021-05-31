@@ -25,6 +25,22 @@
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.css">
+  <!--Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <!-- css -->
+  <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
+      <!-- css -->
+  <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vueperslides"></script>
+  <link href="https://unpkg.com/vueperslides/dist/vueperslides.css" rel="stylesheet">
 </head>
 
     <!-- Header.. -->
@@ -203,7 +219,62 @@ textarea {
     <script>
         var totalpaypal = document.getElementById(total).innerText;
     </script>
-
+<template>
+  <v-data-table
+    :headers="headers"
+    :items="items"
+    sort-by="calories"
+    class="elevation-1"
+  >
+    <template v-slot:top>
+      <v-toolbar
+        flat
+      >
+        <v-toolbar-title>My CRUD</v-toolbar-title>
+        <v-divider
+          class="mx-4"
+          inset
+          vertical
+        ></v-divider>
+        <v-spacer></v-spacer>
+        <v-dialog v-model="dialogDelete" max-width="500px">
+          <v-card>
+            <v-card-title class="headline">Are you sure you want to delete this item?</v-card-title>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="blue darken-1" text @click="closeDelete">Cancel</v-btn>
+              <v-btn color="blue darken-1" text @click="deleteItemConfirm">OK</v-btn>
+              <v-spacer></v-spacer>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-toolbar>
+    </template>
+    <template v-slot:item.actions="{ item }">
+      <v-icon
+        small
+        class="mr-2"
+        @click="editItem(item)"
+      >
+        mdi-pencil
+      </v-icon>
+      <v-icon
+        small
+        @click="deleteItem(item)"
+      >
+        mdi-close
+      </v-icon>
+    </template>
+    <template v-slot:no-data>
+      <v-btn
+        color="primary"
+        @click="initialize"
+      >
+        Reset
+      </v-btn>
+    </template>
+  </v-data-table>
+</template>
 <div class="body1">
 <section style="margin-left:20%">
   <form style="padding-top:0px">
@@ -250,7 +321,12 @@ textarea {
     </form>
 
     <script src="./cart.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript"></script>
+  <script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 
       var cart = getCart();
       v=0
