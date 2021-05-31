@@ -7,6 +7,7 @@
 
     console.log(cartItem.data.id);
     console.log(items)
+    console.log(cart[i])
   }
   populateCart();
   function populateCart() {
