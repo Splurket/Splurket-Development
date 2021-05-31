@@ -6,6 +6,7 @@
     items.push(pushdata)
 
     console.log(cartItem.data.id);
+  }
   populateCart();
   function populateCart() {
 
