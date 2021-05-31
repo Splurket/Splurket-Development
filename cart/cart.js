@@ -255,6 +255,6 @@ console.log(Object.keys(hello).length)
         }
         this.close()
       },
-    }),
+    },
   })
 }
