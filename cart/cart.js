@@ -1,6 +1,5 @@
     const items=[];
 var hello=getCart();
-const items=[];
 console.log(Object.keys(hello).length)
   for(var item in hello) {
     console.log(item)
