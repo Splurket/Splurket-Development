@@ -1,5 +1,5 @@
+  const items=[];
   populateCart();
-var items=[];
   function populateCart() {
 
     var cartBody = document.querySelector("#cart > tbody");
