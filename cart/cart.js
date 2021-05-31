@@ -40,7 +40,7 @@
       var cartItem = cart[item];
       var tr = document.createElement("tr");
       var desc = document.createElement("td");
-      console.log(items)
+      console.log(items1)
       desc.innerHTML = cartItem.data.description;
       tr.appendChild(desc);
 
