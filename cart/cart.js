@@ -14,7 +14,7 @@ console.log(Object.keys(hello).length)
     //console.log(cartItem.data.id);
   }
   console.log(items)
-  function populateCart() {
+  function populateCart(){
 
     var cartBody = document.querySelector("#cart > tbody");
     var cart = getCart();
@@ -110,7 +110,7 @@ console.log(Object.keys(hello).length)
 
       cartBody.appendChild(tr);
     }
-  }*/
+  }*/}
 
   function addToCart(data) {
     var cart = getCart()
