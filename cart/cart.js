@@ -1,7 +1,7 @@
   cart=getCart();
   populateCart();
   
-var hello={"RWxvbiBNdXNrJnNwbHVya2V0QGdtYWlsLmNvbQ==":{"quantity":2,"data":{"id":"RWxvbiBNdXNrJnNwbHVya2V0QGdtYWlsLmNvbQ==","description":"Elon Musk","price":"57894587487"}},"RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFpbC5jb20=":{"quantity":2,"data":{"id":"RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFpbC5jb20=","description":"Occupy Mars Pose (Elon)","price":"549"}}}
+var hello=getCart();
 const items=[];
 console.log(Object.keys(hello).length)
   for(var item in hello) {
@@ -46,7 +46,6 @@ console.log(Object.keys(hello).length)
       var cartItem = cart[item];
       var tr = document.createElement("tr");
       var desc = document.createElement("td");
-      console.log(items)
       desc.innerHTML = cartItem.data.description;
       tr.appendChild(desc);
 
