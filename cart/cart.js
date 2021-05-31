@@ -34,6 +34,7 @@ var items=[];
       var desc = document.createElement("td");
       pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.data.quantity}`, price: `${cartItem.data.price}`}
       items.push(pushdata)
+      console.log(items)
       desc.innerHTML = cartItem.data.description;
       tr.appendChild(desc);
 
