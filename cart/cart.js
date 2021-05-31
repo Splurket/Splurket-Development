@@ -37,7 +37,6 @@
     items.push(pushdata)
 
     console.log(cartItem.data.id);
-      console.log(items)
       desc.innerHTML = cartItem.data.description;
       tr.appendChild(desc);
 
@@ -103,6 +102,7 @@
       cartBody.appendChild(tr);
     }
   }
+  console.log(items)
 
   function addToCart(data) {
     var cart = getCart()
