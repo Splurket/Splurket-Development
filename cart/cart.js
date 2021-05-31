@@ -1,14 +1,13 @@
-    const items1=[];
+const items=[];
   var cart = getCart();
   for(var i = 0; i < cart.length; i++) {
     var cartItem = cart[i];
     pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.quantity}`, price: `${cartItem.data.price}`}
-    items1.push(pushdata)
+    items.push(pushdata)
 
     console.log(cartItem.data.id);
-    console.log(items1)
-    console.log(cart[i])
   }
+  console.log(items)
   populateCart();
   function populateCart() {
 
