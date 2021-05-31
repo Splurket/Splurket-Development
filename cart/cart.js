@@ -1,4 +1,11 @@
-  const items=[];
+    const items=[];
+  var cart = getCart();
+  for(var i = 0; i < cart.length; i++) {
+    var cartItem = cart[i];
+    pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.data.quantity}`, price: `${cartItem.data.price}`}
+    items.push(pushdata)
+
+    console.log(cartItem.data.id);
   populateCart();
   function populateCart() {
 
@@ -32,8 +39,6 @@
       var cartItem = cart[item];
       var tr = document.createElement("tr");
       var desc = document.createElement("td");
-      pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.data.quantity}`, price: `${cartItem.data.price}`}
-      items.push(pushdata)
       console.log(items)
       desc.innerHTML = cartItem.data.description;
       tr.appendChild(desc);
