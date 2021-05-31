@@ -45,8 +45,6 @@ console.log(Object.keys(hello).length)
       var cartItem = cart[item];
       var tr = document.createElement("tr");
       var desc = document.createElement("td");
-    pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.quantity}`, price: `${cartItem.data.price}`}
-    items.push(pushdata)
 
     //console.log(cartItem.data.id);
       desc.innerHTML = cartItem.data.description;
@@ -158,5 +156,3 @@ console.log(Object.keys(hello).length)
   window.addEventListener("storage", function(e) {
     populateCart();
   })
-
-console.log(items)
