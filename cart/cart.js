@@ -36,7 +36,7 @@
     pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.quantity}`, price: `${cartItem.data.price}`}
     items.push(pushdata)
 
-    console.log(cartItem.data.id);
+    //console.log(cartItem.data.id);
       desc.innerHTML = cartItem.data.description;
       tr.appendChild(desc);
 
