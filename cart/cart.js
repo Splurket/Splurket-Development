@@ -1,6 +1,9 @@
-    const items=[];
-    var hello=getCart();
-    console.log(Object.keys(hello).length)
+  cart=getCart();
+  populateCart();
+  
+var hello={"RWxvbiBNdXNrJnNwbHVya2V0QGdtYWlsLmNvbQ==":{"quantity":2,"data":{"id":"RWxvbiBNdXNrJnNwbHVya2V0QGdtYWlsLmNvbQ==","description":"Elon Musk","price":"57894587487"}},"RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFpbC5jb20=":{"quantity":2,"data":{"id":"RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFpbC5jb20=","description":"Occupy Mars Pose (Elon)","price":"549"}}}
+const items=[];
+console.log(Object.keys(hello).length)
   for(var item in hello) {
     console.log(item)
     var cartItem = hello[item];
@@ -11,7 +14,6 @@
     //console.log(cartItem.data.id);
   }
   console.log(items)
-  populateCart();
   function populateCart() {
 
     var cartBody = document.querySelector("#cart > tbody");
@@ -44,8 +46,7 @@
       var cartItem = cart[item];
       var tr = document.createElement("tr");
       var desc = document.createElement("td");
-
-    //console.log(cartItem.data.id);
+      console.log(items)
       desc.innerHTML = cartItem.data.description;
       tr.appendChild(desc);
 
