@@ -36,9 +36,9 @@ console.log(Object.keys(hello).length)
     
 
     // remove all cart items
-    while (cartBody.firstChild) {
+    /*while (cartBody.firstChild) {
       cartBody.removeChild(cartBody.firstChild);
-    }
+    }*/
 
     // add cart items back
     /*for (var item in cart) {
