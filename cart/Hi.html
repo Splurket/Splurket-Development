@@ -1,12 +1,13 @@
 <script>
 var hello={"RWxvbiBNdXNrJnNwbHVya2V0QGdtYWlsLmNvbQ==":{"quantity":2,"data":{"id":"RWxvbiBNdXNrJnNwbHVya2V0QGdtYWlsLmNvbQ==","description":"Elon Musk","price":"57894587487"}},"RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFpbC5jb20=":{"quantity":2,"data":{"id":"RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFpbC5jb20=","description":"Occupy Mars Pose (Elon)","price":"549"}}}
 const items=[];
-  var cart = JSON.parse({"RWxvbiBNdXNrJnNwbHVya2V0QGdtYWlsLmNvbQ==":{"quantity":2,"data":{"id":"RWxvbiBNdXNrJnNwbHVya2V0QGdtYWlsLmNvbQ==","description":"Elon Musk","price":"57894587487"}},"RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFpbC5jb20=":{"quantity":2,"data":{"id":"RHlsYW4gQ2xheXRvbiZzcGx1cmtldEBnbWFpbC5jb20=","description":"Occupy Mars Pose (Elon)","price":"549"}}});
-  for(var i = 0; i < cart.length; i++) {
-    console.log(cart[i])
-    var cartItem = cart[i];
-    //pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.quantity}`, price: `${cartItem.data.price}`}
-    //items.push(pushdata)
+console.log(Object.keys(hello).length)
+  for(var item in hello) {
+    console.log(item)
+    var cartItem = hello[item];
+    pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.quantity}`, price: `${cartItem.data.price}`}
+    items.push(pushdata)
+    console.log(Object.keys(hello[item]).length)
 
     //console.log(cartItem.data.id);
   }
