@@ -219,6 +219,10 @@ textarea {
     <script>
         var totalpaypal = document.getElementById(total).innerText;
     </script>
+    <div id="app" style="width:100%">
+  <v-app id="inspire">
+  <main id="main">
+    <div class="container">
 <template>
   <v-data-table
     :headers="headers"
@@ -275,7 +279,11 @@ textarea {
     </template>
   </v-data-table>
 </template>
-<div class="body1">
+</div>
+</main>
+</v-app>
+</div>
+<!--<div class="body1">
 <section style="margin-left:20%">
   <form style="padding-top:0px">
   <header>
@@ -304,7 +312,7 @@ textarea {
   <section style="margin-left:40%;margin-top:50px;">
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="paypalitems">
     <input type="hidden" name="cmd" value="_cart" />
-    <input type="hidden" name="upload" value="1">
+    <input type="hidden" name="upload" value="1">-->
 
     <!-- business email address -->
     <input type="hidden" name="business" value="misfitzgym@gmail.com" />
@@ -326,63 +334,6 @@ textarea {
   <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-
-      var cart = getCart();
-      v=0
-      for (var item in cart) {
-        var v
-        v = (v + 1)
-        var n =JSON.stringify(v)
-        var cartItem = cart[item];
-        var dollars = JSON.stringify(cartItem.data.price);
-        var dollars1 = dollars.replace(/["']/g, "")
-        var str = dollars1;
-        var resStr=str.substring(0,str.length-2)+"."+str.substring(str.length-2);
-        var size1 = JSON.stringify(cartItem.data.size);
-        var color1 = JSON.stringify(cartItem.data.color);
-        //If both not undefined then add in color and size
-          if(typeof size1 !== "undefined" && typeof color1 !== "undefined") {
-            var itemname = cartItem.data.description +"; "+ size1 + "; " + color1
-        }
-            //if color is defined and size is undefined add in only color
-          if(typeof color1 !== "undefined" && typeof size1 == "undefined") {
-            var itemname = cartItem.data.description + "; " + color1
-        }
-        //if size is defined and color is undefined add in only size
-          if(typeof size1 !== "undefined" && typeof color1 == "undefined") {
-            var itemname = cartItem.data.description + "; " + size1
-        }
-        //If both undefined then don't add in color or size
-          if(typeof size1 == "undefined" && typeof color1 == "undefined") {
-            var itemname = cartItem.data.description
-        }
-        var appendpay = document.getElementById('paypalitems')
-        var ppitem = document.createElement("input")
-        var ppitem1 = document.createElement("input")
-        var ppitem2 = document.createElement("input")
-        var ppitem3 = document.createElement("input")
-        ppitem.type="hidden";
-        ppitem.name = "item_number_"+ n;
-        ppitem.value = `${cartItem.data.id}`
-
-        ppitem1.type="hidden";
-        ppitem1.name = "item_name_"+ n;
-        ppitem1.value = itemname
-
-        ppitem2.type="hidden";
-        ppitem2.name = "amount_"+ n;
-        ppitem2.value = `${resStr}`
-
-        ppitem3.type="hidden";
-        ppitem3.name = "quantity_"+ n;
-        ppitem3.value = `${cartItem.quantity}`
-
-        appendpay.appendChild(ppitem);
-        appendpay.appendChild(ppitem1)
-        appendpay.appendChild(ppitem2)
-        appendpay.appendChild(ppitem3)
-      }
 
     </script>
     <script
