@@ -272,12 +272,7 @@ textarea {
       </v-icon>
     </template>
     <template v-slot:no-data>
-      <v-btn
-        color="primary"
-        @click="initialize"
-      >
-        Reset
-      </v-btn>
+        <h1>No Items Found In Cart</h1>
     </template>
   </v-data-table>
 </template>
@@ -357,30 +352,7 @@ textarea {
     console.log(idd)
     removeFromCart(idd)
   }
-    function removeFromCart(id) {
-    id=idd
-    var cart = getCart();
-    if (!cart[id]) {
-      console.error(`${id} not found in cart`);
-      return;
-    }
 
-    var prevQuantity = cart[id].quantity;
-    if (prevQuantity === 1) {
-      // remove item if will go to 0
-      delete cart[id];
-    } else {
-      cart[id].quantity = prevQuantity - 1;
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    populateCart();
-  }
-
-  function getCart() {
-    return JSON.parse(localStorage.getItem('cart')) || {};
-  }
     </script>
 </body>
 </body>
