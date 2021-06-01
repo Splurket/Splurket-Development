@@ -247,7 +247,7 @@ textarea {
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" text @click="closeDelete">Cancel</v-btn>
-              <v-btn color="blue darken-1" :id="desserts.id" text @click="deleteItemConfirm">OK</v-btn>
+              <v-btn color="blue darken-1" :id="desserts.id" text @click="deleteItemConfirm" onclick="removeFromCart(this.id)">OK</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
           </v-card>
