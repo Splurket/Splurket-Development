@@ -110,7 +110,7 @@ console.log(Object.keys(hello).length)
 
       cartBody.appendChild(tr);
     }
-  }*/
+  }*/}
 
   function addToCart(data) {
     var cart = getCart()
