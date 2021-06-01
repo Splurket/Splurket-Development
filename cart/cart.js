@@ -7,7 +7,12 @@ console.log(Object.keys(hello).length)
   for(var item in hello) {
     console.log(item)
     var cartItem = hello[item];
-    pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.quantity}`, price: `${cartItem.data.price}`}
+      var dollars = JSON.stringify(cartItem.data.price);
+      var dollars1 = dollars.replace(/["']/g, "")
+      var str = dollars1;
+      var resStr=str.substring(0,str.length-2)+"."+str.substring(str.length-2);
+      pricethat = '$'+resStr;
+    pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.quantity}`, price: pricethat}
     items.push(pushdata)
     console.log(Object.keys(hello[item]).length)
 
