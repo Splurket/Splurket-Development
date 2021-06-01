@@ -1,3 +1,4 @@
+  const idd;
   cart=getCart();
   populateCart();
   
@@ -129,6 +130,7 @@ console.log(Object.keys(hello).length)
   }
 
   function removeFromCart(id) {
+    id=idd
     var cart = getCart();
     if (!cart[id]) {
       console.error(`${id} not found in cart`);
@@ -155,6 +157,9 @@ console.log(Object.keys(hello).length)
   window.addEventListener("storage", function(e) {
     populateCart();
   })
+  function idf(idflick){
+    idd=idflick;
+  }
   new Vue({
   el: '#app',
   vuetify: new Vuetify(),
@@ -224,6 +229,7 @@ console.log(Object.keys(hello).length)
         this.editedIndex = this.desserts.indexOf(item)
         this.editedItem = Object.assign({}, item)
         this.dialogDelete = true
+        idd=id
       },
 
       deleteItemConfirm () {

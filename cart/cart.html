@@ -247,7 +247,7 @@ textarea {
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" text @click="closeDelete">Cancel</v-btn>
-              <v-btn color="blue darken-1" id="desserts" text @click="deleteItemConfirm" onclick="removeFromCart(this.id)">OK</v-btn>
+              <v-btn color="blue darken-1" id="desserts" text @click="deleteItemConfirm" onclick="removeFromCart()">OK</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
           </v-card>
@@ -266,7 +266,7 @@ textarea {
         small
         :id=item.id
         @click="deleteItem(item)"
-        onclick="document.getElementById('desserts').id=this.id"
+        onclick="idf(this.id)"
       >
         mdi-close
       </v-icon>
