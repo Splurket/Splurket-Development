@@ -157,9 +157,6 @@ console.log(Object.keys(hello).length)
   window.addEventListener("storage", function(e) {
     populateCart();
   })
-  function idf(idflick){
-    idd=idflick;
-  }
   new Vue({
   el: '#app',
   vuetify: new Vuetify(),
