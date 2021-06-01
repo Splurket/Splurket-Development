@@ -96,12 +96,7 @@ console.log(Object.keys(hello).length)
       var rem = document.createElement("td");
       var but = document.createElement("button");
 
-      function removeListener(id) {
-        return function(e) {
-          removeFromCart(id);
-          window.location.reload();
-        }
-      }
+      }*/
       but.addEventListener("click", removeListener(item));
       but.innerHTML = 'X';
       but.style ="background-color: #52b36c; color: white; border-color:white;"
@@ -109,8 +104,8 @@ console.log(Object.keys(hello).length)
       tr.appendChild(rem);
 
       cartBody.appendChild(tr);
-    }
-  }*/}
+    }/*
+  }*/
 
   function addToCart(data) {
     var cart = getCart()
@@ -220,7 +215,7 @@ console.log(Object.keys(hello).length)
         this.dialog = true
       },
 
-      deleteItem (item) {
+      deleteItem (item, id) {
         this.editedIndex = this.desserts.indexOf(item)
         this.editedItem = Object.assign({}, item)
         this.dialogDelete = true
@@ -229,6 +224,7 @@ console.log(Object.keys(hello).length)
       deleteItemConfirm () {
         this.desserts.splice(this.editedIndex, 1)
         this.closeDelete()
+
       },
 
       close () {

@@ -234,7 +234,7 @@ textarea {
       <v-toolbar
         flat
       >
-        <v-toolbar-title>My CRUD</v-toolbar-title>
+        <v-toolbar-title>Cart</v-toolbar-title>
         <v-divider
           class="mx-4"
           inset
@@ -247,7 +247,7 @@ textarea {
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" text @click="closeDelete">Cancel</v-btn>
-              <v-btn color="blue darken-1" text @click="deleteItemConfirm">OK</v-btn>
+              <v-btn color="blue darken-1" id="deletebtn" text @click="deleteItemConfirm">OK</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
           </v-card>
@@ -264,7 +264,9 @@ textarea {
       </v-icon>
       <v-icon
         small
+        :id=item.id
         @click="deleteItem(item)"
+        onclick="document.getElementById('deletebtn').id=this.id"
       >
         mdi-close
       </v-icon>
