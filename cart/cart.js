@@ -101,7 +101,7 @@ console.log(Object.keys(hello).length)
       var rem = document.createElement("td");
       var but = document.createElement("button");
 
-      }*/
+      }
       but.addEventListener("click", removeListener(item));
       but.innerHTML = 'X';
       but.style ="background-color: #52b36c; color: white; border-color:white;"
@@ -109,7 +109,7 @@ console.log(Object.keys(hello).length)
       tr.appendChild(rem);
 
       cartBody.appendChild(tr);
-    }/*
+    }
   }*/
 
   function addToCart(data) {
