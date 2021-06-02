@@ -243,6 +243,14 @@ textarea {
           vertical
         ></v-divider>
         <v-spacer></v-spacer>
+            <v-btn
+              color="primary"
+              dark
+              class="mb-2"
+              onclick="deletet()"
+            >
+              Clear Cart
+          </template>
         <v-dialog v-model="dialogDelete" max-width="500px">
           <v-card>
             <v-card-title class="headline">Are You Sure You Want To Delete This Item?</v-card-title>
