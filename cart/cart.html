@@ -257,21 +257,16 @@ textarea {
       >
         <v-card>
           <v-card-title>
-            Dialog 2
+            Delete All Items?
           </v-card-title>
           <v-card-text>
             <v-btn
               color="primary"
               dark
-              @click="dialog3 = !dialog3"
+              onclick="localStorage.removeItem('cart');"
             >
-              Open Dialog 3
+              Yes Clear All items
             </v-btn>
-            <v-select
-              :items="select"
-              label="A Select List"
-              item-value="text"
-            ></v-select>
           </v-card-text>
           <v-card-actions>
             <v-btn
@@ -279,7 +274,7 @@ textarea {
               text
               @click="dialog2 = false"
             >
-              Close
+              No, Get Me Out Of Here!
             </v-btn>
           </v-card-actions>
         </v-card>
