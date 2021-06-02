@@ -21,7 +21,7 @@ console.log(Object.keys(hello).length)
   }
   console.log(items)
   function populateCart(){
-
+    
     var cartBody = document.querySelector("#cart > tbody");
     var cart = getCart();
     Crtitems = (JSON.stringify(Object.keys(cart).length))
