@@ -21,11 +21,17 @@ console.log(Object.keys(hello).length)
   }
   console.log(items)
   function populateCart(){
-    
+
     var cartBody = document.querySelector("#cart > tbody");
     var cart = getCart();
     Crtitems = (JSON.stringify(Object.keys(cart).length))
-
+    if Crtitems > 0{
+      document.getElementById('app').style.diplay="none"
+      document.getElementById('noitems').style.display="block"
+    }else{
+      document.getElementById('app').style.diplay="block"
+      document.getElementById('noitems').style.display="none"
+    }
     // update total
     //var totalEl = document.getElementById("total");
     var total = Object.keys(cart).reduce((prev, curr) => {
