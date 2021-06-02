@@ -161,6 +161,11 @@ console.log(Object.keys(hello).length)
   el: '#app',
   vuetify: new Vuetify(),
     data: () => ({
+     dialog2: false,
+    dialog3: false,
+    notifications: false,
+    sound: true,
+    widgets: false,
       dialog: false,
       dialogDelete: false,
       headers: [
