@@ -229,7 +229,8 @@ textarea {
     :items="desserts"
     sort-by="calories"
     class="elevation-1"
-    :rows-per-page-items="[-1]"
+    select-all
+    :footer-props.items-per-page-options="[-1]"
   >
     <template v-slot:top>
       <v-toolbar
