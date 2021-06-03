@@ -834,52 +834,6 @@ textarea {
 <center>
     <div class="container" id="frontpage">
 
-        <!-- form -->
-
-        <center><h1 style="color:white">Splurket Request Form</h1>
-            <p style="color:white;">Here is where you can Place an Order to have a Product specially built. Ask for
-                anything Digital! <br><br>Software Has No Limits</p></center>
-        <form>
-            <!-- name -->
-            <div class="input-group" id="username">
-                <label for="demo_name" style="color:white;">Splurket Username</label>
-                <input class="u-full-width" type="text" placeholder="Please Enter Your Username" id="demo_username">
-            </div>
-            <div style="background-color:red;color:white;border-radius: 5px;padding:5px;display:none;" id="UsernameError">
-                        <p>Error: Invalid Email. Please Provide A Valid Email!</p>
-            </div>
-            <div class="input-group" id="name">
-                <label for="demo_name" style="color:white;">Full Name</label>
-                <input class="u-full-width" type="text" placeholder="Please Enter Your Name" id="demo_name">
-            </div>
-            <div style="background-color:red;color:white;border-radius: 5px;padding:5px;display:none;" id="NameError">
-                        <p>Error: Invalid Email. Please Provide A Valid Email!</p>
-            </div>
-
-            <!-- email -->
-            <div class="input-group" id="email">
-                <label for="demo_name" style="color:white;">Email</label>
-                <input class="u-full-width" type="text" placeholder="Please Enter Your Email" id="demo_email">
-            </div>
-            <div style="background-color:red;color:white;border-radius: 5px;padding:5px;display:none;" id="EmailError">
-                        <p>Error: Invalid Email. Please Provide A Valid Email!</p>
-                    </div>
-            <!-- email -->
-            <div class="input-group" id="phone">
-                <label for="demo_name" style="color:white;">Phone Number (To Contact When Completed)</label>
-                <input class="u-full-width" type="text" placeholder="Please Enter Your Phone Number" id="demo_phone">
-            </div>
-            <div style="background-color:red;color:white;border-radius: 5px;padding:5px;display:none;" id="PhoneError">
-                        <p>Error: Invalid Email. Please Provide A Valid Email!</p>
-            </div>
-            <div id="next1">
-                <center>
-                    <button style="background-color: white; color: #52b36c; max-width:200px;" type="button" id="submit"
-                            class="button-primary u-full-width" onclick="next1()">Next
-                    </button>
-                </center>
-            </div>
-
 
             <!-- JOB TYPE -->
 
@@ -1191,38 +1145,6 @@ textarea {
         var name
         var email
         var phone
-        function next1() {
-            Username = document.getElementById('demo_username').value;
-            name = document.getElementById('demo_name').value;
-            email = document.getElementById('demo_email').value;
-            phone = document.getElementById('demo_phone').value;
-            if(Username = ""){
-                document.getElementById('UsernameError').style.display = "block";
-            }
-            if( name = ""){
-                document.getElementById('NameError').style.display = "block";
-            }
-            if(email = ""){
-                document.getElementById('EmailError').style.display = "block";
-            }
-            if(phone = ""){
-                document.getElementById('PhoneError').style.display = "block";
-            }else{
-
-            document.getElementById("username").style.display = "none";
-            document.getElementById("name").style.display = "none";
-            document.getElementById("email").style.display = "none";
-            document.getElementById("phone").style.display = "none";
-            localStorage.setItem("name", name);
-            localStorage.setItem("email", email);
-            localStorage.setItem("phone", phone);
-            localStorage.setItem("username", Username);
-            document.getElementById("job_options").style.display = "block";
-            document.getElementById("back1").style.display = "block";
-            document.getElementById("next1").style.display = "none";
-            document.getElementById("next2").style.display = "block";
-        }
-    }
 
         function back1() {
             document.getElementById("job_type").style.display = "none";
