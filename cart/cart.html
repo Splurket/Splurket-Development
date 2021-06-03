@@ -287,7 +287,7 @@ textarea {
             <v-card-title class="headline">Are You Sure You Want To Delete This Item?</v-card-title>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="closeDelete">Cancel</v-btn>
+              <v-btn color="blue darken-1" text @click="dialogDelete = false">Cancel</v-btn>
               <v-btn color="blue darken-1" id="desserts" text @click="deleteItemConfirm" onclick="removeFromCart()">OK</v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
