@@ -118,52 +118,8 @@ console.log(Object.keys(hello).length)
 
       cartBody.appendChild(tr);
     }
-  }*/}
 
-  function addToCart(data) {
-    var cart = getCart()
-    var prevQuantity = cart[data.id] ? cart[data.id].quantity: 0;
-    cart[data.id] = {
-      quantity: prevQuantity + 1,
-      data,
-
-    }
-    data1 = data.price.replace("$","")
-    data2 = data1.replace(".","")
-    data.price = data2;
-    localStorage.setItem('cart', JSON.stringify(cart));
-    
-    populateCart();
-  }
-
-  function removeFromCart(id) {
-    id=idd
-    var cart = getCart();
-    if (!cart[id]) {
-      console.error(`${id} not found in cart`);
-      return;
-    }
-
-    var prevQuantity = cart[id].quantity;
-    if (prevQuantity === 1) {
-      // remove item if will go to 0
-      delete cart[id];
-    } else {
-      cart[id].quantity = prevQuantity - 1;
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    populateCart();
-  }
-
-  function getCart() {
-    return JSON.parse(localStorage.getItem('cart')) || {};
-  }
-
-  window.addEventListener("storage", function(e) {
-    populateCart();
-  })
+  }*/
   new Vue({
   el: '#app',
   vuetify: new Vuetify(),
@@ -264,4 +220,50 @@ console.log(Object.keys(hello).length)
         this.close()
       },
     },
+  })
+  }
+
+  function addToCart(data) {
+    var cart = getCart()
+    var prevQuantity = cart[data.id] ? cart[data.id].quantity: 0;
+    cart[data.id] = {
+      quantity: prevQuantity + 1,
+      data,
+
+    }
+    data1 = data.price.replace("$","")
+    data2 = data1.replace(".","")
+    data.price = data2;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    populateCart();
+  }
+
+  function removeFromCart(id) {
+    id=idd
+    var cart = getCart();
+    if (!cart[id]) {
+      console.error(`${id} not found in cart`);
+      return;
+    }
+
+    var prevQuantity = cart[id].quantity;
+    if (prevQuantity === 1) {
+      // remove item if will go to 0
+      delete cart[id];
+    } else {
+      cart[id].quantity = prevQuantity - 1;
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    populateCart();
+  }
+
+  function getCart() {
+    return JSON.parse(localStorage.getItem('cart')) || {};
+  }
+
+  window.addEventListener("storage", function(e) {
+    populateCart();
   })
