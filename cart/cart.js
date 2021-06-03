@@ -26,7 +26,7 @@ console.log(Object.keys(hello).length)
     var cartBody = document.querySelector("#cart > tbody");
     var cart = getCart();
     Crtitems = (JSON.stringify(Object.keys(cart).length))
-    if (Crtitems > "0" || typeof Crtitems == "undefined"){
+    if (Crtitems > "0" || typeof Crtitems !== "undefined"){
       document.getElementById('app').style.diplay="none"
       document.getElementById('noitems').style.display="block"
     }else{
