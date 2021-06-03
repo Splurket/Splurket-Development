@@ -833,8 +833,21 @@ textarea {
 </noscript>
 <center>
     <div class="container" id="frontpage">
+<div id="app" style="width:100%">
+  <v-app id="inspire">
+    <v-container fluid style="min-height:100%">
+        <v-tabs vertical>
+      <v-tab>
+        Request Type
+      </v-tab>
+      <v-tab>
+        Request Info
+      </v-tab>
+      <v-tab>
+        Request Completion
+      </v-tab>
 
-
+      <v-tab-item>
             <!-- JOB TYPE -->
 
             <div class="input-group" id="job_options">
@@ -856,7 +869,8 @@ textarea {
                 </div>
             </div>
 
-
+      </v-tab-item>
+      <v-tab-item>
             <!--NEW PRODUCT REQUEST-->
 
 
@@ -1127,11 +1141,31 @@ textarea {
                 </div>
             </div>
 
-            </div>
-            </div>
-        </form>
-        </main>
-    </div>
+      </v-tab-item>
+      <v-tab-item>
+        <v-card flat>
+          <v-card-text>
+            <p>
+              Fusce a quam. Phasellus nec sem in justo pellentesque facilisis. Nam eget dui. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. In dui magna, posuere eget, vestibulum et, tempor auctor, justo.
+            </p>
+
+            <p class="mb-0">
+              Cras sagittis. Phasellus nec sem in justo pellentesque facilisis. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nam at tortor in tellus interdum sagittis.
+            </p>
+          </v-card-text>
+        </v-card>
+      </v-tab-item>
+    </v-tabs>
+
+</template>
+</v-container>
+</v-app>
+</div>
+</div>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
     <script>
         var qpperms
         var qppayment
@@ -1275,3 +1309,47 @@ textarea {
 </center>
 </body>
 </html>
+
+<script>
+    new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  data() {
+    return {
+      
+      itemsPerPageArray: [15, 25, 50],
+      search: '',
+      filter: {},
+      sortDesc: false,
+      page: 1,
+      itemsPerPage: 15,
+      sortBy: 'name',
+      keys1: [
+      'Name',
+      'Price',
+      'Ratings'
+      ],
+      keys: [
+      'Name',
+      'Price',
+      'Ratings'
+      ]};},
+  computed: {
+    numberOfPages() {
+      return Math.ceil(this.items.length / this.itemsPerPage);
+    },
+    filteredKeys() {
+      return this.keys.filter(key => key !== 'Name');
+    } },
+
+  methods: {
+    nextPage() {
+      if (this.page + 1 <= this.numberOfPages) this.page += 1;
+    },
+    formerPage() {
+      if (this.page - 1 >= 1) this.page -= 1;
+    },
+    updateItemsPerPage(number) {
+      this.itemsPerPage = number;
+    } } });
+
