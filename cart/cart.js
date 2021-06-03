@@ -27,11 +27,11 @@ console.log(Object.keys(hello).length)
     var cart = getCart();
     Crtitems = (JSON.stringify(Object.keys(cart).length))
     if (Crtitems > "0" || typeof Crtitems !== "undefined"){
-      document.getElementById('app').style.diplay="none"
-      document.getElementById('noitems').style.display="block"
-    }else{
       document.getElementById('app').style.diplay="block"
       document.getElementById('noitems').style.display="none"
+    }else{
+      document.getElementById('app').style.diplay="none"
+      document.getElementById('noitems').style.display="block"
     }
     // update total
     //var totalEl = document.getElementById("total");
