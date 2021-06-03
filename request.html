@@ -846,15 +846,36 @@ textarea {
 
             <div class="input-group" id="job_options">
                 <div>
-                    <label style="color:white;">Please Select An Option Below:</label>
-                    <input style="color:white;" type="radio" id="product" name="job_type" value="New Product Request"
-                           onclick="next2(this.value)"><span style="color:white;">New Product Request</span><br>
-                    <input style="text-color:white;" type="radio" id="hire_dev" name="job_type" value="Hire A Developer"
-                           onclick="next2(this.value)"><span style="color:white;">I Want To Hire A Developer</span><br>
-                    <input style="color:white;" type="radio" id="hire_dev" name="job_type" value="Get A Quote"
-                           onclick="next2(this.value)"><span style="color:white;">I Want To Get A Quote</span><br>
+                    <label style="color:#52b36c;">Please Select An Option Below:</label>
+                    <v-radio-group v-model="radioGroup">
+                       <v-radio
+                        label="New Product Request"
+                        color="red"
+                        value="New Product Request"
+                        onclick="next2(this.value)"
+                        id="product"
+                        name="job_type"
+                      ></v-radio>
+                       <v-radio
+                        label="I Want To Hire A Developer"
+                        color="red"
+                        value="Hire A Developer"
+                        onclick="next2(this.value)"
+                        id="hire_dev"
+                        name="job_type"
+                      ></v-radio>
+                      <v-radio
+                        label="I Want To Get A Quote"
+                        color="red"
+                        value="Get A Quote"
+                        onclick="next2(this.value)"
+                        id="hire_dev"
+                        name="job_type"
+                      ></v-radio>
+                    </v-radio-group>
                 </div>
-                <div hidden="hidden" id="back1">
+                </div>
+                <div id="back1">
                     <center>
                         <button style="background-color: white; color: #52b36c; max-width:200px;" type="button"
                                 id="submit" class="button-primary u-full-width" onclick="back1()">Back
