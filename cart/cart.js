@@ -253,10 +253,6 @@ console.log(Object.keys(hello).length)
 
       closeDelete () {
         this.dialogDelete = false
-        this.$nextTick(() => {
-          this.editedItem = Object.assign({}, this.defaultItem)
-          this.editedIndex = -1
-        })
       },
 
       save () {
