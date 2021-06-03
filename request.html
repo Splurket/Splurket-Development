@@ -869,40 +869,8 @@ textarea {
                         <v-tab-item
                   >
 
-                    <v-card style="width:100%"><br>
-                        <v-card-title class="subheading font-weight-bold">
-                          {{ review.name }}
-                        </v-card-title>
-                        <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ review.desc }}</v-card-text>
-                        <v-card-text style="color:black;font-size:15px;padding-left: 16px;padding-top: 0px;height:30px" class="e546783wyte underline" :id="review.reviewer" onclick="window.top.location.href='./user?user='+this.id">- {{ review.reviewer }}</v-card-text>
-                        <v-rating
-                          v-model="review.rate"
-                          background-color="green lighten-3"
-                          color="green"
-                          small
-                          readonly
-                          style=""
-                        ></v-rating>
-                        <!--<v-list dense>
-                          <v-list-product
-                            v-for="(key, index) in filteredKeys"
-                            :key="index"
-                          >
-                            <v-list-product-content :class="{ 'blue--text': sortBy === key }">
-                              {{ key }}:
-                            </v-list-product-content>
-                            <v-list-product-content
-                              class="align-end"
-                              :class="{ 'blue--text': sortBy === key }"
-                            >
-                              {{ product[key.toLowerCase()] }}
-                            </v-list-product-content>
-                          </v-list-product>-->
-
-                      </v-card>
+                    
                   </v-tab-item>
-              </v-col>
-          </v-row>
         </v-tab-item>
                     <v-tab style="font-size:17px">Badges</v-tab>
                         <v-tab-item
