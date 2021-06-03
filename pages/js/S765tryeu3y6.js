@@ -138,6 +138,7 @@ new Vue({
   vuetify: new Vuetify(),
   data() {
     return {
+      
       itemsPerPageArray: [15, 25, 50],
       search: '',
       filter: {},
