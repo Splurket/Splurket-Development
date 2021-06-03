@@ -842,12 +842,28 @@ textarea {
                 <v-tab style="font-size:17px">Description</v-tab>
                   <v-tab-item
                   >
-                  <div width="100" >
-                      <iframe id="ifrm" :src="product.iframe" style="border:none;width:100%;height:100%" onmouseover="setHeight(this.id)">
-                      </iframe>
+                              <!-- JOB TYPE -->
+
+            <div class="input-group" id="job_options">
+                <div>
+                    <label style="color:white;">Please Select An Option Below:</label>
+                    <input style="color:white;" type="radio" id="product" name="job_type" value="New Product Request"
+                           onclick="next2(this.value)"><span style="color:white;">New Product Request</span><br>
+                    <input style="text-color:white;" type="radio" id="hire_dev" name="job_type" value="Hire A Developer"
+                           onclick="next2(this.value)"><span style="color:white;">I Want To Hire A Developer</span><br>
+                    <input style="color:white;" type="radio" id="hire_dev" name="job_type" value="Get A Quote"
+                           onclick="next2(this.value)"><span style="color:white;">I Want To Get A Quote</span><br>
+                </div>
+                <div hidden="hidden" id="back1">
+                    <center>
+                        <button style="background-color: white; color: #52b36c; max-width:200px;" type="button"
+                                id="submit" class="button-primary u-full-width" onclick="back1()">Back
+                        </button>
+                    </center>
+                </div>
+            </div>
 
 
-                  </div>
                   </v-tab-item>
                     <v-tab style="font-size:17px">Reviews</v-tab>
                         <v-tab-item
@@ -935,28 +951,6 @@ textarea {
 </v-app>
 </div>
 </div>
-
-            <!-- JOB TYPE -->
-
-            <div class="input-group" id="job_options">
-                <div>
-                    <label style="color:white;">Please Select An Option Below:</label>
-                    <input style="color:white;" type="radio" id="product" name="job_type" value="New Product Request"
-                           onclick="next2(this.value)"><span style="color:white;">New Product Request</span><br>
-                    <input style="text-color:white;" type="radio" id="hire_dev" name="job_type" value="Hire A Developer"
-                           onclick="next2(this.value)"><span style="color:white;">I Want To Hire A Developer</span><br>
-                    <input style="color:white;" type="radio" id="hire_dev" name="job_type" value="Get A Quote"
-                           onclick="next2(this.value)"><span style="color:white;">I Want To Get A Quote</span><br>
-                </div>
-                <div hidden="hidden" id="back1">
-                    <center>
-                        <button style="background-color: white; color: #52b36c; max-width:200px;" type="button"
-                                id="submit" class="button-primary u-full-width" onclick="back1()">Back
-                        </button>
-                    </center>
-                </div>
-            </div>
-
 
             <!--NEW PRODUCT REQUEST-->
 
