@@ -119,7 +119,6 @@ console.log(Object.keys(hello).length)
       cartBody.appendChild(tr);
     }
   }*/
-rendering()
 }
 
   function addToCart(data) {
@@ -165,9 +164,7 @@ rendering()
 
   window.addEventListener("storage", function(e) {
     populateCart();
-    rendering()
   })
-  function rendering(){
   new Vue({
   el: '#app',
   vuetify: new Vuetify(),
@@ -269,4 +266,3 @@ rendering()
       },
     },
   })
-}
