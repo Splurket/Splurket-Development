@@ -856,7 +856,7 @@ textarea {
             <div class="input-group" id="job_options">
                <center><div>
                     <label style="color:#52b36c;">Please Select An Option Below:</label>
-                    <center><v-radio-group v-model="nextTickRadioGroupValue"style="padding-left:50px;color:white"><center>
+                    <center><v-radio-group v-model="nextTickRadioGroupValue"style="padding-left:50px"><center>
                        <v-radio
                         label="New Product Request"
                         color="red"
@@ -1177,9 +1177,6 @@ textarea {
 <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
     <script>
-        newProductRequest = document.getElementById("New-Product-Request")
-        quote_menu = document.getElementById("quote_menu")
-        dhire = document.getElementById("dhire")
         var qpperms
         var qppayment
         var qdpermissions
@@ -1213,21 +1210,20 @@ textarea {
             var jtype = job_type;
             console.log(jtype)
             if (jtype == "New-Product-Request") {
-                newProductRequest.style.display = "block";
-                quote_menu.style.display = "none";
-                dhire.style.display = "none";
+                document.getElementById("New-Product-Request").style.display = "block";
+                document.getElementById("quote_menu").style.display = "none";
+                document.getElementById("dhire").style.display = "none";
             }
             if (jtype == "Get A Quote") {
-                quote_menu.style.display = "block";
-                newProductRequest.style.display = "none";
-                dhire.style.display = "none";
-
+                document.getElementById("New-Product-Request").style.display = "none";
+                document.getElementById("quote_menu").style.display = "block";
+                document.getElementById("dhire").style.display = "none";
             }
 
             if (jtype == "Hire A Developer") {
-                dhire.style.display = "block";
-                quote_menu.style.display = "none";
-                newProductRequest.style.display = "none";
+                document.getElementById("New-Product-Request").style.display = "none";
+                document.getElementById("quote_menu").style.display = "none";
+                document.getElementById("dhire").style.display = "block";
             }
         }
 
