@@ -847,7 +847,7 @@ textarea {
     <v-container fluid style="min-height:100%">
         <template>
             <div style="height:100%;width:100%;position:relative;margin-bottom:5%">
-              <v-tabs color="#52b36c" vertical>
+              <v-tabs color="#52b36c" vertical style="margin-top:20px">
                 <v-tab style="font-size:17px">Request Type</v-tab>
                   <v-tab-item
                   >
@@ -1177,6 +1177,9 @@ textarea {
 <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
     <script>
+        var newProductRequest = document.getElementById("New-Product-Request")
+        var quote_menu = document.getElementById("quote_menu")
+        var dhire = document.getElementById("dhire")
         var qpperms
         var qppayment
         var qdpermissions
@@ -1210,17 +1213,21 @@ textarea {
             var jtype = job_type;
             console.log(jtype)
             if (jtype == "New-Product-Request") {
-                document.getElementById("New-Product-Request").style.display = "block";
-                document.getElementById("quote_menu").style.display = "none";
-                document.getElementById("dhire").style.display = "none";
+                newProductRequest.style.display = "block";
+                quote_menu.style.display = "none";
+                dhire.style.display = "none";
             }
             if (jtype == "Get A Quote") {
-                document.getElementById("quote_menu").style.display = "block";
-                document.getElementById("New-Product-Request").style.display = "none";
+                quote_menu.style.display = "block";
+                newProductRequest.style.display = "none";
+                dhire.style.display = "none";
+
             }
 
             if (jtype == "Hire A Developer") {
-                document.getElementById("dhire").style.display = "block";
+                dhire.style.display = "block";
+                quote_menu.style.display = "none";
+                newProductRequest.style.display = "none";
             }
         }
 
