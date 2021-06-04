@@ -1331,7 +1331,9 @@ new Vue({
     nextTickDoSomethingWithNewValue() {
       this.$nextTick(() => {
           this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
+          console.log(this.nextTickRadioGroupValue)
           next2(this.nextTickRadioGroupValue)
+
         })
     }               
     }
