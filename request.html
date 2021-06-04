@@ -853,10 +853,10 @@ textarea {
                     <label style="color:#52b36c;">Please Select An Option Below:</label>
                     <center><v-radio-group style="padding-left:50px"><center>
                        <v-radio
-                        label="New Product Request"
+                        label="New-Product-Request"
                         color="red"
-                        value="New Product Request"
-                        onclick="next2(this.value);document.getElementById('New Product Request').style.display = 'block'; console.log('pussy')"
+                        value="New-Product-Request"
+                        onclick="next2(this.value);document.getElementById('New-Product-Request').style.display = 'block'; console.log('pussy')"
                         id="product"
                         name="job_type"
                       ></v-radio>
@@ -885,7 +885,7 @@ textarea {
                   <v-tab style="font-size:17px">Badges</v-tab>
                         <v-tab-item
                       >
-                <div id="New Product Request" style="display: none;">
+                <div id="New-Product-Request" style="display: none;">
                     <div>
                         <label for="demo_name" style="color:white;">Name Of Product Request</label>
                         <input class="u-full-width" type="text" placeholder="Please Enter The Name Of Your Product Request"
@@ -910,7 +910,7 @@ textarea {
                         <input style="color:white;" type="radio" id="is" name="p_permissions"
                                value="Product Is Allowed In Store After Completion" onclick="ppermissions(this.value)"><span
                             style="color:white;">Product Is Allowed In Store After Completion</span><br>
-                        <input style="text-color:white;" type="radio" id="not" name="p_permissions"
+                        <input style="color:white;" type="radio" id="not" name="p_permissions"
                                value="Product Is NOT Allowed In Store After Completion"
                                onclick="ppermissions(this.value)"><span style="color:white;">Product Is NOT Allowed In Store After Completion</span><br>
                     </div>
@@ -919,7 +919,7 @@ textarea {
                         <input style="color:white;" type="radio" id="negotiating" name="ppay_type"
                                value="After Negotiating With Product Creator" onclick="ppay(this.value)"><span
                             style="color:white;">After Negotiating With Product Creator</span><br>
-                        <input style="text-color:white;" type="radio" id="complete" name="ppay_type" value="After Product Is Made"
+                        <input style="color:white;" type="radio" id="complete" name="ppay_type" value="After Product Is Made"
                                onclick="ppay(this.value)"><span
                             style="color:white;">After The Product Is Made</span><br>
                         <p style="color:white;">NOTE: ALL JOB AND SERVICE PAYMENTS MUST BE MADE IN THE PAYMENT SECTION OF
@@ -982,7 +982,7 @@ textarea {
                         <label style="color:white;">Payment Options</label>
                         <input style="color:white;" type="radio" id="after_complete" name="pay_type"
                                value="After Job Is Complete"><span style="color:white;">After Job Is Complete</span><br>
-                        <input style="text-color:white;" type="radio" id="before_start" name="pay_type"
+                        <input style="color:white;" type="radio" id="before_start" name="pay_type"
                                value="Before Job Is Complete"><span
                             style="color:white;">Before Job Is Started</span><br>
                         <input style="color:white;" type="radio" id="hourly" name="pay_type"
@@ -992,7 +992,7 @@ textarea {
                         <label style="color:white;">Work Permissions</label>
                         <input style="color:white;" type="radio" id="wis" name="w_permissions"
                                value="Work Is Allowed In Store After Completion"><span style="color:white;">Work Is Allowed In Store After Completion</span><br>
-                        <input style="text-color:white;" type="radio" id="wnot" name="w_permissions"
+                        <input style="color:white;" type="radio" id="wnot" name="w_permissions"
                                value="Work Is NOT Allowed In Store After Completion"><span style="color:white;">Work Is NOT Allowed In Store After Completion</span><br>
                     </div>
                     <div id="submit">
@@ -1013,7 +1013,7 @@ textarea {
                     <input style="color:white;" type="radio" id="newd" name="quote"
                            value="The Cost To Hire A Developer" onclick="quotemenu(this.value)"><span
                         style="color:white;">The Cost To Hire A Developer</span><br>
-                    <input style="text-color:white;" type="radio" id="newp" name="quote"
+                    <input style="color:white;" type="radio" id="newp" name="quote"
                            value="The Cost Of A New Product" onclick="quotemenu(this.value)"><span
                         style="color:white;" onclick="quotemenu(this.value)">A New Product</span><br>
                 </div>
@@ -1059,7 +1059,7 @@ textarea {
                     <label style="color:white;">When Do You Want To Pay?</label>
                     <input style="color:white;" type="radio" id="qdnegotiating" name="qday_type"
                            value="qpnegotiation" checked="checked" onclick="qppayment(this.value)"><span style="color:white;">After Negotiating With Creator</span><br>
-                    <input style="text-color:white;" type="radio" id="qdcomplete" name="qday_type"
+                    <input style="color:white;" type="radio" id="qdcomplete" name="qday_type"
                            value="pafter_complete" onclick="qppayment(this.value)"><span
                         style="color:white;">After The Product Is Complete</span><br>
                     <p style="color:white;">NOTE: ALL JOB AND SERVICE PAYMENTS MUST BE MADE IN THE PAYMENT SECTION
@@ -1072,7 +1072,7 @@ textarea {
                     <label style="color:white;">Product Permissions</label>
                     <input style="color:white;" type="radio" id="qdis" name="qd_permissions"
                            value="Peoduct Is Allowed In Store After Completion" onclick="qpperms(this.value)"><span style="color:white;">Product Is Allowed In Store After Completion</span><br>
-                    <input style="text-color:white;" type="radio" id="qdnot" name="qd_permissions"
+                    <input style="color:white;" type="radio" id="qdnot" name="qd_permissions"
                            value="Product Is NOT Allowed In Store After Completion" onclick="qpperms(this.value)"><span style="color:white;">Product Is NOT Allowed In Store After Completion</span><br>
                 </div>
                 <div id="submit">
@@ -1082,7 +1082,6 @@ textarea {
                         </button>
                     </center>
                 </div>
-            </div>
             </div>
 
 
@@ -1125,7 +1124,7 @@ textarea {
                     <label style="color:white;">Payment Options</label>
                     <input style="color:white;" type="radio" id="after_complete" name="pay_type"
                            value="After Job Is Complete" onclick="qdpayment(this.value)"><span style="color:white;">After Job Is Complete</span><br>
-                    <input style="text-color:white;" type="radio" id="before_start" name="pay_type"
+                    <input style="color:white;" type="radio" id="before_start" name="pay_type"
                            value="Before Job Starts" onclick="qdpayment(this.value)"><span
                         style="color:white;">Before Job Is Started</span><br>
                     <input style="color:white;" type="radio" id="hourly" name="pay_type"
@@ -1140,7 +1139,7 @@ textarea {
                     <label style="color:white;">Work Permissions</label>
                     <input style="color:white;" type="radio" id="qpis" name="qp_permissions"
                            value="Work Is Allowed In Store After Completion" onclick="qdpermissions(this.value)"><span style="color:white;">Work Is Allowed In Store After Completion</span><br>
-                    <input style="text-color:white;" type="radio" id="qpnot" name="qp_permissions"
+                    <input style="color:white;" type="radio" id="qpnot" name="qp_permissions"
                            value="Work Is NOT Allowed In Store After Completion" onclick="qdpermissions(this.value)"><span style="color:white;">Work Is NOT Allowed In Store After Completion</span><br>
                 </div>
                 <div id="submit">
@@ -1166,7 +1165,7 @@ textarea {
 </div>
 </div>
 
-            <!--NEW PRODUCT REQUEST-->
+            <!--New-Product-Request-->
 
 
     <!-- partial -->
@@ -1206,8 +1205,8 @@ textarea {
         function next2(job_type) {
             var jtype = job_type;
             console.log(jtype)
-            if (jtype == "New Product Request") {
-                document.getElementById("New Product Request").style.display = "block";
+            if (jtype == "New-Product-Request") {
+                document.getElementById("New-Product-Request").style.display = "block";
                 document.getElementById("job_options").style.display = "none";
             }
             if (jtype == "Get A Quote") {
