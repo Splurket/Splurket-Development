@@ -856,7 +856,7 @@ textarea {
                         label="New-Product-Request"
                         color="red"
                         value="New-Product-Request"
-                        onclick="next2(this.value);document.getElementById('New-Product-Request').style.display = 'block'; console.log('pussy')"
+                        @change="nextTickDoSomethingWithNewValue"
                         id="product"
                         name="job_type"
                       ></v-radio>
@@ -864,7 +864,7 @@ textarea {
                         label="I Want To Hire A Developer"
                         color="red"
                         value="Hire A Developer"
-                        onclick="next2(this.value); document.getElementById('quote_menu').style.display = 'block';"
+                        @change="nextTickDoSomethingWithNewValue"
                         id="hire_dev"
                         name="job_type"
                       ></v-radio>
@@ -872,7 +872,7 @@ textarea {
                         label="I Want To Get A Quote"
                         color="red"
                         value="Get A Quote"
-                        onclick="next2(this.value) document.getElementById('dhire').style.display = 'block';"
+                        @change="nextTickDoSomethingWithNewValue"
                         id="hire_dev"
                         name="job_type"
                       ></v-radio>
@@ -1333,10 +1333,6 @@ new Vue({
           this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
           next2(this.nextTickRadioGroupValue)
         })
-    },
-    doSomethingWithNewValue() {
-          this.valueWhenClicked = this.radioGroupValue
-          console.log('Value when clicked: ', this.radioGroupValue)
     }               
     }
 })
