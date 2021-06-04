@@ -602,7 +602,7 @@ textarea {
     background-color: #52b36c !important;
     color:white !important;
 }
-v-tab-item{
+.v-window{
     background-color:#52b36c !important;
 }
 </style>
@@ -1209,9 +1209,12 @@ v-tab-item{
             console.log(jtype)
             if (jtype == "New-Product-Request") {
                 document.getElementById("New-Product-Request").style.display = "block";
+                document.getElementById("quote_menu").style.display = "none";
+                document.getElementById("dhire").style.display = "none";
             }
             if (jtype == "Get A Quote") {
                 document.getElementById("quote_menu").style.display = "block";
+                document.getElementById("New-Product-Request").style.display = "none";
             }
 
             if (jtype == "Hire A Developer") {
