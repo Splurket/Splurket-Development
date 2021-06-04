@@ -1350,24 +1350,6 @@ new Vue({
       this.$nextTick(() => {
           this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
           console.log(this.nextTickRadioGroupValue)
-            var jtype = this.nextTickRadioGroupValue
-            console.log(jtype)
-            if (jtype == "New-Product-Request") {
-                document.getElementById("New-Product-Request").style.display = "block";
-                document.getElementById("quote_menu").style.display = "none";
-                document.getElementById("dhire").style.display = "none";
-            }
-            if (jtype == "Get A Quote") {
-                document.getElementById("New-Product-Request").style.display = "none";
-                document.getElementById("quote_menu").style.display = "block";
-                document.getElementById("dhire").style.display = "none";
-            }
-
-            if (jtype == "Hire A Developer") {
-                document.getElementById("New-Product-Request").style.display = "none";
-                document.getElementById("quote_menu").style.display = "none";
-                document.getElementById("dhire").style.display = "block";
-            }
 
         })
     }               
