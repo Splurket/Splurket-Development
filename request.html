@@ -1364,7 +1364,7 @@ textarea {
             }
         }
 
-        function quotemenu(qselect) {
+        function quotemenu30(qselect) {
             if (qselect == "The Cost To Hire A Developer") {
                 document.getElementById("dquote").style.display = "block";
                 document.getElementById("quote_menu").style.display = "none";
@@ -1505,8 +1505,8 @@ new Vue({
     quotemenu1() {
         this.$nextTick(() => {
           this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
-          quotemenu(this.nextTickValueWhenClicked)
-          console.log(this.nextTickRadioGroupValue)
+          quotemenu30(this.quotemenu)
+          console.log(this.quotemenu)
       })
     }
     
