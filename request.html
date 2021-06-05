@@ -920,6 +920,7 @@ textarea {
                         <label style="color:white;">Product Permissions</label>
                        <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                        <v-radio 
+                       color="white"
                        id="is" 
                        name="p_permissions"
                        value="Product Is Allowed In Store After Completion" 
@@ -927,7 +928,8 @@ textarea {
                        label="Product Is Allowed In Store After Completion">
                            
                        </v-radio>
-                        <v-radio  
+                        <v-radio 
+                        color="white"
                         id="not" 
                         name="p_permissions"   
                         value="Product Is NOT Allowed In Store After Completion"
@@ -941,6 +943,7 @@ textarea {
                         <label style="color:white;">When Do You Want To Pay?</label>
                        <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                        <v-radio 
+                       color="white"
                        id="negotiating" 
                        name="ppay_type"
                         value="After Negotiating With Product Creator" 
@@ -948,7 +951,8 @@ textarea {
                         label="After Negotiating With Product Creator">
                             
                         </v-radio>
-                        <v-radio  
+                        <v-radio 
+                        color="white"
                         id="complete" 
                         name="ppay_type" 
                         value="After Product Is Made"
@@ -1020,19 +1024,22 @@ textarea {
                         <label style="color:white;">Payment Options</label>
                        <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                        <v-radio 
+                       color="white"
                        id="after_complete" 
                        name="pay_type"
                        value="After Job Is Complete" 
                        label="After Job Is Complete"
                         onclick="dosomething()">
                        </v-radio>
-                        <v-radio  
+                        <v-radio 
+                        color="white"
                         id="before_start" 
                         name="pay_type"
                         value="Before Job Is Complete" 
                         label="Before Job Is Started"
                         onclick="dosomething()"></v-radio>
-                        <v-radio  
+                        <v-radio 
+                        color="white"
                         id="hourly" 
                         name="pay_type"
                         value="Hourly Based Pay" 
@@ -1045,12 +1052,14 @@ textarea {
                         <label style="color:white;">Work Permissions</label>
                        <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                        <v-radio 
+                       color="white"
                        id="wis" 
                        name="w_permissions"
                         value="Work Is Allowed In Store After Completion" 
                         label="Work Is Allowed In Store After Completion"
                         onclick="dosomething()"></v-radio>
-                        <v-radio  
+                        <v-radio 
+                        color="white"
                         id="wnot" 
                         name="w_permissions"
                         value="Work Is NOT Allowed In Store After Completion" 
@@ -1075,11 +1084,13 @@ textarea {
                 <div>
                     <label style="color:white;">I Need A Quote For:</label>
                     <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
-                    <v-radio  
+                    <v-radio
+                    color="white"  
                     id="newd" 
                     name="quote"
                     value="The Cost To Hire A Developer" onclick="quotemenu(this.value)" label="The Cost To Hire A Developer"></v-radio>
                     <v-radio  
+                    color="white"  
                     id="newp" 
                     name="quote"
                     value="The Cost Of A New Product" 
@@ -1131,6 +1142,7 @@ textarea {
                     <label style="color:white;">When Do You Want To Pay?</label>
                     <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                     <v-radio  
+                    color="white"  
                     id="qdnegotiating" 
                     name="qday_type"
                     value="qpnegotiation" 
@@ -1138,6 +1150,7 @@ textarea {
                     onclick="qppayment(this.value)" 
                     label="After Negotiating With Creator"></v-radio>
                     <v-radio  
+                    color="white"  
                     id="qdcomplete" 
                     name="qday_type"
                     value="pafter_complete" 
@@ -1155,12 +1168,14 @@ textarea {
                     <label style="color:white;">Product Permissions</label>
                     <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                     <v-radio  
+                    color="white"  
                     id="qdis" 
                     name="qd_permissions"
                     value="Peoduct Is Allowed In Store After Completion" 
                     onclick="qpperms(this.value)" 
                     label="Product Is Allowed In Store After Completion"></v-radio>
                     <v-radio  
+                    color="white"  
                     id="qdnot" 
                     name="qd_permissions"
                     value="Product Is NOT Allowed In Store After Completion" 
@@ -1219,18 +1234,21 @@ textarea {
                     <label style="color:white;">Payment Options</label>
                      <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                     <v-radio  
+                    color="white"  
                     id="after_complete" 
                     name="pay_type"
                     value="After Job Is Complete" 
                     onclick="qdpayment(this.value)" 
                     label="After Job Is Complete"></v-radio>
                     <v-radio  
+                    color="white"  
                     id="before_start" 
                     name="pay_type"
                     value="Before Job Starts" 
                     onclick="qdpayment(this.value)" 
                     label="Before Job Is Started"></v-radio>
                     <v-radio  
+                    color="white"  
                     id="hourly" 
                     name="pay_type"
                     value="Hourly Based Pay" 
@@ -1248,12 +1266,14 @@ textarea {
                     <label style="color:white;">Work Permissions</label>
                      <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                     <v-radio  
+                    color="white"  
                     id="qpis" 
                     name="qp_permissions"
                     value="Work Is Allowed In Store After Completion" 
                     onclick="qdpermissions(this.value)" 
                     label="Work Is Allowed In Store After Completion"></v-radio>
-                    <v-radio  
+                    <v-radio
+                    color="white"    
                     id="qpnot" 
                     name="qp_permissions"
                     value="Work Is NOT Allowed In Store After Completion" 
