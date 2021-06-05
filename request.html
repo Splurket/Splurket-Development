@@ -1083,12 +1083,14 @@ textarea {
             <div id="quote_menu" style="display: none;">
                 <div>
                     <label style="color:white;">I Need A Quote For:</label>
-                    <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
+                    <v-radio-group v-model="quotemenu"style="padding-left:50px"><center>
                     <v-radio
                     color="white"  
                     id="newd" 
                     name="quote"
-                    value="The Cost To Hire A Developer" onclick="quotemenu(this.value)" label="The Cost To Hire A Developer"></v-radio>
+                    value="The Cost To Hire A Developer" 
+                    @change="quotemenu" 
+                    label="The Cost To Hire A Developer"></v-radio>
                     <v-radio  
                     color="white"  
                     id="newp" 
@@ -1520,6 +1522,12 @@ new Vue({
             }
 
         })
+    },
+    quotemenu() {
+        this.$nextTick(() => {
+          this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
+          quotemenu(this.nextTickValueWhenClicked)
+      })
     }
     
 
