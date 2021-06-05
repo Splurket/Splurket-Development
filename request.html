@@ -1089,14 +1089,14 @@ textarea {
                     id="newd" 
                     name="quote"
                     value="The Cost To Hire A Developer" 
-                    @change="quotemenu" 
+                    @change="quotemenu1" 
                     label="The Cost To Hire A Developer"></v-radio>
                     <v-radio  
                     color="white"  
                     id="newp" 
                     name="quote"
                     value="The Cost Of A New Product" 
-                    onclick="quotemenu(this.value)"
+                    @change="quotemenu1"
                     label="Estimated Price of A New Product"></v-radio>
                 </center>
             </v-radio-group>
@@ -1470,6 +1470,9 @@ new Vue({
     nextTickRadioGroupValue: 0,
     nextTickValueWhenClicked: null,
     nextTickValueOneSecondLater: null,
+    quotemenu: 0,
+    quotemenu: null,
+    quotemenu: null,
     tab: "subscribe"
   }),
   methods: {
@@ -1498,35 +1501,11 @@ new Vue({
 
         })
     },
-    ModelStuff() {
-      this.$nextTick(() => {
-          this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
-          console.log(this.nextTickRadioGroupValue)
-            var jtype = this.nextTickRadioGroupValue
-            console.log(jtype)
-            if (jtype == "New-Product-Request") {
-                document.getElementById("New-Product-Request").style.display = "block";
-                document.getElementById("quote_menu").style.display = "none";
-                document.getElementById("dhire").style.display = "none";
-            }
-            if (jtype == "Get A Quote") {
-                document.getElementById("New-Product-Request").style.display = "none";
-                document.getElementById("quote_menu").style.display = "block";
-                document.getElementById("dhire").style.display = "none";
-            }
-
-            if (jtype == "Hire A Developer") {
-                document.getElementById("New-Product-Request").style.display = "none";
-                document.getElementById("quote_menu").style.display = "none";
-                document.getElementById("dhire").style.display = "block";
-            }
-
-        })
-    },
-    quotemenu() {
+    quotemenu1() {
         this.$nextTick(() => {
           this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
           quotemenu(this.nextTickValueWhenClicked)
+          console.log(this.nextTickRadioGroupValue)
       })
     }
     
