@@ -918,7 +918,7 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">Product Permissions</label>
-                       <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                       <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                        <v-radio 
                        id="is" 
                        name="p_permissions"
@@ -939,7 +939,7 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">When Do You Want To Pay?</label>
-                       <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                       <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                        <v-radio 
                        id="negotiating" 
                        name="ppay_type"
@@ -1018,7 +1018,7 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">Payment Options</label>
-                       <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                       <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                        <v-radio 
                        id="after_complete" 
                        name="pay_type"
@@ -1043,7 +1043,7 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">Work Permissions</label>
-                       <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                       <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                        <v-radio 
                        id="wis" 
                        name="w_permissions"
@@ -1074,7 +1074,7 @@ textarea {
             <div id="quote_menu" style="display: none;">
                 <div>
                     <label style="color:white;">I Need A Quote For:</label>
-                    <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                    <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                     <v-radio  
                     id="newd" 
                     name="quote"
@@ -1129,7 +1129,7 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">When Do You Want To Pay?</label>
-                    <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                    <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                     <v-radio  
                     id="qdnegotiating" 
                     name="qday_type"
@@ -1153,7 +1153,7 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">Product Permissions</label>
-                    <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                    <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                     <v-radio  
                     id="qdis" 
                     name="qd_permissions"
@@ -1217,7 +1217,7 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">Payment Options</label>
-                     <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                     <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                     <v-radio  
                     id="after_complete" 
                     name="pay_type"
@@ -1246,7 +1246,7 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">Work Permissions</label>
-                     <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                     <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
                     <v-radio  
                     id="qpis" 
                     name="qp_permissions"
@@ -1475,7 +1475,34 @@ new Vue({
             }
 
         })
-    }               
+    },
+    ModelStuff() {
+      this.$nextTick(() => {
+          this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
+          console.log(this.nextTickRadioGroupValue)
+            var jtype = this.nextTickRadioGroupValue
+            console.log(jtype)
+            if (jtype == "New-Product-Request") {
+                document.getElementById("New-Product-Request").style.display = "block";
+                document.getElementById("quote_menu").style.display = "none";
+                document.getElementById("dhire").style.display = "none";
+            }
+            if (jtype == "Get A Quote") {
+                document.getElementById("New-Product-Request").style.display = "none";
+                document.getElementById("quote_menu").style.display = "block";
+                document.getElementById("dhire").style.display = "none";
+            }
+
+            if (jtype == "Hire A Developer") {
+                document.getElementById("New-Product-Request").style.display = "none";
+                document.getElementById("quote_menu").style.display = "none";
+                document.getElementById("dhire").style.display = "block";
+            }
+
+        })
+    }
+    
+
     }
 })
 </script>
