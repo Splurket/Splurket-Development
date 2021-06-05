@@ -918,21 +918,46 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">Product Permissions</label>
-                        <input style="color:white;" type="radio" id="is" name="p_permissions"
-                               value="Product Is Allowed In Store After Completion" onclick="ppermissions(this.value)"><span
-                            style="color:white;">Product Is Allowed In Store After Completion</span><br>
-                        <input style="color:white;" type="radio" id="not" name="p_permissions"
-                               value="Product Is NOT Allowed In Store After Completion"
-                               onclick="ppermissions(this.value)"><span style="color:white;">Product Is NOT Allowed In Store After Completion</span><br>
+                       <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                       <v-radio 
+                       id="is" 
+                       name="p_permissions"
+                       value="Product Is Allowed In Store After Completion" 
+                       onclick="ppermissions(this.value)" 
+                       label="Product Is Allowed In Store After Completion">
+                           
+                       </v-radio>
+                        <v-radio  
+                        id="not" 
+                        name="p_permissions"   
+                        value="Product Is NOT Allowed In Store After Completion"
+                        @click="ppermissions(this.value)"
+                        label="Product Is NOT Allowed In Store After Completion">
+                    </v-radio>
+                </center>
+            </v-radio-group>
                     </div>
                     <div>
                         <label style="color:white;">When Do You Want To Pay?</label>
-                        <input style="color:white;" type="radio" id="negotiating" name="ppay_type"
-                               value="After Negotiating With Product Creator" onclick="ppay(this.value)"><span
-                            style="color:white;">After Negotiating With Product Creator</span><br>
-                        <input style="color:white;" type="radio" id="complete" name="ppay_type" value="After Product Is Made"
-                               onclick="ppay(this.value)"><span
-                            style="color:white;">After The Product Is Made</span><br>
+                       <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                       <v-radio 
+                       id="negotiating" 
+                       name="ppay_type"
+                        value="After Negotiating With Product Creator" 
+                        onclick="ppay(this.value)" 
+                        label="After Negotiating With Product Creator">
+                            
+                        </v-radio>
+                        <v-radio  
+                        id="complete" 
+                        name="ppay_type" 
+                        value="After Product Is Made"
+                        onclick="ppay(this.value)" 
+                        label="After The Product Is Made">
+                            
+                        </v-radio>
+                    </center>
+                </v-radio-group>
                         <p style="color:white;">NOTE: ALL JOB AND SERVICE PAYMENTS MUST BE MADE IN THE PAYMENT SECTION OF
                             THE WEBSITE. THIS ENSURES YOUR MONEY IS SAFE AND SECURES A REFUND IF NECESSARY! IF PAYMENT IS
                             NOT MADE THROUGH US, WE ARE NOT LIABLE FOR ANY LOST ASSETS.</p><br><a style="color:white;"
@@ -993,20 +1018,46 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">Payment Options</label>
-                        <input style="color:white;" type="radio" id="after_complete" name="pay_type"
-                               value="After Job Is Complete"><span style="color:white;">After Job Is Complete</span><br>
-                        <input style="color:white;" type="radio" id="before_start" name="pay_type"
-                               value="Before Job Is Complete"><span
-                            style="color:white;">Before Job Is Started</span><br>
-                        <input style="color:white;" type="radio" id="hourly" name="pay_type"
-                               value="Hourly Based Pay"><span style="color:white;">Hourly Based Pay</span><br>
+                       <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                       <v-radio 
+                       id="after_complete" 
+                       name="pay_type"
+                       value="After Job Is Complete" 
+                       label="After Job Is Complete"
+                        @change="DO SOMETHING!!">
+                       </v-radio>
+                        <v-radio  
+                        id="before_start" 
+                        name="pay_type"
+                        value="Before Job Is Complete" 
+                        label="Before Job Is Started"
+                        @change=" DO SOMETHING"></v-radio>
+                        <v-radio  
+                        id="hourly" 
+                        name="pay_type"
+                        value="Hourly Based Pay" 
+                        label="Hourly Based Pay"
+                        @change=" DO SOMETHING"></v-radio>
+                    </center>
+                </v-radio-group>
                     </div>
                     <div>
                         <label style="color:white;">Work Permissions</label>
-                        <input style="color:white;" type="radio" id="wis" name="w_permissions"
-                               value="Work Is Allowed In Store After Completion"><span style="color:white;">Work Is Allowed In Store After Completion</span><br>
-                        <input style="color:white;" type="radio" id="wnot" name="w_permissions"
-                               value="Work Is NOT Allowed In Store After Completion"><span style="color:white;">Work Is NOT Allowed In Store After Completion</span><br>
+                       <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                       <v-radio 
+                       id="wis" 
+                       name="w_permissions"
+                        value="Work Is Allowed In Store After Completion" 
+                        label="Work Is Allowed In Store After Completion"
+                        @change="DO SOMETHING"></v-radio>
+                        <v-radio  
+                        id="wnot" 
+                        name="w_permissions"
+                        value="Work Is NOT Allowed In Store After Completion" 
+                        label="Work Is NOT Allowed In Store After Completion"
+                        @change="DO SOMETHING"></v-radio>
+                    </center>
+                </v-radio-group>
                     </div>
                     <div id="submit">
                     <center>
@@ -1023,12 +1074,19 @@ textarea {
             <div id="quote_menu" style="display: none;">
                 <div>
                     <label style="color:white;">I Need A Quote For:</label>
-                    <input style="color:white;" type="radio" id="newd" name="quote"
-                           value="The Cost To Hire A Developer" onclick="quotemenu(this.value)"><span
-                        style="color:white;">The Cost To Hire A Developer</span><br>
-                    <input style="color:white;" type="radio" id="newp" name="quote"
-                           value="The Cost Of A New Product" onclick="quotemenu(this.value)"><span
-                        style="color:white;" onclick="quotemenu(this.value)">Estimated Price of A New Product</span><br>
+                    <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                    <v-radio  
+                    id="newd" 
+                    name="quote"
+                    value="The Cost To Hire A Developer" onclick="quotemenu(this.value)" label="The Cost To Hire A Developer"></v-radio>
+                    <v-radio  
+                    id="newp" 
+                    name="quote"
+                    value="The Cost Of A New Product" 
+                    onclick="quotemenu(this.value)"
+                    label="Estimated Price of A New Product"></v-radio>
+                </center>
+            </v-radio-group>
                 </div>
             </div>
 
@@ -1071,11 +1129,22 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">When Do You Want To Pay?</label>
-                    <input style="color:white;" type="radio" id="qdnegotiating" name="qday_type"
-                           value="qpnegotiation" checked="checked" onclick="qppayment(this.value)"><span style="color:white;">After Negotiating With Creator</span><br>
-                    <input style="color:white;" type="radio" id="qdcomplete" name="qday_type"
-                           value="pafter_complete" onclick="qppayment(this.value)"><span
-                        style="color:white;">After The Product Is Complete</span><br>
+                    <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                    <v-radio  
+                    id="qdnegotiating" 
+                    name="qday_type"
+                    value="qpnegotiation" 
+                    checked="checked" 
+                    onclick="qppayment(this.value)" 
+                    label="After Negotiating With Creator"></v-radio>
+                    <v-radio  
+                    id="qdcomplete" 
+                    name="qday_type"
+                    value="pafter_complete" 
+                    onclick="qppayment(this.value)" 
+                    label="After The Product Is Complete"></v-radio>
+                </center>
+            </v-radio-group>
                     <p style="color:white;">NOTE: ALL JOB AND SERVICE PAYMENTS MUST BE MADE IN THE PAYMENT SECTION
                         OF THE WEBSITE. THIS ENSURES YOUR MONEY IS SAFE AND SECURES A REFUND IF NECESSARY! IF
                         PAYMENT IS NOT MADE THROUGH US, WE ARE NOT LIABLE FOR ANY LOST ASSETS.</p><br><a
@@ -1084,10 +1153,21 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">Product Permissions</label>
-                    <input style="color:white;" type="radio" id="qdis" name="qd_permissions"
-                           value="Peoduct Is Allowed In Store After Completion" onclick="qpperms(this.value)"><span style="color:white;">Product Is Allowed In Store After Completion</span><br>
-                    <input style="color:white;" type="radio" id="qdnot" name="qd_permissions"
-                           value="Product Is NOT Allowed In Store After Completion" onclick="qpperms(this.value)"><span style="color:white;">Product Is NOT Allowed In Store After Completion</span><br>
+                    <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                    <v-radio  
+                    id="qdis" 
+                    name="qd_permissions"
+                    value="Peoduct Is Allowed In Store After Completion" 
+                    onclick="qpperms(this.value)" 
+                    label="Product Is Allowed In Store After Completion"></v-radio>
+                    <v-radio  
+                    id="qdnot" 
+                    name="qd_permissions"
+                    value="Product Is NOT Allowed In Store After Completion" 
+                    onclick="qpperms(this.value)" 
+                    label="Product Is NOT Allowed In Store After Completion"></v-radio>
+                </center>
+            </v-radio-group>
                 </div>
                 <div id="submit">
                     <center>
@@ -1137,13 +1217,27 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">Payment Options</label>
-                    <input style="color:white;" type="radio" id="after_complete" name="pay_type"
-                           value="After Job Is Complete" onclick="qdpayment(this.value)"><span style="color:white;">After Job Is Complete</span><br>
-                    <input style="color:white;" type="radio" id="before_start" name="pay_type"
-                           value="Before Job Starts" onclick="qdpayment(this.value)"><span
-                        style="color:white;">Before Job Is Started</span><br>
-                    <input style="color:white;" type="radio" id="hourly" name="pay_type"
-                           value="Hourly Based Pay" onclick="qdpayment(this.value)"><span style="color:white;">Hourly Based Pay</span><br>
+                     <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                    <v-radio  
+                    id="after_complete" 
+                    name="pay_type"
+                    value="After Job Is Complete" 
+                    onclick="qdpayment(this.value)" 
+                    label="After Job Is Complete"></v-radio>
+                    <v-radio  
+                    id="before_start" 
+                    name="pay_type"
+                    value="Before Job Starts" 
+                    onclick="qdpayment(this.value)" 
+                    label="Before Job Is Started"></v-radio>
+                    <v-radio  
+                    id="hourly" 
+                    name="pay_type"
+                    value="Hourly Based Pay" 
+                    onclick="qdpayment(this.value)" 
+                    label="Hourly Based Pay"></v-radio>
+                       </center>
+                   </v-radio-group>
                     <p style="color:white;">NOTE: ALL JOB AND SERVICE PAYMENTS MUST BE MADE IN THE PAYMENT SECTION
                         OF THE WEBSITE. THIS ENSURES YOUR MONEY IS SAFE AND SECURES A REFUND IF NECESSARY! IF
                         PAYMENT IS NOT MADE THROUGH US, WE ARE NOT LIABLE FOR ANY LOST ASSETS.</p><br><a
@@ -1152,10 +1246,21 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">Work Permissions</label>
-                    <input style="color:white;" type="radio" id="qpis" name="qp_permissions"
-                           value="Work Is Allowed In Store After Completion" onclick="qdpermissions(this.value)"><span style="color:white;">Work Is Allowed In Store After Completion</span><br>
-                    <input style="color:white;" type="radio" id="qpnot" name="qp_permissions"
-                           value="Work Is NOT Allowed In Store After Completion" onclick="qdpermissions(this.value)"><span style="color:white;">Work Is NOT Allowed In Store After Completion</span><br>
+                     <v-radio-group v-model=" MODEL GOES HERE  "style="padding-left:50px"><center>
+                    <v-radio  
+                    id="qpis" 
+                    name="qp_permissions"
+                    value="Work Is Allowed In Store After Completion" 
+                    onclick="qdpermissions(this.value)" 
+                    label="Work Is Allowed In Store After Completion"></v-radio>
+                    <v-radio  
+                    id="qpnot" 
+                    name="qp_permissions"
+                    value="Work Is NOT Allowed In Store After Completion" 
+                    onclick="qdpermissions(this.value)" 
+                    label="Work Is NOT Allowed In Store After Completion"></v-radio>
+                </center>
+            </v-radio-group>
                 </div>
                 <div id="submit">
                     <center>
