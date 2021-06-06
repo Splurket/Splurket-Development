@@ -953,21 +953,23 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">Product Permissions</label>
-                       <v-radio-group v-model="pperms2"style="padding-left:50px"><center>
+                       <v-radio-group v-model="devhireperm2"style="padding-left:50px"><center>
                        <v-radio 
                        color="white"
                        id="wis" 
-                       name="p_permissions"
+                       name="w_permissions"
                         value="Product Is Allowed In Store After Completion" 
                         label="Product Is Allowed In Store After Completion"
-                        @change="ppermissions1"></v-radio>
+                        @change="devhireperm1"></v-radio>
                         <v-radio 
                         color="white"
                         id="wnot" 
-                        name="p_permissions"
+                        name="w_permissions"
                         value="Product Is NOT Allowed In Store After Completion" 
                         label="Product Is NOT Allowed In Store After Completion"
-                        @change="ppermissions1"></v-radio>
+                        @change="devhireperm1"></v-radio>
+                    </center>
+                </v-radio-group>
                     </center>
                 </v-radio-group>
                     </div>
@@ -1542,7 +1544,7 @@ textarea {
             description: pdescription,
             skills: skillsNeed,
             payment: ppay,
-            permissions:ppermission,
+            permissions:devhireperm,
             user: Username69,
             name:name69,
             email:email69,
