@@ -953,7 +953,7 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">Product Permissions</label>
-                       <v-radio-group v-model="ppermissions2"style="padding-left:50px"><center>
+                       <v-radio-group v-model="pperms2"style="padding-left:50px"><center>
                        <v-radio 
                        color="white"
                        id="is" 
@@ -1665,20 +1665,20 @@ new Vue({
     nextTickValueWhenClicked: null,
     nextTickValueOneSecondLater: null,
     quotemenu: 0,
-    ppermissions2: 0,
+    pperms2: 0,
     ppay2: 0,
-        dpermissions2: 0,
-        dpayment2: 0,
-        qppermissions2: 0,
-        qppay2: 0,
-        qdpermissions2: 0,
-        qdpayment2: 0,
-        devhirepay2: 0,
-        devhireperm2: 0,
-        qppayment2: 0,
-        qpperms2: 0,
-        qdpayment2: 0,
-    
+    dpermissions2: 0,
+    dpayment2: 0,
+    qppermissions2: 0,
+    qppay2: 0,
+    qdpermissions2: 0,
+    qdpayment2: 0,
+    devhirepay2: 0,
+    devhireperm2: 0,
+    qppayment2: 0,
+    qpperms2: 0,
+    qdpayment2: 0,
+
     ModelStuff:"hello",
     tab: "subscribe"
   }),
@@ -1716,7 +1716,7 @@ new Vue({
     },
     ppermissions1() {
     this.$nextTick(() => {
-        ppermissions = this.ppermissions2
+        ppermissions = this.pperms2
         console.log(ppermission)
 
     })
