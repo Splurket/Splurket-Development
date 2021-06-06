@@ -893,7 +893,7 @@ textarea {
 
 
                   </v-tab-item>
-                  <v-tab style="font-size:17px">Request Details</v-tab>
+                  <v-tab style="font-size:17px" id="requestDets">Request Details</v-tab>
                 <v-tab-item :eager="true">
                 <div id="New-Product-Request" style="display: block;">
                     <center><h1>New Product Invocation Form</h1></center>
@@ -1499,6 +1499,7 @@ new Vue({
                 document.getElementById("quote_menu").style.display = "none";
                 document.getElementById("dhire").style.display = "block";
             }
+            document.getElementById('requestDets').click
         })
     },
     quotemenu1() {
