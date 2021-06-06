@@ -852,7 +852,7 @@ textarea {
             <div style="height:100%;width:100%;position:relative;margin-bottom:5%">
               <v-tabs color="#52b36c" vertical style="margin-top:20px">
                 <v-tab style="font-size:17px">Request Type</v-tab>
-                  <v-tab-item
+                  <v-tab-item value='tab-1'
                   >
                               <!-- JOB TYPE -->
 
@@ -894,7 +894,7 @@ textarea {
 
                   </v-tab-item>
                   <v-tab style="font-size:17px">Request Details</v-tab>
-                <v-tab-item :eager="true">
+                <v-tab-item :eager="true" value='tab-2'>
                 <div id="New-Product-Request" style="display: block;">
                     <center><h1>New Product Invocation Form</h1></center>
                     <div>
@@ -1294,7 +1294,7 @@ textarea {
             </div>
             </v-tab-item>
                     <v-tab style="font-size:17px">Request Description</v-tab>
-                        <v-tab-item
+                        <v-tab-item value='tab-3'
                   >
         </v-tab-item>
 
