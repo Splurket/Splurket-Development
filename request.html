@@ -1340,6 +1340,7 @@ textarea {
             var user = firebase.auth().currentUser;
             //splurket@gmail.com
             var email1 = user.email;
+            document.getElementById('demo_email').value = user.email
             
             var email = getParameterByName('user'); 
             console.log(email)
@@ -1391,7 +1392,6 @@ textarea {
                         document.getElementById('demo_username').value = user_name;
 
 
-                        document.getElementById('demo_email').value = user.email
                     } else {
                         // doc.data() will be undefined in this case
                         console.log("No such document!");
