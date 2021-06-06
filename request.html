@@ -893,8 +893,8 @@ textarea {
 
 
                   </v-tab-item>
-                                      <v-tab style="font-size:17px">Contact Info</v-tab>
-                        <v-tab-item
+            <v-tab style="font-size:17px" id="contactDets">Contact Info</v-tab>
+            <v-tab-item
                   >
                               <!-- name -->
             <div class="input-group" id="username">
@@ -919,7 +919,7 @@ textarea {
             <div id="next1">
                 <center>
                     <button style="background-color: white; color: #52b36c; max-width:200px;" type="button" id="submit"
-                            class="button-primary u-full-width" onclick="next1()">Next
+                            class="button-primary u-full-width" onclick="document.getElementById('requestDets').click()">Next
                     </button>
                 </center>
             </div>
@@ -1335,6 +1335,83 @@ textarea {
 <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
     <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is signed in.
+            var user = firebase.auth().currentUser;
+            //splurket@gmail.com
+            var email1 = user.email;
+            
+            var email = getParameterByName('user'); 
+            console.log(email)
+            //still splurket
+            
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Accept", "application/json, /;q=0.5");
+            var raw = JSON.stringify({
+              "stringtoencrypt": `${email1}`
+            });
+            //document.write(raw)
+            var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
+            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+              .then(function (response) {
+                  return response.json();
+              })
+              .then(function (data) {
+                //should be a base64 string by now
+                getuserdata(data);
+            });
+          } else {
+        document.getElementById('demo_username').value = ""
+
+        document.getElementById('demo_name').value = ""
+
+        document.getElementById('demo_email').value = ""
+
+        document.getElementById('demo_phone').value = ""          }
+        });
+        function getuserdata(data) {
+            email = data.encryptedstring;
+                var docRef = db.collection("users").doc(email);
+                docRef.get().then((doc) => {
+                    if (doc.exists) {
+                        data1 = doc.data()
+                        pro_pic = data1.pro_pic;
+                        if (data1.username == "" ){
+                            user_name = data1.email
+                        }
+                        if (data1.username != "") {
+                            user_name = data1.username;
+                        }
+                        document.getElementById('demo_username').value = user_name;
+
+
+                        document.getElementById('demo_email').value = user.email
+
+                        document.getElementById("avatarpic").src = pro_pic;
+                        //document.getElementById("avatarpic1").src = pro_pic;
+                        document.getElementById("avatarusername1").innerText = "Signed In As: " + user_name;
+                        document.getElementById("avatar").style.display = "block";
+                        document.getElementById("avatarpic").style.display = "inline-block";
+                        var all = document.getElementsByClassName('headerdrop');
+                        for (var i = 0; i < all.length; i++) {
+                          all[i].style.top = '98px';
+                        }
+                    } else {
+                        // doc.data() will be undefined in this case
+                        console.log("No such document!");
+                        console.log(doc.data())
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+        }
         var qpperms
         var qppayment
         var qdpermissions
@@ -1586,7 +1663,7 @@ new Vue({
                 document.getElementById("quote_menu").style.display = "none";
                 document.getElementById("dhire").style.display = "block";
             }
-            document.getElementById('requestDets').click()
+            document.getElementById('contactDets').click()
         })
     },
     quotemenu1() {
