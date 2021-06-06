@@ -1527,24 +1527,23 @@ textarea {
     function qpperms(qpperms2){
         qpperms = qpperms2;
 
-
     }
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         function addproductd(data){
-            console.log('name' pname)
-            console.log('category' productCategory)
-            console.log('description' pdescription)
-            console.log('skills' skillsNeed)
-            console.log('payment' ppay)
-            console.log('permissions'devhireperm)
-            console.log('user' Username69)
-            console.log('name'name69)
-            console.log('email'email69)
-            console.log('phone'phone69)
-            console.log('price'pprice)
+            console.log(pname)
+            console.log(productCategory)
+            console.log(pdescription)
+            console.log(skillsNeed)
+            console.log(ppay)
+            console.log(devhireperm)
+            console.log(Username69)
+            console.log(name69)
+            console.log(email69)
+            console.log(phone69)
+            console.log(pprice)
             Docid = data.encryptedstring;
             db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
             name: pname,
@@ -1577,7 +1576,7 @@ textarea {
         //radios
         //ppermissions
         //ppay
-        function pcard() {
+    function pcard() {
         productName = document.getElementById('pname').value;
         pprice = document.getElementById('pprice').value;
         if(pprice.includes('$')){
