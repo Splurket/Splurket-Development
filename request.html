@@ -918,13 +918,13 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">Product Permissions</label>
-                       <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
+                       <v-radio-group v-model="ppermissions2"style="padding-left:50px"><center>
                        <v-radio 
                        color="white"
                        id="is" 
                        name="p_permissions"
                        value="Product Is Allowed In Store After Completion" 
-                       onclick="ppermissions(this.value)" 
+                       @change="ppermissions1" 
                        label="Product Is Allowed In Store After Completion">
                            
                        </v-radio>
@@ -933,7 +933,7 @@ textarea {
                         id="not" 
                         name="p_permissions"   
                         value="Product Is NOT Allowed In Store After Completion"
-                        @click="ppermissions(this.value)"
+                        @change="ppermissions1"
                         label="Product Is NOT Allowed In Store After Completion">
                     </v-radio>
                 </center>
@@ -941,13 +941,13 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">When Do You Want To Pay?</label>
-                       <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
+                       <v-radio-group v-model="ppay2"style="padding-left:50px"><center>
                        <v-radio 
                        color="white"
                        id="negotiating" 
                        name="ppay_type"
                         value="After Negotiating With Product Creator" 
-                        onclick="ppay(this.value)" 
+                        @change="ppay1" 
                         label="After Negotiating With Product Creator">
                             
                         </v-radio>
@@ -956,7 +956,7 @@ textarea {
                         id="complete" 
                         name="ppay_type" 
                         value="After Product Is Made"
-                        onclick="ppay(this.value)" 
+                        @change="ppay1" 
                         label="After The Product Is Made">
                             
                         </v-radio>
@@ -1022,14 +1022,14 @@ textarea {
                     </div>
                     <div>
                         <label style="color:white;">Payment Options</label>
-                       <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
+                       <v-radio-group v-model="devhirepay2"style="padding-left:50px"><center>
                        <v-radio 
                        color="white"
                        id="after_complete" 
                        name="pay_type"
                        value="After Job Is Complete" 
                        label="After Job Is Complete"
-                        onclick="dosomething()">
+                       @change="devhirepay1">
                        </v-radio>
                         <v-radio 
                         color="white"
@@ -1037,34 +1037,34 @@ textarea {
                         name="pay_type"
                         value="Before Job Is Complete" 
                         label="Before Job Is Started"
-                        onclick="dosomething()"></v-radio>
+                        @change="devhirepay1"></v-radio>
                         <v-radio 
                         color="white"
                         id="hourly" 
                         name="pay_type"
                         value="Hourly Based Pay" 
                         label="Hourly Based Pay"
-                        onclick="dosomething()"></v-radio>
+                        @change="devhirepay1"></v-radio>
                     </center>
                 </v-radio-group>
                     </div>
                     <div>
                         <label style="color:white;">Work Permissions</label>
-                       <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
+                       <v-radio-group v-model="devhireperm2"style="padding-left:50px"><center>
                        <v-radio 
                        color="white"
                        id="wis" 
                        name="w_permissions"
                         value="Work Is Allowed In Store After Completion" 
                         label="Work Is Allowed In Store After Completion"
-                        onclick="dosomething()"></v-radio>
+                        @change="devhireperm1"></v-radio>
                         <v-radio 
                         color="white"
                         id="wnot" 
                         name="w_permissions"
                         value="Work Is NOT Allowed In Store After Completion" 
                         label="Work Is NOT Allowed In Store After Completion"
-                        onclick="dosomething()"></v-radio>
+                        @change="devhireperm1"></v-radio>
                     </center>
                 </v-radio-group>
                     </div>
@@ -1142,21 +1142,21 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">When Do You Want To Pay?</label>
-                    <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
+                    <v-radio-group v-model="qppayment2"style="padding-left:50px"><center>
                     <v-radio  
                     color="white"  
                     id="qdnegotiating" 
                     name="qday_type"
                     value="qpnegotiation" 
                     checked="checked" 
-                    onclick="qppayment(this.value)" 
+                    @change="qppayment1" 
                     label="After Negotiating With Creator"></v-radio>
                     <v-radio  
                     color="white"  
                     id="qdcomplete" 
                     name="qday_type"
                     value="pafter_complete" 
-                    onclick="qppayment(this.value)" 
+                    @change="qppayment1" 
                     label="After The Product Is Complete"></v-radio>
                 </center>
             </v-radio-group>
@@ -1168,20 +1168,20 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">Product Permissions</label>
-                    <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
+                    <v-radio-group v-model="qpperms2"style="padding-left:50px"><center>
                     <v-radio  
                     color="white"  
                     id="qdis" 
                     name="qd_permissions"
                     value="Peoduct Is Allowed In Store After Completion" 
-                    onclick="qpperms(this.value)" 
+                    @change="qpperms1" 
                     label="Product Is Allowed In Store After Completion"></v-radio>
                     <v-radio  
                     color="white"  
                     id="qdnot" 
                     name="qd_permissions"
                     value="Product Is NOT Allowed In Store After Completion" 
-                    onclick="qpperms(this.value)" 
+                    @change="qpperms1"
                     label="Product Is NOT Allowed In Store After Completion"></v-radio>
                 </center>
             </v-radio-group>
@@ -1234,27 +1234,27 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">Payment Options</label>
-                     <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
+                     <v-radio-group v-model="qdpayment2"style="padding-left:50px"><center>
                     <v-radio  
                     color="white"  
                     id="after_complete" 
                     name="pay_type"
                     value="After Job Is Complete" 
-                    onclick="qdpayment(this.value)" 
+                    @change="qdpayment1" 
                     label="After Job Is Complete"></v-radio>
                     <v-radio  
                     color="white"  
                     id="before_start" 
                     name="pay_type"
                     value="Before Job Starts" 
-                    onclick="qdpayment(this.value)" 
+                    @change="qdpayment1" 
                     label="Before Job Is Started"></v-radio>
                     <v-radio  
                     color="white"  
                     id="hourly" 
                     name="pay_type"
                     value="Hourly Based Pay" 
-                    onclick="qdpayment(this.value)" 
+                    @change="qdpayment1" 
                     label="Hourly Based Pay"></v-radio>
                        </center>
                    </v-radio-group>
@@ -1266,20 +1266,20 @@ textarea {
                 </div>
                 <div>
                     <label style="color:white;">Work Permissions</label>
-                     <v-radio-group v-model="ModelStuff"style="padding-left:50px"><center>
+                     <v-radio-group v-model="qdpermissions2"style="padding-left:50px"><center>
                     <v-radio  
                     color="white"  
                     id="qpis" 
                     name="qp_permissions"
                     value="Work Is Allowed In Store After Completion" 
-                    onclick="qdpermissions(this.value)" 
+                    @change="qdpermissions1" 
                     label="Work Is Allowed In Store After Completion"></v-radio>
                     <v-radio
                     color="white"    
                     id="qpnot" 
                     name="qp_permissions"
                     value="Work Is NOT Allowed In Store After Completion" 
-                    onclick="qdpermissions(this.value)" 
+                    @change="qdpermissions1"  
                     label="Work Is NOT Allowed In Store After Completion"></v-radio>
                 </center>
             </v-radio-group>
@@ -1473,6 +1473,46 @@ new Vue({
     quotemenu: 0,
     quotemenu: null,
     quotemenu: null,
+    ppermissions2: 0,
+    ppermissions2: null,
+    ppermissions2: null,
+    ppay2: 0,
+    ppay2: null,
+    ppay2: null,
+        dpermissions2: 0,
+    dpermissions2: null,
+    dpermissions2: null,
+        dpayment2: 0,
+    dpayment2: null,
+    dpayment2: null,
+        qppermissions2: 0,
+    qppermissions2: null,
+    qppermissions2: null,
+        qppay2: 0,
+    qppay2: null,
+    qppay2: null,
+        qdpermissions2: 0,
+    qdpermissions2: null,
+    qdpermissions2: null,
+        qdpayment2: 0,
+    qdpayment2: null,
+    qdpayment2: null,
+        devhirepay2: 0,
+    devhirepay2: null,
+    devhirepay2: null,
+        devhireperm2: 0,
+    devhireperm2: null,
+    devhireperm2: null,
+        qppayment2: 0,
+    qppayment2: null,
+    qppayment2: null,
+        qpperms2: 0,
+    qpperms2: null,
+    qpperms2: null,
+        qdpayment2: 0,
+    qdpayment2: null,
+    qdpayment2: null,
+    
     ModelStuff:"hello",
     tab: "subscribe"
   }),
@@ -1504,12 +1544,63 @@ new Vue({
     },
     quotemenu1() {
         this.$nextTick(() => {
-          this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
           quotemenu30(this.quotemenu)
           console.log(this.quotemenu)
       })
+    },
+        ppermissions() {
+        ppermission = this.ppermissions2;
+        console.log(ppermission)
+    },
+
+    ppay1() {
+        ppayment = this.ppayment2;
+        console.log(ppayment)
+    },
+    dpermissions1() {
+        dpermissions = this.pperm2;
+        console.log(dpermissions)
+    },
+
+    dpayment1() {
+        dpayment = this.dpay2;
+        console.log(dpayment)
+    },
+    qppermissions1() {
+        pqerms = this.pqermissions2;
+        console.log(pqerms)
+    },
+
+    qppay1() {
+        pqpayment = this.ppay2;
+        console.log(pqpayment)
+    },
+    qdpermissions1() {
+        dqpermissions = this.pperm2;
+        console.log(dqpermissions)
+    },
+
+    qdpayment1() {
+        dqpayment = this.dpay2;
+        console.log(dqpayment)
+    },
+    devhirepay1(){
+        devhirepay = this.devhirepay2;
+        console.log(devhirepay)
+    },
+    devhireperm1(){
+        devhireperm = this.devhireperm2;
+        console.log(devhireperm)
+    },
+    qppayment1(){
+        qppayment = this.qppayment2;
+        console.log(qppayment)
+    },
+    qpperms1(){
+        qpperms = this.qpperms2;
+        console.log(qpperms)
     }
-    
+
 
     }
 })
