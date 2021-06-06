@@ -1415,6 +1415,7 @@ textarea {
         var dpermissions
         var ppermission
         var ppayment
+        var Docid
         var Username69 = document.getElementById('demo_username').value;
         var name69 = document.getElementById('demo_name').value;
         var email69 = document.getElementById('demo_email').value;
@@ -1536,6 +1537,24 @@ textarea {
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
+        function addproductd(data){
+            Docid = data.encryptedstring;
+            db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
+            name: pname,
+            category: productCategory,
+            description: pdescription,
+            skills: skillsNeed,
+            payment: ppay,
+            permissions:ppermission,
+            user: Username69,
+            name:name69,
+            email:email69,
+            phone:phone69,
+            price:pprice,
+
+
+        });
+        }
         function randomIntFromInterval(min, max) { // min and max included 
       return Math.floor(Math.random() * (max - min + 1) + min)
     }
@@ -1580,22 +1599,7 @@ textarea {
           })
           .then(function (data) {
             //should be a base64 string by now
-            Docid= data.encryptedstring
-        });
-        db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
-            name: pname,
-            category: productCategory,
-            description: pdescription,
-            skills: skillsNeed,
-            payment: ppay,
-            permissions:ppermission,
-            user: Username69,
-            name:name69,
-            email:email69,
-            phone:phone69,
-            price:pprice,
-
-
+           addproductd(data)
         });
 }
     </script>
