@@ -1238,7 +1238,7 @@ textarea {
                     <textarea class="u-full-width" id="qddescription"></textarea>
                 </div>
                 <div>
-                    <label for="demo_name" style="color:white;">Product Category</label>
+                    <label for="demo_name" style="color:white;">Job Category</label>
                     <input class="u-full-width" type="text"
                            placeholder="Please Enter The Category That This Product Is In" id="qdcat">
                 </div>
@@ -1562,18 +1562,6 @@ textarea {
             name69 = document.getElementById('demo_name').value;
             email69 = document.getElementById('demo_email').value;
             phone69 = document.getElementById('demo_phone').value;
-            console.log(dname)
-            console.log(dcat)
-            console.log(ddesc)
-            console.log(dskills)
-            console.log(devhirepay)
-            console.log(devhireperm)
-            console.log(Username69)
-            console.log(name69)
-            console.log(email69)
-            console.log(phone69)
-            console.log(dprice1)
-            console.log(dtime)
             Docid = data.encryptedstring;
             db.collection('requests').doc('unclaimed').collection('jobs').doc(Docid).set({
             name: dname,
@@ -1683,20 +1671,7 @@ textarea {
     </script>
     <script>
         //dev hire quote
-                function pqcard() {
-        var qddescription = document.getElementById('qddescription').value;
-        var qdtime
-        var qdcost
-        var qdcat
-        var qdskills
-        var qddescription
-        //Create A card
-}
-    </script>
-    <script>
-        //product quote
-                function dqcard() {
-
+    function pqcard() {
         var qpdescription = document.getElementById('qpdescription').value;
         var qptime
         var qpcost
@@ -1705,6 +1680,89 @@ textarea {
         var qpdescription
         //Create A card
     }
+    </script>
+    <script>
+        //product quote
+    function dqcard() {
+        var qddescription = document.getElementById('qddescription').value;
+        var qdtime
+        var qdcost
+        var qdcat
+        var qdskills
+        var qddescription
+        //Create A card
+        qdcost = document.getElementById('qdcost').value;
+        qdtime = document.getElementById('qdtime').value;
+        qdname = document.getElementById('qdname').value;
+        qdcat = document.getElementById('qdcat').value;
+        qdskills = document.getElementById('dqskills').value;
+        qddescription = document.getElementById('qddescription').value;
+        if(qdcost.includes('$')){
+            qdcost=qdcost
+        }else(qdcost = '$'+qdcost)
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json, /;q=0.5");
+        var raw = JSON.stringify({
+          "stringtoencrypt": `${qdname}${email}${rndInt}`
+        });
+        //document.write(raw)
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+            //should be a base64 string by now
+           addqdevd(data)
+        });
+}
+        function addqdevd(data){
+            qdcost1 = document.getElementById('qdcost').value;
+            qdtime = document.getElementById('qdtime').value;
+            qdname = document.getElementById('qdname').value;
+            qdcat = document.getElementById('qdcat').value;
+            qdskills = document.getElementById('dqskills').value;
+            qddescription = document.getElementById('qddescription').value;
+            Username69 = document.getElementById('demo_username').value;
+            name69 = document.getElementById('demo_name').value;
+            email69 = document.getElementById('demo_email').value;
+            phone69 = document.getElementById('demo_phone').value;
+            console.log(qdname)
+            console.log(qdcat)
+            console.log(ddesc)
+            console.log(qdskills)
+            console.log(dqpayment)
+            console.log(qdpermissions)
+            console.log(Username69)
+            console.log(name69)
+            console.log(email69)
+            console.log(phone69)
+            console.log(qdcost1)
+            console.log(qdtime)
+            Docid = data.encryptedstring;
+            db.collection('requests').doc('unclaimed').collection('quotes').collection('jobs').doc(Docid).set({
+            name: qdname,
+            category: qdcat,
+            description: ddesc,
+            skills: qdskills,
+            payment: dqpayment,
+            permissions: qdpermissions,
+            user: Username69,
+            name:name69,
+            email:email69,
+            phone:phone69,
+            price:qdcost1,
+            time:qdtime,
+
+
+        });
+        }
 
     </script>
     </form>
