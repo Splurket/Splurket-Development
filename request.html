@@ -1532,6 +1532,7 @@ textarea {
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
+        const rndInt = randomIntFromInterval(1000, 9999)
         function addproductd(data){
             Username69 = document.getElementById('demo_username').value;
             name69 = document.getElementById('demo_name').value;
@@ -1581,7 +1582,6 @@ textarea {
       return Math.floor(Math.random() * (max - min + 1) + min)
     }
 
-        const rndInt = randomIntFromInterval(1000, 9999)
         //new product
         var description = document.getElementById('pdescription').value;
         var productCategory
@@ -1601,7 +1601,6 @@ textarea {
         productCategory = document.getElementById('pcategory').value;
         skillsNeed = document.getElementById('pskills').value;
         pdescription = document.getElementById('pdescription').value;
-        const rndInt = randomIntFromInterval(1000, 9999)
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Accept", "application/json, /;q=0.5");
