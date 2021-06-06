@@ -1477,6 +1477,9 @@ new Vue({
     tab: "subscribe"
   }),
   methods: {
+        changeTab(tab4){
+     this.tab= `tab-${tab4}`;
+    },
     nextTickDoSomethingWithNewValue() {
       this.$nextTick(() => {
           this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
@@ -1499,7 +1502,7 @@ new Vue({
                 document.getElementById("quote_menu").style.display = "none";
                 document.getElementById("dhire").style.display = "block";
             }
-
+            changeTab("1")
         })
     },
     quotemenu1() {
