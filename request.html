@@ -947,6 +947,11 @@ textarea {
                         <textarea class="u-full-width" id="pdescription"></textarea>
                     </div>
                     <div>
+                        <label for="demo_name" style="color:white;">Add Price(Optional)</label>
+                        <p style="color:white;"> What Would You Pay To Have This Product Made? (USD)</p>
+                        <input class="u-full-width" type="text" placeholder="Please Specify A Price" id="pprice">
+                    </div>
+                    <div>
                         <label style="color:white;">Product Permissions</label>
                        <v-radio-group v-model="ppermissions2"style="padding-left:50px"><center>
                        <v-radio 
@@ -1374,7 +1379,8 @@ textarea {
 
         document.getElementById('demo_email').value = ""
 
-        document.getElementById('demo_phone').value = ""          }
+        document.getElementById('demo_phone').value = ""          
+    }
         });
         function getuserdata(data) {
             email = data.encryptedstring;
@@ -1409,10 +1415,10 @@ textarea {
         var dpermissions
         var ppermission
         var ppayment
-        var Username
-        var name
-        var email
-        var phone
+        var Username69 = document.getElementById('demo_username').value;
+        var name69 = document.getElementById('demo_name').value;
+        var email69 = document.getElementById('demo_email').value;
+        var phone69 = document.getElementById('demo_phone').value;
 
         function back1() {
             document.getElementById("job_type").style.display = "none";
@@ -1530,6 +1536,11 @@ textarea {
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
+        function randomIntFromInterval(min, max) { // min and max included 
+      return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    const rndInt = randomIntFromInterval(1000, 9999)
         //new product
         var description = document.getElementById('pdescription').value;
         var productCategory
@@ -1541,13 +1552,51 @@ textarea {
         //ppermissions
         //ppay
         function pcard() {
-        document.getElementById('negotiating')
-        document.getElementById('complete')
         productName = document.getElementById('pname').value;
+        pprice = document.getElementById('pprice').value;
+        if(pprice.includes('$')){
+            pprice=pprice
+        }else(pprice = '$'+pprice)
         productCategory = document.getElementById('pcategory').value;
         skillsNeed = document.getElementById('pskills').value;
         pdescription = document.getElementById('pdescription').value;
+        const rndInt = randomIntFromInterval(1000, 9999)
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json, /;q=0.5");
+        var raw = JSON.stringify({
+          "stringtoencrypt": `${productName}${email}${rndInt}`
+        });
+        //document.write(raw)
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+            //should be a base64 string by now
+            Docid= data.encryptedstring
+        });
+        db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
+            name: pname,
+            category: productCategory,
+            description: pdescription,
+            skills: skillsNeed,
+            payment: ppay,
+            permissions:ppermission,
+            user: Username69,
+            name:name69,
+            email:email69,
+            phone:phone69,
+            price:pprice,
 
+
+        });
 }
     </script>
     <script>
