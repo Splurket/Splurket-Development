@@ -1537,17 +1537,6 @@ textarea {
             name69 = document.getElementById('demo_name').value;
             email69 = document.getElementById('demo_email').value;
             phone69 = document.getElementById('demo_phone').value;
-            console.log(productName)
-            console.log(productCategory)
-            console.log(pdescription)
-            console.log(skillsNeed)
-            console.log(ppayment)
-            console.log(devhireperm)
-            console.log(Username69)
-            console.log(name69)
-            console.log(email69)
-            console.log(phone69)
-            console.log(pprice)
             Docid = data.encryptedstring;
             db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
             name: productName,
@@ -1561,6 +1550,29 @@ textarea {
             email:email69,
             phone:phone69,
             price:pprice,
+
+
+        });
+        }
+        function adddevd(data){
+            Username69 = document.getElementById('demo_username').value;
+            name69 = document.getElementById('demo_name').value;
+            email69 = document.getElementById('demo_email').value;
+            phone69 = document.getElementById('demo_phone').value;
+            Docid = data.encryptedstring;
+            db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
+            name: dname,
+            category: dcat,
+            description: ddescription,
+            skills: dskills,
+            payment: devhirepay,
+            permissions:devhireperm,
+            user: Username69,
+            name:name69,
+            email:email69,
+            phone:phone69,
+            price:dprice,
+            time:dtime,
 
 
         });
@@ -1615,10 +1627,11 @@ textarea {
     </script>
     <script>
         //New Creator hire
-                function dcard() {
+    function dcard() {
+        const rndInt = randomIntFromInterval(1000, 9999)
         var ddescription = document.getElementById('ddescription').value;
         var devtime
-        var devprice
+        var dprice
         var devcat
         var devskills
         var ddescription
@@ -1629,7 +1642,32 @@ textarea {
         dcat = document.getElementById('dcategory').value;
         dskills = document.getElementById('dskills').value;
         ddescription = document.getElementById('ddescription').value;
-    }
+        if(dprice.includes('$')){
+            dprice=dprice
+        }else(dprice = '$'+dprice)
+        const rndInt = randomIntFromInterval(1000, 9999)
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json, /;q=0.5");
+        var raw = JSON.stringify({
+          "stringtoencrypt": `${productName}${email}${rndInt}`
+        });
+        //document.write(raw)
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+            //should be a base64 string by now
+           adddevd(data)
+        });
+}
     </script>
     <script>
         //dev hire quote
