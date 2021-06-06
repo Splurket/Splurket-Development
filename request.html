@@ -1558,7 +1558,7 @@ textarea {
         function adddevd(data){
             console.log(dname)
             console.log(dcat)
-            console.log(ddescription)
+            console.log(ddesc)
             console.log(dskills)
             console.log(devhirepay)
             console.log(devhireperm)
@@ -1566,7 +1566,7 @@ textarea {
             console.log(name69)
             console.log(email69)
             console.log(phone69)
-            console.log(dprice)
+            console.log(dprice1)
             console.log(dtime)
             Username69 = document.getElementById('demo_username').value;
             name69 = document.getElementById('demo_name').value;
@@ -1576,7 +1576,7 @@ textarea {
             db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
             name: dname,
             category: dcat,
-            description: ddescription,
+            description: ddesc,
             skills: dskills,
             payment: devhirepay,
             permissions:devhireperm,
@@ -1584,7 +1584,7 @@ textarea {
             name:name69,
             email:email69,
             phone:phone69,
-            price:dprice,
+            price:dprice1,
             time:dtime,
 
 
@@ -1640,21 +1640,21 @@ textarea {
         //New Creator hire
     function dcard() {
         const rndInt = randomIntFromInterval(1000, 9999)
-        var ddescription = document.getElementById('ddescription').value;
+        var ddesc
         var devtime
-        var dprice
+        var dprice1
         var devcat
         var devskills
         var ddescription
         //Create A card
-        dprice = document.getElementById('dprice').value;
+        dprice1 = document.getElementById('dprice').value;
         dtime = document.getElementById('dtime').value;
         dname = document.getElementById('dname').value;
         dcat = document.getElementById('dcategory').value;
         dskills = document.getElementById('dskills').value;
-        ddescription = document.getElementById('ddescription').value;
-        if(dprice.includes('$')){
-            dprice=dprice
+        ddesc = document.getElementById('ddescription').value;
+        if(dprice1.includes('$')){
+            dprice1=dprice
         }else(dprice = '$'+dprice)
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
