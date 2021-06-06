@@ -1413,10 +1413,10 @@ textarea {
         var ppermission
         var ppayment
         var Docid
-        var Username69 = document.getElementById('demo_username').value;
-        var name69 = document.getElementById('demo_name').value;
-        var email69 = document.getElementById('demo_email').value;
-        var phone69 = document.getElementById('demo_phone').value;
+        var Username69
+        var name69
+        var email69
+        var phone69
 
         function back1() {
             document.getElementById("job_type").style.display = "none";
@@ -1533,11 +1533,15 @@ textarea {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         function addproductd(data){
-            console.log(pname)
+            Username69 = document.getElementById('demo_username').value;
+            name69 = document.getElementById('demo_name').value;
+            email69 = document.getElementById('demo_email').value;
+            phone69 = document.getElementById('demo_phone').value;
+            console.log(productName)
             console.log(productCategory)
             console.log(pdescription)
             console.log(skillsNeed)
-            console.log(ppay)
+            console.log(ppayment)
             console.log(devhireperm)
             console.log(Username69)
             console.log(name69)
@@ -1546,11 +1550,11 @@ textarea {
             console.log(pprice)
             Docid = data.encryptedstring;
             db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
-            name: pname,
+            name: productName,
             category: productCategory,
             description: pdescription,
             skills: skillsNeed,
-            payment: ppay,
+            payment: ppayment,
             permissions:devhireperm,
             user: Username69,
             name:name69,
