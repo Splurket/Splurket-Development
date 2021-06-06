@@ -1537,6 +1537,17 @@ textarea {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         function addproductd(data){
+            console.log('name' pname)
+            console.log('category' productCategory)
+            console.log('description' pdescription)
+            console.log('skills' skillsNeed)
+            console.log('payment' ppay)
+            console.log('permissions'devhireperm)
+            console.log('user' Username69)
+            console.log('name'name69)
+            console.log('email'email69)
+            console.log('phone'phone69)
+            console.log('price'pprice)
             Docid = data.encryptedstring;
             db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
             name: pname,
