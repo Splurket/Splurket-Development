@@ -870,9 +870,9 @@ textarea {
                         style="color:white !important"
                       ></v-radio>
                        <v-radio
-                        label="I Want To Hire A Developer"
+                        label="I Want To Hire A Creator"
                         color="white"
-                        value="Hire A Developer"
+                        value="Hire A Creator"
                         @change="nextTickDoSomethingWithNewValue"
                         id="hire_dev"
                         name="job_type"
@@ -1011,7 +1011,7 @@ textarea {
                 </div>
 
 
-                <!--HIRE A DEVELOPER-->
+                <!--HIRE A Creator-->
 
                 <div id="dhire" style="display: none;">
                     <center><h1>Creator Hire Form</h1></center>
@@ -1096,7 +1096,7 @@ textarea {
                     <div id="submit">
                     <center>
                         <button style="background-color: white; color: #52b36c; max-width:300px;" type="button"
-                                id="dsubmit" class="button-primary u-full-width" onclick="dcard()">Submit Developer Hire Request
+                                id="dsubmit" class="button-primary u-full-width" onclick="dcard()">Submit Creator Hire Request
                         </button>
                     </center>
                 </div>
@@ -1113,9 +1113,9 @@ textarea {
                     color="white"  
                     id="newd" 
                     name="quote"
-                    value="The Cost To Hire A Developer" 
+                    value="The Cost To Hire A Creator" 
                     @change="quotemenu1" 
-                    label="The Cost To Hire A Developer"></v-radio>
+                    label="The Cost To Hire A Creator"></v-radio>
                     <v-radio  
                     color="white"  
                     id="newp" 
@@ -1225,7 +1225,7 @@ textarea {
 
 
             <div id="dquote" style="display: none;">
-                <center><h1>Developer Hire Quote Form</h1></center>
+                <center><h1>Creator Hire Quote Form</h1></center>
                 <div class="input-group">
                     <label for="demo_name" style="color:white;">Job Name</label>
                     <input class="u-full-width" type="text" placeholder="Please Enter The Name Of The Job"
@@ -1312,7 +1312,7 @@ textarea {
                 <div id="submit">
                     <center>
                         <button style="background-color: white; color: #52b36c; max-width:300px;" type="button"
-                                id="dqsubmit" class="button-primary u-full-width" onclick="dqcard()">Submit Developer Hire Quote
+                                id="dqsubmit" class="button-primary u-full-width" onclick="dqcard()">Submit Creator Hire Quote
                         </button>
                     </center>
                 </div>
@@ -1378,7 +1378,7 @@ textarea {
                 document.getElementById("dhire").style.display = "none";
             }
 
-            if (jtype == "Hire A Developer") {
+            if (jtype == "Hire A Creator") {
                 document.getElementById("New-Product-Request").style.display = "none";
                 document.getElementById("quote_menu").style.display = "none";
                 document.getElementById("dhire").style.display = "block";
@@ -1386,7 +1386,7 @@ textarea {
         }
 
         function quotemenu30(qselect) {
-            if (qselect == "The Cost To Hire A Developer") {
+            if (qselect == "The Cost To Hire A Creator") {
                 document.getElementById("dquote").style.display = "block";
                 document.getElementById("quote_menu").style.display = "none";
             }
@@ -1485,7 +1485,7 @@ textarea {
 }
     </script>
     <script>
-        //New developer hire
+        //New Creator hire
                 function dcard() {
         var ddescription = document.getElementById('ddescription').value;
         var devtime
@@ -1581,7 +1581,7 @@ new Vue({
                 document.getElementById("dhire").style.display = "none";
             }
 
-            if (jtype == "Hire A Developer") {
+            if (jtype == "Hire A Creator") {
                 document.getElementById("New-Product-Request").style.display = "none";
                 document.getElementById("quote_menu").style.display = "none";
                 document.getElementById("dhire").style.display = "block";
