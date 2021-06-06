@@ -863,7 +863,7 @@ textarea {
                        <v-radio
                         label="New Product Request"
                         color="white"
-                        value="New-Product-Request"
+                        value="New Product Request"
                         @change="nextTickDoSomethingWithNewValue"
                         id="product"
                         name="job_type"
@@ -893,6 +893,37 @@ textarea {
 
 
                   </v-tab-item>
+                                      <v-tab style="font-size:17px">Contact Info</v-tab>
+                        <v-tab-item
+                  >
+                              <!-- name -->
+            <div class="input-group" id="username">
+                <label for="demo_name" style="color:white;">Splurket Username</label>
+                <input class="u-full-width" type="text" placeholder="Please Enter Your Username" id="demo_username">
+            </div>
+            <div class="input-group" id="name">
+                <label for="demo_name" style="color:white;">Full Name</label>
+                <input class="u-full-width" type="text" placeholder="Please Enter Your Name" id="demo_name">
+            </div>
+
+            <!-- email -->
+            <div class="input-group" id="email">
+                <label for="demo_name" style="color:white;">Email</label>
+                <input class="u-full-width" type="text" placeholder="Please Enter Your Email" id="demo_email">
+            </div>
+            <!-- email -->
+            <div class="input-group" id="phone">
+                <label for="demo_name" style="color:white;">Phone Number</label>
+                <input class="u-full-width" type="text" placeholder="Please Enter Your Phone Number" id="demo_phone">
+            </div>
+            <div id="next1">
+                <center>
+                    <button style="background-color: white; color: #52b36c; max-width:200px;" type="button" id="submit"
+                            class="button-primary u-full-width" onclick="next1()">Next
+                    </button>
+                </center>
+            </div>
+        </v-tab-item>
                   <v-tab style="font-size:17px" id="requestDets">Request Details</v-tab>
                 <v-tab-item :eager="true">
                 <div id="New-Product-Request" style="display: block;">
@@ -967,12 +998,6 @@ textarea {
                             NOT MADE THROUGH US, WE ARE NOT LIABLE FOR ANY LOST ASSETS.</p><br><a style="color:white;"
                                                                                                   href="url">CLICK HERE TO
                         GO TO PAYMENT PAGE</a>
-                    </div>
-                    <div hidden="hidden">
-                        <input class="u-full-width" type="text" id="myTest">
-                    </div>
-                    <div hidden="hidden">
-                        <input class="u-full-width" type="text" id="myTest1">
                     </div>
                     <br>
                     <div id="submit">
@@ -1293,10 +1318,6 @@ textarea {
                 </div>
             </div>
             </v-tab-item>
-                    <v-tab style="font-size:17px">Contact Info</v-tab>
-                        <v-tab-item
-                  >
-        </v-tab-item>
 
           </v-tabs></center>
 </div>
@@ -1444,12 +1465,23 @@ textarea {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         //new product
-                function pcard() {
         var description = document.getElementById('pdescription').value;
         var productCategory
         var skillsNeed
         var pdescription
+
         //Create A card
+        //radios
+        //ppermissions
+        //ppay
+        function pcard() {
+        document.getElementById('negotiating')
+        document.getElementById('complete')
+        productName = document.getElementById('pname').value;
+        productCategory = document.getElementById('pcategory').value;
+        skillsNeed = document.getElementById('pskills').value;
+        pdescription = document.getElementById('pdescription').value;
+
 }
     </script>
     <script>
@@ -1462,6 +1494,12 @@ textarea {
         var devskills
         var ddescription
         //Create A card
+        dprice = document.getElementById('dprice').value;
+        dtime = document.getElementById('dtime').value;
+        dname = document.getElementById('dname').value;
+        dcat = document.getElementById('dcategory').value;
+        dskills = document.getElementById('dskills').value;
+        ddescription = document.getElementById('ddescription').value;
     }
     </script>
     <script>
@@ -1559,7 +1597,7 @@ new Vue({
     },
         ppermissions1() {
     this.$nextTick(() => {
-        ppermission = this.ppermissions2
+        ppermissions = this.ppermissions2
         console.log(ppermission)
 
     })
