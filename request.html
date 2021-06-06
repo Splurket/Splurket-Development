@@ -1575,7 +1575,7 @@ textarea {
             email69 = document.getElementById('demo_email').value;
             phone69 = document.getElementById('demo_phone').value;
             Docid = data.encryptedstring;
-            db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
+            db.collection('requests').doc('unclaimed').collection('jobs').doc(Docid).set({
             name: dname,
             category: dcat,
             description: ddesc,
