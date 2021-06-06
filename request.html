@@ -1393,16 +1393,6 @@ textarea {
 
 
                         document.getElementById('demo_email').value = user.email
-
-                        document.getElementById("avatarpic").src = pro_pic;
-                        //document.getElementById("avatarpic1").src = pro_pic;
-                        document.getElementById("avatarusername1").innerText = "Signed In As: " + user_name;
-                        document.getElementById("avatar").style.display = "block";
-                        document.getElementById("avatarpic").style.display = "inline-block";
-                        var all = document.getElementsByClassName('headerdrop');
-                        for (var i = 0; i < all.length; i++) {
-                          all[i].style.top = '98px';
-                        }
                     } else {
                         // doc.data() will be undefined in this case
                         console.log("No such document!");
