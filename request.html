@@ -1728,14 +1728,14 @@ textarea {
             qdname = document.getElementById('qdname').value;
             qdcat = document.getElementById('qdcat').value;
             qdskills = document.getElementById('qdskills').value;
-            qddescription = document.getElementById('qddescription').value;
+            qddesc = document.getElementById('qddescription').value;
             Username69 = document.getElementById('demo_username').value;
             name69 = document.getElementById('demo_name').value;
             email69 = document.getElementById('demo_email').value;
             phone69 = document.getElementById('demo_phone').value;
             console.log(qdname)
             console.log(qdcat)
-            console.log(ddesc)
+            console.log(qddesc)
             console.log(qdskills)
             console.log(dqpayment)
             console.log(qdpermissions)
@@ -1749,7 +1749,7 @@ textarea {
             db.collection('requests').doc('unclaimed').collection('quotes').collection('jobs').doc(Docid).set({
             name: qdname,
             category: qdcat,
-            description: ddesc,
+            description: qddesc,
             skills: qdskills,
             payment: dqpayment,
             permissions: qdpermissions,
