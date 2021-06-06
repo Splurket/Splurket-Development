@@ -1558,6 +1558,10 @@ textarea {
         function adddevd(data){
             dprice1 = document.getElementById('dprice').value;
             var ddesc = document.getElementById('ddescription').value;
+            Username69 = document.getElementById('demo_username').value;
+            name69 = document.getElementById('demo_name').value;
+            email69 = document.getElementById('demo_email').value;
+            phone69 = document.getElementById('demo_phone').value;
             console.log(dname)
             console.log(dcat)
             console.log(ddesc)
@@ -1570,10 +1574,6 @@ textarea {
             console.log(phone69)
             console.log(dprice1)
             console.log(dtime)
-            Username69 = document.getElementById('demo_username').value;
-            name69 = document.getElementById('demo_name').value;
-            email69 = document.getElementById('demo_email').value;
-            phone69 = document.getElementById('demo_phone').value;
             Docid = data.encryptedstring;
             db.collection('requests').doc('unclaimed').collection('jobs').doc(Docid).set({
             name: dname,
