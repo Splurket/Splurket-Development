@@ -1737,8 +1737,8 @@ textarea {
             console.log(qdcat)
             console.log(qddesc)
             console.log(qdskills)
-            console.log(dqpayment)
-            console.log(qdpermissions)
+            console.log(qdpayment)
+            console.log(qdperms)
             console.log(Username69)
             console.log(name69)
             console.log(email69)
@@ -1751,8 +1751,8 @@ textarea {
             category: qdcat,
             description: qddesc,
             skills: qdskills,
-            payment: dqpayment,
-            permissions: qdpermissions,
+            payment: qdpayment,
+            permissions: qdperms,
             user: Username69,
             name:name69,
             email:email69,
@@ -1879,16 +1879,16 @@ new Vue({
     },
     qdpermissions1() {
         this.$nextTick(() => {
-        dqpermissions = this.pperm2
-        console.log(dqpermissions)
+        qdperms = this.qdpermissions2
+        console.log(qdperms)
 
     })
     },
 
     qdpayment1() {
         this.$nextTick(() => {
-        dqpayment = this.dpay2
-        console.log(dqpayment)
+        qdpayment = this.qdpayment2
+        console.log(qdpayment)
     })
     },
     devhirepay1(){
