@@ -103,9 +103,10 @@ a{
     background-color: transparent;
     border: none;
     position: absolute;
-    right: 0;
+    left: 10px;
     margin: 8px 10px;
     display: none;
+    color:white;
 }
 .toggle-button:focus{
     outline: none;
