@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Splurket: Request Invocation</title>
+        <link rel="stylesheet" href="./assets/css/bd-coming-soon.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="./arcflashstyle.css">
+  <!-- Favicon -->
+  <!--<link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon" />-->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Animate On Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom StyleSheet -->
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="icon" src="/assets/images/Logo.ico">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.css">
+  <link rel="stylesheet" href="./styles.css">
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <!-- css -->
+  <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
+      <!-- css -->
+  <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vueperslides"></script>
+  <link href="https://unpkg.com/vueperslides/dist/vueperslides.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">-->
+</head>
+<style>
+    .container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box
+}
+
+.column,
+.columns {
+    width: 100%;
+    float: left;
+    box-sizing: border-box
+}
+
+@media (min-width:400px) {
+    .container {
+        width: 85%;
+        padding: 0
+    }
+}
+
+@media (min-width:550px) {
+    .container {
+        width: 80%
+    }
+    .column,
+    .columns {
+        margin-left: 4%
+    }
+    .column:first-child,
+    .columns:first-child {
+        margin-left: 0
+    }
+    .one.column,
+    .one.columns {
+        width: 4.66666666667%
+    }
+    .two.columns {
+        width: 13.3333333333%
+    }
+    .three.columns {
+        width: 22%
+    }
+    .four.columns {
+        width: 30.6666666667%
+    }
+    .five.columns {
+        width: 39.3333333333%
+    }
+    .six.columns {
+        width: 48%
+    }
+    .seven.columns {
+        width: 56.6666666667%
+    }
+    .eight.columns {
+        width: 65.3333333333%
+    }
+    .nine.columns {
+        width: 74%
+    }
+    .ten.columns {
+        width: 82.6666666667%
+    }
+    .eleven.columns {
+        width: 91.3333333333%
+    }
+    .twelve.columns {
+        width: 100%;
+        margin-left: 0
+    }
+    .one-third.column {
+        width: 30.6666666667%
+    }
+    .two-thirds.column {
+        width: 65.3333333333%
+    }
+    .one-half.column {
+        width: 48%
+    }
+    .offset-by-one.column,
+    .offset-by-one.columns {
+        margin-left: 8.66666666667%
+    }
+    .offset-by-two.column,
+    .offset-by-two.columns {
+        margin-left: 17.3333333333%
+    }
+    .offset-by-three.column,
+    .offset-by-three.columns {
+        margin-left: 26%
+    }
+    .offset-by-four.column,
+    .offset-by-four.columns {
+        margin-left: 34.6666666667%
+    }
+    .offset-by-five.column,
+    .offset-by-five.columns {
+        margin-left: 43.3333333333%
+    }
+    .offset-by-six.column,
+    .offset-by-six.columns {
+        margin-left: 52%
+    }
+    .offset-by-seven.column,
+    .offset-by-seven.columns {
+        margin-left: 60.6666666667%
+    }
+    .offset-by-eight.column,
+    .offset-by-eight.columns {
+        margin-left: 69.3333333333%
+    }
+    .offset-by-nine.column,
+    .offset-by-nine.columns {
+        margin-left: 78%
+    }
+    .offset-by-ten.column,
+    .offset-by-ten.columns {
+        margin-left: 86.6666666667%
+    }
+    .offset-by-eleven.column,
+    .offset-by-eleven.columns {
+        margin-left: 95.3333333333%
+    }
+    .offset-by-one-third.column,
+    .offset-by-one-third.columns {
+        margin-left: 34.6666666667%
+    }
+    .offset-by-two-thirds.column,
+    .offset-by-two-thirds.columns {
+        margin-left: 69.3333333333%
+    }
+    .offset-by-one-half.column,
+    .offset-by-one-half.columns {
+        margin-left: 52%
+    }
+}
+
+html {
+    font-size: 62.5%
+}
+
+body {
+    font-size: 1.5em;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: Raleway, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222
+}
+
+
+.button,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    color: #555;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    box-sizing: border-box
+}
+
+.button:focus,
+.button:hover,
+button:focus,
+button:hover,
+input[type=button]:focus,
+input[type=button]:hover,
+input[type=reset]:focus,
+input[type=reset]:hover,
+input[type=submit]:focus,
+input[type=submit]:hover {
+    color: #333;
+    border-color: #888;
+    outline: 0
+}
+
+.button.button-primary,
+button.button-primary,
+input[type=button].button-primary,
+input[type=reset].button-primary,
+input[type=submit].button-primary {
+    color: #FFF;
+    background-color: #33C3F0;
+    border-color: #33C3F0
+}
+
+.button.button-primary:focus,
+.button.button-primary:hover,
+button.button-primary:focus,
+button.button-primary:hover,
+input[type=button].button-primary:focus,
+input[type=button].button-primary:hover,
+input[type=reset].button-primary:focus,
+input[type=reset].button-primary:hover,
+input[type=submit].button-primary:focus,
+input[type=submit].button-primary:hover {
+    color: #FFF;
+    background-color: #1EAEDB;
+    border-color: #1EAEDB
+}
+
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=url],
+select,
+textarea {
+    height: 38px;
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box
+}
+
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=url],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+textarea {
+    min-height: 65px;
+    padding-top: 6px;
+    padding-bottom: 6px
+}
+
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=url]:focus,
+select:focus,
+textarea:focus {
+    border: 1px solid #33C3F0;
+    outline: 0
+}
+
+label,
+legend {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600
+}
+
+fieldset {
+    padding: 0;
+    border-width: 0
+}
+
+input[type=checkbox],
+input[type=radio] {
+    display: inline
+}
+
+label>.label-body {
+    display: inline-block;
+    margin-left: .5rem;
+    font-weight: 400
+}
+
+ul {
+    list-style: circle inside
+}
+
+ol {
+    list-style: decimal inside
+}
+
+ol,
+ul {
+    padding-left: 0;
+    margin-top: 0
+}
+
+code {
+    padding: .2rem .5rem;
+    margin: 0 .2rem;
+    font-size: 90%;
+    white-space: nowrap;
+    background: #F1F1F1;
+    border: 1px solid #E1E1E1;
+    border-radius: 4px
+}
+
+pre>code {
+    display: block;
+    padding: 1rem 1.5rem;
+    white-space: pre
+}
+
+td,
+th {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #E1E1E1
+}
+
+td:first-child,
+th:first-child {
+    padding-left: 0
+}
+
+td:last-child,
+th:last-child {
+    padding-right: 0
+}
+
+.button,
+button {
+    margin-bottom: 1rem
+}
+
+fieldset,
+input,
+select,
+textarea {
+    margin-bottom: 1.5rem
+}
+
+blockquote,
+dl,
+figure,
+form,
+ol,
+p,
+pre,
+table,
+ul {
+    margin-bottom: 2.5rem
+}
+
+.u-full-width {
+    width: 100%;
+    box-sizing: border-box
+}
+
+.u-max-full-width {
+    max-width: 100%;
+    box-sizing: border-box
+}
+
+.u-pull-right {
+    float: right
+}
+
+.u-pull-left {
+    float: left
+}
+
+hr {
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+    border-width: 0;
+    border-top: 1px solid #E1E1E1
+}
+
+.container:after,
+.row:after,
+.u-cf {
+    content: "";
+    display: table;
+    clear: both
+}
+</style>
+
+<body style="background-color: white;">
+    <!-- customized style -->
+
+    <style>
+        input[type="text"]{
+            padding: 19px 18px;
+            border-radius: 0;
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        * html, * body, *.container, *.row {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            max-width: 100%;
+            height: 100%;
+        }
+
+        button {
+            font-size: 16px;
+            background-color: #d23f0e;
+        }
+
+        .half {
+            position: fixed;
+            margin: 0;
+            width: 50% !important;
+            height: 100%;
+
+        }
+
+        .form {
+            left: 50%;
+            overflow: auto;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        h1{
+            font-size: 2em font-weight: bolder;
+        }
+
+        form {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 400px;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+
+        }
+
+        .radio-group label {
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .half {
+                position: static;
+                width: 100% !important;
+                height: auto;
+            }
+
+            .bg {
+                height: 30vh;
+                /* The image used */
+                background-image: url("");
+
+                /* Full height */
+                height: 100%;
+
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
+        form {
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+
+        }
+
+
+    </style>
+<!-- Google Tag Manager (noscript)-->
+<style type="text/css">
+    .headerdrop {
+      position: absolute;
+      border-top:solid 2px;
+      border-color: white;
+      top:98px;
+      background-color: #52b36c;
+      width:100%;
+      color: white;
+      display: none;
+      z-index:6;
+
+}
+    .headerdrop:hover{
+        display: block;
+    }
+    .search-box{
+    display: inline;
+    border-right: 1px solid var(--secondary);
+    padding-right: 12px;
+    margin-right: 10px;
+}
+.v-application a {
+    color: black!important;
+}
+body{
+  color:black !important;
+}
+.footercontainer a {
+  color:#52b36c! !important;
+}
+.product-detail__content .product__review {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 1.6rem; */
+    /* padding-bottom: 1.6rem; */
+    border-bottom: 0.5px solid var(--primaryColor);
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+}
+textarea {
+  resize: vertical;
+  height: 100%;
+}
+.slippery{
+  color:#52b36c! !important;
+}
+.slippery i{
+  color:#52b36c;
+
+}
+#markdown-editor .toolbar .group {
+    border-right: 1px solid #52b36c!;
+    margin-right: 4px;
+    display: inline;
+}
+.underline:hover{
+  text-decoration: underline;
+  color:white;
+  cursor: pointer;
+}
+.v-tab--active{
+    background-color: white !important;
+    color:#52b36c! !important;
+}
+.v-window{
+    background-color:white !important;
+    color:#52b36c! !important;
+    padding:20px;
+}
+.v-label{
+    color:#52b36c! !important;
+}
+</style>
+
+    <!-- Header.. -->
+<body>
+<iframe src="./pages/header" style="border:none;width:100%;height:98px" id="iframehead"></iframe>
+<div class="dropdown-content" id="dropcont" style="color:white; min-width:240px;border-top: solid 2px;border-color: white;z-index: 100;" onmouseout="this.style.display = 'none'" onmouseover="this.style.display = 'block'">
+    <div>
+        <p style="display:inline-block"; id="avatarusername1" onclick="profilego()">Signed In As:</p>
+    </div>
+<hr>
+    <p onclick="profilego()">Your Profile</p>
+    <p>Splurket Pay</p>
+    <p>Splurket Creators</p>
+    <p>Your Payment History</p>
+    <p>Your Job Request History</p>
+    <hr>
+    <div>
+    <center><p onclick="signout()">Sign Out</p></center>
+  </div>
+</div>
+<!--Home Dropdown-->
+    <div class="headerdrop" hidden="hidden" id="homeheaderdrop"onmouseover="this.style.display = 'block'" onmouseout="this.style.display = 'none'"> 
+        <div class="fcolumn" style="margin-left:100px"> 
+            <h2 style="font-size:20px;">Splurket</h2><hr>
+                <p>Profile</p>
+                <p>Marketplace</p>
+                <p>Splurket Pay</p>
+                <p>Splurket Creators</p>
+        </div>
+        <div class="fcolumn"> 
+            <h2 style="font-size:20px;left:100px;">Splurket Creators</h2><hr>
+                <p>Become A Creator</p>
+                <p>Add A Product</p>
+                <p>Share Your Talent</p>
+                <p>Fulfill Customer Orders</p>
+        </div>
+
+    </div>
+    <!--marketplace Dropdown-->
+    <div class="headerdrop" hidden="hidden" id="marketplaceheaderdrop" onmouseover="this.style.display = 'block'" onmouseout="this.style.display = 'none'">   
+        <div class="fcolumn" style="margin-left:100px"> 
+            <h2 style="font-size:20px;">Marketplace</h2><hr>
+                <p>Explore</p>
+                <p>Categories</p>
+                <p>Cart</p>
+                <p>Checkout</p>
+        </div>
+        <div class="fcolumn"> 
+            <h2 style="font-size:20px;left:100px;">Orders and Job Requests</h2><hr>
+                <p>New Job Request</p>
+                <p>Your Orders And Job Requests</p>
+                <p>Job Payment Completion</p>
+                <p>Get A Quote</p>
+        </div>
+        <div class="fcolumn"> 
+            <h2 style="font-size:20px;left:100px;">Talent</h2><hr>
+                <p>Explore Talent</p>
+                <p>Hire Talent</p>
+                <p>Get A Quote</p>
+        </div>
+    </div>
+    <!--Messages Dropdown-->
+    <div class="headerdrop" hidden="hidden" id="messageheaderdrop" onmouseover="this.style.display = 'block'" onmouseout="this.style.display = 'none'">
+        <div class="fcolumn" style="margin-left:100px">
+            <h2 style="font-size:20px;">Messages</h2><hr>
+                    <p>New Message</p>
+                    <p>All Messages</p>
+                    <p>Recipients</p>
+        </div>
+        <div class="fcolumn" style="margin-left:100px">
+
+        </div>
+        <div class="fcolumn" style="margin-left:100px">
+            <center><h3 style="background-color: red;padding:10px;">For Added Safety and Your Protection, Keep Payments and Communications Within Splurket.</h3></center>
+        </div>
+    </div>
+
+    <!--Support Dropdown-->
+    <div class="headerdrop" hidden="hidden" id="supportheaderdrop" onmouseover="this.style.display = 'block'" onmouseout="this.style.display = 'none'">
+        <div class="fcolumn" style="margin-left:100px"> 
+            <h2 style="font-size:20px;">About</h2><hr>
+                <p>Overview</p>
+                <p>What Is Splurket</p>
+                <p>What Sets Us Apart</p>
+                <p>Privacy Policy</p>
+        </div>
+        <div class="fcolumn"> 
+            <h2 style="font-size:20px;left:100px;">FAQ</h2><hr>
+                <p>How Do I Get Started</p>
+                <p>How Do I Pay For An Order/Complete Job</p>
+                <p>How Can I Become a Seller/Creator</p>
+                <p>What Happens When I Get A Quote?</p>
+                <p>More</p>
+        </div>
+        <div class="fcolumn"> 
+            <h2 style="font-size:20px;left:100px;">Blog</h2><hr>
+                <p>Latest</p>
+                <p>All Posts</p>
+                <p>Getting Started Guides</p>
+        </div>
+        <div class="fcolumn"> 
+            <h2 style="font-size:20px;left:100px;">Community</h2><hr>
+                <p>Discord</p>
+                <p>Events</p>
+                <p>Referrals</p>
+        </div>
+        </div>
+
+    
+    <script>
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+        var name, email, photoUrl, uid, emailVerified;
+
+        var config = {
+            apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
+            authDomain: "splurket-66df1.firebaseapp.com",
+            databaseURL: "https://splurket-66df1-default-rtdb.firebaseio.com",
+            projectId: "splurket-66df1",
+            storageBucket: "splurket-66df1.appspot.com",
+            messagingSenderId: "286706779903",
+            appId: "1:286706779903:web:fd91c29319f9804e192eca",
+            measurementId: "G-QWQ2M658KL"
+          };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true }); 
+        /*firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is signed in.
+            var user = firebase.auth().currentUser;
+            //splurket@gmail.com
+            var email1 = user.email;
+            
+            /*var email = getParameterByName('user'); 
+            console.log(email)
+            //still splurket
+            
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Accept", "application/json, /;q=0.5");
+            var raw = JSON.stringify({
+              "stringtoencrypt": `${email1}`
+            });
+            //document.write(raw)
+            var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
+            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+              .then(function (response) {
+                  return response.json();
+              })
+              .then(function (data) {
+                //should be a base64 string by now
+                getuserdata(data);
+            });
+          } else {
+            console.log('fuck')
+            document.getElementById("avatar").style.display = "none";
+            document.getElementById("login").style.display = "block";
+            document.getElementById('cartbutton').style.top='20px';
+            var all = document.getElementsByClassName('headerdrop');
+            for (var i = 0; i < all.length; i++) {
+              all[i].style.top = '83px';
+            }
+          }
+        });
+        function getuserdata(data) {
+            email = data.encryptedstring;
+                var docRef = db.collection("users").doc(email);
+                docRef.get().then((doc) => {
+                    if (doc.exists) {
+                        data1 = doc.data()
+                        pro_pic = data1.pro_pic;
+                        if (data1.username == "" ){
+                            user_name = data1.email
+                        }
+                        if (data1.username != "") {
+                            user_name = data1.username;
+                        }
+                        document.getElementById("avatarpic").src = pro_pic;
+                        //document.getElementById("avatarpic1").src = pro_pic;
+                        document.getElementById("avatarusername1").innerText = "Signed In As: " + user_name;
+                        document.getElementById("avatar").style.display = "block";
+                        document.getElementById("avatarpic").style.display = "inline-block";
+                        var all = document.getElementsByClassName('headerdrop');
+                        for (var i = 0; i < all.length; i++) {
+                          all[i].style.top = '98px';
+                        }
+                    } else {
+                        // doc.data() will be undefined in this case
+                        console.log("No such document!");
+                        console.log(doc.data())
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+        }
+        function profilego() {
+            var localstuff1 = localStorage.getItem('usercreds');
+            var localstuff = JSON.parse(localstuff1)
+            var loginemail = btoa(localstuff.email);
+            var loginpassword = btoa(localstuff.password);
+            location.href = "https://myaccount.splurket.com/login?bunnyluck="+loginemail+"&rabbitfoot="+loginpassword
+        }
+        function signout() {
+            firebase.auth().signOut().then(() => {
+                localStorage.removeItem('usercreds');
+                var all = document.getElementsByClassName('headerdrop');
+                for (var i = 0; i < all.length; i++) {
+                  all[i].style.top = '83px';
+                }
+            }).catch((error) => {
+              // An error happened.
+            });
+        }*/
+    </script>
+
+    
+
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+<center>
+    <div class="container" id="frontpage">
+<div id="app" style="width:100%">
+  <v-app id="inspire">
+    <v-container fluid style="min-height:100%">
+        <template>
+            <div style="height:100%;width:100%;position:relative;margin-bottom:5%">
+              <v-tabs color="white" vertical style="margin-top:20px" id="tabs">
+                <v-tab style="font-size:17px">Request Type</v-tab>
+                  <v-tab-item
+                  >
+                              <!-- JOB TYPE -->
+
+            <div class="input-group" id="job_options">
+               <center><div>
+                    <label style="color:#52b36c;">Please Select An Option Below To Get Started:</label>
+                    <center><v-radio-group v-model="nextTickRadioGroupValue"style="padding-left:50px" centered><center>
+                       <v-radio
+                        label="New Product Request"
+                        color="#52b36c"
+                        value="New Product Request"
+                        @change="nextTickDoSomethingWithNewValue"
+                        id="product"
+                        name="job_type"
+                        style="color:#52b36c !important"
+                      ></v-radio>
+                       <v-radio
+                        label="I Want To Hire A Creator"
+                        color="#52b36c"
+                        value="Hire A Creator"
+                        @change="nextTickDoSomethingWithNewValue"
+                        id="hire_dev"
+                        name="job_type"
+                        style="color:#52b36c !important"
+                      ></v-radio>
+                      <v-radio
+                        label="I Want To Get A Quote"
+                        color="#52b36c"
+                        value="Get A Quote"
+                        @change="nextTickDoSomethingWithNewValue"
+                        id="hire_dev"
+                        name="job_type"
+                        style="color:#52b36c !important"
+                      ></v-radio>
+                    </v-radio-group>
+                </div></center>
+            </div>
+
+
+                  </v-tab-item>
+            <v-tab style="font-size:17px" id="contactDets">Contact Info</v-tab>
+            <v-tab-item :eager="true">
+                              <!-- name -->
+            <div class="input-group" id="username">
+                <label for="demo_name" style="color:#52b36c;">Splurket Username</label>
+                <input class="u-full-width" type="text" placeholder="Please Enter Your Username" id="demo_username" disabled>
+            </div>
+            <div class="input-group" id="name">
+                <label for="demo_name" style="color:#52b36c;">Full Name</label>
+                <input class="u-full-width" type="text" placeholder="Please Enter Your Name" id="demo_name">
+            </div>
+
+            <!-- email -->
+            <div class="input-group" id="email">
+                <label for="demo_name" style="color:#52b36c;">Email</label>
+                <input class="u-full-width" type="text" placeholder="Please Enter Your Email" id="demo_email" disabled>
+            </div>
+            <!-- email -->
+            <div class="input-group" id="phone">
+                <label for="demo_name" style="color:#52b36c;">Phone Number</label>
+                <input class="u-full-width" type="text" placeholder="Please Enter Your Phone Number" id="demo_phone">
+            </div>
+            <div id="next1">
+                <center>
+                    <button style="background-color: #52b36c; color: white; max-width:200px;" type="button" id="submit"
+                            class="button-primary u-full-width" onclick="document.getElementById('requestDets').click()">Next
+                    </button>
+                </center>
+            </div>
+        </v-tab-item>
+                  <v-tab style="font-size:17px" id="requestDets">Request Details</v-tab>
+                <v-tab-item :eager="true">
+                <div id="New-Product-Request" style="display: block;">
+                    <center><h1>New Product Invocation Form</h1></center>
+                    <div>
+                        <label for="demo_name" style="color:#52b36c;">Name Of Product Request</label>
+                        <input class="u-full-width" type="text" placeholder="Please Enter The Name Of Your Product Request"
+                               id="pname">
+                    </div>
+                    <div>
+                        <label for="demo_name" style="color:#52b36c;">What Category Does This Product Fall Into?</label>
+                        <input class="u-full-width" type="text" placeholder="Please Enter Product Category" id="pcategory">
+                    </div>
+                    <div>
+                        <label for="demo_name" style="color:#52b36c;">What Skills Are Required To Make This Product?</label>
+                        <p style="color:#52b36c;"> Please Seperate Skills by Comma</p>
+                        <input class="u-full-width" type="text" placeholder="Please List The Skills Needed" id="pskills">
+                    </div>
+                    <div class="input-group">
+                        <label style="color:#52b36c;" for="demo_textarea">Product/Job Description</label>
+                        <p style="color:#52b36c;">Please Describe What You Want With As Much Detail As Possible"</p>
+                        <textarea class="u-full-width" id="pdescription"></textarea>
+                    </div>
+                    <div>
+                        <label for="demo_name" style="color:#52b36c;">Add Price(Optional)</label>
+                        <p style="color:#52b36c;"> What Would You Pay To Have This Product Made? (USD)</p>
+                        <input class="u-full-width" type="text" placeholder="Please Specify A Price" id="pprice">
+                    </div>
+                    <div>
+                        <label style="color:#52b36c;">Product Permissions</label>
+                       <v-radio-group v-model="devhireperm2"style="padding-left:50px"><center>
+                       <v-radio 
+                       color="#52b36c"
+                       id="wis" 
+                       name="w_permissions"
+                        value="Product Is Allowed In Store After Completion" 
+                        label="Product Is Allowed In Store After Completion"
+                        @change="devhireperm1"></v-radio>
+                        <v-radio 
+                        color="#52b36c"
+                        id="wnot" 
+                        name="w_permissions"
+                        value="Product Is NOT Allowed In Store After Completion" 
+                        label="Product Is NOT Allowed In Store After Completion"
+                        @change="devhireperm1"></v-radio>
+                    </center>
+                </v-radio-group>
+                    </div>
+                    <div>
+                        <label style="color:#52b36c;">When Do You Want To Pay?</label>
+                       <v-radio-group v-model="ppay2"style="padding-left:50px"><center>
+                       <v-radio 
+                       color="#52b36c"
+                       id="negotiating" 
+                       name="ppay_type"
+                        value="After Negotiating With Product Creator" 
+                        @change="ppay1" 
+                        label="After Negotiating With Product Creator">
+                            
+                        </v-radio>
+                        <v-radio 
+                        color="#52b36c"
+                        id="complete" 
+                        name="ppay_type" 
+                        value="After Product Is Made"
+                        @change="ppay1" 
+                        label="After The Product Is Made">
+                            
+                        </v-radio>
+                    </center>
+                </v-radio-group>
+                        <p style="color:#52b36c;">NOTE: ALL JOB AND SERVICE PAYMENTS MUST BE MADE IN THE PAYMENT SECTION OF
+                            THE WEBSITE. THIS ENSURES YOUR MONEY IS SAFE AND SECURES A REFUND IF NECESSARY! IF PAYMENT IS
+                            NOT MADE THROUGH US, WE ARE NOT LIABLE FOR ANY LOST ASSETS.</p><br><a style="color:#52b36c;"
+                                                                                                  href="url">CLICK HERE TO
+                        GO TO PAYMENT PAGE</a>
+                    </div>
+                    <br>
+                    <div id="submit">
+                        <center>
+                            <button style="background-color: #52b36c; color: white; max-width:300px;" type="button"
+                                    id="psubmit" class="button-primary u-full-width" onclick="pcard()">Submit Product
+                                Request
+                            </button>
+                        </center>
+                    </div>
+                </div>
+
+
+                <!--HIRE A Creator-->
+
+                <div id="dhire" style="display: none;">
+                    <center><h1>Creator Hire Form</h1></center>
+                    <div class="input-group">
+                        <label for="demo_name" style="color:#52b36c;">Job Name</label>
+                        <input class="u-full-width" type="text" placeholder="Please Enter The Name Of The Job"
+                               id="dname">
+                    </div>
+                    <div class="input-group">
+                        <label style="color:#52b36c;" for="demo_textarea">Job Description</label>
+                        <p style="color:#52b36c;">Please Describe The Job As Much As Possible"</p>
+                        <textarea class="u-full-width" id="ddescription"></textarea>
+                    </div>
+                    <div>
+                        <label for="demo_name" style="color:#52b36c;">Job Category</label>
+                        <input class="u-full-width" type="text"
+                               placeholder="Please Enter The Name Of Your Product Request" id="dcategory">
+                    </div>
+                    <div>
+                        <label for="demo_name" style="color:#52b36c;">What Skills Are Required For This Job?</label>
+                        <p style="color:#52b36c;"> Please Seperate Skills by Comma</p>
+                        <input class="u-full-width" type="text" placeholder="Please List The Skills Needed"
+                               id="dskills">
+                    </div>
+                    <div class="input-group">
+                        <label for="demo_name" style="color:#52b36c;">Estimated Cost/Price</label>
+                        <input class="u-full-width" type="text" placeholder="Please Enter The Estimated Cost"
+                               id="dprice">
+                    </div>
+                    <div class="input-group">
+                        <label for="demo_name" style="color:#52b36c;">Estimated Time Frame</label>
+                        <input class="u-full-width" type="text" placeholder="Please Enter The Time Frame" id="dtime">
+                    </div>
+                    <div>
+                        <label style="color:#52b36c;">Payment Options</label>
+                       <v-radio-group v-model="devhirepay2"style="padding-left:50px"><center>
+                       <v-radio 
+                       color="#52b36c"
+                       id="after_complete" 
+                       name="pay_type"
+                       value="After Job Is Complete" 
+                       label="After Job Is Complete"
+                       @change="devhirepay1">
+                       </v-radio>
+                        <v-radio 
+                        color="#52b36c"
+                        id="before_start" 
+                        name="pay_type"
+                        value="Before Job Is Complete" 
+                        label="Before Job Is Started"
+                        @change="devhirepay1"></v-radio>
+                        <v-radio 
+                        color="#52b36c"
+                        id="hourly" 
+                        name="pay_type"
+                        value="Hourly Based Pay" 
+                        label="Hourly Based Pay"
+                        @change="devhirepay1"></v-radio>
+                    </center>
+                </v-radio-group>
+                    </div>
+                    <div>
+                        <label style="color:#52b36c;">Work Permissions</label>
+                       <v-radio-group v-model="devhireperm2"style="padding-left:50px"><center>
+                       <v-radio 
+                       color="#52b36c"
+                       id="wis" 
+                       name="w_permissions"
+                        value="Work Is Allowed In Store After Completion" 
+                        label="Work Is Allowed In Store After Completion"
+                        @change="devhireperm1"></v-radio>
+                        <v-radio 
+                        color="#52b36c"
+                        id="wnot" 
+                        name="w_permissions"
+                        value="Work Is NOT Allowed In Store After Completion" 
+                        label="Work Is NOT Allowed In Store After Completion"
+                        @change="devhireperm1"></v-radio>
+                    </center>
+                </v-radio-group>
+                    </div>
+                    <div id="submit">
+                    <center>
+                        <button style="background-color: #52b36c; color: white; max-width:300px;" type="button"
+                                id="dsubmit" class="button-primary u-full-width" onclick="dcard()">Submit Creator Hire Request
+                        </button>
+                    </center>
+                </div>
+            </div>
+
+                <!--QUOTE MENU-->
+
+
+            <div id="quote_menu" style="display: none;">
+                <div>
+                    <label style="color:#52b36c;">I Need A Quote For:</label>
+                    <v-radio-group v-model="quotemenu"style="padding-left:50px"><center>
+                    <v-radio
+                    color="#52b36c"  
+                    id="newd" 
+                    name="quote"
+                    value="The Cost To Hire A Creator" 
+                    @change="quotemenu1" 
+                    label="The Cost To Hire A Creator"></v-radio>
+                    <v-radio  
+                    color="#52b36c"  
+                    id="newp" 
+                    name="quote"
+                    value="The Cost Of A New Product" 
+                    @change="quotemenu1"
+                    label="Estimated Price of A New Product"></v-radio>
+                </center>
+            </v-radio-group>
+                </div>
+            </div>
+
+
+            <!--NEW PRODUCT QUOTE-->
+
+
+            <div id="pquote" style="display: none;">
+                <center><h1>New Product Quote Form</h1></center>
+                <div class="input-group">
+                    <label for="demo_name" style="color:#52b36c;">Product Name</label>
+                    <input class="u-full-width" type="text" placeholder="Please Enter The Name Of The New Product"
+                           id="qpname">
+                </div>
+                <div class="input-group">
+                    <label style="color:#52b36c;" for="demo_textarea">Product Description</label>
+                    <p style="color:#52b36c;">Please Describe The Product As Much As Possible"</p>
+                    <textarea class="u-full-width" id="qpdescription"></textarea>
+                </div>
+                <div>
+                    <label for="demo_name" style="color:#52b36c;">Product Category</label>
+                    <input class="u-full-width" type="text"
+                           placeholder="Please Enter The Category That This Product Is In" id="qpcat">
+                </div>
+                <div>
+                    <label for="demo_name" style="color:#52b36c;">What Skills Are Required For This Job?</label>
+                    <p style="color:#52b36c;"> Please Seperate Skills by Comma</p>
+                    <input class="u-full-width" type="text" placeholder="Please List The Skills Needed"
+                           id="qpskills">
+                </div>
+                <div>
+                    <label for="demo_name" style="color:#52b36c;">Estimated Cost to Make</label>
+                    <input class="u-full-width" type="text"
+                           placeholder="How Much Do You Think This Product Will Cost To Make" id="qpcost">
+                </div>
+                <div>
+                    <label for="demo_name" style="color:#52b36c;">Estimated Time to Complete</label>
+                    <input class="u-full-width" type="text" placeholder="How Long Do You Think it Will Take"
+                           id="qptime">
+                </div>
+                <div>
+                    <label style="color:#52b36c;">When Do You Want To Pay?</label>
+                    <v-radio-group v-model="qppayment2"style="padding-left:50px"><center>
+                    <v-radio  
+                    color="#52b36c"  
+                    id="After Negotiating" 
+                    name="qday_type"
+                    value="After Negotiating With Creator" 
+                    checked="checked" 
+                    @change="qppayment1" 
+                    label="After Negotiating With Creator"></v-radio>
+                    <v-radio  
+                    color="#52b36c"  
+                    id="qdcomplete" 
+                    name="qday_type"
+                    value="After Completion" 
+                    @change="qppayment1" 
+                    label="After The Product Is Complete"></v-radio>
+                </center>
+            </v-radio-group>
+                    <p style="color:#52b36c;">NOTE: ALL JOB AND SERVICE PAYMENTS MUST BE MADE IN THE PAYMENT SECTION
+                        OF THE WEBSITE. THIS ENSURES YOUR MONEY IS SAFE AND SECURES A REFUND IF NECESSARY! IF
+                        PAYMENT IS NOT MADE THROUGH US, WE ARE NOT LIABLE FOR ANY LOST ASSETS.</p><br><a
+                        style="color:#52b36c;" href="url">CLICK HERE TO GO TO PAYMENT PAGE</a>
+
+                </div>
+                <div>
+                    <label style="color:#52b36c;">Product Permissions</label>
+                    <v-radio-group v-model="qpperms2"style="padding-left:50px"><center>
+                    <v-radio  
+                    color="#52b36c"  
+                    id="qdis" 
+                    name="qd_permissions"
+                    value="Product Is Allowed In Store After Completion" 
+                    @change="qpperms1" 
+                    label="Product Is Allowed In Store After Completion"></v-radio>
+                    <v-radio  
+                    color="#52b36c"  
+                    id="qdnot" 
+                    name="qd_permissions"
+                    value="Product Is NOT Allowed In Store After Completion" 
+                    @change="qpperms1"
+                    label="Product Is NOT Allowed In Store After Completion"></v-radio>
+                </center>
+            </v-radio-group>
+                </div>
+                <div id="submit">
+                    <center>
+                        <button style="background-color: #52b36c; color: white; max-width:400px;" type="button"
+                                id="dsubmit" class="button-primary u-full-width" onclick="pqcard()">Submit Product Quote Request
+                        </button>
+                    </center>
+                </div>
+            </div>
+
+
+            <!--DEVHIRE QUOTE!!!-->
+
+
+            <div id="dquote" style="display: none;">
+                <center><h1>Creator Hire Quote Form</h1></center>
+                <div class="input-group">
+                    <label for="demo_name" style="color:#52b36c;">Job Name</label>
+                    <input class="u-full-width" type="text" placeholder="Please Enter The Name Of The Job"
+                           id="qdname">
+                </div>
+                <div class="input-group">
+                    <label style="color:#52b36c;" for="demo_textarea">Job Description</label>
+                    <p style="color:#52b36c;">Please Describe The Job As Much As Possible"</p>
+                    <textarea class="u-full-width" id="qddescription"></textarea>
+                </div>
+                <div>
+                    <label for="demo_name" style="color:#52b36c;">Job Category</label>
+                    <input class="u-full-width" type="text"
+                           placeholder="Please Enter The Category That This Product Is In" id="qdcat">
+                </div>
+                <div>
+                    <label for="demo_name" style="color:#52b36c;">What Skills Are Required For This Job?</label>
+                    <p style="color:#52b36c;"> Please Seperate Skills by Comma</p>
+                    <input class="u-full-width" type="text" placeholder="Please List The Skills Needed"
+                           id="qdskills">
+                </div>
+                <div>
+                    <label for="demo_name" style="color:#52b36c;">Estimated Cost to Make</label>
+                    <input class="u-full-width" type="text"
+                           placeholder="How Much Do You Think This Product Will Cost To Make" id="qdcost">
+                </div>
+                <div>
+                    <label for="demo_name" style="color:#52b36c;">Estimated Time to Complete</label>
+                    <input class="u-full-width" type="text" placeholder="How Long Do You Think it Will Take To Make"
+                           id="qdtime">
+                </div>
+                <div>
+                    <label style="color:#52b36c;">Payment Options</label>
+                     <v-radio-group v-model="qdpayment2"style="padding-left:50px"><center>
+                    <v-radio  
+                    color="#52b36c"  
+                    id="after_complete" 
+                    name="pay_type"
+                    value="After Job Is Complete" 
+                    @change="qdpayment1" 
+                    label="After Job Is Complete"></v-radio>
+                    <v-radio  
+                    color="#52b36c"  
+                    id="before_start" 
+                    name="pay_type"
+                    value="Before Job Starts" 
+                    @change="qdpayment1" 
+                    label="Before Job Is Started"></v-radio>
+                    <v-radio  
+                    color="#52b36c"  
+                    id="hourly" 
+                    name="pay_type"
+                    value="Hourly Based Pay" 
+                    @change="qdpayment1" 
+                    label="Hourly Based Pay"></v-radio>
+                       </center>
+                   </v-radio-group>
+                    <p style="color:#52b36c;">NOTE: ALL JOB AND SERVICE PAYMENTS MUST BE MADE IN THE PAYMENT SECTION
+                        OF THE WEBSITE. THIS ENSURES YOUR MONEY IS SAFE AND SECURES A REFUND IF NECESSARY! IF
+                        PAYMENT IS NOT MADE THROUGH US, WE ARE NOT LIABLE FOR ANY LOST ASSETS.</p><br><a
+                        style="color:#52b36c;" href="url">CLICK HERE TO GO TO PAYMENT PAGE</a>
+
+                </div>
+                <div>
+                    <label style="color:#52b36c;">Work Permissions</label>
+                     <v-radio-group v-model="qdpermissions2"style="padding-left:50px"><center>
+                    <v-radio  
+                    color="#52b36c"  
+                    id="qpis" 
+                    name="qp_permissions"
+                    value="Work Is Allowed In Store After Completion" 
+                    @change="qdpermissions1" 
+                    label="Work Is Allowed In Store After Completion"></v-radio>
+                    <v-radio
+                    color="#52b36c"    
+                    id="qpnot" 
+                    name="qp_permissions"
+                    value="Work Is NOT Allowed In Store After Completion" 
+                    @change="qdpermissions1"  
+                    label="Work Is NOT Allowed In Store After Completion"></v-radio>
+                </center>
+            </v-radio-group>
+                </div>
+                <div id="submit">
+                    <center>
+                        <button style="background-color: #52b36c; color: white; max-width:300px;" type="button"
+                                id="dqsubmit" class="button-primary u-full-width" onclick="dqcard()">Submit Creator Hire Quote
+                        </button>
+                    </center>
+                </div>
+            </div>
+            </v-tab-item>
+
+          </v-tabs></center>
+</div>
+</template>
+</v-container>
+</v-app>
+</div>
+</div>
+
+            <!--New-Product-Request-->
+
+
+    <!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is signed in.
+            var user = firebase.auth().currentUser;
+            //splurket@gmail.com
+            var email1 = user.email;
+            document.getElementById('demo_email').value = user.email
+            
+            var email = getParameterByName('user'); 
+            console.log(email)
+            //still splurket
+            
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Accept", "application/json, /;q=0.5");
+            var raw = JSON.stringify({
+              "stringtoencrypt": `${email1}`
+            });
+            //document.write(raw)
+            var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
+            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+              .then(function (response) {
+                  return response.json();
+              })
+              .then(function (data) {
+                //should be a base64 string by now
+                getuserdata(data);
+            });
+          } else {
+        document.getElementById('demo_username').value = ""
+
+        document.getElementById('demo_name').value = ""
+
+        document.getElementById('demo_email').value = ""
+
+        document.getElementById('demo_phone').value = ""          
+    }
+        });
+        function getuserdata(data) {
+            email = data.encryptedstring;
+                var docRef = db.collection("users").doc(email);
+                docRef.get().then((doc) => {
+                    if (doc.exists) {
+                        data1 = doc.data()
+                        pro_pic = data1.pro_pic;
+                        if (data1.username == "" ){
+                            user_name = data1.email
+                        }
+                        if (data1.username != "") {
+                            user_name = data1.username;
+                        }
+                        document.getElementById('demo_username').value = user_name;
+
+
+                    } else {
+                        // doc.data() will be undefined in this case
+                        console.log("No such document!");
+                        console.log(doc.data())
+                    }
+                }).catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+        }
+        var qpperms
+        var qppayment
+        var qdpermissions
+        var qdpayment
+        var dpayment
+        var dpermissions
+        var ppermission
+        var ppayment
+        var Docid
+        var Username69
+        var name69
+        var email69
+        var phone69
+
+        function back1() {
+            document.getElementById("job_type").style.display = "none";
+            document.getElementById("username").style.display = "block";
+            document.getElementById("name").style.display = "block";
+            document.getElementById("email").style.display = "block";
+            document.getElementById("phone").style.display = "block";
+            var name = localStorage.getItem("name");
+            document.geteElementById("demo_name").value = name;
+            var email = localStorage.getItem("email");
+            document.geteElementById("demo_email").value = email;
+            var phone = localStorage.getItem("phone");
+            document.geteElementById("demo_phone").value = phone;
+            var username = localStorage.getItem("username");
+            document.geteElementById("demo_username").value = username;
+        }
+
+        function next2(job_type) {
+            var jtype = job_type;
+            console.log(jtype)
+            if (jtype == "New-Product-Request") {
+                document.getElementById("New-Product-Request").style.display = "block";
+                document.getElementById("quote_menu").style.display = "none";
+                document.getElementById("dhire").style.display = "none";
+            }
+            if (jtype == "Get A Quote") {
+                document.getElementById("New-Product-Request").style.display = "none";
+                document.getElementById("quote_menu").style.display = "block";
+                document.getElementById("dhire").style.display = "none";
+            }
+
+            if (jtype == "Hire A Creator") {
+                document.getElementById("New-Product-Request").style.display = "none";
+                document.getElementById("quote_menu").style.display = "none";
+                document.getElementById("dhire").style.display = "block";
+                document.getElementById("dquote").style.display = "none";
+                document.getElementById("pquote").style.display = "none";
+            }
+        }
+
+        function quotemenu30(qselect) {
+            if (qselect == "The Cost To Hire A Creator") {
+                document.getElementById("dquote").style.display = "block";
+                document.getElementById("quote_menu").style.display = "none";
+            }
+            if (qselect == "The Cost Of A New Product") {
+                document.getElementById("pquote").style.display = "block";
+                document.getElementById("quote_menu").style.display = "none";
+            }
+        }
+    function ppermissions(ppermissions2) {
+        ppermissions = ppermissions2;
+        console.log(ppermissions)
+        console.log(ppermissions)
+    }
+
+    function ppay(ppayment2) {
+        ppayment = ppayment2;
+        console.log(ppayment)
+        console.log(ppayment)
+    }
+    function dpermissions(pperm2) {
+        dpermissions = pperm2;
+        console.log(dpermissions)
+        console.log(dpermissions)
+    }
+
+    function dpayment(dpay2) {
+        dpayment = dpay2;
+        console.log(dpayment)
+        console.log(dpayment)
+    }
+    function qppermissions(pqermissions2) {
+        pqerms = pqermissions2;
+        console.log(pqerms)
+        console.log(pqerms)
+    }
+
+    function qppay(ppay2) {
+        pqpayment = ppay2;
+        console.log(pqpayment)
+        console.log(pqpayment)
+    }
+    function qdpermissions(pperm2) {
+        dqpermissions = pperm2;
+        console.log(dqpermissions)
+        console.log(dqpermissions)
+    }
+
+    function qdpayment(dpay2) {
+        dqpayment = dpay2;
+        console.log(dqpayment)
+        console.log(dqpayment)
+    }
+    function devhirepay(devhirepay2){
+        devhirepay = devhirepay2;
+        console.log(devhirepay)
+        console.log(devhirepay)
+    }
+    function devhireperm(devhireperm2){
+        devhireperm = devhireperm2;
+        console.log(devhireperm)
+        console.log(devhireperm)
+    }
+    function qppayment(qppayment2){
+        qppayment = qppayment2;
+        console.log(qppayment)
+        console.log(qppayment)
+    }
+    function qpperms(qpperms2){
+        qpperms = qpperms2;
+
+    }
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        const rndInt = randomIntFromInterval(1000, 9999)
+        function addproductd(data){
+            Username69 = document.getElementById('demo_username').value;
+            name69 = document.getElementById('demo_name').value;
+            email69 = document.getElementById('demo_email').value;
+            phone69 = document.getElementById('demo_phone').value;
+            Docid = data.encryptedstring;
+            db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
+            name: productName,
+            category: productCategory,
+            description: pdescription,
+            skills: skillsNeed,
+            payment: ppayment,
+            permissions:devhireperm,
+            user: Username69,
+            name:name69,
+            email:email69,
+            phone:phone69,
+            price:pprice,
+
+
+        });
+        }
+        function adddevd(data){
+            dprice1 = document.getElementById('dprice').value;
+            var ddesc = document.getElementById('ddescription').value;
+            Username69 = document.getElementById('demo_username').value;
+            name69 = document.getElementById('demo_name').value;
+            email69 = document.getElementById('demo_email').value;
+            phone69 = document.getElementById('demo_phone').value;
+            Docid = data.encryptedstring;
+            db.collection('requests').doc('unclaimed').collection('jobs').doc(Docid).set({
+            name: dname,
+            category: dcat,
+            description: ddesc,
+            skills: dskills,
+            payment: devhirepay,
+            permissions:devhireperm,
+            user: Username69,
+            name:name69,
+            email:email69,
+            phone:phone69,
+            price:dprice1,
+            time:dtime,
+
+
+        });
+        }
+        function randomIntFromInterval(min, max) { // min and max included 
+      return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+        //new product
+        var description = document.getElementById('pdescription').value;
+        var productCategory
+        var skillsNeed
+        var pdescription
+
+        //Create A card
+        //radios
+        //ppermissions
+        //ppay
+    function pcard() {
+        productName = document.getElementById('pname').value;
+        pprice = document.getElementById('pprice').value;
+        if(pprice.includes('$')){
+            pprice=pprice
+        }else(pprice = '$'+pprice)
+        productCategory = document.getElementById('pcategory').value;
+        skillsNeed = document.getElementById('pskills').value;
+        pdescription = document.getElementById('pdescription').value;
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json, /;q=0.5");
+        var raw = JSON.stringify({
+          "stringtoencrypt": `${productName}${email}${rndInt}`
+        });
+        //document.write(raw)
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+            //should be a base64 string by now
+           addproductd(data)
+        });
+}
+    </script>
+    <script>
+        //New Creator hire
+    function dcard() {
+        const rndInt = randomIntFromInterval(1000, 9999)
+        var ddesc = document.getElementById('ddescription').value;
+        var devtime
+        var dprice1
+        var devcat
+        var devskills
+        var ddescription
+        //Create A card
+        dprice1 = document.getElementById('dprice').value;
+        dtime = document.getElementById('dtime').value;
+        dname = document.getElementById('dname').value;
+        dcat = document.getElementById('dcategory').value;
+        dskills = document.getElementById('dskills').value;
+        ddesc = document.getElementById('ddescription').value;
+        if(dprice1.includes('$')){
+            dprice1=dprice
+        }else(dprice = '$'+dprice)
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json, /;q=0.5");
+        var raw = JSON.stringify({
+          "stringtoencrypt": `${dname}${email}${rndInt}`
+        });
+        //document.write(raw)
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+            //should be a base64 string by now
+           adddevd(data)
+        });
+}
+    </script>
+    <script>
+        //dev hire quote
+    function pqcard() {
+        var qpdescription = document.getElementById('qpdescription').value;
+        var qptime
+        var qpcost
+        var qpcat
+        var dskills
+        var qpdescription
+        //Create A card
+        qpcost1 = document.getElementById('qpcost').value;
+        qptime = document.getElementById('qptime').value;
+        qpname = document.getElementById('qpname').value;
+        qpskills = document.getElementById('qpskills').value;
+        qpdesc = document.getElementById('qpdescription').value;
+        if(qpcost1.includes('$')){
+            qpcost1=qpcost1
+        }else(qpcost1 = '$'+qpcost1)
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json, /;q=0.5");
+        var raw = JSON.stringify({
+          "stringtoencrypt": `${qpname}${email}${rndInt}`
+        });
+        //document.write(raw)
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+            //should be a base64 string by now
+           addqpd(data)
+        });
+    }
+    </script>
+    <script>
+        //product quote
+    function dqcard() {
+        var qddescription = document.getElementById('qddescription').value;
+        var qdtime
+        var qdcost
+        var qdcat
+        var qdskills
+        var qddescription
+        //Create A card
+        qdcost = document.getElementById('qdcost').value;
+        qdtime = document.getElementById('qdtime').value;
+        qdname = document.getElementById('qdname').value;
+        qdcat = document.getElementById('qdcat').value;
+        qdskills = document.getElementById('qdskills').value;
+        qddescription = document.getElementById('qddescription').value;
+        if(qdcost.includes('$')){
+            qdcost=qdcost
+        }else(qdcost = '$'+qdcost)
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json, /;q=0.5");
+        var raw = JSON.stringify({
+          "stringtoencrypt": `${qdname}${email}${rndInt}`
+        });
+        //document.write(raw)
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+            //should be a base64 string by now
+           addqdevd(data)
+        });
+}
+        function addqdevd(data){
+            qdcost1 = document.getElementById('qdcost').value;
+            qdtime = document.getElementById('qdtime').value;
+            qdname = document.getElementById('qdname').value;
+            qdcat = document.getElementById('qdcat').value;
+            qdskills = document.getElementById('qdskills').value;
+            qddesc = document.getElementById('qddescription').value;
+            Username69 = document.getElementById('demo_username').value;
+            name69 = document.getElementById('demo_name').value;
+            email69 = document.getElementById('demo_email').value;
+            phone69 = document.getElementById('demo_phone').value;
+            Docid = data.encryptedstring;
+            db.collection('requests').doc('unclaimed').collection('quotes').doc(Docid).set({
+            name: qdname,
+            category: qdcat,
+            description: qddesc,
+            skills: qdskills,
+            payment: qdpayment,
+            permissions: qdperms,
+            user: Username69,
+            name:name69,
+            email:email69,
+            phone:phone69,
+            price:qdcost1,
+            time:qdtime,
+            type: 'job'
+
+
+        });
+        }
+        function addqpd(data){
+            qpcost1 = document.getElementById('qpcost').value;
+            qptime = document.getElementById('qptime').value;
+            qpname = document.getElementById('qpname').value;
+            qpcat = document.getElementById('qpcat').value;
+            qpskills = document.getElementById('qpskills').value;
+            qpdesc = document.getElementById('qpdescription').value;
+            Username69 = document.getElementById('demo_username').value;
+            name69 = document.getElementById('demo_name').value;
+            email69 = document.getElementById('demo_email').value;
+            phone69 = document.getElementById('demo_phone').value;
+            console.log(qpname)
+            console.log(qpcat)
+            console.log(qpdesc)
+            console.log(qpskills)
+            console.log(qppayment)
+            console.log(qpperms)
+            console.log(Username69)
+            console.log(name69)
+            console.log(email69)
+            console.log(phone69)
+            console.log(qpcost1)
+            console.log(qptime)
+            Docid = data.encryptedstring;
+            db.collection('requests').doc('unclaimed').collection('quotes').doc(Docid).set({
+            name: qpname,
+            category: qpcat,
+            description: qpdesc,
+            skills: qpskills,
+            payment: qppayment,
+            permissions: qpperms,
+            user: Username69,
+            name:name69,
+            email:email69,
+            phone:phone69,
+            price:qpcost1,
+            time:qptime,
+            type: 'product'
+
+
+        });
+        }
+
+    </script>
+    </form>
+    </main>
+    </div>
+</center>
+</div>
+</center>
+</center>
+</body>
+</html>
+<script>
+new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  data: () => ({
+    nextTickRadioGroupValue: 0,
+    nextTickValueWhenClicked: null,
+    nextTickValueOneSecondLater: null,
+    quotemenu: 0,
+    pperms2: 0,
+    ppay2: 0,
+    dpermissions2: 0,
+    dpayment2: 0,
+    qppermissions2: 0,
+    qppay2: 0,
+    qdpermissions2: 0,
+    qdpayment2: 0,
+    devhirepay2: 0,
+    devhireperm2: 0,
+    qppayment2: 0,
+    qpperms2: 0,
+    qdpayment2: 0,
+
+    ModelStuff:"hello",
+    tab: "subscribe"
+  }),
+  methods: {
+    nextTickDoSomethingWithNewValue() {
+      this.$nextTick(() => {
+          this.nextTickValueWhenClicked = this.nextTickRadioGroupValue
+          console.log(this.nextTickRadioGroupValue)
+            var jtype = this.nextTickRadioGroupValue
+            console.log(jtype)
+            if (jtype == "New-Product-Request") {
+                document.getElementById("New-Product-Request").style.display = "block";
+                document.getElementById("quote_menu").style.display = "none";
+                document.getElementById("dhire").style.display = "none";
+                document.getElementById("dquote").style.display = "none";
+                document.getElementById("pquote").style.display = "none";
+            }
+            if (jtype == "Get A Quote") {
+                document.getElementById("New-Product-Request").style.display = "none";
+                document.getElementById("quote_menu").style.display = "block";
+                document.getElementById("dhire").style.display = "none";
+                document.getElementById("dquote").style.display = "none";
+                document.getElementById("pquote").style.display = "none";
+            }
+
+            if (jtype == "Hire A Creator") {
+                document.getElementById("New-Product-Request").style.display = "none";
+                document.getElementById("quote_menu").style.display = "none";
+                document.getElementById("dhire").style.display = "block";
+                document.getElementById("dquote").style.display = "none";
+                document.getElementById("pquote").style.display = "none";
+            }
+            document.getElementById('contactDets').click()
+        })
+    },
+    quotemenu1() {
+        this.$nextTick(() => {
+          quotemenu30(this.quotemenu)
+          console.log(this.quotemenu)
+      })
+    },
+    ppermissions1() {
+    this.$nextTick(() => {
+        ppermissions = this.pperms2
+        console.log(ppermission)
+
+    })
+    },
+
+    ppay1() {
+    this.$nextTick(() => {
+    ppayment = this.ppay2
+    console.log(ppayment)
+
+    })
+    },
+    dpermissions1() {
+        this.$nextTick(() => {
+        dpermissions = this.pperm2
+        console.log(dpermissions)
+
+    })
+    },
+
+        dpayment1() {
+        this.$nextTick(() => {
+        dpayment = this.dpay2
+        console.log(dpayment)
+
+    })
+    },
+    qppermissions1() {
+        this.$nextTick(() => {
+        qpperms = this.pqermissions2
+        console.log(pqerms)
+
+    })
+    },
+
+    qppay1() {
+        this.$nextTick(() => {
+        pqpayment = this.ppay2
+        console.log(pqpayment)
+    })
+    },
+    qdpermissions1() {
+        this.$nextTick(() => {
+        qdperms = this.qdpermissions2
+        console.log(qdperms)
+
+    })
+    },
+
+    qdpayment1() {
+        this.$nextTick(() => {
+        qdpayment = this.qdpayment2
+        console.log(qdpayment)
+    })
+    },
+    devhirepay1(){
+        this.$nextTick(() => {
+        devhirepay = this.devhirepay2
+        console.log(devhirepay)
+    })
+    },
+    devhireperm1(){
+        this.$nextTick(() => {
+        devhireperm = this.devhireperm2
+        console.log(devhireperm)
+    })
+    },
+    qppayment1(){
+        this.$nextTick(() => {
+        qppayment = this.qppayment2
+        console.log(qppayment)
+    })
+    },
+    qpperms1(){
+        this.$nextTick(() => {
+        qpperms = this.qpperms2
+        console.log(qpperms)
+    })
+
+
+    }
+
+
+    }
+})
+</script>
