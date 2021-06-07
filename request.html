@@ -1679,6 +1679,36 @@ textarea {
         var dskills
         var qpdescription
         //Create A card
+        qpcost1 = document.getElementById('qpcost').value;
+        qptime = document.getElementById('qptime').value;
+        qpname = document.getElementById('qpname').value;
+        qpcat = document.getElementById('dqpat').value;
+        qpskills = document.getElementById('qpskills').value;
+        qpdesc = document.getElementById('qpdescription').value;
+        if(qpcost.includes('$')){
+            qpcost=qpcost
+        }else(qpcost = '$'+qpcost)
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json, /;q=0.5");
+        var raw = JSON.stringify({
+          "stringtoencrypt": `${qpname}${email}${rndInt}`
+        });
+        //document.write(raw)
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+            //should be a base64 string by now
+           addqpd(data)
+        });
     }
     </script>
     <script>
@@ -1733,18 +1763,6 @@ textarea {
             name69 = document.getElementById('demo_name').value;
             email69 = document.getElementById('demo_email').value;
             phone69 = document.getElementById('demo_phone').value;
-            console.log(qdname)
-            console.log(qdcat)
-            console.log(qddesc)
-            console.log(qdskills)
-            console.log(qdpayment)
-            console.log(qdperms)
-            console.log(Username69)
-            console.log(name69)
-            console.log(email69)
-            console.log(phone69)
-            console.log(qdcost1)
-            console.log(qdtime)
             Docid = data.encryptedstring;
             db.collection('requests').doc('unclaimed').collection('quotes').doc(Docid).set({
             name: qdname,
@@ -1760,6 +1778,48 @@ textarea {
             price:qdcost1,
             time:qdtime,
             type: 'job'
+
+
+        });
+        }
+        function addqpd(data){
+            qpcost1 = document.getElementById('qpcost').value;
+            qptime = document.getElementById('qptime').value;
+            qpname = document.getElementById('qpname').value;
+            qpcat = document.getElementById('dqpat').value;
+            qpskills = document.getElementById('qpskills').value;
+            qpdesc = document.getElementById('qpdescription').value;
+            Username69 = document.getElementById('demo_username').value;
+            name69 = document.getElementById('demo_name').value;
+            email69 = document.getElementById('demo_email').value;
+            phone69 = document.getElementById('demo_phone').value;
+            console.log(qpname)
+            console.log(qpcat)
+            console.log(qpdesc)
+            console.log(qpskills)
+            console.log(pqpayment)
+            console.log(qpperms)
+            console.log(Username69)
+            console.log(name69)
+            console.log(email69)
+            console.log(phone69)
+            console.log(qpcost1)
+            console.log(qptime)
+            Docid = data.encryptedstring;
+            db.collection('requests').doc('unclaimed').collection('quotes').doc(Docid).set({
+            name: qpname,
+            category: qpcat,
+            description: qpdesc,
+            skills: qpskills,
+            payment: pqpayment,
+            permissions: qpperms,
+            user: Username69,
+            name:name69,
+            email:email69,
+            phone:phone69,
+            price:qpcost1,
+            time:qptime,
+            type: 'product'
 
 
         });
@@ -1865,7 +1925,7 @@ new Vue({
     },
     qppermissions1() {
         this.$nextTick(() => {
-        pqerms = this.pqermissions2
+        qpperms = this.pqermissions2
         console.log(pqerms)
 
     })
