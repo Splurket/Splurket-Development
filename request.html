@@ -1746,7 +1746,7 @@ textarea {
             console.log(qdcost1)
             console.log(qdtime)
             Docid = data.encryptedstring;
-            db.collection('requests').doc('unclaimed').collection('quotes').collection('jobs').doc(Docid).set({
+            db.collection('requests').doc('unclaimed').collection('quotes').doc(Docid).set({
             name: qdname,
             category: qdcat,
             description: qddesc,
@@ -1759,6 +1759,7 @@ textarea {
             phone:phone69,
             price:qdcost1,
             time:qdtime,
+            type: 'job'
 
 
         });
