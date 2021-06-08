@@ -132,13 +132,16 @@ a{
         transition: all 0.8s cubic-bezier(0.51,-0.15,0,0.98);
     }
 }*/
-@media(max-width:1056px){
-  #toggle-open1{
+/* When the browser is at least 600px and above */
+@media screen and (min-width: 1057px) {
+     #toggle-open1{
   display:block;
 }
 #toggle-close1{
   display: block;
+  }
 }
+@media(max-width:1056px){
   #menu-toggle{
   display:block;
 }
@@ -851,10 +854,3 @@ body, html {
   z-index: 1;
   transition: width 0.35s cubic-bezier(0, 0, 0.3, 1);
 }*/
-#toggle-open1{
-  display:none;
-}
-#toggle-close1{
-  display: none;
-}
-.toggle
