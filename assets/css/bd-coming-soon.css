@@ -735,7 +735,7 @@ body, html {
   transition-delay: 0.1s;
 }
 .nav-mobile #menu-toggle.active ~ .menu-button .icon-close, .nav-mobile #menu-toggle:checked ~ .menu-button .icon-close {
-  display: block;
+  display: none;
 }
 .nav-mobile #menu-toggle.active ~ .menu-button .icon-open, .nav-mobile #menu-toggle:checked ~ .menu-button .icon-open {
   display: none;
