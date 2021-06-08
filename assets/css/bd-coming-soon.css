@@ -142,7 +142,7 @@ a{
   }
 
 }
-@media(max-width:1056px){
+@media screen and (max-width:1056px){
   #menu-toggle{
   display:block;
 }
