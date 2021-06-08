@@ -789,6 +789,8 @@ body, html {
   list-style-type: none;
   padding: 0;
   max-width: 400px;
+  position: sticky;
+  top: 0;
 }
 .nav-mobile .menu-container .menu-sidebar .arrow {
   position: absolute;
