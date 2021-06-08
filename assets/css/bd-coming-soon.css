@@ -133,6 +133,12 @@ a{
     }
 }*/
 @media(max-width:1056px){
+  #toggle-open1{
+  display:block;
+}
+#toggle-close1{
+  display: block;
+}
   #menu-toggle{
   display:block;
 }
