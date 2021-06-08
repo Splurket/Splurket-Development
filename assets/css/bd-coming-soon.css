@@ -140,6 +140,9 @@ a{
 #toggle-close1{
   display: none;
   }
+  .menu-sidebar{
+    display:none;
+  }
 }
 @media(max-width:1056px){
   #menu-toggle{
