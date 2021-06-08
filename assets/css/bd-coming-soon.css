@@ -129,6 +129,9 @@ a{
     }
 }*/
 @media(max-width:1056px){
+    #iframehead{
+      height:110px;
+    }
     #header {
         height:180px;
     }
