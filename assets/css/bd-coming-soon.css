@@ -129,6 +129,9 @@ a{
     }
 }*/
 @media(max-width:1056px){
+  #menu-toggle{
+  display:block;
+}
     #iframehead{
       height:110px;
     }
@@ -734,18 +737,21 @@ body, html {
   transition: opacity 0.2s cubic-bezier(0, 0, 0.3, 1);
   transition-delay: 0.1s;
 }
-.nav-mobile #menu-toggle.active ~ .menu-button .icon-close, .nav-mobile #menu-toggle:checked ~ .menu-button .icon-close {
+#menu-toggle{
+  display:none;
+}
+#menu-toggle.active ~ .menu-button .icon-close, #menu-toggle:checked ~ .menu-button .icon-close {
   display: none;
 }
-.nav-mobile #menu-toggle.active ~ .menu-button .icon-open, .nav-mobile #menu-toggle:checked ~ .menu-button .icon-open {
+#menu-toggle.active ~ .menu-button .icon-open, #menu-toggle:checked ~ .menu-button .icon-open {
   display: none;
 }
-.nav-mobile #menu-toggle.active ~ .menu-button:after, .nav-mobile #menu-toggle:checked ~ .menu-button:after {
+#menu-toggle.active ~ .menu-button:after, #menu-toggle:checked ~ .menu-button:after {
   opacity: 1;
   pointer-events: auto;
   transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
 }
-.nav-mobile #menu-toggle.active ~ .menu-sidebar, .nav-mobile #menu-toggle:checked ~ .menu-sidebar {
+#menu-toggle.active ~ .menu-sidebar, #menu-toggle:checked ~ .menu-sidebar {
   transform: translateX(0);
   transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
 }
