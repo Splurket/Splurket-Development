@@ -135,10 +135,10 @@ a{
 /* When the browser is at least 600px and above */
 @media screen and (min-width: 1057px) {
      #toggle-open1{
-  display:block;
+  display:none;
 }
 #toggle-close1{
-  display: block;
+  display: none;
   }
 }
 @media(max-width:1056px){
