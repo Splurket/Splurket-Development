@@ -72,6 +72,10 @@ a{
     justify-content: space-between;
     padding: 10px;
 }
+#iframehead{
+  height:98px;
+  
+}
 .nav-brand{
     font-family: 'Shadows Into Light Two;'
     font-weight: bold;
@@ -841,9 +845,10 @@ body, html {
   z-index: 1;
   transition: width 0.35s cubic-bezier(0, 0, 0.3, 1);
 }*/
-.toggle-open1{
+#toggle-open1{
   display:none;
 }
-.toggle-close1{
+#toggle-close1{
   display: none;
 }
+.toggle
