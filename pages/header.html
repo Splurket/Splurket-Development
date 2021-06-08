@@ -44,7 +44,7 @@
 </style>
 
     <!-- Header.. -->
-<body>
+<body style="background:#52b36c">
     <!-- Header -->
     <header id="header" class="shadow bg-light"style="background-color:#52b36c;">
         <ul style="position: absolute;right:30px;top:20px;" id="cartbutton">
@@ -54,8 +54,13 @@
         <nav class="container navbar" style="margin-left:20px;">
             <a target="_top" href="/index" class="nav-brand text-dark" style="color:white;font-family: 'Shadows Into Light Two';">Splurket<span class="label label-default" style="font-size: 15px;background-color: white;color: #52b36c;padding:5px;font-family: 'Arial';margin-left: 5px;">Alpha</span></a>
             <!-- toggle button -->
-            <button class="toggle-button" style="position: absolute;left:-30px;">
+            <button class="toggle-button" style="position: absolute;left:-30px;" id="toggle-open1" onclick="window.top.document.getElementById('menu-toggle').checked = true; window.top.document.getElementById('toggle-close1').style.display='block'; window.top.document.getElementById('toggle-open1').style.display='none';">
                 <svg width="25" height="25" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12" class="Icon__StyledSvg-sc-1rdji9f-0 dtoguV"><g transform="translate(-4.000000, -6.000000)"><path d="M4,6 L14,6 L14,8 L4,8 L4,6 Z M4,16 L14,16 L14,18 L4,18 L4,16 Z M4,11 L20,11 L20,13 L4,13 L4,11 Z" fill="inherit"></path></g></svg><p>Menu</p>
+            </button>
+            <button class="toggle-button" style="position: absolute;left:-30px;display:none" id="toggle-close1" onclick="document.getElementById('menu-toggle').checked = false; document.getElementById('toggle-open1').style.display='block'; window.top.document.getElementById('toggle-close1').style.display='none';">
+                <svg class="icon-close" viewBox="0 0 100 100" width="20" height="20" fill="white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M83.288 88.13c-2.114 2.112-5.575 2.112-7.69 0L53.66 66.188c-2.113-2.112-5.572-2.112-7.686 0l-21.72 21.72c-2.114 2.113-5.572 2.113-7.687 0l-4.693-4.692c-2.114-2.114-2.114-5.573 0-7.688l21.72-21.72c2.112-2.115 2.112-5.574 0-7.687L11.87 24.4c-2.114-2.113-2.114-5.57 0-7.686l4.842-4.842c2.113-2.114 5.57-2.114 7.686 0l21.72 21.72c2.114 2.113 5.572 2.113 7.688 0l21.72-21.72c2.115-2.114 5.574-2.114 7.688 0l4.695 4.695c2.112 2.113 2.112 5.57-.002 7.686l-21.72 21.72c-2.112 2.114-2.112 5.573 0 7.686L88.13 75.6c2.112 2.11 2.112 5.572 0 7.687l-4.842 4.84z"/>
+              </svg> 
             </button>
             <div class="container">
                   <div class="d-flex justify-content-center">
@@ -194,14 +199,6 @@
     
 
     <!-- java script -->
-    <script>
-    let toggle = document.querySelector("#header .toggle-button");
-    let collapse = document.querySelectorAll("#header .collapse");
-
-    toggle.addEventListener('click',function(){
-        collapse.forEach(col=>col.classList.toggle("collapse-toggle"));
-    })
-    </script>
     <script>
         function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
@@ -343,6 +340,180 @@
         }
 
     </script>
+
+<!-- partial:index.partial.html -->
+<ul class="nav-mobile">      
+  <li class="menu-container"> 
+    <input id="menu-toggle" type="checkbox" style="display:none">
+    <label for="menu-toggle" class="menu-button">   
+    </label>      
+    <ul class="menu-sidebar" style="overflow:scroll">
+      <div id="menu1">
+      <li>
+        <input type="checkbox" id="sub-one" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub1').style.display='block';">        
+        <label class="submenu-label" for="sub-one">Home</label>
+        <div class="arrow right">&#8250;</div>
+        </li>
+      </div>
+        <div id="sub1" style="display: none">           
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back1">
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;" >&#8249;</div> 
+            <label class="submenu-label" for="sub-one" >Back</label>             
+          </li>
+          <h4 style="margin-bottom:5px">Splurket</h4>        
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Requests</a></li>
+          <li><a href="#">Splurket Pay</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Support</a></li>
+          <h4 style="margin-bottom:5px">Splurket Creators</h4>        
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Sell A Product</a></li>
+          <li><a href="#">Sell Your Talent</a></li>
+          <li><a href="#">Resources</a></li>                                 
+        </ul>
+      </div>
+      </li>
+
+      <div id="menu2">
+      <li>
+        <input type="checkbox" id="sub-two" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub2').style.display='block';">        
+        <label class="submenu-label" for="sub-two">Marketplace</label>
+        <div class="arrow right">&#8250;</div> 
+      </li>
+    </div>
+     <div id="sub2" style="display: none">
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back2">
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;" >&#8249;</div> 
+            <label class="submenu-label" for="sub-two">Back</label>             
+          </li>  
+          <h4 style="margin-bottom:5px">Marketplace</h4>    
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Cart</a></li>     
+          <li><a href="#">Checkout</a></li>  
+          <h4 style="margin-bottom:5px">Requests And Orders</h4>  
+          <li>New Request</li>
+          <li>Your Orders And Requests</li>
+          <li>Make A Payment</li>
+          <li>Get A Quote</li>  
+          <h4 style="margin-bottom:5px">Talent</h4>
+          <li>Explore Talent</li>
+          <li>Hire Talent</li>
+          <li>Get A Quote</li>
+          <li></li>
+          <li></li>                            
+        </ul>
+        </div>              
+      </li>
+      <div id="menu3">
+       <li>
+        <input type="checkbox" id="sub-three" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub3').style.display='block';">        
+        <label class="submenu-label" for="sub-three">Messages</label>
+        <div class="arrow right">&#8250;</div>
+        </li>
+        </div> 
+         <div id="sub3" style="display: none">
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back3">
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;" >&#8249;</div> 
+            <label class="submenu-label" for="sub-three">Back</label>             
+          </li>      
+          <li>New Message</li>
+          <li>All Messages</li>
+          <li>Recipients</li>                               
+        </ul> 
+        </div>             
+      </li> 
+      <div id="menu4">   
+      <li>
+        <input type="checkbox" id="sub-four" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub4').style.display='block';">        
+        <label class="submenu-label" for="sub-four">Support</label>
+        <div class="arrow right">&#8250;</div> 
+      </li>
+    </div>
+     <div id="sub4" style="display: none">
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back4">
+            <label class="submenu-label" for="sub-four">Back</label>     
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;">&#8249;</div>       
+          </li>      
+            <h4>About</h4>
+                <li>Overview</li>
+                <li>What Is Splurket</li>
+                <li>What Sets Us Apart</li>
+                <li>Privacy Policy</li>
+            <h4 >FAQ</h4>
+                <li>How Do I Get Started</li>
+                <li>How Do I Pay For An Order/Complete Job</li>
+                <li>How Can I Become a Seller/Creator</li>
+                <li>What Happens When I Get A Quote?</li>
+                <li>More</li>
+            <h4 >Blog</h4>
+                <li>Latest</li>
+                <li>All Posts</li>
+                <li>Getting Started Guides</li>
+            <h4 >Community</h4>
+                <li>Discord</li>
+                <li>Events</li>
+                <li>Referrals</li>
+                <li></li>
+                <li></li>                               
+        </ul>    
+        </div>          
+      </li>                                     
+    </ul> 
+  </li>
+</ul>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script><script  src="./script.js"></script>
+  <script>
+    document.getElementById("back1").addEventListener('click', myFunction1)
+
+function myFunction1(){
+    document.getElementById('menu1').style.display='block';
+    document.getElementById('menu2').style.display='block';
+    document.getElementById('menu3').style.display='block';
+    document.getElementById('menu4').style.display='block';
+    document.getElementById('sub1').style.display='none';
+}
+
+    document.getElementById("back2").addEventListener('click', myFunction2)
+
+function myFunction2(){
+    document.getElementById('menu1').style.display='block';
+    document.getElementById('menu2').style.display='block';
+    document.getElementById('menu3').style.display='block';
+    document.getElementById('menu4').style.display='block';
+    document.getElementById('sub2').style.display='none';
+}
+
+    document.getElementById("back3").addEventListener('click', myFunction3)
+
+function myFunction3(){
+    document.getElementById('menu1').style.display='block';
+    document.getElementById('menu2').style.display='block';
+    document.getElementById('menu3').style.display='block';
+    document.getElementById('menu4').style.display='block';
+    document.getElementById('sub3').style.display='none';
+}
+
+    document.getElementById("back4").addEventListener('click', myFunction4)
+
+function myFunction4(){
+    document.getElementById('menu1').style.display='block';
+    document.getElementById('menu2').style.display='block';
+    document.getElementById('menu3').style.display='block';
+    document.getElementById('menu4').style.display='block';
+    document.getElementById('sub4').style.display='none';
+}
+
+</script>
+</body>
+</html>
+
 
     
     <!-- Header ENDS HERE!!!!.. -->
