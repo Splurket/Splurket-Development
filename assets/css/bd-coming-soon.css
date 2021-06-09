@@ -134,6 +134,9 @@ a{
 }*/
 /* When the browser is at least 600px and above */
 @media screen and (min-width: 1057px) {
+  #formtabs{
+    display: none;
+  }
      #toggle-open1{
   display:none;
 }
@@ -146,8 +149,17 @@ display: none
   .icon-close{
     display: none;
   }
+  div[role="tablist"]{
+    display: block;
+}
 }
 @media(max-width:1056px){
+  div[role="tablist"]{
+    display: none;
+}
+  #formtabs{
+    display: block;
+  }
   #menu-toggle{
   display:block;
 }
@@ -744,7 +756,7 @@ body, html {
 }
 .nav-mobile .menu-button:after {
   opacity: 0;
-  top: 150px;
+  top: 150zpx;
   content: "";
   width: 100vw;
   display: block;

@@ -438,9 +438,6 @@ hr {
 #tablistcheck{
     display:block;
 }
-div[role="tablist"]{
-    display: none;
-}
 
 
 </style>
@@ -855,7 +852,7 @@ textarea {
     <v-container fluid style="min-height:100%">
         <template>
             <div style="height:100%;width:100%;position:relative;margin-bottom:5%">
-                <div style="position:absolute;left:30px;top:20px;z-index:7">
+                <div style="position:fixed;left:30px;bottom:20px;z-index:7" id="formtabs">
             <button id="tablist-open" style="right:15%;color: white;background-color: #52b36c" onclick="tablistlube()">
                 Open Form Sections
             </button>
