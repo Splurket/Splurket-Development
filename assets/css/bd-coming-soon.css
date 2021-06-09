@@ -140,9 +140,14 @@ a{
 #toggle-close1{
   display: none;
   }
-
+  .icon-open{
+display: none
+  }
+  .icon-close{
+    display: none;
+  }
 }
-@media screen and (max-width:1056px){
+@media(max-width:1056px){
   #menu-toggle{
   display:block;
 }
@@ -739,7 +744,7 @@ body, html {
 }
 .nav-mobile .menu-button:after {
   opacity: 0;
-  top: 150px;
+  top: 98px;
   content: "";
   width: 100vw;
   display: block;
@@ -785,13 +790,11 @@ body, html {
   position: fixed;
   transform: translateX(-405px);
   transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
-  top: 150px;
+  top: 98px;
   z-index: 2;
   list-style-type: none;
   padding: 0;
   max-width: 400px;
-  position: sticky;
-  top: 0;
 }
 .nav-mobile .menu-container .menu-sidebar .arrow {
   position: absolute;
