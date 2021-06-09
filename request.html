@@ -441,9 +441,7 @@ hr {
 div[role="tablist"]{
     display: none;
 }
-input[id="tablistcheck"]:checked ~ div[role="tablist"]{
-    display: block;
-}
+
 
 </style>
 
@@ -859,8 +857,12 @@ textarea {
         <template>
             <div style="height:100%;width:100%;position:relative;margin-bottom:5%">
                 <div style="position:absolute;left:30px;top:20px;z-index:7">
-                <input type="checkbox" id="tablistcheck">
+            <button class="tablist-open" style="right:15%;" onclick="tablistlube()">
                 <span><i class="fas fa-bars" style="color:white;"></i></span>
+            </button>
+             <button class="tablist-close" style="right:15%;" onclick="tablistclose()">
+                <span><i class="fas fa-bars" style="color:white;"></i></span>
+            </button>
             </div>
               <v-tabs color="white" vertical style="margin-top:20px" id="tabs">
                 <v-tab style="font-size:17px">Request Type</v-tab>
@@ -2176,5 +2178,16 @@ function myFunction4(){
     document.getElementById('menu4').style.display='block';
     document.getElementById('sub4').style.display='none';
 }
-
+function tablistlube(){
+    var ele1 = document.querySelectorAll('[role="tablist"]');
+    ele1[0].style.display="block" //Remove active class for first element
+    document.getElementById('tablist-open').style.display="none"
+    document.getElementById('tablist-close').style.display="block"
+}
+function tablistclose(){
+    var ele1 = document.querySelectorAll('[role="tablist"]');
+    ele1[0].style.display="none" //Remove active class for first element
+    document.getElementById('tablist-open').style.display="block"
+    document.getElementById('tablist-close').style.display="none"
+}
 </script>
