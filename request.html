@@ -438,6 +438,10 @@ hr {
 div[role="tablist"]{
     display: none;
 }
+#tablist:checked, div[role="tablist"]{
+    display: block;
+
+}
 </style>
 
 <body style="background-color: white;">
@@ -851,6 +855,10 @@ textarea {
     <v-container fluid style="min-height:100%">
         <template>
             <div style="height:100%;width:100%;position:relative;margin-bottom:5%">
+                <div style="position:absolute;left:30px;top:20px">
+                <input type="checkbox" id="tablistcheck">
+                <span><i class="fas fa-bars" style="color:white;"></i></span>
+            </div>
               <v-tabs color="white" vertical style="margin-top:20px" id="tabs">
                 <v-tab style="font-size:17px">Request Type</v-tab>
                   <v-tab-item
