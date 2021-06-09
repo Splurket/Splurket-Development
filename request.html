@@ -435,10 +435,13 @@ hr {
     display: table;
     clear: both
 }
+#tablistcheck{
+    display:block;
+}
 div[role="tablist"]{
     display: none;
 }
-#tablist:checked ~ div[role="tablist"]{
+#tablistcheck:checked ~ div[role="tablist"]{
     display: block;
 
 }
