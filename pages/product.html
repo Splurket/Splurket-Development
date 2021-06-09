@@ -689,3 +689,184 @@ textarea {
         }
 
     </script>
+    <!-- partial:index.partial.html -->
+<ul class="nav-mobile">      
+  <li class="menu-container"> 
+    <input id="menu-toggle" type="checkbox" style="display:none">
+    <label for="menu-toggle" class="menu-button">   
+    </label>      
+    <ul class="menu-sidebar" style="overflow:scroll">
+      <div id="menu1">
+      <li>
+        <input type="checkbox" id="sub-one" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub1').style.display='block';">        
+        <label class="submenu-label" for="sub-one">Home</label>
+        <div class="arrow right">&#8250;</div>
+        </li>
+      </div>
+        <div id="sub1" style="display: none">           
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back1">
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;" >&#8249;</div> 
+            <label class="submenu-label" for="sub-one" >Back</label>             
+          </li>
+          <h4 style="margin-bottom:5px">Splurket</h4>        
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Requests</a></li>
+          <li><a href="#">Splurket Pay</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Support</a></li>
+          <h4 style="margin-bottom:5px">Splurket Creators</h4>        
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Sell A Product</a></li>
+          <li><a href="#">Sell Your Talent</a></li>
+          <li><a href="#">Resources</a></li>                                 
+        </ul>
+      </div>
+      </li>
+
+      <div id="menu2">
+      <li>
+        <input type="checkbox" id="sub-two" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub2').style.display='block';">        
+        <label class="submenu-label" for="sub-two">Marketplace</label>
+        <div class="arrow right">&#8250;</div> 
+      </li>
+    </div>
+     <div id="sub2" style="display: none">
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back2">
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;" >&#8249;</div> 
+            <label class="submenu-label" for="sub-two">Back</label>             
+          </li>  
+          <h4 style="margin-bottom:5px">Marketplace</h4>    
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Cart</a></li>     
+          <li><a href="#">Checkout</a></li>  
+          <h4 style="margin-bottom:5px">Requests And Orders</h4>  
+          <li>New Request</li>
+          <li>Your Orders And Requests</li>
+          <li>Make A Payment</li>
+          <li>Get A Quote</li>  
+          <h4 style="margin-bottom:5px">Talent</h4>
+          <li>Explore Talent</li>
+          <li>Hire Talent</li>
+          <li>Get A Quote</li>
+          <li></li>
+          <li></li>                            
+        </ul>
+        </div>              
+      </li>
+      <div id="menu3">
+       <li>
+        <input type="checkbox" id="sub-three" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub3').style.display='block';">        
+        <label class="submenu-label" for="sub-three">Messages</label>
+        <div class="arrow right">&#8250;</div>
+        </li>
+        </div> 
+         <div id="sub3" style="display: none">
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back3">
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;" >&#8249;</div> 
+            <label class="submenu-label" for="sub-three">Back</label>             
+          </li>      
+          <li>New Message</li>
+          <li>All Messages</li>
+          <li>Recipients</li>                               
+        </ul> 
+        </div>             
+      </li> 
+      <div id="menu4">   
+      <li>
+        <input type="checkbox" id="sub-four" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub4').style.display='block';">        
+        <label class="submenu-label" for="sub-four">Support</label>
+        <div class="arrow right">&#8250;</div> 
+      </li>
+    </div>
+     <div id="sub4" style="display: none">
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back4">
+            <label class="submenu-label" for="sub-four">Back</label>     
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;">&#8249;</div>       
+          </li>      
+            <h4>About</h4>
+                <li>Overview</li>
+                <li>What Is Splurket</li>
+                <li>What Sets Us Apart</li>
+                <li>Privacy Policy</li>
+            <h4 >FAQ</h4>
+                <li>How Do I Get Started</li>
+                <li>How Do I Pay For An Order/Complete Job</li>
+                <li>How Can I Become a Seller/Creator</li>
+                <li>What Happens When I Get A Quote?</li>
+                <li>More</li>
+            <h4 >Blog</h4>
+                <li>Latest</li>
+                <li>All Posts</li>
+                <li>Getting Started Guides</li>
+            <h4 >Community</h4>
+                <li>Discord</li>
+                <li>Events</li>
+                <li>Referrals</li>
+                <li></li>
+                <li></li>                               
+        </ul>    
+        </div>          
+      </li>                                     
+    </ul> 
+  </li>
+</ul>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script><script  src="./script.js"></script>
+  <script>
+    document.getElementById("back1").addEventListener('click', myFunction1)
+
+function myFunction1(){
+    document.getElementById('menu1').style.display='block';
+    document.getElementById('menu2').style.display='block';
+    document.getElementById('menu3').style.display='block';
+    document.getElementById('menu4').style.display='block';
+    document.getElementById('sub1').style.display='none';
+}
+
+    document.getElementById("back2").addEventListener('click', myFunction2)
+
+function myFunction2(){
+    document.getElementById('menu1').style.display='block';
+    document.getElementById('menu2').style.display='block';
+    document.getElementById('menu3').style.display='block';
+    document.getElementById('menu4').style.display='block';
+    document.getElementById('sub2').style.display='none';
+}
+
+    document.getElementById("back3").addEventListener('click', myFunction3)
+
+function myFunction3(){
+    document.getElementById('menu1').style.display='block';
+    document.getElementById('menu2').style.display='block';
+    document.getElementById('menu3').style.display='block';
+    document.getElementById('menu4').style.display='block';
+    document.getElementById('sub3').style.display='none';
+}
+
+    document.getElementById("back4").addEventListener('click', myFunction4)
+
+function myFunction4(){
+    document.getElementById('menu1').style.display='block';
+    document.getElementById('menu2').style.display='block';
+    document.getElementById('menu3').style.display='block';
+    document.getElementById('menu4').style.display='block';
+    document.getElementById('sub4').style.display='none';
+}
+function tablistlube(){
+    var ele1 = document.querySelectorAll('[role="tablist"]');
+    ele1[0].style.display="block" //Remove active class for first element
+    document.getElementById('tablist-open').style.display="none"
+    document.getElementById('tablist-close').style.display="block"
+}
+function tablistclose(){
+    var ele1 = document.querySelectorAll('[role="tablist"]');
+    ele1[0].style.display="none" //Remove active class for first element
+    document.getElementById('tablist-open').style.display="block"
+    document.getElementById('tablist-close').style.display="none"
+}
+</script>
