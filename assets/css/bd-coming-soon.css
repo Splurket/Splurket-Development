@@ -799,7 +799,7 @@ body, html {
   bottom: 0;
   background: white;
   color: #333;
-  position: fixed;
+  position: sticky;
   transform: translateX(-405px);
   transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
   top: 150px;
