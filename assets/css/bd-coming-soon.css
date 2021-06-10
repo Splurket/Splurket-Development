@@ -805,7 +805,7 @@ body, html {
   list-style-type: none;
   padding: 0;
   max-width: 400px;
-  height:100em;
+  height:100vh;
 }
 .nav-mobile .menu-container .menu-sidebar .arrow {
   position: absolute;
