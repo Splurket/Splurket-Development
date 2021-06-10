@@ -756,11 +756,10 @@ body, html {
 }
 .nav-mobile .menu-button:after {
   opacity: 0;
-  top: 150zpx;
+  top: 150px;
   content: "";
   width: 100vw;
   display: block;
-  position: fixed;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   content: "";
@@ -834,7 +833,6 @@ body, html {
   background: #eee;
 }
 .nav-mobile .menu-container .menu-sidebar li .menu-sub {
-  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
