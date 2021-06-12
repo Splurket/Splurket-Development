@@ -17,6 +17,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-messaging.js"></script>
 
     <link rel="icon" type="image/x-icon" href="/assets/images/Logo.png" />
     <!-- Font Awesome Icons -->
@@ -272,6 +273,27 @@ body {
             measurementId: "G-QWQ2M658KL"
           };
         firebase.initializeApp(config);
+        const messaging = firebase.messaging();
+
+
+        // Get registration token. Initially this makes a network call, once retrieved
+        // subsequent calls to getToken will return from cache.
+        messaging.getToken({ vapidKey: 'BDxQWJ8w7iFoHokDPizgUvU7S6JmfC_n2xwLj0H3fRRU8dG1lLpeiBsjJ5HtHacYBuY8bEhL1HDbrfB8DMxYeuY' }).then((currentToken) => {
+          if (currentToken) {
+            // Send the token to your server and update the UI if necessary
+            // ...
+          } else {
+            // Show permission request UI
+            console.log('No registration token available. Request permission to generate one.');
+            // ...
+          }
+        }).catch((err) => {
+          console.log('An error occurred while retrieving token. ', err);
+          // ...
+        });  
+
+
+
         const db = firebase.firestore();
         db.settings({ timestampsInSnapshots: true }); 
         firebase.auth().onAuthStateChanged(function(user) {
