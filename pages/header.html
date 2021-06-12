@@ -232,7 +232,7 @@
 
         // Get registration token. Initially this makes a network call, once retrieved
         // subsequent calls to getToken will return from cache.
-        messaging.usePublicVapidKey('BDxQWJ8w7iFoHokDPizgUvU7S6JmfC_n2xwLj0H3fRRU8dG1lLpeiBsjJ5HtHacYBuY8bEhL1HDbrfB8DMxYeuY')
+
         messaging.getToken({ vapidKey: 'BDxQWJ8w7iFoHokDPizgUvU7S6JmfC_n2xwLj0H3fRRU8dG1lLpeiBsjJ5HtHacYBuY8bEhL1HDbrfB8DMxYeuY' }).then((currentToken) => {
           if (currentToken) {
             // Send the token to your server and update the UI if necessary
