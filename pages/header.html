@@ -226,6 +226,14 @@
             measurementId: "G-QWQ2M658KL"
           };
         firebase.initializeApp(config);
+        const messaging = firebase.messaging();
+
+
+        // Get registration token. Initially this makes a network call, once retrieved
+        // subsequent calls to getToken will return from cache.
+        messaging.getToken().then(function(data){
+            console.log(data)
+        })  
         const db = firebase.firestore();
         db.settings({ timestampsInSnapshots: true }); 
         firebase.auth().onAuthStateChanged(function(user) {
