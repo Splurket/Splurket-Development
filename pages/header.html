@@ -232,20 +232,23 @@
 
         // Get registration token. Initially this makes a network call, once retrieved
         // subsequent calls to getToken will return from cache.
-
-        messaging.getToken({ vapidKey: 'BDxQWJ8w7iFoHokDPizgUvU7S6JmfC_n2xwLj0H3fRRU8dG1lLpeiBsjJ5HtHacYBuY8bEhL1HDbrfB8DMxYeuY' }).then((currentToken) => {
-          if (currentToken) {
-            // Send the token to your server and update the UI if necessary
-            // ...
-          } else {
-            // Show permission request UI
-            console.log('No registration token available. Request permission to generate one.');
-            // ...
-          }
-        }).catch((err) => {
-          console.log('An error occurred while retrieving token. ', err);
-          // ...
-        });  
+        messaging.usePublicVapidKey('BDxQWJ8w7iFoHokDPizgUvU7S6JmfC_n2xwLj0H3fRRU8dG1lLpeiBsjJ5HtHacYBuY8bEhL1HDbrfB8DMxYeuY');
+         messaging.requestPermission().then(function() {
+                console.log('Notification permission granted.');
+                console.log('Get token');
+                messaging.getToken().then(function(refreshedToken) {
+                  console.log('Token refreshed.');
+                  console.log(refreshedToken);
+                }).catch(function(err) {
+                  console.log('Unable to retrieve refreshed token ', err);
+                });
+            }).catch(function(err) {
+                        console.log('Unable to get permission to notify.', err);
+            });     
+        messaging.onMessage(function(payload) {
+            console.log('Message received. ', payload);
+        });
+      
         const db = firebase.firestore();
         db.settings({ timestampsInSnapshots: true }); 
         firebase.auth().onAuthStateChanged(function(user) {
