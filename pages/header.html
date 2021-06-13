@@ -228,6 +228,20 @@
           };
         firebase.initializeApp(config);
         const messaging = firebase.messaging();
+        const messaging = firebase.messaging();
+        messaging.onBackgroundMessage((payload) => {
+          console.log('[firebase-messaging-sw.js] Received background message ', payload);
+          // Customize notification here
+          const notificationTitle = 'Background Message Title';
+          const notificationOptions = {
+            body: 'Background Message body.',
+            icon: '/firebase-logo.png'
+          };
+
+          self.registration.showNotification(notificationTitle,
+            notificationOptions);
+        });
+
         // Handle incoming messages. Called when:
         // - a message is received while the app has focus
         // - the user clicks on an app notification created by a service worker
