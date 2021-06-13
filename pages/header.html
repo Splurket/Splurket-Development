@@ -227,29 +227,15 @@
             measurementId: "G-QWQ2M658KL"
           };
         firebase.initializeApp(config);
-
-
-
-        const db = firebase.firestore();
-          const messaging = firebase.messaging();
-
-         messaging.requestPermission().then(function() {
-                console.log('Notification permission granted.');
-                console.log('Get token');
-                messaging.getToken().then(function(refreshedToken) {
-                  console.log('Token refreshed.');
-                  console.log(refreshedToken);
-                }).catch(function(err) {
-                  console.log('Unable to retrieve refreshed token ', err);
-                });
-            }).catch(function(err) {
-                        console.log('Unable to get permission to notify.', err);
-            });     
-        messaging.onMessage(function(payload) {
-            console.log('Message received. ', payload);
+        const messaging = firebase.messaging();
+        // Handle incoming messages. Called when:
+        // - a message is received while the app has focus
+        // - the user clicks on an app notification created by a service worker
+        //   `messaging.onBackgroundMessage` handler.
+        messaging.onMessage((payload) => {
+          console.log('Message received. ', payload);
+          // ...
         });
-
-       
       
         const db = firebase.firestore();
         db.settings({ timestampsInSnapshots: true }); 
