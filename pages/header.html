@@ -226,6 +226,11 @@
             appId: "1:286706779903:web:fd91c29319f9804e192eca",
             measurementId: "G-QWQ2M658KL"
           };
+        firebase.initializeApp(config);
+
+
+
+        const db = firebase.firestore();
           const messaging = firebase.messaging();
 
          messaging.requestPermission().then(function() {
@@ -242,14 +247,6 @@
             });     
         messaging.onMessage(function(payload) {
             console.log('Message received. ', payload);
-        });
-        // Handle incoming messages. Called when:
-        // - a message is received while the app has focus
-        // - the user clicks on an app notification created by a service worker
-        //   `messaging.onBackgroundMessage` handler.
-        messaging.onMessage((payload) => {
-          console.log('Message received. ', payload);
-          // ...
         });
 
        
