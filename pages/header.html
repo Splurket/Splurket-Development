@@ -226,7 +226,7 @@
             appId: "1:286706779903:web:fd91c29319f9804e192eca",
             measurementId: "G-QWQ2M658KL"
           };
-          messaging=firebase.messaging()
+          const messaging = firebase.messaging();
 
          messaging.requestPermission().then(function() {
                 console.log('Notification permission granted.');
