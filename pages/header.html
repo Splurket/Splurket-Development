@@ -228,9 +228,6 @@
           };
 
 
-        // Get registration token. Initially this makes a network call, once retrieved
-        // subsequent calls to getToken will return from cache.
-        messaging.usePublicVapidKey('BDxQWJ8w7iFoHokDPizgUvU7S6JmfC_n2xwLj0H3fRRU8dG1lLpeiBsjJ5HtHacYBuY8bEhL1HDbrfB8DMxYeuY');
          messaging.requestPermission().then(function() {
                 console.log('Notification permission granted.');
                 console.log('Get token');
@@ -246,6 +243,16 @@
         messaging.onMessage(function(payload) {
             console.log('Message received. ', payload);
         });
+        // Handle incoming messages. Called when:
+        // - a message is received while the app has focus
+        // - the user clicks on an app notification created by a service worker
+        //   `messaging.onBackgroundMessage` handler.
+        messaging.onMessage((payload) => {
+          console.log('Message received. ', payload);
+          // ...
+        });
+
+       
       
         const db = firebase.firestore();
         db.settings({ timestampsInSnapshots: true }); 
