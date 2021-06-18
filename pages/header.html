@@ -227,28 +227,6 @@
             measurementId: "G-QWQ2M658KL"
           };
         firebase.initializeApp(config);
-        const messaging = firebase.messaging();
-        messaging.onBackgroundMessage((payload) => {
-          console.log('[firebase-messaging-sw.js] Received background message ', payload);
-          // Customize notification here
-          const notificationTitle = 'Background Message Title';
-          const notificationOptions = {
-            body: 'Background Message body.',
-            icon: '/firebase-logo.png'
-          };
-
-          self.registration.showNotification(notificationTitle,
-            notificationOptions);
-        });
-
-        // Handle incoming messages. Called when:
-        // - a message is received while the app has focus
-        // - the user clicks on an app notification created by a service worker
-        //   `messaging.onBackgroundMessage` handler.
-        messaging.onMessage((payload) => {
-          console.log('Message received. ', payload);
-          // ...
-        });
       
         const db = firebase.firestore();
         db.settings({ timestampsInSnapshots: true }); 
