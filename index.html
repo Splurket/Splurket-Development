@@ -59,198 +59,717 @@
     padding-right: 12px;
     margin-right: 10px;
 }
-body {
-    background-image: url("./assets/images/bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+
 </style>
 
     <!-- Header.. -->
 <body>
     <!-- Header -->
-    <header id="header" class="shadow bg-light"style="background-color:#52b36c;">
-        <ul style="position: absolute;right:30px;top:20px;" id="cartbutton">
-                <a href="./cart/cart.html" class="icon-shopping-cart" style="font-size: 25px;"><i style="color:white" class="fa fa-shopping-cart"></i>
-                </a><a style="padding-left:7px;padding-right:7px;padding-top:5px;padding-bottom:5px;" id="lblCartCount" cssclass="badge badge-warning" forecolor="White">0</a>
-            </ul>
-        <nav class="container navbar" style="margin-left:20px;">
-            <a href="/index.html" class="nav-brand text-dark" style="color:white;font-family: 'Shadows Into Light Two';">Splurket<span class="label label-default" style="font-size: 15px;background-color: white;color: #52b36c;padding:5px;font-family: 'Arial';margin-left: 5px;">Alpha</span></a>
-            <!-- toggle button -->
-            <button class="toggle-button">
-                <span><i class="fas fa-bars"></i></span>
-            </button>
-            <div class="container">
-                  <div class="d-flex justify-content-center">
-                    <div class="searchbar">
-                      <input class="search_input change1" type="text" name="" placeholder="Search Products..." >
-                      <a href="#" class="search_icon"><i class="fas fa-search" style="color:#52b36c"></i></a>
-                    </div>
-                  </div>
-                </div>
-            <!-- collapse on toggle button click -->
-            <div class="collapse" style="margin-right:0%;">
-                <ul class="navbar-nav">
-                    <a href="./index.html" id="home" class="ef5672847" title="Home" onmouseover="document.getElementById('homeheaderdrop').style.display = 'block';document.getElementById('marketplaceheaderdrop').style.display = 'none';document.getElementById('supportheaderdrop').style.display = 'none';document.getElementById('messageheaderdrop').style.display = 'none';">Home</a>
-                    
-                    <a href="./pages/marketplace.html" id="marketplace" class="ef5672847" title="Marketplace" onmouseover="document.getElementById('marketplaceheaderdrop').style.display = 'block';document.getElementById('homeheaderdrop').style.display = 'none';document.getElementById('supportheaderdrop').style.display = 'none';document.getElementById('messageheaderdrop').style.display = 'none';">Marketplace</a>
-                    
-                    <a href="./pages/messages.html" id="messages" class="ef5672847" title="Messages" onmouseover="document.getElementById('messageheaderdrop').style.display = 'block';document.getElementById('homeheaderdrop').style.display = 'none';document.getElementById('supportheaderdrop').style.display = 'none';document.getElementById('marketplaceheaderdrop').style.display = 'none';">Messages</a>
-                    
-                    <a href="./pages/custom request.html" id="support" class="ef5672847" title="Support" onmouseover="document.getElementById('supportheaderdrop').style.display = 'block';document.getElementById('homeheaderdrop').style.display = 'none';document.getElementById('marketplaceheaderdrop').style.display = 'none';document.getElementById('messageheaderdrop').style.display = 'none';">Support</a>
-                </ul>
-            </div>
-            <!--Login BUTTON-->
-            <div id="login" hidden="hidden">
-                <button class="login-button" id="login-button" onclick="location.href='https://accounts.splurket.com?redirect='+location.href;">Login</button>
-            </div>
-            <!--AVATAR-->
-            <div class="dropdown" id="avatar" hidden="hidden" ><br>
-                <img src="" alt="Avatar" class="avatar" id="avatarpic" width="60px" height="60px" hidden="hidden">
-              <div class="dropdown-content" style="color:white; min-width:240px;right:2%;border-top: solid 2px;border-color: white;">
-                <div>
-                    <p style="display:inline-block"; id="avatarusername1" onclick="profilego()">Signed In As:</p>
-                </div>
-                <hr>
-                <p onclick="profilego()">Your Profile</p>
-                <p>Splurket Pay</p>
-                <p>Splurket Creators</p>
-                <p>Your Payment History</p>
-                <p>Your Job Request History</p>
-                <hr>
-                <div>
-                <center><p onclick="signout()">Sign Out</p></center>
+
+<iframe src="./header" style="border:none;width:100%;" id="iframehead"></iframe>
+<div style="position: sticky;top: 0px;z-index: 4;">
+<ul class="nav-mobile">      
+  <li class="menu-container"> 
+    <input id="menu-toggle" type="checkbox" style="display:none">
+    <label for="menu-toggle" class="menu-button">   
+    </label>      
+    <ul class="menu-sidebar" style="overflow:scroll">
+      <div id="menu1">
+      <li>
+        <input type="checkbox" id="sub-one" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub1').style.display='block';">        
+        <label class="submenu-label" for="sub-one">Home</label>
+        <div class="arrow right">&#8250;</div>
+        </li>
+      </div>
+        <div id="sub1" style="display: none">           
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back1">
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;" >&#8249;</div> 
+            <label class="submenu-label" for="sub-one" >Back</label>             
+          </li>
+          <h4 style="margin-bottom:5px">Splurket</h4>        
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Requests</a></li>
+          <li><a href="#">Splurket Pay</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Support</a></li>
+          <h4 style="margin-bottom:5px">Splurket Creators</h4>        
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Sell A Product</a></li>
+          <li><a href="#">Sell Your Talent</a></li>
+          <li><a href="#">Resources</a></li>                                 
+        </ul>
+      </div>
+      </li>
+
+      <div id="menu2">
+      <li>
+        <input type="checkbox" id="sub-two" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub2').style.display='block';">        
+        <label class="submenu-label" for="sub-two">Marketplace</label>
+        <div class="arrow right">&#8250;</div> 
+      </li>
+    </div>
+     <div id="sub2" style="display: none">
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back2">
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;" >&#8249;</div> 
+            <label class="submenu-label" for="sub-two">Back</label>             
+          </li>  
+          <h4 style="margin-bottom:5px">Marketplace</h4>    
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Cart</a></li>     
+          <li><a href="#">Checkout</a></li>  
+          <h4 style="margin-bottom:5px">Requests And Orders</h4>  
+          <li>New Request</li>
+          <li>Your Orders And Requests</li>
+          <li>Make A Payment</li>
+          <li>Get A Quote</li>  
+          <h4 style="margin-bottom:5px">Talent</h4>
+          <li>Explore Talent</li>
+          <li>Hire Talent</li>
+          <li>Get A Quote</li>
+          <li></li>
+          <li></li>                            
+        </ul>
+        </div>              
+      </li>
+      <div id="menu3">
+       <li>
+        <input type="checkbox" id="sub-three" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub3').style.display='block';">        
+        <label class="submenu-label" for="sub-three">Messages</label>
+        <div class="arrow right">&#8250;</div>
+        </li>
+        </div> 
+         <div id="sub3" style="display: none">
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back3">
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;" >&#8249;</div> 
+            <label class="submenu-label" for="sub-three">Back</label>             
+          </li>      
+          <li>New Message</li>
+          <li>All Messages</li>
+          <li>Recipients</li>                               
+        </ul> 
+        </div>             
+      </li> 
+      <div id="menu4">   
+      <li>
+        <input type="checkbox" id="sub-four" class="submenu-toggle" onclick="document.getElementById('menu1').style.display='none';document.getElementById('menu2').style.display='none';document.getElementById('menu3').style.display='none';document.getElementById('menu4').style.display='none';document.getElementById('sub4').style.display='block';">        
+        <label class="submenu-label" for="sub-four">Support</label>
+        <div class="arrow right">&#8250;</div> 
+      </li>
+    </div>
+     <div id="sub4" style="display: none">
+        <ul class="menu-sub" style="list-style: none">
+          <li class="menu-sub-title" id="back4">
+            <label class="submenu-label" for="sub-four">Back</label>     
+            <div class="arrow left" style="display: inline-block;left:0px;width:100%;">&#8249;</div>       
+          </li>      
+            <h4>About</h4>
+                <li>Overview</li>
+                <li>What Is Splurket</li>
+                <li>What Sets Us Apart</li>
+                <li>Privacy Policy</li>
+            <h4 >FAQ</h4>
+                <li>How Do I Get Started</li>
+                <li>How Do I Pay For An Order/Complete Job</li>
+                <li>How Can I Become a Seller/Creator</li>
+                <li>What Happens When I Get A Quote?</li>
+                <li>More</li>
+            <h4 >Blog</h4>
+                <li>Latest</li>
+                <li>All Posts</li>
+                <li>Getting Started Guides</li>
+            <h4 >Community</h4>
+                <li>Discord</li>
+                <li>Events</li>
+                <li>Referrals</li>
+                <li></li>
+                <li></li>                               
+        </ul>    
+        </div>          
+      </li>                                     
+    </ul> 
+  </li>
+</ul>
+</div>
+</html>
+    
+</body>
+</html>
+<head>
+  <meta charset="utf-8">
+  <title>Fiverr</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/landingstyle.css">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <section class="slider" style="background-color:#52b36c">
+    <div class="container">      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="slider-left">
+            <center><h2 style="color:white">Dream & Explore. Create & Sell.<br>The Marketplace Of The Digital Age</h2></center>
+            <div class="input-group mb-3">
+              <input type="text" class="slider-input form-control" placeholder="Try logo animation " aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <i class="fas fa-search" aria-hidden="true"></i>
+              <div class="input-group-append">
+                <button class="search btn btn-outline-secondary" type="button" style="border-color: #52b27c">Search</button>
               </div>
             </div>
-
+            <nav class="slider-left-menu">
+              <ul>
+                <li style="color:white">Popular :</li>
+                <li><a href="#">Voice Over</a></li>
+                <li><a href="#">Translation</a></li>
+                <li><a href="#">Logo Design</a></li>
+                <li><a href="#">Articles & Blog Posts</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="slider-right">
+            <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_496,dpr_1.0/general_assets/logged_out_homepage/assets/hero/900-matthew2x.png" alt="">
+            <div class="star">
+              <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+              <p>Mathew, writer and proofreader</p>
             </div>
-        </nav>
-    </header>
-    <!--Home Dropdown-->
-    <div class="headerdrop" hidden="hidden" id="homeheaderdrop"onmouseover="this.style.display = 'block'" onmouseout="this.style.display = 'none'"> 
-        <div class="fcolumn" style="margin-left:100px"> 
-            <h2 style="font-size:20px;">Splurket</h2><hr>
-                <p>Profile</p>
-                <p>Marketplace</p>
-                <p>Splurket Pay</p>
-                <p>Splurket Creators</p>
+          </div>
         </div>
-        <div class="fcolumn"> 
-            <h2 style="font-size:20px;left:100px;">Splurket Creators</h2><hr>
-                <p>Become A Creator</p>
-                <p>Add A Product</p>
-                <p>Share Your Talent</p>
-                <p>Fulfill Customer Orders</p>
-        </div>
-
+      </div>
     </div>
-    <!--marketplace Dropdown-->
-    <div class="headerdrop" hidden="hidden" id="marketplaceheaderdrop" onmouseover="this.style.display = 'block'" onmouseout="this.style.display = 'none'">   
-        <div class="fcolumn" style="margin-left:100px"> 
-            <h2 style="font-size:20px;">Marketplace</h2><hr>
-                <p>Explore</p>
-                <p>Categories</p>
-                <p>Cart</p>
-                <p>Checkout</p>
+  </section>
+  <section class="service">
+    <div class="container-fluid">
+      <div class="service-cont">
+        <h2>Popular professional services</h2>
+      </div>
+
+
+    <div class="service-boxes ml-3">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <article class="s-b-x-cont">
+              <p>Build Your Brand</p>
+              <h4>Logo Design</h4>
+            </article>
+            <picture class="service-img">
+              <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_250,dpr_1.0/general_assets/logged_out_homepage/assets/sub_category/logodesign@2x.jpg" alt="">
+            </picture>
+            <article class="s-b-x-cont-2">
+              <p>Customize your site</p>
+              <h4>Wordpress</h4>
+            </article>
+            <picture class="service-img">
+              <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_250,dpr_1.0/general_assets/logged_out_homepage/assets/sub_category/wordpress@2x.jpg" alt="">
+            </picture>
+            <article class="s-b-x-cont-3">
+              <p>Share your message</p>
+              <h4>Voice Over</h4>
+            </article>
+            <picture class="service-img">
+              <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_250,dpr_1.0/general_assets/logged_out_homepage/assets/sub_category/voiceover@2x.jpg" alt="">
+            </picture>
+            <article class="s-b-x-cont-4">
+              <p>Engage your audience</p>
+              <h4>Whiteboard</h4>
+            </article>
+            <picture class="service-img">
+              <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_250,dpr_1.0/general_assets/logged_out_homepage/assets/sub_category/whiteboard@2x.jpg" alt="">
+            </picture>
+            <article class="s-b-x-cont-5">
+              <p>Reach more customers</p>
+              <h4>Social Media</h4>
+            </article>
+            <picture class="service-img">
+              <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_250,dpr_1.0/general_assets/logged_out_homepage/assets/sub_category/social@2x.jpg" alt="">
+            </picture>
+          </div>
+          <div class="carousel-item">
+            <article class="s-b-x-cont">
+              <p>Unlock growth online</p>
+              <h4>seo</h4>
+            </article>
+            <picture class="service-img">
+              <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_250,dpr_1.0/general_assets/logged_out_homepage/assets/sub_category/seo@2x.jpg" alt="">
+            </picture>
+            <article class="s-b-x-cont-2">
+              <p>Color your dreams</p>
+              <h4>IIIustration</h4>
+            </article>
+            <picture class="service-img">
+              <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_250,dpr_1.0/general_assets/logged_out_homepage/assets/sub_category/illustration2x.jpg" alt="">
+            </picture>
+            <article class="s-b-x-cont-3">
+              <p>Go global</p>
+              <h4>Translation</h4>
+            </article>
+            <picture class="service-img">
+              <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_250,dpr_1.0/general_assets/logged_out_homepage/assets/sub_category/translation2x.jpg" alt="">
+            </picture>
+            <article class="s-b-x-cont-4">
+              <p>Learn your business</p>
+              <h4>Data entry</h4>
+            </article>
+            <picture class="service-img">
+              <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_250,dpr_1.0/general_assets/logged_out_homepage/assets/sub_category/data-entry2x.jpg" alt="">
+            </picture>
+            <article class="s-b-x-cont-5">
+              <p>Showcase your story</p>
+              <h4>Book covers</h4>
+            </article>
+            <picture class="service-img">
+              <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_250,dpr_1.0/general_assets/logged_out_homepage/assets/sub_category/books2x.jpg" alt="">
+            </picture>
+          </div>
         </div>
-        <div class="fcolumn"> 
-            <h2 style="font-size:20px;left:100px;">Orders and Job Requests</h2><hr>
-                <p>New Job Request</p>
-                <p>Your Orders And Job Requests</p>
-                <p>Job Payment Completion</p>
-                <p>Get A Quote</p>
-        </div>
-        <div class="fcolumn"> 
-            <h2 style="font-size:20px;left:100px;">Talent</h2><hr>
-                <p>Explore Talent</p>
-                <p>Hire Talent</p>
-                <p>Get A Quote</p>
-        </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>        
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>  
     </div>
-    <!--Messages Dropdown-->
-    <div class="headerdrop" hidden="hidden" id="messageheaderdrop" onmouseover="this.style.display = 'block'" onmouseout="this.style.display = 'none'">
-        <div class="fcolumn" style="margin-left:100px">
-            <h2 style="font-size:20px;">Messages</h2><hr>
-                    <p>New Message</p>
-                    <p>All Messages</p>
-                    <p>Recipients</p>
+  </section>
+  <section class="work">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="work-left">
+            <div class="part">
+              <h2>Get work done faster, with confidence</h2>
+              <span><i class="far fa-check-circle mr-2"></i>Payment protection, guaranteed</span>
+              <p>Payment is released to the freelancer once you’re pleased and approve <br> the work you get.</p>
+            </div>
+            <div class="part">
+              <span><i class="far fa-check-circle mr-2"></i>Payment protection, guaranteed</span>
+              <p>Payment is released to the freelancer once you’re pleased and approve <br> the work you get.</p>
+            </div>
+            <div class="part">
+              <span><i class="far fa-check-circle mr-2"></i>Payment protection, guaranteed</span>
+              <p>Payment is released to the freelancer once you’re pleased and approve <br> the work you get.</p>
+            </div>
+          </div>
         </div>
-        <div class="fcolumn" style="margin-left:100px">
-
+        <div class="col-lg-6">
+          <div class="work-right">
+            <picture class="work-right-img">
+              <img style="width: 650px;" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_700,dpr_1.0/general_assets/logged_out_homepage/assets/selling_proposition/1400-selling-proposition-2x.png" alt="">
+            </picture>
+            <article class="video-play">
+              <span><i class="fas fa-play"></i></span>
+            </article>
+          </div>
         </div>
-        <div class="fcolumn" style="margin-left:100px">
-            <center><h3 style="background-color: red;padding:10px;">For Added Safety and Your Protection, Keep Payments and Communications Within Splurket.</h3></center>
-        </div>
+      </div>
     </div>
-
-    <!--Support Dropdown-->
-    <div class="headerdrop" hidden="hidden" id="supportheaderdrop" onmouseover="this.style.display = 'block'" onmouseout="this.style.display = 'none'">
-        <div class="fcolumn" style="margin-left:100px"> 
-            <h2 style="font-size:20px;">About</h2><hr>
-                <p>Overview</p>
-                <p>What Is Splurket</p>
-                <p>What Sets Us Apart</p>
-                <p>Privacy Policy</p>
+  </section>
+  <section class="market">
+    <article class="market-content">
+      <h4>Explore the marketplace</h4>
+    </article>
+    <div class="market-boxes text-center">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="market-box">
+              <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg" alt="">
+              <h5></h5>
+              <p>Graphics & Design</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="market-box">
+              <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg" alt="">
+              <h5></h5>
+              <p>Digital Marketing</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="market-box">
+              <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg" alt="">
+              <h5></h5>
+              <p>Writing & Translation</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="market-box">
+              <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg" alt="">
+              <h5></h5>
+              <p>Video & Animation</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="market-box">
+              
+              <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg" alt="">
+              <h5></h5>
+              <p>Music & Audio</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="market-box">
+              <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg" alt="">
+              <h5></h5>
+              <p>Programming & Tech</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="market-box">
+              <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg" alt="">
+              <h5></h5>
+              <p>Business</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="market-box">
+              <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg" alt="">
+              <h5></h5>
+              <p>Lifestyle</p>
+            </div>
+          </div>
         </div>
-        <div class="fcolumn"> 
-            <h2 style="font-size:20px;left:100px;">FAQ</h2><hr>
-                <p>How Do I Get Started</p>
-                <p>How Do I Pay For An Order/Complete Job</p>
-                <p>How Can I Become a Seller/Creator</p>
-                <p>What Happens When I Get A Quote?</p>
-                <p>More</p>
-        </div>
-        <div class="fcolumn"> 
-            <h2 style="font-size:20px;left:100px;">Blog</h2><hr>
-                <p>Latest</p>
-                <p>All Posts</p>
-                <p>Getting Started Guides</p>
-        </div>
-        <div class="fcolumn"> 
-            <h2 style="font-size:20px;left:100px;">Community</h2><hr>
-                <p>Discord</p>
-                <p>Events</p>
-                <p>Referrals</p>
-        </div>
+      </div>   
     </div>
+  </section>
+  <section class="project">
+    <article class="project-content">
+      <h2>Get inspired with projects made by our freelancers</h2>
+    </article>
+    <div class="container-fluid">
+      <div class="project-boxes">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="project-box">
+              <picture class="p-b-img">
+                <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_320,dpr_1.0/general_assets/logged_out_homepage/assets/made_on_fiverr/carmelacaldart0.jpg" alt="">
+              </picture>
+              <article class="p-b-cont">
+                <span><a href="#"><img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/bc8d9342a981e3e7f42c4c3e15b30e7d-1555596582200/4754a943-ba33-4953-b84a-033fd3d36350.jpg" alt="">IIIustration <p>camelacaldarto</p></a></span>
+              </article>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="project-box">
+              <picture class="p-b-img">
+                <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_320,dpr_1.0/general_assets/logged_out_homepage/assets/made_on_fiverr/spickex.jpg" alt="">
+              </picture>
+              <article class="p-b-cont">
+                <span><a href="#"><img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/22711136/original/fiverr_profile.jpg" alt="">Flyer Design <p>by spickex</p></a></span>
+              </article>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="project-box">
+              <picture class="p-b-img">
+                <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_320,dpr_1.0/general_assets/logged_out_homepage/assets/made_on_fiverr/artsi3d.png" alt="">
+              </picture>
+              <article class="p-b-cont">
+                <span><a href="#"><img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/a832de173d05a95cd49903ba5b7dad13-1533185904165/f601e668-0887-4bf6-be52-ff28be45a1e3.jpg" alt="">3 d Models & Product Design <p>by artsi3d</p></a></span>
+              </article>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="project-box">
+              <picture class="p-b-img">
+                <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_320,dpr_1.0/general_assets/logged_out_homepage/assets/made_on_fiverr/dvincentgomes.jpg" alt="">
+              </picture>
+              <article class="p-b-cont">
+                <span><a href="#"><img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/01b6ce5dc58e320d3e1e27d9c6a10143-1556123965312/c675e6f4-303e-4fab-9854-314669dda095.jpg" alt="">IIIustration <p>dvincentgomes</p></a></span>
+              </article>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <section class="testi">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="work-right">
+            <picture class="work-right-img">
+              <img style="width: 650px;" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_600,dpr_1.0/general_assets/logged_out_homepage/assets/testimonials/1440-haerfest-2x.jpg" alt="">
+            </picture>
+            <article class="video-play">
+              <span><i class="fas fa-play"></i></span>
+            </article>
+          </div>
+        </div>
+        <div class="col-lg-6 p-0">
+          <div class="testi-right">
+            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Voluptate corporis maiores, quaerat voluptatibus vitae provident veniam <br> cumque voluptates dolorum voluptas! Lorem ipsum dolor <br> sit amet consectetur adipisicing elit. Ullam sint sapiente <br> nesciunt eos vel eligendi in minus aliquid <br> laboriosam deleniti?"</p>
+            <h5>Tim and Dan Joo, Co-funders</h5>
+            <span>HERFEST</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="fiver-pro">
+    <div class="container-fluid">
+      <div class="pro-img">
+        <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_1400,dpr_1.0/general_assets/logged_out_homepage/assets/pro/pro_banner_1400px-2x.jpg" alt="">
+      </div>
+      <div class="pro-content">
+        <h4>Try Fiverr pro</h4>
+        <h2>Unrivaled experts, trusted by the world's <br> biggest brands</h2>
+        <a href="#">Explore Pro Service</a>
+      </div>
+    </div>
+  </section>
+  <section class="tools">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="work-left">
+            <div class="part">
+              <h2>Give your business the right tools</h2>
+              <span><i class="far fa-check-circle mr-2"></i>Full transparency</span>
+              <p>A new shared dashboard allows you to track your team's activity, so that <br> everyone is always in sync.</p>
+            </div>
+            <div class="part">
+              <span><i class="far fa-check-circle mr-2"></i>VIP customer support</span>
+              <p>Quick response time and upgraded support solutions will help you to get <br> what you need, when you need it.</p>
+            </div>
+            <div class="part">
+              <span><i class="far fa-check-circle mr-2"></i>Improved billing options</span>
+              <p>One team - one payment method. You can now add a card on file that every <br> team member can use.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="tools-right">
+            <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_700,dpr_1.0/general_assets/logged_out_homepage/assets/business_tools/ipadX2.gif" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="guide">
+    <div class="container-fluid">
+      <h2>Fiverr guides</h2>
+      <div class="row">
+        <div class="guide-boxes">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="guide-box">
+                <div class="g-b-img">
+                  <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_450,dpr_1.0/general_assets/logged_out_homepage/assets/fiverr_guides/1440-create-website-2x.jpg" alt="">
+                </div>
+                <div class="g-b-cont">
+                  <h4>Start an online business and work from home</h4>
+                  <p>A complete guide to starting a small business online</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="guide-box">
+                <div class="g-b-img">
+                  <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_450,dpr_1.0/general_assets/logged_out_homepage/assets/fiverr_guides/1440-digital-marketing-2x.jpg" alt="">
+                </div>
+                <div class="g-b-cont">
+                  <h4>Digital marketing made easy</h4>
+                  <p>A practical guide to understand what is digital marketing</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="guide-box">
+                <div class="g-b-img">
+                  <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_450,dpr_1.0/general_assets/logged_out_homepage/assets/fiverr_guides/1440-strong-brand-2x.jpg" alt="">
+                </div>
+                <div class="g-b-cont">
+                  <h4>Create a logo for your business</h4>
+                  <p>A step-by-step guide to create a memorable business logo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="get-start">
+    <div class="container-fluid">
+      <div class="start-img">
+        <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_1400,dpr_1.0/general_assets/logged_out_homepage/assets/signup/1440-cta2x.jpg" alt="">
+      </div>
+      <div class="get-start-cont text-center">
+        <h3>Find freelance services for your business today</h3>
+        <p>We've got you covered for all your business needs</p>
+        <a href="#">Get Started</a>
+      </div>
+    </div>
+  </section>
+  <footer class="footer-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="f-t-left">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="f-r-box">
+                  <h4>Categories</h4>
+                  <nav>
+                    <ul>
+                      <li><a href="#">Graphics & Design</a></li>
+                      <li><a href="#">Digital Marketing</a></li>
+                      <li><a href="#">Writing & Translation</a></li>
+                      <li><a href="#">Video & Animation</a></li>
+                      <li><a href="#">Music & Audio</a></li>
+                      <li><a href="#">Programming & Tech</a></li>
+                      <li><a href="#">Business</a></li>
+                      <li><a href="#">Lifestyle</a></li>
+                      <li><a href="#">Sitemap</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="f-r-box">
+                  <h4>About</h4>
+                  <nav>
+                    <ul>
+                      <li><a href="#">Careers</a></li>
+                      <li><a href="#">Press & News</a></li>
+                      <li><a href="#">Partnerships</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Terms of Service</a></li>
+                      <li><a href="#">Intellectual Property Claims</a></li>
+                      <li><a href="#">Investor Relations</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="f-r-box">
+                  <h4>Support</h4>
+                  <nav>
+                    <ul>
+                      <li><a href="#">Help & Support</a></li>
+                      <li><a href="#">Trust & Safety</a></li>
+                      <li><a href="#">Selling on Fiverr</a></li>
+                      <li><a href="#">Buying on Fiverr</a></li>                 
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="f-t-right">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="f-r-box">
+                  <h4>Community</h4>
+                  <nav>
+                    <ul>
+                      <li><a href="#">Events</a></li>
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">Forum</a></li>
+                      <li><a href="#">Community Standards</a></li>                 
+                      <li><a href="#">Podcast</a></li>                 
+                      <li><a href="#">Affiliates</a></li>                 
+                      <li><a href="#">PodInvite a Friendcast</a></li>                 
+                      <li><a href="#">Become a Seller</a></li>                 
+                      <li><a href="#">Fiverr Elevate <br> <small>Exclusive Benefits</small></a></li>                                 
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="f-r-box">
+                  <h4>More From Fiverr</h4>
+                  <nav>
+                    <ul>
+                      <li><a href="#">Fiverr Pro</a></li>
+                      <li><a href="#">Fiverr Studios</a></li>
+                      <li><a href="#">Fiverr Logo Maker</a></li>
+                      <li><a href="#">Fiverr Guides</a></li>                 
+                      <li><a href="#">Get Inspired</a></li>                 
+                      <li><a href="#">ClearVoice <br>
+                        <small>Content Marketing</small> </a></li>                 
+                      <li><a href="#">AND CO <br>
+                        <small>Invoice Software</small> </a></li>                 
+                      <li><a href="#">Learn <br>
+                        <small>Online Courses</small> </a></li>                                                                      
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer class="footer-bottom">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="f-b-left">
+            <p><span>fiverr</span>© Fiverr International Ltd. 2020</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="f-b-right">
+            <nav>
+              <ul>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><span><i class="fas fa-globe"></i></span>English</a></li>
+                <li><a href="#">$USD</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 
-    <!-- java script -
-    <script>
-    let toggle = document.querySelector("#header .toggle-button");
-    let collapse = document.querySelectorAll("#header .collapse");
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 
-    toggle.addEventListener('click',function(){
-        collapse.forEach(col=>col.classList.toggle("collapse-toggle"));
-    })
-    </script>-->
-    
-    <!-- Header ENDS HERE!!!!.. -->
-
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
-</html>
-    
-</body>
-</html>
-<body class="min-vh-100 d-flex flex-column">
-
-    <main class="my-auto">
-        <div class="container">
-            <h1 class="page-title"style="padding-top:60px; padding-bottom:50px;"><center>The Future of Digital Products Is Almost Here!</h1>
-            <center><p class="page-description" style="background-color:black; padding-left:20px; padding-right:20px; padding-top:20px; padding-bottom:20px" >Lot's of work taking place to open up jobs for digital creators! Customers will be able to request anything digital, and others will be able to join as creators to build what they want! This new, innovative idea, will help thousands, and possibly millions of people! Show your support by following us on social media, and if you are interested in volunteering a helping hand to be a part of the future, history and something bigger than yourself, email us with the address above! Thanks for coming, and we hope you'll be back soon to witness awesomeness!
-            <p style="background-color:white;"></p></p></center>
-            <p><center>Show Your Support</p>
-            <nav class="footer-social-links"><center>
-                <a href="#!" class="social-link"><i class="mdi mdi-facebook-box"></i></a>
-                <a href="#!" class="social-link"><i class="mdi mdi-twitter"></i></a>
-                <a href="#!" class="social-link"><i class="mdi mdi-google"></i></a>
-                <a href="https://www.instagram.com/splurket_store/" class="social-link"><i class="mdi mdi-instagram"></i></a>
-                <a href="#!" class="social-link"><i class="mdi mdi-discord"></i></a>
-             </p>
-              <p>Search: Splurket_Store on all major platforms!<p></center><br><br><br><br>
-    </main>
     <script>
         function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
