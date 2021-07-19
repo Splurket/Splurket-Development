@@ -761,10 +761,9 @@ textarea {
             //still splurket
             
             var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Accept", "application/json, /;q=0.5");
+            myHeaders.append("Content-Type", "text/plain");
             var raw = JSON.stringify({
-              "stringtoencrypt": `${email1}`
+              "flemishGiant": `${email1}`
             });
             //document.write(raw)
             var requestOptions = {
@@ -773,7 +772,7 @@ textarea {
               body: raw,
               redirect: 'follow'
             };
-            fetch("https://americanrivergold.com/fluffybunnyin", requestOptions)
+            fetch("https://script.google.com/macros/s/AKfycbwd3VKlX6ajjUYSkrg9YOEu3fDg-F0PJsRvv8ia0bhPX6OHn_Lk1a4N7dVx3nKEacui/exec", requestOptions)
               .then(function (response) {
                   return response.json();
               })
@@ -1366,8 +1365,7 @@ textarea {
             //still splurket
             
             var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Accept", "application/json, /;q=0.5");
+            myHeaders.append("Content-Type", "text/plain");
             var raw = JSON.stringify({
               "flemishGiant": `${email1}`
             });
@@ -1623,8 +1621,7 @@ textarea {
         skillsNeed = document.getElementById('pskills').value;
         pdescription = document.getElementById('pdescription').value;
         var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Accept", "application/json, /;q=0.5");
+        myHeaders.append("Content-Type", "text/plain");
         var raw = JSON.stringify({
           "flemishGiant": `${productName}${email}${rndInt}`
         });
@@ -1666,8 +1663,7 @@ textarea {
             dprice1=dprice
         }else(dprice = '$'+dprice)
         var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Accept", "application/json, /;q=0.5");
+        myHeaders.append("Content-Type", "text/plain");
         var raw = JSON.stringify({
           "flemishGiant": `${dname}${email}${rndInt}`
         });
@@ -1707,8 +1703,7 @@ textarea {
             qpcost1=qpcost1
         }else(qpcost1 = '$'+qpcost1)
         var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Accept", "application/json, /;q=0.5");
+        myHeaders.append("Content-Type", "text/plain");
         var raw = JSON.stringify({
           "flemishGiant": `${qpname}${email}${rndInt}`
         });
@@ -1749,8 +1744,7 @@ textarea {
             qdcost=qdcost
         }else(qdcost = '$'+qdcost)
         var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Accept", "application/json, /;q=0.5");
+        myHeaders.append("Content-Type", "text/plain");
         var raw = JSON.stringify({
           "flemishGiant": `${qdname}${email}${rndInt}`
         });
