@@ -305,6 +305,12 @@ textarea {
         mdi-close
       </v-icon>
     </template>
+    <template v-slot:item.name="{ item }">
+      <td
+      :id="item.id"
+
+      >{{item.name}}</td>
+    </template>
     <template v-slot:no-data>
         <h1>No Items Found In Cart</h1>
     </template>
