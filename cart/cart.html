@@ -251,6 +251,7 @@ textarea {
      :items-per-page="-1"
      :hide-default-footer="true"
   >
+
     <template v-slot:top>
       <v-toolbar
         flat
@@ -339,6 +340,11 @@ textarea {
     <template v-slot:no-data>
         <h1>No Items Found In Cart</h1>
     </template>
+    <v-card style="position: absolute;right:30px;top:2rem;min-width:250px;min-height:100px">
+    <h3 style="padding:15px">Subtotal: <span id="total">{{ total }}</span></h3>
+    <center><v-divider style="width:85%;"></v-divider></center>
+    <center><v-btn type="button" class="btn btn-primary" style="margin-top:15px;background-color: #52b36c;border-color: #52b36c;color:white" value="Checkout">Checkout</v-btn></center><br>
+      </v-card>
   </v-data-table>
 </template>
 </div>
