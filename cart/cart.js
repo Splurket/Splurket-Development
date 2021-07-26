@@ -20,7 +20,6 @@ console.log(Object.keys(hello).length)
 
     //console.log(cartItem.data.id);
   }
-  console.log(items)
   function populateCart(){
 
     var cartBody = document.querySelector("#cart > tbody");
@@ -41,10 +40,9 @@ console.log(Object.keys(hello).length)
       var p = cart[curr].data.price;
       return prev + (q*p);
     }, 0);
-    console.log(total)
 
     totalDollars = total / 100;
-    
+    console.log(totalDollars)
     totalDollars1 = totalDollars.toFixed(2)
     totalEl.innerHTML = `$${totalDollars1}`;
     
@@ -166,13 +164,14 @@ console.log(Object.keys(hello).length)
   window.addEventListener("storage", function(e) {
     populateCart();
   })
-  new Vue({
+  app = new Vue({
   el: '#app',
   vuetify: new Vuetify(),
     data: () => ({
      dialog2: false,
       dialog: false,
       dialogDelete: false,
+      total:0,
       headers: [
         {
           text: 'Your Items',
