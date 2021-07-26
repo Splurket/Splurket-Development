@@ -251,9 +251,7 @@ textarea {
      :items-per-page="-1"
      :hide-default-footer="true"
   >
-  <template v-slot:footer
-flat
-  >
+  <template v-slot:bottom>
         <v-card style="position: absolute;right:30px;top:2rem;min-width:250px;min-height:100px">
         <h3 style="padding:15px">Subtotal: <span id="total">{{ total }}</span></h3>
         <center><v-divider style="width:85%;"></v-divider></center>
