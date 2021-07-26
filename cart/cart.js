@@ -155,7 +155,7 @@ console.log(Object.keys(hello).length)
 
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    populateCart();
+    window.location.reload()
   }
 
   function getCart() {
