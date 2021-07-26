@@ -34,7 +34,7 @@ console.log(Object.keys(hello).length)
       document.getElementById('noitems').style.display="block"
     }
     // update total
-    //var totalEl = document.getElementById("total");
+    var totalEl = document.getElementById("total");
     var total = Object.keys(cart).reduce((prev, curr) => {
 
       var q = cart[curr].quantity;
@@ -45,7 +45,7 @@ console.log(Object.keys(hello).length)
     totalDollars = total / 100;
     
     totalDollars1 = totalDollars.toFixed(2)
-    //totalEl.innerHTML = `$${totalDollars1}`;
+    totalEl.innerHTML = `$${totalDollars1}`;
     
 
     // remove all cart items
