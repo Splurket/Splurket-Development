@@ -314,7 +314,7 @@ textarea {
         </v-dialog>
       </v-toolbar>
       <v-card eager style="position: absolute;right:10px;top:0px">
-        <h3>Subtotal: <span id="total"></span></h3>
+        <h3>Subtotal: <span id="total">{{ total }}</span></h3>
       </v-card>
     </template>
     <template v-slot:item.actions="{ item }">
@@ -456,7 +456,7 @@ console.log(Object.keys(hello).length)
     totalDollars = total / 100;
     console.log(totalDollars)
     totalDollars1 = totalDollars.toFixed(2)
-    totalEl.innerHTML = `$${totalDollars1}`;
+    app.total = `$${totalDollars1}`;
     
 
     // remove all cart items
