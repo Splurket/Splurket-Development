@@ -335,7 +335,8 @@ textarea {
       >{{item.name}}</td>
     </template>
     <template v-slot:no-data>
-        <h1>No Items Found In Cart</h1>
+        <h1>No Items Found In Cart</h1><hr>
+        <v-btn type="submit" value="Checkout" id="Secure payment" class="u_sec_btn" style="font-family:'Arial'; font-weight:bold; background-color: #52b36c" name="Secure payment">Checkout</v-btn>
     </template>
   </v-data-table>
 </template>
@@ -385,7 +386,7 @@ textarea {
     <input type="hidden" name="handling" value="0">
     <input type="hidden" name="cancel_return" value="">
     <input type="hidden" name="return" value="RETURN_URL">
-    <input type="submit" value="Checkout" id="Secure payment" class="u_sec_btn" style="font-family:'Arial'; font-weight:bold; background-color: #52b36c" name="Secure payment" />
+  
     </form>
       <script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
