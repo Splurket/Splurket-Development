@@ -41,6 +41,7 @@ console.log(Object.keys(hello).length)
       var p = cart[curr].data.price;
       return prev + (q*p);
     }, 0);
+    console.log(total)
 
     totalDollars = total / 100;
     
