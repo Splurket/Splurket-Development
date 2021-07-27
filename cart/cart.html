@@ -341,7 +341,7 @@ textarea {
       <td
       :id="item.id"
       onclick="window.top.location.href='https://splurket.com/pages/product?product='+this.id"
-      ><img :src="item.image"></td>
+      ><img :src="item.image" style="width:50px;height:50px"></td>
     </template>
     <template v-slot:no-data>
         <h1>No Items Found In Cart</h1><br>
@@ -596,7 +596,7 @@ console.log(Object.keys(hello).length)
       total:0,
       headers: [
       { text: '', align: 'start', sortable: false, value: 'image'},
-        { text: 'Your Items', align: 'start', sortable: false, value: 'name'},
+        { text: 'Items', align: 'start', sortable: false, value: 'name'},
         { text: 'Quantity', value: 'quantity' },
         { text: 'Price', value: 'price' },
         { text: 'Actions', value: 'actions', sortable: false },
