@@ -14,7 +14,7 @@ console.log(Object.keys(hello).length)
       var str = dollars1;
       var resStr=str.substring(0,str.length-2)+"."+str.substring(str.length-2);
       pricethat = '$'+resStr;
-    pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.quantity}`, price: pricethat}
+    pushdata= {value: false, id: `${cartItem.data.id}`, name: `${cartItem.data.description}`, quantity: `${cartItem.quantity}`, price: pricethat, image: `${cartItem.data.image}`}
     items.push(pushdata)
     console.log(Object.keys(hello[item]).length)
 
@@ -173,12 +173,8 @@ console.log(Object.keys(hello).length)
       dialogDelete: false,
       total:0,
       headers: [
-        {
-          text: 'Your Items',
-          align: 'start',
-          sortable: false,
-          value: 'name',
-        },
+      { text: '', align: 'start', sortable: false, value: 'image'},
+        { text: 'Your Items', align: 'start', sortable: false, value: 'name'},
         { text: 'Quantity', value: 'quantity' },
         { text: 'Price', value: 'price' },
         { text: 'Actions', value: 'actions', sortable: false },
