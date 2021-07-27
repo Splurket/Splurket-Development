@@ -305,7 +305,7 @@ textarea {
       </v-dialog>
         <v-dialog v-model="dialogDelete" max-width="500px" style="word-break: break-word;">
           <v-card>
-            <center><v-card-title class="headline" style="word-wrap: break-word; word-break: break-word">Are You Sure You Want To Delete This Item?</v-card-title></center>
+            <center><v-card-title class="headline" style="word-wrap: break-word;word-break: break-word">Are You Sure You Want To Delete This Item?</v-card-title></center>
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" text @click="closeDelete">Cancel</v-btn>
@@ -325,7 +325,7 @@ textarea {
       <v-icon
         small
         :id=item.id
-        @click="deleteItem(item)"
+        onclick="idf(this.id)"
       >
         mdi-close
       </v-icon>
@@ -683,6 +683,11 @@ console.log(Object.keys(hello).length)
   })
   </script>
 <script>
+  function idf(idflick){
+    idd=idflick;
+    console.log(idd)
+    removeFromCart(idd)
+  }
   function deletet(){
 
   }
