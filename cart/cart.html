@@ -251,13 +251,7 @@ textarea {
      :items-per-page="-1"
      :hide-default-footer="true"
   >
-  <template v-slot:footer>
-        <v-card style="position: absolute;right:30px;top:2rem;min-width:250px;min-height:100px">
-        <h3 style="padding:15px">Subtotal: <span id="total">{{ total }}</span></h3>
-        <center><v-divider style="width:85%;"></v-divider></center>
-        <center><v-btn type="button" class="btn btn-primary" style="margin-top:15px;background-color: #52b36c;border-color: #52b36c;color:white" value="Checkout">Checkout</v-btn></center><br>
-      </v-card>
-    </template>
+
 
     <template v-slot:top>
       <v-toolbar
@@ -311,7 +305,7 @@ textarea {
       </v-dialog>
         <v-dialog v-model="dialogDelete" max-width="500px" style="word-break: break-word;">
           <v-card>
-            <v-card-title class="headline">Are You Sure You Want To Delete This Item?</v-card-title>
+            <center><v-card-title class="headline" style="word-wrap: break-word; word-break: break-word">Are You Sure You Want To Delete This Item?</v-card-title></center>
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" text @click="closeDelete">Cancel</v-btn>
@@ -332,7 +326,6 @@ textarea {
         small
         :id=item.id
         @click="deleteItem(item)"
-        onclick="idf(this.id)"
       >
         mdi-close
       </v-icon>
@@ -690,11 +683,6 @@ console.log(Object.keys(hello).length)
   })
   </script>
 <script>
-  function idf(idflick){
-    idd=idflick;
-    console.log(idd)
-    removeFromCart(idd)
-  }
   function deletet(){
 
   }
