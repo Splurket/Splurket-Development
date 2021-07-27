@@ -44,7 +44,7 @@ console.log(Object.keys(hello).length)
     totalDollars = total / 100;
     console.log(totalDollars)
     totalDollars1 = totalDollars.toFixed(2)
-    totalEl.innerHTML = `$${totalDollars1}`;
+    app.total = `$${totalDollars1}`;
     
 
     // remove all cart items
