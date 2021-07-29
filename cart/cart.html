@@ -713,7 +713,7 @@ console.log(Object.keys(hello).length)
   console.log(car1t)
   function checkout(){
     var thiscart = localStorage.getItem('cart')
-    console.log(thiscart)
+    window.location.href="https://pay.splurket.com/checkout/checkout-start?cart="+thiscart
   }
 </script>
 </body>
