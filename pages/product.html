@@ -1042,10 +1042,10 @@ function tablistclose(){
           Crtitems = (JSON.stringify(Object.keys(cart).length))
           var CartItemsNote = Crtitems;
           if (CartItemsNote > '0') {
-            iframehead.contentWindow.document.getElementById('lblCartCount').innerText = CartItemsNote;
+            document.getElementById('iframehead').contentWindow.document.getElementById('lblCartCount').innerText = CartItemsNote;
           }
-          if (CartItemsNote =='0') {
-            iframehead.contentWindow.document.getElementById('lblCartCount').innerText= '0';
+          else if (CartItemsNote =='0') {
+            document.getElementById('iframehead').contentWindow.document.getElementById('lblCartCount').innerText= '0';
           }
         }
 
