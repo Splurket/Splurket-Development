@@ -1555,7 +1555,8 @@ textarea {
             name69 = document.getElementById('demo_name').value;
             email69 = document.getElementById('demo_email').value;
             phone69 = document.getElementById('demo_phone').value;
-            Docid = data.encryptedstring;
+                        Docid1 = data.encryptedstring;
+            Docid = Docid1.replace("/","+++___")
             db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
             name: productName,
             category: productCategory,
@@ -1579,7 +1580,8 @@ textarea {
             name69 = document.getElementById('demo_name').value;
             email69 = document.getElementById('demo_email').value;
             phone69 = document.getElementById('demo_phone').value;
-            Docid = data.encryptedstring;
+                        Docid1 = data.encryptedstring;
+            Docid = Docid1.replace("/","+++___")
             db.collection('requests').doc('unclaimed').collection('jobs').doc(Docid).set({
             name: dname,
             category: dcat,
@@ -1775,7 +1777,8 @@ textarea {
             name69 = document.getElementById('demo_name').value;
             email69 = document.getElementById('demo_email').value;
             phone69 = document.getElementById('demo_phone').value;
-            Docid = data.encryptedstring;
+            Docid1 = data.encryptedstring;
+            Docid = Docid1.replace("/","+++___")
             db.collection('requests').doc('unclaimed').collection('quotes').doc(Docid).set({
             name: qdname,
             category: qdcat,
@@ -1817,7 +1820,8 @@ textarea {
             console.log(phone69)
             console.log(qpcost1)
             console.log(qptime)
-            Docid = data.encryptedstring;
+                        Docid1 = data.encryptedstring;
+            Docid = Docid1.replace("/","+++___")
             db.collection('requests').doc('unclaimed').collection('quotes').doc(Docid).set({
             name: qpname,
             category: qpcat,
