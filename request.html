@@ -1570,7 +1570,7 @@ textarea {
             console.log(Docid)
             let [month, date, year]    = new Date().toLocaleDateString("en-US").split("/")
             db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
-            date: `${month}/ ${date}/ ${year}`,
+            date: `${month}/${date}/${year}`,
             name: productName,
             category: productCategory,
             description: pdescription,
