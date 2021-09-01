@@ -1551,7 +1551,7 @@ textarea {
     <script>
         const rndInt = randomIntFromInterval(1000, 9999)
         function addproductd(data){
-            productName = document.getElementById('pname').value;
+            const productName = document.getElementById('pname').value;
             pprice = document.getElementById('pprice').value;
             if(pprice.includes('$')){
                 pprice=pprice
