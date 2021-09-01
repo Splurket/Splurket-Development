@@ -41,9 +41,6 @@
   <script src="https://unpkg.com/vueperslides"></script>
   <link href="https://unpkg.com/vueperslides/dist/vueperslides.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">-->
-    <script>
-        var productName;
-    </script>
 </head>
 <style>
     .container {
@@ -943,7 +940,7 @@ textarea {
                     <div>
                         <label for="demo_name" style="color:#52b36c;">Name Of Product Request</label>
                         <input class="u-full-width" type="text" placeholder="Please Enter The Name Of Your Product Request"
-                               onblur="productName = this.value" id="pname">
+                               id="pname">
                     </div>
                     <div>
                         <label for="demo_name" style="color:#52b36c;">What Category Does This Product Fall Into?</label>
@@ -1577,7 +1574,7 @@ textarea {
             payment: ppayment,
             permissions:devhireperm,
             user: Username69,
-            name:name69,
+            usersname:name69,
             email:email69,
             phone:phone69,
             price:pprice,
@@ -1638,6 +1635,7 @@ textarea {
         var raw = JSON.stringify({
           "flemishGiant": `${productName}${email}${rndInt}`
         });
+        console.log(raw)
         //document.write(raw)
         var requestOptions = {
           method: 'POST',
