@@ -41,6 +41,9 @@
   <script src="https://unpkg.com/vueperslides"></script>
   <link href="https://unpkg.com/vueperslides/dist/vueperslides.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">-->
+    <script>
+        var productName;
+    </script>
 </head>
 <style>
     .container {
@@ -940,7 +943,7 @@ textarea {
                     <div>
                         <label for="demo_name" style="color:#52b36c;">Name Of Product Request</label>
                         <input class="u-full-width" type="text" placeholder="Please Enter The Name Of Your Product Request"
-                               id="pname">
+                               onblur="productName = this.value" id="pname">
                     </div>
                     <div>
                         <label for="demo_name" style="color:#52b36c;">What Category Does This Product Fall Into?</label>
@@ -1551,7 +1554,7 @@ textarea {
     <script>
         const rndInt = randomIntFromInterval(1000, 9999)
         function addproductd(data){
-            const productName = document.getElementById('pname').value;
+            productName = document.getElementById('pname').value;
             pprice = document.getElementById('pprice').value;
             if(pprice.includes('$')){
                 pprice=pprice
