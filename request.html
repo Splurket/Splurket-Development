@@ -1555,8 +1555,10 @@ textarea {
             name69 = document.getElementById('demo_name').value;
             email69 = document.getElementById('demo_email').value;
             phone69 = document.getElementById('demo_phone').value;
-                        Docid = data.encryptedstring;
+            Docid = data.encryptedstring;
+            let [month, date, year]    = new Date().toLocaleDateString("en-US").split("/")
             db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
+            date: `${month}/ ${date}/ ${year}`,
             name: productName,
             category: productCategory,
             description: pdescription,
@@ -1777,6 +1779,7 @@ textarea {
             phone69 = document.getElementById('demo_phone').value;
             Docid = data.encryptedstring;
             db.collection('requests').doc('unclaimed').collection('quotes').doc(Docid).set({
+
             name: qdname,
             category: qdcat,
             description: qddesc,
