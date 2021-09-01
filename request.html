@@ -761,7 +761,7 @@ textarea {
             //still splurket
             
             var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "text/plain");
+            myHeaders.append("Content-Type", "application/json");
             var raw = JSON.stringify({
               "flemishGiant": `${email1}`
             });
@@ -1352,12 +1352,13 @@ textarea {
 <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
     <script>
+        var email1
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             // User is signed in.
             var user = firebase.auth().currentUser;
             //splurket@gmail.com
-            var email1 = user.email;
+            email1 = user.email;
             document.getElementById('demo_email').value = user.email
             
             var email = getParameterByName('user'); 
@@ -1546,11 +1547,13 @@ textarea {
 
     }
 
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        const rndInt = randomIntFromInterval(1000, 9999)
+        var rndInt = randomIntFromInterval(1000, 9999)
         function addproductd(data){
+            var data = JSON.parse(data)
             productName = document.getElementById('pname').value;
             pprice = document.getElementById('pprice').value;
             if(pprice.includes('$')){
@@ -1564,6 +1567,7 @@ textarea {
             email69 = document.getElementById('demo_email').value;
             phone69 = document.getElementById('demo_phone').value;
             Docid = data.encryptedstring;
+            console.log(Docid)
             let [month, date, year]    = new Date().toLocaleDateString("en-US").split("/")
             db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
             date: `${month}/ ${date}/ ${year}`,
@@ -1622,6 +1626,7 @@ textarea {
         //ppermissions
         //ppay
     function pcard() {
+        var rndInt = randomIntFromInterval(1000, 9999)
         productName = document.getElementById('pname').value;
         pprice = document.getElementById('pprice').value;
         if(pprice.includes('$')){
@@ -1631,9 +1636,9 @@ textarea {
         skillsNeed = document.getElementById('pskills').value;
         pdescription = document.getElementById('pdescription').value;
         var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "text/plain");
+        myHeaders.append("Content-Type", "application/json");
         var raw = JSON.stringify({
-          "flemishGiant": `${productName}${email}${rndInt}`
+          "flemishGiant": `${productName}${email1}${rndInt}`
         });
         console.log(raw)
         //document.write(raw)
@@ -1656,7 +1661,7 @@ textarea {
     <script>
         //New Creator hire
     function dcard() {
-        const rndInt = randomIntFromInterval(1000, 9999)
+        var rndInt = randomIntFromInterval(1000, 9999)
         var ddesc = document.getElementById('ddescription').value;
         var devtime
         var dprice1
@@ -1674,7 +1679,7 @@ textarea {
             dprice1=dprice
         }else(dprice = '$'+dprice)
         var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "text/plain");
+        myHeaders.append("Content-Type", "application/json");
         var raw = JSON.stringify({
           "flemishGiant": `${dname}${email}${rndInt}`
         });
@@ -1714,7 +1719,7 @@ textarea {
             qpcost1=qpcost1
         }else(qpcost1 = '$'+qpcost1)
         var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "text/plain");
+        myHeaders.append("Content-Type", "application/json");
         var raw = JSON.stringify({
           "flemishGiant": `${qpname}${email}${rndInt}`
         });
@@ -1755,7 +1760,7 @@ textarea {
             qdcost=qdcost
         }else(qdcost = '$'+qdcost)
         var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "text/plain");
+        myHeaders.append("Content-Type", "application/json");
         var raw = JSON.stringify({
           "flemishGiant": `${qdname}${email}${rndInt}`
         });
