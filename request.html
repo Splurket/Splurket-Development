@@ -1567,7 +1567,7 @@ textarea {
             let [month, date, year]    = new Date().toLocaleDateString("en-US").split("/")
             db.collection('requests').doc('unclaimed').collection('products').doc(Docid).set({
             date: `${month}/ ${date}/ ${year}`,
-            name: productName,
+            name: document.getElementById('pname').value,
             category: productCategory,
             description: pdescription,
             skills: skillsNeed,
