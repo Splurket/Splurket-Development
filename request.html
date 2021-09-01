@@ -1553,7 +1553,7 @@ textarea {
     <script>
         var rndInt = randomIntFromInterval(1000, 9999)
         function addproductd(data){
-            var data = JSON.parse(data)
+            //var data = JSON.parse(data)
             productName = document.getElementById('pname').value;
             pprice = document.getElementById('pprice').value;
             if(pprice.includes('$')){
@@ -1582,6 +1582,7 @@ textarea {
             email:email69,
             phone:phone69,
             price:pprice,
+            status: "New",
 
 
         });
