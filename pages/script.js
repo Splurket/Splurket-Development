@@ -69,6 +69,14 @@ new Vue({
     filteredKeys() {
       return this.keys.filter(key => key !== 'Name');
     } },
+    mounted() {
+      // hide the overlay when everything has loaded
+      // you could choose some other event, e.g. if you're loading
+      // data asynchronously, you could wait until that process returns
+      document.getElementById('loading-wrapper').style.display = "none";
+      document.getElementById('app').style.display = "none";
+
+    }, 
 
   methods: {
     nextPage() {
