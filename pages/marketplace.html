@@ -573,17 +573,8 @@ function tablistclose(){
 </style><!-- partial:index.partial -->
 
 
-<div id="app" style="width:100%;">
+<div id="app" style="width:100%;display:none">
   <v-app id="inspire">
-        <v-overlay
-      :opacity="1"
-      :value="overlay"
-    >
-      <div id="loading-wrapper">
-  <div id="loading-text">Splurking...</div>
-  <div id="loading-content"></div>
-</div>
-    </v-overlay>
     <v-container fluid style="min-height:100%">
         <strong><v-btn
             class="vuebtn"
@@ -644,7 +635,7 @@ function tablistclose(){
           </v-toolbar>
         </template>
   
-        <template v-slot:default="props">
+        <template v-slot:default="props" style="display:none">
           <v-row style="margin-top:50px;position:relative;width:90%;margin-right: 5%;margin-left: 5%;">
             <v-col
               v-for="item in props.items"
