@@ -86,7 +86,7 @@ new Vue({
       document.getElementById('loading-wrapper').style.display = "block";
       document.getElementById('app').style.display = "none";
     }
-}, interval);
+}, 300);
   })
 
     }, 
