@@ -70,10 +70,15 @@ new Vue({
       return this.keys.filter(key => key !== 'Name');
     } },
     mounted() {
-      // hide the overlay when everything has loaded
+      this.$nextTick(function () {
+    // Code that will run only after the
+    // entire view has been rendered
+          // hide the overlay when everything has loaded
       // you could choose some other event, e.g. if you're loading
       // data asynchronously, you could wait until that process returns
-
+      document.getElementById('loading-wrapper').style.display = "none";
+      document.getElementById('app').style.display = "block";
+  })
 
     }, 
 
