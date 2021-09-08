@@ -77,7 +77,7 @@ new Vue({
       // you could choose some other event, e.g. if you're loading
       // data asynchronously, you could wait until that process returns
       var in1 = document.getElementById('app').innerHTML
-      console.log(in)
+      console.log(in1)
       document.getElementById('loading-wrapper').style.display = "none";
       document.getElementById('app').style.display = "block";
   })
