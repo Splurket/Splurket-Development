@@ -77,8 +77,9 @@ new Vue({
       // data asynchronously, you could wait until that process returns
       document.getElementById('loading-wrapper').style.display = "none";
      document.getElementById('app').style.display = "block";
-      var in1 = document.getElementById('app').innerHTML
+
     var timer = window.setInterval(function(){
+       var in1 = document.getElementById('app').innerHTML
     if(in1.includes('No data available')) {
      document.getElementById('loading-wrapper').style.display = "block";
      document.getElementById('app').style.display = "none";
