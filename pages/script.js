@@ -70,18 +70,21 @@ new Vue({
       return this.keys.filter(key => key !== 'Name');
     } },
     mounted() {
+      this.$nextTick(function () {
     // Code that will run only after the
     // entire view has been rendered
           // hide the overlay when everything has loaded
       // you could choose some other event, e.g. if you're loading
       // data asynchronously, you could wait until that process returns
       var in1 = document.getElementById('app').innerHTML
-      while (in1.includes('No data available')){
+      if(in1.includes('No data available')){
       document.getElementById('loading-wrapper').style.display = "block";
       document.getElementById('app').style.display = "none";
-    }
+    }else{
       document.getElementById('loading-wrapper').style.display = "none";
       document.getElementById('app').style.display = "block";
+    }
+  })
 
     }, 
 
