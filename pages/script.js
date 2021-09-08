@@ -75,11 +75,9 @@ new Vue({
           // hide the overlay when everything has loaded
       // you could choose some other event, e.g. if you're loading
       // data asynchronously, you could wait until that process returns
-      document.getElementById('loading-wrapper').style.display = "none";
-     document.getElementById('app').style.display = "block";
 
     var timer = window.setInterval(function(){
-       var in1 = document.getElementById('app').innerHTML
+    var in1 = document.getElementById('app').innerHTML
     if(in1.includes('No data available')) {
      document.getElementById('loading-wrapper').style.display = "block";
      document.getElementById('app').style.display = "none";
