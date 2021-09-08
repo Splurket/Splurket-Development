@@ -119,6 +119,8 @@ new Vue({
                             mainContainer.appendChild(div2);
                         }
                     }*/
+checkVue()
+      async function checkVue(){
       var in1 = document.getElementById('app').innerHTML
       while (in1.includes('No data available')){
       document.getElementById('loading-wrapper').style.display = "block";
@@ -126,4 +128,5 @@ new Vue({
     }
       document.getElementById('loading-wrapper').style.display = "none";
       document.getElementById('app').style.display = "block";
+    }
 
