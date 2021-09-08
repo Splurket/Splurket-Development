@@ -81,8 +81,8 @@ new Vue({
       document.getElementById('loading-wrapper').style.display = "block";
       document.getElementById('app').style.display = "none";
     }else{
-      document.getElementById('loading-wrapper').style.display = "block";
-      document.getElementById('app').style.display = "none";
+      document.getElementById('loading-wrapper').style.display = "none";
+      document.getElementById('app').style.display = "block";
     }
   })
 
