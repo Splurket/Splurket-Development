@@ -70,7 +70,6 @@ new Vue({
       return this.keys.filter(key => key !== 'Name');
     } },
     mounted() {
-      this.$nextTick(function () {
     // Code that will run only after the
     // entire view has been rendered
           // hide the overlay when everything has loaded
@@ -83,7 +82,6 @@ new Vue({
     }
       document.getElementById('loading-wrapper').style.display = "none";
       document.getElementById('app').style.display = "block";
-  })
 
     }, 
 
