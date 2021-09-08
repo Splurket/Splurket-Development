@@ -82,6 +82,7 @@ new Vue({
     if(in1.includes('No data available')) {
      document.getElementById('loading-wrapper').style.display = "block";
      document.getElementById('app').style.display = "none";
+     console.log(in1)
   }else{
       document.getElementById('loading-wrapper').style.display = "none";
      document.getElementById('app').style.display = "block";
