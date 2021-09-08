@@ -87,7 +87,7 @@ new Vue({
      document.getElementById('app').style.display = "block";
      window.clearInterval(timer);
     }
-}, 300);
+}, 100);
 
     }, 
 
