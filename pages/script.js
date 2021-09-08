@@ -76,7 +76,7 @@ new Vue({
           // hide the overlay when everything has loaded
       // you could choose some other event, e.g. if you're loading
       // data asynchronously, you could wait until that process returns
-      var in = document.getElementById('app').innerHTML
+      var in1 = document.getElementById('app').innerHTML
       console.log(in)
       document.getElementById('loading-wrapper').style.display = "none";
       document.getElementById('app').style.display = "block";
