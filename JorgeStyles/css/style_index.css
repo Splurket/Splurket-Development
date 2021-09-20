@@ -37,6 +37,16 @@ img{
         margin-left:17% !important;
         font-size:50px !important;
     }
+    .mainButton{
+        margin-left:27% !important;
+        top:370px !important;
+    }
+    .secondText1{
+        font-size:30px!important;
+    }
+    .secondText2{
+        font-size:30px!important;
+    }
 } 
 @media screen and (min-width:300px){
     .index-main-img{
