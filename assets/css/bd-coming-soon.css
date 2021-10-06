@@ -116,6 +116,11 @@ a{
 .toggle-button:focus{
     outline: none;
 }
+/* Added width to remove it from inline styles to use in media query DS */
+#search-input {
+  width: 500px;
+}
+
 /* navigation menu */
 /* media query */
 /*@media(max-width:992px){

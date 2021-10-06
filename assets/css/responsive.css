@@ -123,6 +123,10 @@ Author URI: http://www.bootstrapthemes.co
     .main_feature_area:before {
         left: 40%;
     }
+    /* Added search input id for width for responsiveness DS */
+    #search-input {
+        width: 350px;
+    }
 
 
 
