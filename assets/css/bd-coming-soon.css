@@ -77,7 +77,8 @@ a{
 
 }
 .nav-brand{
-    font-family: 'Shadows Into Light Two;'
+  /* Moved ; to outside of '' DS */
+    font-family: 'Shadows Into Light Two';
     font-weight: bold;
     align-items: center;
     font-size: 40px;
@@ -501,12 +502,14 @@ h2 {
   background-color: #ffff;
   border: none;
   color: #52b36c;
-  padding: 15px 32px;
+  /* Changed padding to fit login button in nav bar DS */
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  /* Changed margin to align login button with other nav bar elements */
+  margin: 14px 5px 4px 0px;
   cursor: pointer;
   position: absolute;
 }
@@ -559,7 +562,7 @@ h2 {
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-}
+
 .headerdrop {
   position: absolute;
   top:300px;
@@ -675,8 +678,7 @@ h2 {
   max-width:257px;
   min-width: 254px;
 }
-*/
-</style>
+
 
 
 
