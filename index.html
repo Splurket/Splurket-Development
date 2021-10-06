@@ -410,21 +410,23 @@ iframe{
 
         <div class=" footercontainer" width="100%" style="max-width:100%;z-index:-1;background-color:#52b36c;">
   <div class="frow">
-    <center><div class="fcolumn">
-      <img src="./assets/images/Logo.png" width="120px" height="120px">
+    <!-- Added a second class to all 4 columns to only affect this group of columns with media queries DS -->
+    <center><div class="fcolumn fColDiff">
+      <!-- Added id to use in css and removed inline styles to use media queries DS -->
+      <img src="./assets/images/Logo.png" id="footerLogo">
       <p style="color:white">Splurket</p>
       <p style="color:white;font-size: 15px">Imagine No Limits</p>
     </div>
-    <div class="fcolumn">
-      <h2>Connect</h2>
+    <div class="fcolumn fColDiff">
+      <h2 class="footerH2">Connect</h2>
       <a onclick="this.innerText = 'Splurket@gmail.com' ">Email</a><br>
       <a href="">Discord</a><br>
       <a href="https://www.instagram.com/splurket_store/">Instagram</a><br>
       <a href="">Facebook</a><br>
 
     </div>
-    <div class="fcolumn">
-      <h2>Explore</h2>
+    <div class="fcolumn fColDiff">
+      <h2 class="footerH2">Explore</h2>
       <a href="">Home</a><br>
       <a href="">Store</a><br>
       <a href="">About</a><br>
@@ -432,8 +434,8 @@ iframe{
       <a href="">Contact</a><br>
 
     </div>
-    <div class="fcolumn">
-      <h2>Company</h2>
+    <div class="fcolumn fColDiff">
+      <h2 class="footerH2">Company</h2>
       <a href="">Home</a><br>
       <a href="">Legal</a><br>
       <a href="">Refund</a><br>
