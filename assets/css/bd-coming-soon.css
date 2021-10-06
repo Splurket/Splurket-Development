@@ -120,6 +120,11 @@ a{
 #search-input {
   width: 500px;
 }
+/* Added width/height to remove it from inline styles to use in media query DS */
+#footerLogo {
+  width: 120px;
+  height: 120px;
+}
 
 /* navigation menu */
 /* media query */
@@ -876,3 +881,21 @@ body, html {
   z-index: 1;
   transition: width 0.35s cubic-bezier(0, 0, 0.3, 1);
 }*/
+/* Added media query to bottom to avoid cascade conflicts DS */
+@media screen and (max-width: 767px) {
+  .frow {
+    padding: 0 5px 0 5px;
+  }
+  /* footer columns */
+  .fColDiff {
+    padding: 0 0 20px 0;
+  }
+  .footerH2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+  #footerLogo {
+    width: 100px;
+    height: 100px;
+  }
+}
