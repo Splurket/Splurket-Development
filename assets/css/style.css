@@ -18,6 +18,8 @@ body {
     margin-right: 0;
     font-family: 'open_sansregular', sans-serif;
     font-weight: 300;
+    /* Added height to extend body to fit all content DS */
+    height: fit-content;
 }
 
 
