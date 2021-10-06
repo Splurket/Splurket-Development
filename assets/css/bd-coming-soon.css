@@ -353,6 +353,9 @@ p {
   color: white;
 }
 
+.frow {
+  margin-bottom: 50px;
+}
 /* Clear floats after the columns */
 .frow:after {
   content: "";
@@ -885,6 +888,7 @@ body, html {
 @media screen and (max-width: 767px) {
   .frow {
     padding: 0 5px 0 5px;
+    margin-bottom: 20px;
   }
   /* footer columns */
   .fColDiff {
