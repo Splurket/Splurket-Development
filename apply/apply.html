@@ -1,0 +1,661 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Nunito Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+        <title>Splurket Login</title>
+        <meta charset="utf-8">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript"></script>
+        
+        <link href='https://fonts.googleapis.com/css?family=Shadows Into Light Two' rel='stylesheet'>
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #52b36c;
+}
+
+.box {
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    background: #ffff;
+    text-align: center;
+    transition: 0.25s;
+    margin:auto;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #52b36c;
+    padding: 10px 10px;
+    width: 285px;
+    outline: none;
+    color: gray;
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    width: 300px;
+    border-color: black;
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: grey;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+    background: #2ecc71;
+    color: white;
+
+}
+@media screen and (max-width: 992px) {
+    .box {
+        width: 500px;
+        padding: 40px;
+        position: absolute;
+        top: 50%;
+        left: 0px !important;
+        background: #ffff;
+        text-align: center;
+        transition: 0.25s;
+        margin-top: 100px
+        margin-bottom:100px;
+    }
+}
+
+.forgot {
+    text-decoration: underline
+}
+.button {
+  background-color: #52b36c;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.db-RegisterAndLoginBackground-firstAndSecondLeftStripeBlend,
+.db-RegisterAndLoginBackground-firstLeftStripe,
+.db-RegisterAndLoginBackground-firstRightStripe,
+.db-RegisterAndLoginBackground-secondLeftStripe {
+    position: absolute
+}
+
+.db-RegisterAndLoginBackground-firstLeftStripe {
+    top: 668px;
+    left: calc(50% - 700px);
+    right: calc(50% + 540px);
+    height: 40px;
+    background-color: #80e9ff
+}
+
+.db-RegisterAndLoginBackground-secondLeftStripe {
+    top: 698px;
+    left: -10px;
+    right: calc(50% + 405px);
+    height: 40px;
+    background-color: #fff
+}
+
+.db-RegisterAndLoginBackground-firstAndSecondLeftStripeBlend {
+    top: 698px;
+    left: calc(50% - 700px);
+    right: calc(50% + 540px);
+    height: 10px;
+    background-color: #0048e5
+}
+
+.db-RegisterAndLoginBackground-firstRightStripe {
+    top: 200px;
+    right: -10px;
+    left: calc(50% + 430px);
+    height: 40px;
+    background-color: #fff
+}
+
+.db-RegisterAndLoginBackground--desktop .db-RegisterAndLoginBackground-firstAndSecondLeftStripeBlend,
+.db-RegisterAndLoginBackground--desktop .db-RegisterAndLoginBackground-firstLeftStripe {
+    left: -160px;
+    right: calc(100% - 16px)
+}
+
+.db-RegisterAndLoginBackground--desktop .db-RegisterAndLoginBackground-secondLeftStripe {
+    right: calc(100% - 135px)
+}
+
+.db-RegisterAndLoginBackground--desktop .db-RegisterAndLoginBackground-firstRightStripe {
+    left: calc(100% - 110px)
+}
+
+.db-RegisterAndLoginBackground--billing .db-RegisterAndLoginBackground-firstLeftStripe,
+.db-RegisterAndLoginBackground--billing .db-RegisterAndLoginBackground-firstRightStripe,
+.db-RegisterAndLoginBackground--invoicing .db-RegisterAndLoginBackground-firstLeftStripe,
+.db-RegisterAndLoginBackground--invoicing .db-RegisterAndLoginBackground-firstRightStripe {
+    background-color: #ffd848
+}
+
+.db-RegisterAndLoginBackground--billing .db-RegisterAndLoginBackground-secondLeftStripe,
+.db-RegisterAndLoginBackground--invoicing .db-RegisterAndLoginBackground-secondLeftStripe {
+    background-color: #00d924
+}
+
+.db-RegisterAndLoginBackground--billing .db-RegisterAndLoginBackground-firstAndSecondLeftStripeBlend,
+.db-RegisterAndLoginBackground--invoicing .db-RegisterAndLoginBackground-firstAndSecondLeftStripeBlend {
+    background-color: #00a600
+}
+
+.db-RegisterAndLoginBackground--connect .db-RegisterAndLoginBackground-firstLeftStripe,
+.db-RegisterAndLoginBackground--connect .db-RegisterAndLoginBackground-firstRightStripe {
+    background-color: #11efe3
+}
+
+.db-RegisterAndLoginBackground--connect .db-RegisterAndLoginBackground-secondLeftStripe,
+.db-RegisterAndLoginBackground--issuing .db-RegisterAndLoginBackground-secondLeftStripe {
+    background-color: #0073e6
+}
+
+.db-RegisterAndLoginBackground--connect .db-RegisterAndLoginBackground-firstAndSecondLeftStripeBlend,
+.db-RegisterAndLoginBackground--issuing .db-RegisterAndLoginBackground-firstAndSecondLeftStripeBlend {
+    background-color: #00299c
+}
+
+.db-RegisterAndLoginBackground--issuing .db-RegisterAndLoginBackground-firstLeftStripe,
+.db-RegisterAndLoginBackground--issuing .db-RegisterAndLoginBackground-firstRightStripe {
+    background-color: #ff80ff
+}
+
+.db-RegisterAndLoginBackground--atlas .db-RegisterAndLoginBackground-firstLeftStripe,
+.db-RegisterAndLoginBackground--atlas .db-RegisterAndLoginBackground-firstRightStripe {
+    background-color: #ffd848
+}
+
+.db-RegisterAndLoginBackground--atlas .db-RegisterAndLoginBackground-secondLeftStripe {
+    background-color: #fb0
+}
+
+.db-RegisterAndLoginBackground--atlas .db-RegisterAndLoginBackground-firstAndSecondLeftStripeBlend {
+    background-color: #ff7600
+}
+
+.db-RegisterAndLoginBackground-grayBackground {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    right: 0;
+    transform-origin: 0 50%;
+    height: 1698px;
+    background-color: #f7fafc
+}
+
+.db-RegisterAndLoginBackground-verticalLine {
+    position: absolute;
+    top: -100vh;
+    bottom: -100vh;
+    right: auto;
+    width: 1px;
+    background-size: 1px 8px;
+    background-image: linear-gradient(180deg, #eceef4 49%, rgba(236, 238, 244, 0) 50%)
+}
+
+.db-RegisterAndLoginBackground-verticalLine--fifth,
+.db-RegisterAndLoginBackground-verticalLine--first {
+    background: #eceef4;
+    background-image: none
+}
+
+.db-RegisterAndLoginBackground-verticalLine--first {
+    left: calc(50% - 540px)
+}
+
+.db-RegisterAndLoginBackground-verticalLine--second {
+    left: calc(50% - 270px)
+}
+
+.db-RegisterAndLoginBackground-verticalLine--third {
+    left: 50%
+}
+
+.db-RegisterAndLoginBackground-verticalLine--fourth {
+    left: calc(50% + 269px)
+}
+
+.db-RegisterAndLoginBackground-verticalLine--fifth {
+    left: calc(50% + 540px)
+}
+
+.db-RegisterAndLoginBackground--desktop .db-RegisterAndLoginBackground-verticalLine--first {
+    left: 16px
+}
+
+.db-RegisterAndLoginBackground--desktop .db-RegisterAndLoginBackground-verticalLine--second {
+    left: calc(8px + 25%)
+}
+
+.db-RegisterAndLoginBackground--desktop .db-RegisterAndLoginBackground-verticalLine--third {
+    left: 50%
+}
+
+.db-RegisterAndLoginBackground--desktop .db-RegisterAndLoginBackground-verticalLine--fourth {
+    left: calc(-9px + 75%)
+}
+
+.db-RegisterAndLoginBackground--desktop .db-RegisterAndLoginBackground-verticalLine--fifth {
+    left: calc(-16px + 100%)
+}
+
+.db-RegisterAndLoginBackgroundMobile {
+    position: relative
+}
+
+.db-RegisterAndLoginBackgroundMobile-background--v4 {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh
+}
+
+.db-RegisterAndLoginBackgroundMobile-skew {
+    transform: skewY(-12deg)
+}
+
+.db-RegisterAndLoginBackgroundMobile-grayBackground {
+    position: absolute;
+    top: -300px;
+    left: 0;
+    right: 0;
+    height: 480px;
+    background-color: #f7fafc
+}
+
+.db-RegisterAndLoginBackgroundMobile-verticalLine {
+    position: absolute;
+    top: -100vh;
+    bottom: -200vh;
+    width: 1px;
+    background: #eceef4;
+    background-image: none
+}
+
+.db-RegisterAndLoginBackgroundMobile-verticalLine--first {
+    left: calc(50% - 191px);
+    right: auto
+}
+
+.db-RegisterAndLoginBackgroundMobile-verticalLine--second {
+    left: calc(50% + 190px);
+    right: auto
+}
+
+.db-RegisterAndLoginBackgroundMobile--mobileNarrow .db-RegisterAndLoginBackgroundMobile-verticalLine--first {
+    left: 16px;
+    right: auto
+}
+
+.db-RegisterAndLoginBackgroundMobile--mobileNarrow .db-RegisterAndLoginBackgroundMobile-verticalLine--second {
+    left: auto;
+    right: 16px
+}
+
+.db-RegisterAndLoginBackgroundMobile-firstAndSecondRightStripeBlend,
+.db-RegisterAndLoginBackgroundMobile-firstLeftStripe,
+.db-RegisterAndLoginBackgroundMobile-firstRightStripe,
+.db-RegisterAndLoginBackgroundMobile-secondRightStripe {
+    position: absolute;
+    height: 40px
+}
+
+.db-RegisterAndLoginBackgroundMobile-firstLeftStripe {
+    top: 180px;
+    width: calc(50% - 191px);
+    left: 0;
+    background-color: #fff
+}
+
+.db-RegisterAndLoginBackgroundMobile-firstRightStripe {
+    top: 50px;
+    left: calc(50% + 103px);
+    background-color: #80e9ff;
+    width: 126px
+}
+
+.db-RegisterAndLoginBackgroundMobile-secondRightStripe {
+    top: 80px;
+    left: calc(50% + 67px);
+    width: 800px;
+    background-color: #fff
+}
+
+.db-RegisterAndLoginBackgroundMobile-firstAndSecondRightStripeBlend {
+    top: 80px;
+    left: calc(50% + 103px);
+    height: 10px;
+    width: 126px;
+    background-color: #0048e5
+}
+
+.db-RegisterAndLoginBackgroundMobile--mobileNarrow .db-RegisterAndLoginBackgroundMobile-firstLeftStripe {
+    left: 0;
+    width: 72px
+}
+
+.db-RegisterAndLoginBackgroundMobile--mobileNarrow .db-RegisterAndLoginBackgroundMobile-firstAndSecondRightStripeBlend,
+.db-RegisterAndLoginBackgroundMobile--mobileNarrow .db-RegisterAndLoginBackgroundMobile-firstRightStripe,
+.db-RegisterAndLoginBackgroundMobile--mobileNarrow .db-RegisterAndLoginBackgroundMobile-secondRightStripe {
+    right: 0
+}
+
+.db-RegisterAndLoginBackgroundMobile--billing .db-RegisterAndLoginBackgroundMobile-firstLeftStripe,
+.db-RegisterAndLoginBackgroundMobile--billing .db-RegisterAndLoginBackgroundMobile-secondRightStripe,
+.db-RegisterAndLoginBackgroundMobile--invoicing .db-RegisterAndLoginBackgroundMobile-firstLeftStripe,
+.db-RegisterAndLoginBackgroundMobile--invoicing .db-RegisterAndLoginBackgroundMobile-secondRightStripe {
+    background-color: #00d924
+}
+
+.db-RegisterAndLoginBackgroundMobile--billing .db-RegisterAndLoginBackgroundMobile-firstRightStripe .db-RegisterAndLoginBackgroundMobile--invoicing .db-RegisterAndLoginBackgroundMobile-firstRightStripe {
+    background-color: #ffd848
+}
+
+.db-RegisterAndLoginBackgroundMobile--billing .db-RegisterAndLoginBackgroundMobile-firstAndSecondRightStripeBlend .db-RegisterAndLoginBackgroundMobile--invoicing .db-RegisterAndLoginBackgroundMobile-firstAndSecondRightStripeBlend {
+    background-color: #00a600
+}
+
+.db-RegisterAndLoginBackgroundMobile--connect .db-RegisterAndLoginBackgroundMobile-firstLeftStripe,
+.db-RegisterAndLoginBackgroundMobile--connect .db-RegisterAndLoginBackgroundMobile-secondRightStripe,
+.db-RegisterAndLoginBackgroundMobile--issuing .db-RegisterAndLoginBackgroundMobile-firstLeftStripe,
+.db-RegisterAndLoginBackgroundMobile--issuing .db-RegisterAndLoginBackgroundMobile-secondRightStripe {
+    background-color: #0073e6
+}
+
+.db-RegisterAndLoginBackgroundMobile--connect .db-RegisterAndLoginBackgroundMobile-firstRightStripe {
+    background-color: #11efe3
+}
+
+.db-RegisterAndLoginBackgroundMobile--connect .db-RegisterAndLoginBackgroundMobile-firstAndSecondRightStripeBlend,
+.db-RegisterAndLoginBackgroundMobile--issuing .db-RegisterAndLoginBackgroundMobile-firstAndSecondRightStripeBlend {
+    background-color: #00299c
+}
+
+.db-RegisterAndLoginBackgroundMobile--issuing .db-RegisterAndLoginBackgroundMobile-firstRightStripe {
+    background-color: #ff80ff
+}
+
+.db-RegisterAndLoginBackgroundMobile--atlas .db-RegisterAndLoginBackgroundMobile-firstLeftStripe,
+.db-RegisterAndLoginBackgroundMobile--atlas .db-RegisterAndLoginBackgroundMobile-secondRightStripe {
+    background-color: #fb0
+}
+
+.db-RegisterAndLoginBackgroundMobile--atlas .db-RegisterAndLoginBackgroundMobile-firstRightStripe {
+    background-color: #ffd848
+}
+
+.db-RegisterAndLoginBackgroundMobile--atlas .db-RegisterAndLoginBackgroundMobile-firstAndSecondRightStripeBlend {
+    background-color: #ff7600
+}
+</style>
+<body>
+        <div style="width:100%">
+            <div style="width:100%;max-height:50%;margin:auto; padding-right:5%;padding-top:5%;padding-bottom: 30px;">
+            </div>
+        </div>
+    <div class="container" style="margin-bottom:50%;">
+        <div class="row">
+            <div class="col-md-6" style="width:100%;">
+                    <form onsubmit="event.preventDefault()" class="box" style="margin-bottom:50%">
+                        <h1>Splurket Hiring Test</h1>
+                        <p class="text-muted">Please Complete This Form To The Best Of Your Ability.</p> 
+                        <br>
+                        <h1>Javascript</h1>
+
+                    <br>
+                    <p style="color:black">1. Using Either Jquery or Vanilla Javascript, How Would You Log The Displayed Text From This Element? <strong>< div class="someText" style="color:black; width:300px;height:800px">Splurkians Unite!< /div></strong></p>
+                    <textarea style="width:350px"></textarea>
+                                        <br>
+                    <p style="color:black">2. Using Either Jquery or Vanilla Javascript, How Would You Log The Id From This Element? <strong>< div class="someText" style="color:black; width:300px;height:800px" id="splurkianDiv">Splurkians Unite!< /div></strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br>
+                    <p style="color:black">3. Using Vanilla Javascript, How Would You Make A GET REST API Call To This URL And Log The Response As Stringified JSON?<strong>https://splurket.com/private/applicants</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br>
+                    <p style="color:black">4. Using Vanilla Javascript, How Would You Log The Third Item In This Array?<strong>["Splurket","Is","Awesome"]</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br>
+                    <p style="color:black">5. Using Vanilla Javascript, How Would You Log Every Item In This Array?<strong>["Splurket","Is","Always","Very",Awesome"]</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br>
+                    <p style="color:black">5. Using Vanilla Javascript, How Would You Generate A Random Number Between 1 and 1000?</p>
+                    <textarea style="width:350px"></textarea>
+                    <br><br><br><h1>HTML</h1>
+
+                    <br>
+                    <p style="color:black">1. How Would You Create A Paragraph Element With The Following Text:<br> <strong>Hello World, Splurket Is Hiring! Tell Your Friends, Family, And Followers, And Join Us As We Change The World!</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br><br>
+                    <p style="color:black">2. In Your Own Words, <strong>What Are Data Attributes?</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br>
+                    <p style="color:black">3. In Your Own Words, <strong>How Do LocalStorage and IndexedDB Differ?</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br>
+                    <p style="color:black">4. <strong>Create An HTML Link Element, Which Opens In A New Tab</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br>
+                    <p style="color:black">5. <strong>Create A Small Form Using Form Elements Such As: Inputs, TextAreas, Labels, And Buttons</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br><br><br><h1>CSS</h1>
+
+                    <br>
+                    <p style="color:black">1. How Would You Make The Following Text Green (#52b36c)<br><strong>Splurket Is Hiring!</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br><br>
+                    <p style="color:black">2. <strong>What Are Media Queries? Give An Example of Use.</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br>
+                    <p style="color:black">3. How Would You Change The Background Color Of This Element Using A Rule? (Use Any Color)<strong>< div class="someText" style="color:black; width:300px;height:800px">Splurkians Unite!< /div></strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br>
+                    <p style="color:black">4. <strong>What Defines A Class In CSS? What Defines An ID?</strong></p>
+                    <textarea style="width:350px"></textarea>
+                    <br>
+                    <p style="color:black">5. <strong>How Would You Change The Style Of A Radio Button Input in CSS</strong></p>
+                    <textarea style="width:350px"></textarea>
+
+
+                    <h1>Other Info</h1>
+                    <input type="text" name="" placeholder="Name" id="userSIEmail" onclick="this.style.color='black';">
+                    <input type="text" name="" placeholder="Email" id="userSIEmail" onclick="this.style.color='black';">
+                    <input type="text" name="" placeholder="LinkedIn" id="userSIEmail" onclick="this.style.color='black';">
+                    <input type="text" name="" placeholder="Github (If Applicable)" id="userSIEmail" onclick="this.style.color='black';">
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+<div>
+    <div class="db-RegisterAndLoginBackground-secondLeftStripe" style="transform: skewY(-20deg);opacity: 0.4;"></div>
+    <div class="db-RegisterAndLoginBackground-firstRightStripe" style="transform: skewY(-20deg);opacity: 0.4;"></div>
+
+            
+                     
+</body>
+</html>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Firebase -->
+    
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+
+<script>
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+    redirect= getParameterByName('redirect');
+    document.getElementById('login-link').href = './sign-up.html?redirect='+ redirect
+    if (typeof redirect != 'undefined'){
+        var pathArray = redirect.split( '/' );
+        var protocol = pathArray[0];
+        var host = pathArray[2];
+        var redirectbase = protocol + '//' + host;
+    }
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
+    authDomain: "splurket-66df1.firebaseapp.com",
+    databaseURL: "https://splurket-66df1-default-rtdb.firebaseio.com",
+    projectId: "splurket-66df1",
+    storageBucket: "splurket-66df1.appspot.com",
+    messagingSenderId: "286706779903",
+    appId: "1:286706779903:web:fd91c29319f9804e192eca",
+    measurementId: "G-QWQ2M658KL"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        function checkUserSIEmail(){
+            var userSIEmail = document.getElementById("userSIEmail");
+            var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var flag;
+            if(userSIEmail.value.match(userSIEmailFormate)){
+                document.getElementById("userSIEmailError").style.display = "none";
+            }else{
+                document.getElementById("userSIEmailError").style.display = "block";
+            }
+        }
+        // xxxxxxxxxx Sign In Password Validation xxxxxxxxxx
+        function checkUserSIPassword(){
+            var userSIPassword = document.getElementById("userSIPassword");
+            var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
+            var flag;
+            if(userSIPassword.value.match(userSIPasswordFormate)){
+                document.getElementById("userSIPasswordError").style.display = "none";
+            }else{
+                document.getElementById("userSIPasswordError").style.display = "block";
+            }
+        }
+        document.addEventListener('submit', (e) => {
+            var userSIEmail = document.getElementById("userSIEmail").value;
+            var userSIPassword = document.getElementById("userSIPassword").value;
+            var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
+
+            var checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
+            var checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
+
+            if(checkUserEmailValid == null){
+                return checkUserSIEmail();
+            }else if(checkUserPasswordValid == null){
+                return checkUserSIPassword();
+            }else{
+                var userSIEmail = userSIEmail.toLowerCase();
+                firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
+                    var data= JSON.stringify(success)
+                    //window.location.replace("./index.html")
+                    //document.write("Login Successful!")
+                    bunnify1(userSIEmail);
+                    bunnify2(userSIPassword);
+                }).catch((error) => {
+                    // Handle Errors here.
+                    console.log(error)
+                    if (error.message.includes('email')) {
+                        document.getElementById("userSIEmailError").style.display = "block";
+                        document.getElementById("userSIEmailError").innerText = error.message
+                    }
+                    if (error.message.includes('password')){
+                        document.getElementById("userSIPasswordError").style.display = "block";
+                        document.getElementById("userSIPasswordError").innerText = error.message
+                    }
+                })
+
+                };
+            })
+        function bunnify1(bunnytype) {
+            data1 = btoa(bunnytype)
+            
+                definebunny1(data1);
+}
+        function bunnify2(bunnytype) {
+            data = btoa(bunnytype)
+            definebunny2(data);
+}
+        function definebunny1(data1) {
+            bunny1 = data1;
+        }
+        function definebunny2(data) {
+            bunny2 = data;
+            if(typeof redirect != "undefined"){
+                location.href=`${redirectbase}/login.html?redirect=${redirect}&bunnyluck=${bunny1}&rabbitfoot=${bunny2}`;
+        }else{
+            location.href=`splurket.com/login.html?redirect=${redirect}&bunnyluck=${bunny1}&rabbitfoot=${bunny2}`
+        }
+        }
+
+    </script>
+
+</body>
+</html>
+
+    </body>
+    </html>
+
+<!--
+1. create the user in authentication
+2. create a user in the database for the profile
+3. create a stripe customer
