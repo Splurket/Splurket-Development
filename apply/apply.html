@@ -433,7 +433,7 @@
         </div>
     <div class="container" style="margin-bottom:50%;">
         <div class="row">
-            <div class="col-md-6" style="width:100%;">
+            <div class="col-md-6" style="width:100%;" id="theForm">
                     <form onsubmit="event.preventDefault()" class="box" style="margin-bottom:50%">
                         <h1>Splurket Hiring Test</h1>
                         <p class="text-muted">Please Complete This Form To The Best Of Your Ability.</p> 
@@ -442,63 +442,64 @@
 
                     <br>
                     <p style="color:black">1. Using Either Jquery or Vanilla Javascript, How Would You Log The Displayed Text From This Element? <strong>< div class="someText" style="color:black; width:300px;height:800px">Splurkians Unite!< /div></strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="JS1" style="width:350px"></textarea onKeyup="this.value=this.value">
                                         <br>
                     <p style="color:black">2. Using Either Jquery or Vanilla Javascript, How Would You Log The Id From This Element? <strong>< div class="someText" style="color:black; width:300px;height:800px" id="splurkianDiv">Splurkians Unite!< /div></strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="JS1" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br>
                     <p style="color:black">3. Using Vanilla Javascript, How Would You Make A GET REST API Call To This URL And Log The Response As Stringified JSON?<strong>https://splurket.com/private/applicants</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="JS2" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br>
                     <p style="color:black">4. Using Vanilla Javascript, How Would You Log The Third Item In This Array?<strong>["Splurket","Is","Awesome"]</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="JS3" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br>
                     <p style="color:black">5. Using Vanilla Javascript, How Would You Log Every Item In This Array?<strong>["Splurket","Is","Always","Very",Awesome"]</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="JS4" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br>
                     <p style="color:black">5. Using Vanilla Javascript, How Would You Generate A Random Number Between 1 and 1000?</p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="JS5" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br><br><br><h1>HTML</h1>
 
                     <br>
                     <p style="color:black">1. How Would You Create A Paragraph Element With The Following Text:<br> <strong>Hello World, Splurket Is Hiring! Tell Your Friends, Family, And Followers, And Join Us As We Change The World!</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="HTML1" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br><br>
                     <p style="color:black">2. In Your Own Words, <strong>What Are Data Attributes?</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="HTML2" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br>
                     <p style="color:black">3. In Your Own Words, <strong>How Do LocalStorage and IndexedDB Differ?</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="HTML3" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br>
                     <p style="color:black">4. <strong>Create An HTML Link Element, Which Opens In A New Tab</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="HTML4" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br>
-                    <p style="color:black">5. <strong>Create A Small Form Using Form Elements Such As: Inputs, TextAreas, Labels, And Buttons</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <p style="color:black">5. <strong>Create A Small Form Using Form Elements Such As: Inputs, textarea onKeyup="this.value=this.value"s, Labels, And Buttons</strong></p>
+                    <textarea onKeyup="this.value=this.value" id="HTML5" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br><br><br><h1>CSS</h1>
 
                     <br>
                     <p style="color:black">1. How Would You Make The Following Text Green (#52b36c)<br><strong>Splurket Is Hiring!</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="CSS1" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br><br>
                     <p style="color:black">2. <strong>What Are Media Queries? Give An Example of Use.</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="CSS2" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br>
                     <p style="color:black">3. How Would You Change The Background Color Of This Element Using A Rule? (Use Any Color)<strong>< div class="someText" style="color:black; width:300px;height:800px">Splurkians Unite!< /div></strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="CSS3" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br>
                     <p style="color:black">4. <strong>What Defines A Class In CSS? What Defines An ID?</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="CSS4" style="width:350px"></textarea onKeyup="this.value=this.value">
                     <br>
                     <p style="color:black">5. <strong>How Would You Change The Style Of A Radio Button Input in CSS</strong></p>
-                    <textarea style="width:350px"></textarea>
+                    <textarea onKeyup="this.value=this.value" id="CSS5"style="width:350px"></textarea onKeyup="this.value=this.value">
 
 
                     <h1>Other Info</h1>
-                    <input type="text" name="" placeholder="Name" id="userSIEmail" onclick="this.style.color='black';">
-                    <input type="text" name="" placeholder="Email" id="userSIEmail" onclick="this.style.color='black';">
-                    <input type="text" name="" placeholder="LinkedIn" id="userSIEmail" onclick="this.style.color='black';">
-                    <input type="text" name="" placeholder="Github (If Applicable)" id="userSIEmail" onclick="this.style.color='black';">
+                    <input type="text" name="" placeholder="Name" id="Name1" onclick="this.style.color='black';" required="true" onKeyup="this.value=this.value">
+                    <input type="text" name="" placeholder="Email" id="Email1" onclick="this.style.color='black';" onKeyup="this.value=this.value">
+                    <input type="text" name="" placeholder="LinkedIn" id="LinkedIn1" onclick="this.style.color='black';" required="true" onKeyup="this.value=this.value">
+                    <input type="text" name="" placeholder="Github (If Applicable)" id="Github1" onclick="this.style.color='black';" onKeyup="this.value=this.value">
+                    <button class="button" onclick="submission()">Complete Test And Apply</button>
                     </form>
                 </div>
             </div>
@@ -534,118 +535,36 @@
   <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
 
 <script>
-    function getParameterByName(name, url = window.location.href) {
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-    redirect= getParameterByName('redirect');
-    document.getElementById('login-link').href = './sign-up.html?redirect='+ redirect
-    if (typeof redirect != 'undefined'){
-        var pathArray = redirect.split( '/' );
-        var protocol = pathArray[0];
-        var host = pathArray[2];
-        var redirectbase = protocol + '//' + host;
-    }
+
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyC-BUGGSsvUX8z4W1LcsJzS59yrL4__EsE",
-    authDomain: "splurket-66df1.firebaseapp.com",
-    databaseURL: "https://splurket-66df1-default-rtdb.firebaseio.com",
-    projectId: "splurket-66df1",
-    storageBucket: "splurket-66df1.appspot.com",
-    messagingSenderId: "286706779903",
-    appId: "1:286706779903:web:fd91c29319f9804e192eca",
-    measurementId: "G-QWQ2M658KL"
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyCjdmz12-Q63FIMyjv-e160E3-P6ClHpIo",
+  authDomain: "splurket-apply.firebaseapp.com",
+  projectId: "splurket-apply",
+  storageBucket: "splurket-apply.appspot.com",
+  messagingSenderId: "513202625402",
+  appId: "1:513202625402:web:c8dd40e33753732aee54c3",
+  measurementId: "G-9KRBNV20YR"
+};
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+          const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true }); 
 </script>
 
     <!-- Custom JavaScript -->
     <script>
-        function checkUserSIEmail(){
-            var userSIEmail = document.getElementById("userSIEmail");
-            var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            var flag;
-            if(userSIEmail.value.match(userSIEmailFormate)){
-                document.getElementById("userSIEmailError").style.display = "none";
-            }else{
-                document.getElementById("userSIEmailError").style.display = "block";
+        function submission() {
+        var theForm=document.getElementById("theForm").innerHTML
+        var name1=document.getElementById("Name1").value
+        console.log(name1)
+db.collection('applications').doc(btoa(name1)).set({
+    form: theForm,
+});
+console.log(theForm)
             }
-        }
-        // xxxxxxxxxx Sign In Password Validation xxxxxxxxxx
-        function checkUserSIPassword(){
-            var userSIPassword = document.getElementById("userSIPassword");
-            var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
-            var flag;
-            if(userSIPassword.value.match(userSIPasswordFormate)){
-                document.getElementById("userSIPasswordError").style.display = "none";
-            }else{
-                document.getElementById("userSIPasswordError").style.display = "block";
-            }
-        }
-        document.addEventListener('submit', (e) => {
-            var userSIEmail = document.getElementById("userSIEmail").value;
-            var userSIPassword = document.getElementById("userSIPassword").value;
-            var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
-
-            var checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
-            var checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
-
-            if(checkUserEmailValid == null){
-                return checkUserSIEmail();
-            }else if(checkUserPasswordValid == null){
-                return checkUserSIPassword();
-            }else{
-                var userSIEmail = userSIEmail.toLowerCase();
-                firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
-                    var data= JSON.stringify(success)
-                    //window.location.replace("./index.html")
-                    //document.write("Login Successful!")
-                    bunnify1(userSIEmail);
-                    bunnify2(userSIPassword);
-                }).catch((error) => {
-                    // Handle Errors here.
-                    console.log(error)
-                    if (error.message.includes('email')) {
-                        document.getElementById("userSIEmailError").style.display = "block";
-                        document.getElementById("userSIEmailError").innerText = error.message
-                    }
-                    if (error.message.includes('password')){
-                        document.getElementById("userSIPasswordError").style.display = "block";
-                        document.getElementById("userSIPasswordError").innerText = error.message
-                    }
-                })
-
-                };
-            })
-        function bunnify1(bunnytype) {
-            data1 = btoa(bunnytype)
-            
-                definebunny1(data1);
-}
-        function bunnify2(bunnytype) {
-            data = btoa(bunnytype)
-            definebunny2(data);
-}
-        function definebunny1(data1) {
-            bunny1 = data1;
-        }
-        function definebunny2(data) {
-            bunny2 = data;
-            if(typeof redirect != "undefined"){
-                location.href=`${redirectbase}/login.html?redirect=${redirect}&bunnyluck=${bunny1}&rabbitfoot=${bunny2}`;
-        }else{
-            location.href=`splurket.com/login.html?redirect=${redirect}&bunnyluck=${bunny1}&rabbitfoot=${bunny2}`
-        }
-        }
 
     </script>
 
