@@ -427,6 +427,7 @@
 }
 </style>
 <body>
+    <div id="demo" style="position: fixed;bottom:10px;background-color:white;right:20px;padding:15px"></div>    
         <div style="width:100%">
             <div style="width:100%;max-height:50%;margin:auto; padding-right:5%;padding-top:5%;padding-bottom: 30px;">
             </div>
@@ -438,6 +439,7 @@
                         <h1>Splurket Hiring Test</h1>
                         <p class="text-muted">Please Complete This Form To The Best Of Your Ability.</p> 
                         <br>
+                        <div id="questions">
                         <h1>Javascript</h1>
 
                     <br>
@@ -492,7 +494,7 @@
                     <br>
                     <p style="color:black">5. <strong>How Would You Change The Style Of A Radio Button Input in CSS</strong></p>
                     <textarea onKeyup="this.innerHTML=this.value" onBlur="this.innerHTML=this.value" id="CSS5"style="width:350px"></textarea onKeyup="this.innerHTML=this.value" onBlur="this.innerHTML=this.value">
-
+</div>
 
                     <h1>Other Info</h1>
                     <input type="text" name="" placeholder="Name" id="Name1" onclick="this.style.color='black';" required="true" onKeyup="this.innerHTML=this.value" onBlur="this.innerHTML=this.value">
@@ -586,6 +588,37 @@ db.collection('applications').doc(btoa(name1)).set({
 });
 console.log(theForm)
             }
+
+// Set the date we're counting down to
+var countDownDate1 = new Date().getTime();
+var countDownDate= new Date(countDownDate1 +46*60000);
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById('questions').style.display="none"
+  }
+}, 1000);
 
     </script>
 
