@@ -434,6 +434,9 @@
         </div>
     <div class="container" style="margin-bottom:50%;">
         <div class="row">
+            <div class="col-md-6" style="width:100%;display: none" id="theForm1">
+                <h1>Thanks For Completing The Test, We Will Be In Contact Shortly!</h1>
+            </div>
             <div class="col-md-6" style="width:100%;" id="theForm">
                     <form onsubmit="event.preventDefault()" class="box" style="margin-bottom:50%">
                         <h1>Splurket Hiring Test</h1>
@@ -587,6 +590,8 @@ db.collection('applications').doc(btoa(name1)).set({
                 
 });
 console.log(theForm)
+document.getElementById('theForm').style.display = 'none'
+document.getElementById('theForm1').style.display = 'none'
             }
 
 // Set the date we're counting down to
@@ -617,6 +622,7 @@ var x = setInterval(function() {
     document.getElementById("demo").style.color = "red";
     document.getElementById("demo").innerHTML = "EXPIRED";
     document.getElementById('questions').style.display="none"
+    submission()
   }
 }, 1000);
 
