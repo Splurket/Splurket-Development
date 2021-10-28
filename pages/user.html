@@ -116,7 +116,7 @@
     <!-- Header.. -->
 <body>
     <!-- Header -->
-<iframe src="./header" style="border:none;width:100%;height:98px" id="iframehead" scrolling="no"></iframe>
+<iframe src="./header.html" style="border:none;width:100%;height:98px" id="iframehead" scrolling="no"></iframe>
 <div class="dropdown-content" id="dropcont" style="color:white; min-width:240px;border-top: solid 2px;border-color: white;z-index: 100;" onmouseout="this.style.display = 'none'" onmouseover="this.style.display = 'block'">
     <div><br>
         <p style="display:inline-block"; id="avatarusername1" onclick="profilego()">Signed In As:</p>
@@ -262,14 +262,14 @@ display:block;
                         <v-img
                           height="250"
                           :src="product.image"
-                          :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat"
+                          :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory" onclick="window.top.location.href='./product.html?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat"
                         ></v-img>
                         <div>
-                          <img :src="product.creatorpic" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px":id="product.creator" onclick="window.top.location.href='./creator?creator='+this.id"></img></a>
-                            <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit" :id="product.creator" onclick="window.top.location.href='./user?user='+this.id">{{ product.creator }}
+                          <img :src="product.creatorpic" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px":id="product.creator" onclick="window.top.location.href='./creator.html?creator='+this.id"></img></a>
+                            <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit" :id="product.creator" onclick="window.top.location.href='./user.html?user='+this.id">{{ product.creator }}
                         </p>
                       </div>
-                        <v-card-title class="subheading font-weight-bold" :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat">
+                        <v-card-title class="subheading font-weight-bold" :id="product.id" :data-cat="product.category" :data-subcat="product.subcategory" onclick="window.top.location.href='./product.html?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat">
                           {{ product.name }}
                         </v-card-title>
                         <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ product.desc }}</v-card-text>
@@ -335,8 +335,7 @@ display:block;
                           background-color="green lighten-3"
                           color="green"
                           small
-                          readonly
-                          style=""
+                          readonly                        
                         ></v-rating>
                         <!--<v-list dense>
                           <v-list-product

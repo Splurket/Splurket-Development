@@ -147,7 +147,7 @@
     
 
 
-<iframe src="./header" style="border:none;width:100%;" id="iframehead" scrolling="no"></iframe>
+<iframe src="./header.html" style="border:none;width:100%;" id="iframehead" scrolling="no"></iframe>
 <div style="position: sticky;top: 0px;z-index: 4;">
 <ul class="nav-mobile">      
   <li class="menu-container"> 
@@ -649,14 +649,14 @@ function tablistclose(){
                 <v-img
                   height="250"
                   :src="item.image"
-                  :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat"
+                  :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="window.top.location.href='./product.html?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat"
                 ></v-img>
                 <div>
-                  <img :src="item.creatorpic" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px":id="item.creator" onclick="window.top.location.href='./creator?creator='+this.id"></img></a>
-                    <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit" :id="item.creator" onclick="window.top.location.href='./user?user='+this.id">{{ item.creator }}
+                  <img :src="item.creatorpic" height="30px" width="30px" style="border-radius: 50%;margin-top:10px;margin-left: 10px":id="item.creator" onclick="window.top.location.href='./creator.html?creator='+this.id"></img></a>
+                    <p style="display: inline-block;margin: 0px;top:265px;left:50px;position: absolute;" class="cardtit" :id="item.creator" onclick="window.top.location.href='./user.html?user='+this.id">{{ item.creator }}
                 </p>
               </div>
-                <v-card-title class="subheading font-weight-bold" :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="window.top.location.href='./product?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat">
+                <v-card-title class="subheading font-weight-bold" :id="item.id" :data-cat="item.category" :data-subcat="item.subcategory" onclick="window.top.location.href='./product.html?product='+this.id+'&cat='+this.dataset.cat+'&subcat='+this.dataset.subcat">
                   {{ item.name }}
                 </v-card-title>
                 <v-card-text style="color:#878787;font-size:15px;padding-left: 16px;padding-top: 0px;" class="e546783wyte">{{ item.desc }}</v-card-text>
